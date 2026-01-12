@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: retry.AdaptiveMode
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/retry.AdaptiveMode";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (A)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../aws.html" title="aws (package)">aws</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../retry.html" title="retry (package)">retry</a></span></span>
+     &raquo; 
+    <span class="title">AdaptiveMode</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: retry.AdaptiveMode
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/retry"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>AdaptiveMode provides an experimental retry strategy that expands on the Standard retry strategy, adding client attempt rate limits. The attempt rate limit is initially unrestricted, but becomes restricted when the attempt fails with for a throttle error. When restricted AdaptiveMode may need to sleep before an attempt is made, if too many throttles have been received. AdaptiveMode’s sleep can be canceled with context cancel. Set AdaptiveModeOptions FailOnNoAttemptTokens to change the behavior from sleep, to fail fast.</p>
+
+<p>Eventually unrestricted attempt rate limit will be restored once attempts no longer are failing due to throttle errors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="../../service/s3/types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="../../service/s3/HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="IsErrorRetryable.html" title="retry.IsErrorRetryable (interface)">retry.IsErrorRetryable</a></span>, <span class='object_link'><a href="../../service/s3/types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="../../service/s3/PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../RetryerV2.html" title="aws.RetryerV2 (interface)">aws.RetryerV2</a></span>, <span class='object_link'><a href="../../service/internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="../../service/s3/types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetAttemptToken-instance_method" title="retry.AdaptiveMode.GetAttemptToken() (method)">func (a *AdaptiveMode) <strong>GetAttemptToken</strong>(ctx context.Context) (func(error) error, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetAttemptToken returns the attempt token that can be used to rate limit attempt calls.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetInitialToken-instance_method" title="retry.AdaptiveMode.GetInitialToken() (method)">func (a *AdaptiveMode) <strong>GetInitialToken</strong>() (releaseToken func(error) error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetInitialToken returns the initial attempt token that can increment the retry token pool if the attempt is successful.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#IsErrorRetryable-instance_method" title="retry.AdaptiveMode.IsErrorRetryable() (method)">func (a *AdaptiveMode) <strong>IsErrorRetryable</strong>(err error) bool </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorRetryable returns if the failed attempt is retryable.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#MaxAttempts-instance_method" title="retry.AdaptiveMode.MaxAttempts() (method)">func (a *AdaptiveMode) <strong>MaxAttempts</strong>() int </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>MaxAttempts returns the maximum number of attempts that can be made for an attempt before failing.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="GetAttemptToken-instance_method">
+  
+    func (a *<span class='object_link'><a href="" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span>) <strong><span class='object_link'><a href="#GetAttemptToken-instance_method" title="retry.AdaptiveMode.GetAttemptToken() (method)">GetAttemptToken</a></span></strong>(ctx context.Context) (func(error) error, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetAttemptToken returns the attempt token that can be used to rate limit attempt calls. Will be used by the SDK’s retry package’s Attempt middleware to get an attempt token prior to calling the temp and releasing the attempt token after the attempt has been made.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/adaptive.go', line 131</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (a *AdaptiveMode) GetAttemptToken(ctx context.Context) (<span class="hljs-keyword">func</span>(<span class="hljs-constant">error</span>) <span class="hljs-constant">error</span>, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">for</span> {
+		acquiredToken, waitTryAgain := a.rateLimit.AcquireToken(a.options.RequestCost)
+		<span class="hljs-keyword">if</span> acquiredToken {
+			<span class="hljs-keyword">break</span>
+		}
+		<span class="hljs-keyword">if</span> a.options.FailOnNoAttemptTokens {
+			<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(
+				<span class="hljs-string">"unable to get attempt token, and FailOnNoAttemptTokens enables"</span>)
+		}
+
+		<span class="hljs-keyword">if</span> err := sdk.SleepWithContext(ctx, waitTryAgain); err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"failed to wait for token to be available, %w"</span>, err)
+		}
+	}
+
+	<span class="hljs-keyword">return</span> a.handleResponse, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetInitialToken-instance_method">
+  
+    func (a *<span class='object_link'><a href="" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span>) <strong><span class='object_link'><a href="#GetInitialToken-instance_method" title="retry.AdaptiveMode.GetInitialToken() (method)">GetInitialToken</a></span></strong>() (releaseToken func(error) error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetInitialToken returns the initial attempt token that can increment the retry token pool if the attempt is successful.</p>
+
+<p>Deprecated: This method does not provide a way to block using Context, nor can it return an error. Use RetryerV2, and GetAttemptToken instead. Only present to implement Retryer interface.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+123
+124
+125</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/adaptive.go', line 123</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (a *AdaptiveMode) GetInitialToken() (releaseToken <span class="hljs-keyword">func</span>(<span class="hljs-constant">error</span>) <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">return</span> nopRelease
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="IsErrorRetryable-instance_method">
+  
+    func (a *<span class='object_link'><a href="" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span>) <strong><span class='object_link'><a href="#IsErrorRetryable-instance_method" title="retry.AdaptiveMode.IsErrorRetryable() (method)">IsErrorRetryable</a></span></strong>(err error) bool 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>IsErrorRetryable returns if the failed attempt is retryable. This check should determine if the error can be retried, or if the error is terminal.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/adaptive.go', line 90</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (a *AdaptiveMode) IsErrorRetryable(err <span class="hljs-constant">error</span>) <span class="hljs-constant">bool</span> {
+	<span class="hljs-keyword">return</span> a.retryer.IsErrorRetryable(err)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="MaxAttempts-instance_method">
+  
+    func (a *<span class='object_link'><a href="" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span>) <strong><span class='object_link'><a href="#MaxAttempts-instance_method" title="retry.AdaptiveMode.MaxAttempts() (method)">MaxAttempts</a></span></strong>() int 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>MaxAttempts returns the maximum number of attempts that can be made for an attempt before failing. A value of 0 implies that the attempt should be retried until it succeeds if the errors are retryable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/adaptive.go', line 97</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (a *AdaptiveMode) MaxAttempts() <span class="hljs-constant">int</span> {
+	<span class="hljs-keyword">return</span> a.retryer.MaxAttempts()
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:50 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: s3.CreateMultipartUploadInput
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/s3.CreateMultipartUploadInput";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../s3.html" title="s3 (package)">s3</a></span></span>
+     &raquo; 
+    <span class="title">CreateMultipartUploadInput</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: s3.CreateMultipartUploadInput
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/s3"
+</div>
+
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../aws/signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Structure Field Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ACL-field" title="s3.CreateMultipartUploadInput.ACL (field)"><strong>ACL</strong> types.ObjectCannedACL</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The canned ACL to apply to the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Bucket-field" title="s3.CreateMultipartUploadInput.Bucket (field)"><strong>Bucket</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#BucketKeyEnabled-field" title="s3.CreateMultipartUploadInput.BucketKeyEnabled (field)"><strong>BucketKeyEnabled</strong> *bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CacheControl-field" title="s3.CreateMultipartUploadInput.CacheControl (field)"><strong>CacheControl</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies caching behavior along the request/reply chain.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ChecksumAlgorithm-field" title="s3.CreateMultipartUploadInput.ChecksumAlgorithm (field)"><strong>ChecksumAlgorithm</strong> types.ChecksumAlgorithm</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates the algorithm that you want Amazon S3 to use to create the checksum for the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ChecksumType-field" title="s3.CreateMultipartUploadInput.ChecksumType (field)"><strong>ChecksumType</strong> types.ChecksumType</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates the checksum type that you want Amazon S3 to use to calculate the object’s checksum value.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentDisposition-field" title="s3.CreateMultipartUploadInput.ContentDisposition (field)"><strong>ContentDisposition</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies presentational information for the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentEncoding-field" title="s3.CreateMultipartUploadInput.ContentEncoding (field)"><strong>ContentEncoding</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentLanguage-field" title="s3.CreateMultipartUploadInput.ContentLanguage (field)"><strong>ContentLanguage</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The language that the content is in.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentType-field" title="s3.CreateMultipartUploadInput.ContentType (field)"><strong>ContentType</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A standard MIME type describing the format of the object data.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ExpectedBucketOwner-field" title="s3.CreateMultipartUploadInput.ExpectedBucketOwner (field)"><strong>ExpectedBucketOwner</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The account ID of the expected bucket owner.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Expires-field" title="s3.CreateMultipartUploadInput.Expires (field)"><strong>Expires</strong> *time.Time</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The date and time at which the object is no longer cacheable.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GrantFullControl-field" title="s3.CreateMultipartUploadInput.GrantFullControl (field)"><strong>GrantFullControl</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specify access permissions explicitly to give the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GrantRead-field" title="s3.CreateMultipartUploadInput.GrantRead (field)"><strong>GrantRead</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specify access permissions explicitly to allow grantee to read the object data and its metadata.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GrantReadACP-field" title="s3.CreateMultipartUploadInput.GrantReadACP (field)"><strong>GrantReadACP</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specify access permissions explicitly to allows grantee to read the object ACL.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GrantWriteACP-field" title="s3.CreateMultipartUploadInput.GrantWriteACP (field)"><strong>GrantWriteACP</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specify access permissions explicitly to allows grantee to allow grantee to write the ACL for the applicable object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Key-field" title="s3.CreateMultipartUploadInput.Key (field)"><strong>Key</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Object key for which the multipart upload is to be initiated.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Metadata-field" title="s3.CreateMultipartUploadInput.Metadata (field)"><strong>Metadata</strong> map[string]string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A map of metadata to store with the object in S3.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ObjectLockLegalHoldStatus-field" title="s3.CreateMultipartUploadInput.ObjectLockLegalHoldStatus (field)"><strong>ObjectLockLegalHoldStatus</strong> types.ObjectLockLegalHoldStatus</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ObjectLockMode-field" title="s3.CreateMultipartUploadInput.ObjectLockMode (field)"><strong>ObjectLockMode</strong> types.ObjectLockMode</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the Object Lock mode that you want to apply to the uploaded object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ObjectLockRetainUntilDate-field" title="s3.CreateMultipartUploadInput.ObjectLockRetainUntilDate (field)"><strong>ObjectLockRetainUntilDate</strong> *time.Time</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the date and time when you want the Object Lock to expire.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RequestPayer-field" title="s3.CreateMultipartUploadInput.RequestPayer (field)"><strong>RequestPayer</strong> types.RequestPayer</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Confirms that the requester knows that they will be charged for the request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSECustomerAlgorithm-field" title="s3.CreateMultipartUploadInput.SSECustomerAlgorithm (field)"><strong>SSECustomerAlgorithm</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSECustomerKey-field" title="s3.CreateMultipartUploadInput.SSECustomerKey (field)"><strong>SSECustomerKey</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSECustomerKeyMD5-field" title="s3.CreateMultipartUploadInput.SSECustomerKeyMD5 (field)"><strong>SSECustomerKeyMD5</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the 128-bit MD5 digest of the customer-provided encryption key according to RFC 1321.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSEKMSEncryptionContext-field" title="s3.CreateMultipartUploadInput.SSEKMSEncryptionContext (field)"><strong>SSEKMSEncryptionContext</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSEKMSKeyId-field" title="s3.CreateMultipartUploadInput.SSEKMSKeyId (field)"><strong>SSEKMSKeyId</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the KMS key ID (Key ID, Key ARN, or Key Alias) to use for object encryption.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ServerSideEncryption-field" title="s3.CreateMultipartUploadInput.ServerSideEncryption (field)"><strong>ServerSideEncryption</strong> types.ServerSideEncryption</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The server-side encryption algorithm used when you store this object in Amazon S3 (for example, AES256 , aws:kms ).</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#StorageClass-field" title="s3.CreateMultipartUploadInput.StorageClass (field)"><strong>StorageClass</strong> types.StorageClass</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Tagging-field" title="s3.CreateMultipartUploadInput.Tagging (field)"><strong>Tagging</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The tag-set for the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#WebsiteRedirectLocation-field" title="s3.CreateMultipartUploadInput.WebsiteRedirectLocation (field)"><strong>WebsiteRedirectLocation</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Structure Field Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="ACL-field">
+  <strong>ACL</strong> types.ObjectCannedACL 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The canned ACL to apply to the object. Amazon S3 supports a set of predefined ACLs, known as canned ACLs. Each canned ACL has a predefined set of grantees and permissions. For more information, see ACL[https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL]in the Amazon S3 User Guide.</p>
+
+<p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can grant access permissions to individual Amazon Web Services accounts or to predefined groups defined by Amazon S3. These permissions are then added to the access control list (ACL) on the new object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. One way to grant the permissions using the request headers is to specify a canned ACL with the x-amz-acl request header.</p>
+<ul><li>
+<p>This functionality is not supported for directory buckets.</p>
+</li><li>
+<p>This functionality is not supported for Amazon S3 on Outposts.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Bucket-field">
+  <strong>Bucket</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The name of the bucket where the multipart upload is initiated and where the object is uploaded.</p>
+
+<p>Directory buckets - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format Bucket-name.s3express-zone-id.region-code.amazonaws.com . Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format bucket-base-name–zone-id–x-s3 (for example, amzn-s3-demo-bucket–usw2-az1–x-s3 ). For information about bucket naming restrictions, see bucket naming rules[https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html]in the Amazon S3 User Guide.</p>
+
+<p>Access points - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form AccessPointName-AccountId.s3-accesspoint.Region.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see access points[https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html]in the Amazon S3 User Guide.</p>
+
+<p>Object Lambda access points are not supported by directory buckets.</p>
+
+<p>S3 on Outposts - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form AccessPointName-AccountId.outpostID.s3-outposts.Region.amazonaws.com . When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see is S3 on Outposts?[https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html]in the Amazon S3 User Guide.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="BucketKeyEnabled-field">
+  <strong>BucketKeyEnabled</strong> *bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using Key Management Service (KMS) keys (SSE-KMS).</p>
+
+<p>General purpose buckets - Setting this header to true causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS. Also, specifying this header with a PUT action doesn’t affect bucket-level settings for S3 Bucket Key.</p>
+
+<p>Directory buckets - S3 Bucket Keys are always enabled for GET and PUT operations in a directory bucket and can’t be disabled. S3 Bucket Keys aren’t supported, when you copy SSE-KMS encrypted objects from general purpose buckets to directory buckets, from directory buckets to general purpose buckets, or between directory buckets, through <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>, <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-objects-Batch-Ops">the Copy operation in Batch Operations</a>, or <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-import-job">the import jobs</a>. In this case, Amazon S3 makes a call to KMS every time a copy request is made for a KMS-encrypted object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CacheControl-field">
+  <strong>CacheControl</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies caching behavior along the request/reply chain.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ChecksumAlgorithm-field">
+  <strong>ChecksumAlgorithm</strong> types.ChecksumAlgorithm 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates the algorithm that you want Amazon S3 to use to create the checksum for the object. For more information, see object integrity[https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html]in the Amazon S3 User Guide.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ChecksumType-field">
+  <strong>ChecksumType</strong> types.ChecksumType 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates the checksum type that you want Amazon S3 to use to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentDisposition-field">
+  <strong>ContentDisposition</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies presentational information for the object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentEncoding-field">
+  <strong>ContentEncoding</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
+
+<p>For directory buckets, only the aws-chunked value is supported in this header field.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentLanguage-field">
+  <strong>ContentLanguage</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The language that the content is in.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentType-field">
+  <strong>ContentType</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A standard MIME type describing the format of the object data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ExpectedBucketOwner-field">
+  <strong>ExpectedBucketOwner</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code 403 Forbidden (access denied).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Expires-field">
+  <strong>Expires</strong> *time.Time 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The date and time at which the object is no longer cacheable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GrantFullControl-field">
+  <strong>GrantFullControl</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specify access permissions explicitly to give the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.</p>
+
+<p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see Control List (ACL) Overview[https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html]in the Amazon S3 User Guide.</p>
+
+<p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
+<ul><li>
+<p>id – if the value specified is the canonical user ID of an Amazon Web  Services account</p>
+</li><li>
+<p>uri – if you are granting permissions to a predefined group</p>
+</li><li>
+<p>emailAddress – if the value specified is the email address of an Amazon Web  Services account</p>
+</li></ul>
+
+<p>Using email addresses to specify a grantee is only supported in the following  Amazon Web Services Regions:</p>
+<ul><li>
+<p>US East (N. Virginia)</p>
+</li><li>
+<p>US West (N. California)</p>
+</li><li>
+<p>US West (Oregon)</p>
+</li><li>
+<p>Asia Pacific (Singapore)</p>
+</li><li>
+<p>Asia Pacific (Sydney)</p>
+</li><li>
+<p>Asia Pacific (Tokyo)</p>
+</li><li>
+<p>Europe (Ireland)</p>
+</li><li>
+<p>South America (São Paulo)</p>
+</li></ul>
+
+<p>For a list of all the Amazon S3 supported Regions and endpoints, see and Endpoints[https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region]in the  Amazon Web Services General Reference.</p>
+
+<p>For example, the following x-amz-grant-read header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
+
+<pre class="code go"><code class="go"><div class="hljs">x-amz-grant-read: id=<span class="hljs-string">"11112222333"</span>, id=<span class="hljs-string">"444455556666"</span>
+</div></code></pre>
+<ul><li>
+<p>This functionality is not supported for directory buckets.</p>
+</li><li>
+<p>This functionality is not supported for Amazon S3 on Outposts.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GrantRead-field">
+  <strong>GrantRead</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specify access permissions explicitly to allow grantee to read the object data and its metadata.</p>
+
+<p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see Control List (ACL) Overview[https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html]in the Amazon S3 User Guide.</p>
+
+<p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
+<ul><li>
+<p>id – if the value specified is the canonical user ID of an Amazon Web  Services account</p>
+</li><li>
+<p>uri – if you are granting permissions to a predefined group</p>
+</li><li>
+<p>emailAddress – if the value specified is the email address of an Amazon Web  Services account</p>
+</li></ul>
+
+<p>Using email addresses to specify a grantee is only supported in the following  Amazon Web Services Regions:</p>
+<ul><li>
+<p>US East (N. Virginia)</p>
+</li><li>
+<p>US West (N. California)</p>
+</li><li>
+<p>US West (Oregon)</p>
+</li><li>
+<p>Asia Pacific (Singapore)</p>
+</li><li>
+<p>Asia Pacific (Sydney)</p>
+</li><li>
+<p>Asia Pacific (Tokyo)</p>
+</li><li>
+<p>Europe (Ireland)</p>
+</li><li>
+<p>South America (São Paulo)</p>
+</li></ul>
+
+<p>For a list of all the Amazon S3 supported Regions and endpoints, see and Endpoints[https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region]in the  Amazon Web Services General Reference.</p>
+
+<p>For example, the following x-amz-grant-read header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
+
+<pre class="code go"><code class="go"><div class="hljs">x-amz-grant-read: id=<span class="hljs-string">"11112222333"</span>, id=<span class="hljs-string">"444455556666"</span>
+</div></code></pre>
+<ul><li>
+<p>This functionality is not supported for directory buckets.</p>
+</li><li>
+<p>This functionality is not supported for Amazon S3 on Outposts.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GrantReadACP-field">
+  <strong>GrantReadACP</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specify access permissions explicitly to allows grantee to read the object ACL.</p>
+
+<p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see Control List (ACL) Overview[https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html]in the Amazon S3 User Guide.</p>
+
+<p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
+<ul><li>
+<p>id – if the value specified is the canonical user ID of an Amazon Web  Services account</p>
+</li><li>
+<p>uri – if you are granting permissions to a predefined group</p>
+</li><li>
+<p>emailAddress – if the value specified is the email address of an Amazon Web  Services account</p>
+</li></ul>
+
+<p>Using email addresses to specify a grantee is only supported in the following  Amazon Web Services Regions:</p>
+<ul><li>
+<p>US East (N. Virginia)</p>
+</li><li>
+<p>US West (N. California)</p>
+</li><li>
+<p>US West (Oregon)</p>
+</li><li>
+<p>Asia Pacific (Singapore)</p>
+</li><li>
+<p>Asia Pacific (Sydney)</p>
+</li><li>
+<p>Asia Pacific (Tokyo)</p>
+</li><li>
+<p>Europe (Ireland)</p>
+</li><li>
+<p>South America (São Paulo)</p>
+</li></ul>
+
+<p>For a list of all the Amazon S3 supported Regions and endpoints, see and Endpoints[https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region]in the  Amazon Web Services General Reference.</p>
+
+<p>For example, the following x-amz-grant-read header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
+
+<pre class="code go"><code class="go"><div class="hljs">x-amz-grant-read: id=<span class="hljs-string">"11112222333"</span>, id=<span class="hljs-string">"444455556666"</span>
+</div></code></pre>
+<ul><li>
+<p>This functionality is not supported for directory buckets.</p>
+</li><li>
+<p>This functionality is not supported for Amazon S3 on Outposts.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GrantWriteACP-field">
+  <strong>GrantWriteACP</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specify access permissions explicitly to allows grantee to allow grantee to write the ACL for the applicable object.</p>
+
+<p>By default, all objects are private. Only the owner has full access control. When uploading an object, you can use this header to explicitly grant access permissions to specific Amazon Web Services accounts or groups. This header maps to specific permissions that Amazon S3 supports in an ACL. For more information, see Control List (ACL) Overview[https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html]in the Amazon S3 User Guide.</p>
+
+<p>You specify each grantee as a type=value pair, where the type is one of the following:</p>
+<ul><li>
+<p>id – if the value specified is the canonical user ID of an Amazon Web  Services account</p>
+</li><li>
+<p>uri – if you are granting permissions to a predefined group</p>
+</li><li>
+<p>emailAddress – if the value specified is the email address of an Amazon Web  Services account</p>
+</li></ul>
+
+<p>Using email addresses to specify a grantee is only supported in the following  Amazon Web Services Regions:</p>
+<ul><li>
+<p>US East (N. Virginia)</p>
+</li><li>
+<p>US West (N. California)</p>
+</li><li>
+<p>US West (Oregon)</p>
+</li><li>
+<p>Asia Pacific (Singapore)</p>
+</li><li>
+<p>Asia Pacific (Sydney)</p>
+</li><li>
+<p>Asia Pacific (Tokyo)</p>
+</li><li>
+<p>Europe (Ireland)</p>
+</li><li>
+<p>South America (São Paulo)</p>
+</li></ul>
+
+<p>For a list of all the Amazon S3 supported Regions and endpoints, see and Endpoints[https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region]in the  Amazon Web Services General Reference.</p>
+
+<p>For example, the following x-amz-grant-read header grants the Amazon Web Services accounts identified by account IDs permissions to read object data and its metadata:</p>
+
+<pre class="code go"><code class="go"><div class="hljs">x-amz-grant-read: id=<span class="hljs-string">"11112222333"</span>, id=<span class="hljs-string">"444455556666"</span>
+</div></code></pre>
+<ul><li>
+<p>This functionality is not supported for directory buckets.</p>
+</li><li>
+<p>This functionality is not supported for Amazon S3 on Outposts.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Key-field">
+  <strong>Key</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Object key for which the multipart upload is to be initiated.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Metadata-field">
+  <strong>Metadata</strong> map[string]string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A map of metadata to store with the object in S3.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ObjectLockLegalHoldStatus-field">
+  <strong>ObjectLockLegalHoldStatus</strong> types.ObjectLockLegalHoldStatus 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies whether you want to apply a legal hold to the uploaded object.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ObjectLockMode-field">
+  <strong>ObjectLockMode</strong> types.ObjectLockMode 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the Object Lock mode that you want to apply to the uploaded object.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ObjectLockRetainUntilDate-field">
+  <strong>ObjectLockRetainUntilDate</strong> *time.Time 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the date and time when you want the Object Lock to expire.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RequestPayer-field">
+  <strong>RequestPayer</strong> types.RequestPayer 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see Objects in Requester Pays Buckets[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html]in the Amazon S3 User Guide.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSECustomerAlgorithm-field">
+  <strong>SSECustomerAlgorithm</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSECustomerKey-field">
+  <strong>SSECustomerKey</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the x-amz-server-side-encryption-customer-algorithm header.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSECustomerKeyMD5-field">
+  <strong>SSECustomerKeyMD5</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the 128-bit MD5 digest of the customer-provided encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSEKMSEncryptionContext-field">
+  <strong>SSEKMSEncryptionContext</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The value of this header is a Base64 encoded string of a UTF-8 encoded JSON, which contains the encryption context as key-value pairs.</p>
+
+<p>Directory buckets - You can optionally provide an explicit encryption context value. The value must match the default encryption context - the bucket Amazon Resource Name (ARN). An additional encryption context value is not supported.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSEKMSKeyId-field">
+  <strong>SSEKMSKeyId</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the KMS key ID (Key ID, Key ARN, or Key Alias) to use for object encryption. If the KMS key doesn’t exist in the same account that’s issuing the command, you must use the full Key ARN not the Key ID.</p>
+
+<p>General purpose buckets - If you specify x-amz-server-side-encryption with aws:kms or aws:kms:dsse , this header specifies the ID (Key ID, Key ARN, or Key Alias) of the KMS key to use. If you specify x-amz-server-side-encryption:aws:kms or x-amz-server-side-encryption:aws:kms:dsse , but do not provide x-amz-server-side-encryption-aws-kms-key-id , Amazon S3 uses the Amazon Web Services managed key ( aws/s3 ) to protect the data.</p>
+
+<p>Directory buckets - To encrypt data using SSE-KMS, it’s recommended to specify the x-amz-server-side-encryption header to aws:kms . Then, the x-amz-server-side-encryption-aws-kms-key-id header implicitly uses the bucket’s default KMS customer managed key ID. If you want to explicitly set the x-amz-server-side-encryption-aws-kms-key-id header, it must match the bucket’s default customer managed key (using key ID or ARN, not alias). Your SSE-KMS configuration can only support 1 managed key[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk]per directory bucket’s lifetime. The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a> ( aws/s3 ) isn’t supported.</p>
+
+<p>Incorrect key specification results in an HTTP 400 Bad Request error.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ServerSideEncryption-field">
+  <strong>ServerSideEncryption</strong> types.ServerSideEncryption 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The server-side encryption algorithm used when you store this object in Amazon S3 (for example, AES256 , aws:kms ).</p>
+<ul><li>
+<p>Directory buckets - For directory buckets, there are only two supported  options for server-side encryption: server-side encryption with Amazon S3  managed keys (SSE-S3) ( AES256 ) and server-side encryption with KMS keys  (SSE-KMS) ( aws:kms ). We recommend that the bucket’s default encryption uses  the desired encryption configuration and you don’t override the bucket default  encryption in your CreateSession requests or PUT object requests. Then, new  objects are automatically encrypted with the desired encryption settings. For  more information, see data with server-side encryption[https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-serv-side-encryption.html]in the Amazon S3 User Guide. For more information about  the encryption overriding behaviors in directory buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-specifying-kms-encryption.html">Specifying server-side encryption with KMS for new object uploads</a>.</p>
+</li></ul>
+
+<p>In the Zonal endpoint API calls (except CopyObject[https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html]and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>) using the REST API, the  encryption request headers must match the encryption settings that are specified  in the CreateSession request. You can’t override the values of the encryption  settings ( x-amz-server-side-encryption ,  x-amz-server-side-encryption-aws-kms-key-id ,  x-amz-server-side-encryption-context , and  x-amz-server-side-encryption-bucket-key-enabled ) that are specified in the  CreateSession request. You don’t need to explicitly specify these encryption  settings values in Zonal endpoint API calls, and Amazon S3 will use the  encryption settings values from the CreateSession request to protect new  objects in the directory bucket.</p>
+
+<p>When you use the CLI or the Amazon Web Services SDKs, for CreateSession , the  session token refreshes automatically to avoid service interruptions when a  session expires. The CLI or the Amazon Web Services SDKs use the bucket’s  default encryption configuration for the CreateSession request. It’s not  supported to override the encryption settings values in the CreateSession  request. So in the Zonal endpoint API calls (except CopyObject[https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html]and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>), the encryption  request headers must match the default encryption configuration of the directory  bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="StorageClass-field">
+  <strong>StorageClass</strong> types.StorageClass 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class provides high durability and high availability. Depending on performance needs, you can specify a different Storage Class. For more information, see Classes[https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html]in the Amazon S3 User Guide.</p>
+<ul><li>
+<p>Directory buckets only support EXPRESS_ONEZONE (the S3 Express One Zone  storage class) in Availability Zones and ONEZONE_IA (the S3 One  Zone-Infrequent Access storage class) in Dedicated Local Zones.</p>
+</li><li>
+<p>Amazon S3 on Outposts only uses the OUTPOSTS Storage Class.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Tagging-field">
+  <strong>Tagging</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The tag-set for the object. The tag-set must be encoded as URL Query parameters.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="WebsiteRedirectLocation-field">
+  <strong>WebsiteRedirectLocation</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+  </div>
+
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:59 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

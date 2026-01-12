@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: customizations
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/s3/internal/customizations";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (c)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../s3.html" title="s3 (package)">s3</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../internal.html" title="internal (package)">internal</a></span></span>
+     &raquo; 
+    <span class="title">customizations</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: customizations
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/s3/internal/customizations"
+</div>
+
+  
+
+  
+    <h2>Variables</h2>
+    
+      <dl class="constants">
+        
+          <dt id="_-constant" class="">
+          <div class="defn">var <strong>_</strong> (smithyhttp.Signer) = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">(*<span class='object_link'><a href="customizations/ExpressSigner.html" title="customizations.ExpressSigner (struct)">ExpressSigner</a></span>)(<span class="hljs-constant">nil</span>)</div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-AddExpiresOnPresignedURL" title="customizations (package)"><strong>AddExpiresOnPresignedURL</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddExpiresOnPresignedURL represents a build middleware used to assign expiration on a presigned URL.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-ExpressIdentityResolver" title="customizations (package)"><strong>ExpressIdentityResolver</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ExpressIdentityResolver retrieves identity for the S3Express storage class.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="customizations/ExpressSigner.html" title="customizations.ExpressSigner (struct)"><strong>ExpressSigner</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ExpressSigner signs requests for the sigv4-s3express auth scheme.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="customizations/PresignHTTPRequestMiddleware.html" title="customizations.PresignHTTPRequestMiddleware (struct)"><strong>PresignHTTPRequestMiddleware</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>PresignHTTPRequestMiddleware provides the Finalize middleware for creating a presigned URL for an HTTP request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-PresignHTTPRequestMiddlewareOptions" title="customizations (package)"><strong>PresignHTTPRequestMiddlewareOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>PresignHTTPRequestMiddlewareOptions is the options for the PresignHTTPRequestMiddleware middleware.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="customizations/S3ExpressSignHTTPRequestMiddleware.html" title="customizations.S3ExpressSignHTTPRequestMiddleware (struct)"><strong>S3ExpressSignHTTPRequestMiddleware</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>S3ExpressSignHTTPRequestMiddleware signs S3 S3Express requests.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="customizations/SignHTTPRequestMiddleware.html" title="customizations.SignHTTPRequestMiddleware (struct)"><strong>SignHTTPRequestMiddleware</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SignHTTPRequestMiddleware is a <code>FinalizeMiddleware</code> implementation to select HTTP Signing method.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-SignHTTPRequestMiddlewareOptions" title="customizations (package)"><strong>SignHTTPRequestMiddlewareOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SignHTTPRequestMiddlewareOptions is the configuration options for the SignHTTPRequestMiddleware middleware.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-UpdateEndpointOptions" title="customizations (package)"><strong>UpdateEndpointOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>UpdateEndpointOptions provides the options for the UpdateEndpoint middleware setup.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-UpdateEndpointParameterAccessor" title="customizations (package)"><strong>UpdateEndpointParameterAccessor</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>UpdateEndpointParameterAccessor represents accessor functions used by the middleware.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  <h2>
+    Interface Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="customizations/EndpointResolver.html" title="customizations.EndpointResolver (interface)"><strong>EndpointResolver</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>EndpointResolver interface for resolving service endpoints.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="customizations/S3ExpressCredentialsProvider.html" title="customizations.S3ExpressCredentialsProvider (interface)"><strong>S3ExpressCredentialsProvider</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>S3ExpressCredentialsProvider retrieves credentials for the S3Express storage class.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddExpressDefaultChecksumMiddleware-class_method" title="customizations.AddExpressDefaultChecksumMiddleware() (method)">func <strong>AddExpressDefaultChecksumMiddleware</strong>(s *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddExpressDefaultChecksumMiddleware appends a step to default to CRC32 for S3Express requests.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetBucket-class_method" title="customizations.GetBucket() (method)">func <strong>GetBucket</strong>(ctx context.Context) string </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetBucket retrieves a stored bucket name within a context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetIdentityPropertiesBucket-class_method" title="customizations.GetIdentityPropertiesBucket() (method)">func <strong>GetIdentityPropertiesBucket</strong>(ip *smithy.Properties) (string, bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetIdentityPropertiesBucket returns the S3 bucket from identity properties.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetPropertiesBackend-class_method" title="customizations.GetPropertiesBackend() (method)">func <strong>GetPropertiesBackend</strong>(p *smithy.Properties) string </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetPropertiesBackend returns a resolved endpoint backend from the property set.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetSignerVersion-class_method" title="customizations.GetSignerVersion() (method)">func <strong>GetSignerVersion</strong>(ctx context.Context) (v string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetSignerVersion retrieves the signer version to use for signing.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#HandleResponseErrorWith200Status-class_method" title="customizations.HandleResponseErrorWith200Status() (method)">func <strong>HandleResponseErrorWith200Status</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HandleResponseErrorWith200Status check for S3 200 error response.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RegisterPreSigningMiddleware-class_method" title="customizations.RegisterPreSigningMiddleware() (method)">func <strong>RegisterPreSigningMiddleware</strong>(stack *middleware.Stack, signingMiddleware *PresignHTTPRequestMiddleware) (err error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RegisterPreSigningMiddleware registers the wrapper pre-signing middleware to the stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RegisterSigningMiddleware-class_method" title="customizations.RegisterSigningMiddleware() (method)">func <strong>RegisterSigningMiddleware</strong>(stack *middleware.Stack, signingMiddleware *SignHTTPRequestMiddleware) (err error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RegisterSigningMiddleware registers the wrapper signing middleware to the stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ResolveDisableExpressAuth-class_method" title="customizations.ResolveDisableExpressAuth() (method)">func <strong>ResolveDisableExpressAuth</strong>(configs []interface{}) (value bool, exists bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ResolveDisableExpressAuth pulls S3DisableExpressAuth setting from config sources.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetBucket-class_method" title="customizations.SetBucket() (method)">func <strong>SetBucket</strong>(ctx context.Context, bucket string) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetBucket stores a bucket name within the request context, which is required for a variety of custom S3 behaviors.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetIdentityPropertiesBucket-class_method" title="customizations.SetIdentityPropertiesBucket() (method)">func <strong>SetIdentityPropertiesBucket</strong>(ip *smithy.Properties, bucket string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetIdentityPropertiesBucket sets the S3 bucket to identity properties.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetSignerVersion-class_method" title="customizations.SetSignerVersion() (method)">func <strong>SetSignerVersion</strong>(ctx context.Context, version string) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetSignerVersion sets the signer version to be used for signing the request.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UpdateEndpoint-class_method" title="customizations.UpdateEndpoint() (method)">func <strong>UpdateEndpoint</strong>(stack *middleware.Stack, options UpdateEndpointOptions) (err error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>UpdateEndpoint adds the middleware to the middleware stack based on the UpdateEndpointOptions.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Type Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="type-AddExpiresOnPresignedURL">
+  
+    <strong>AddExpiresOnPresignedURL</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>AddExpiresOnPresignedURL represents a build middleware used to assign expiration on a presigned URL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>Expires</strong> time.Duration 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Expires is time.Duration within which presigned url should be expired. This should be the duration in seconds the presigned URL should be considered valid for. By default the S3 presigned url expires in 15 minutes ie. 900 seconds.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-ExpressIdentityResolver">
+  
+    <strong>ExpressIdentityResolver</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>ExpressIdentityResolver retrieves identity for the S3Express storage class.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>Provider</strong> <span class='object_link'><a href="S3ExpressCredentialsProvider.html" title="customizations.S3ExpressCredentialsProvider (interface)">S3ExpressCredentialsProvider</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-PresignHTTPRequestMiddlewareOptions">
+  
+    <strong>PresignHTTPRequestMiddlewareOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>PresignHTTPRequestMiddlewareOptions is the options for the PresignHTTPRequestMiddleware middleware.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>CredentialsProvider</strong> <span class='object_link'><a href="../../../../aws/CredentialsProvider.html" title="aws.CredentialsProvider (interface)">aws.CredentialsProvider</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>ExpressCredentials</strong> <span class='object_link'><a href="S3ExpressCredentialsProvider.html" title="customizations.S3ExpressCredentialsProvider (interface)">S3ExpressCredentialsProvider</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>V4Presigner</strong> v4.HTTPPresigner 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>V4aPresigner</strong> v4a.HTTPPresigner 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>LogSigning</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-SignHTTPRequestMiddlewareOptions">
+  
+    <strong>SignHTTPRequestMiddlewareOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>SignHTTPRequestMiddlewareOptions is the configuration options for the SignHTTPRequestMiddleware middleware.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>CredentialsProvider</strong> <span class='object_link'><a href="../../../../aws/CredentialsProvider.html" title="aws.CredentialsProvider (interface)">aws.CredentialsProvider</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>credential provider</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>LogSigning</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>log signing</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>V4Signer</strong> v4.HTTPSigner 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>v4 signer</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>V4aSigner</strong> v4a.HTTPSigner 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>v4a signer</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-UpdateEndpointOptions">
+  
+    <strong>UpdateEndpointOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>UpdateEndpointOptions provides the options for the UpdateEndpoint middleware setup.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>Accessor</strong> <span class='object_link'><a href="#type-UpdateEndpointParameterAccessor" title="customizations (package)">UpdateEndpointParameterAccessor</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Accessor are parameter accessors used by the middleware</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>UsePathStyle</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>use path style</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>UseAccelerate</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>use transfer acceleration</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>SupportsAccelerate</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>indicates if an operation supports s3 transfer acceleration.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>UseARNRegion</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>use ARN region</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>TargetS3ObjectLambda</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Indicates that the operation should target the s3-object-lambda endpoint. Used to direct operations that do not route based on an input ARN.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>EndpointResolver</strong> <span class='object_link'><a href="#EndpointResolver-field" title="customizations.UpdateEndpointOptions.EndpointResolver (field)">EndpointResolver</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>EndpointResolver used to resolve endpoints. This may be a custom endpoint resolver</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>EndpointResolverOptions</strong> <span class='object_link'><a href="#EndpointResolverOptions-field" title="customizations.UpdateEndpointOptions.EndpointResolverOptions (field)">EndpointResolverOptions</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>EndpointResolverOptions used by endpoint resolver</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>DisableMultiRegionAccessPoints</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>DisableMultiRegionAccessPoints indicates multi-region access point support is disabled</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-UpdateEndpointParameterAccessor">
+  
+    <strong>UpdateEndpointParameterAccessor</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>UpdateEndpointParameterAccessor represents accessor functions used by the middleware</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+
+  <dt><em>(empty struct)</em></dt>
+
+</dl>
+</div>
+
+
+</div>
+    
+  </div>
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="AddExpressDefaultChecksumMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddExpressDefaultChecksumMiddleware-class_method" title="customizations.AddExpressDefaultChecksumMiddleware() (method)">AddExpressDefaultChecksumMiddleware</a></span></strong>(s *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddExpressDefaultChecksumMiddleware appends a step to default to CRC32 for S3Express requests. This should only be applied to operations where a checksum is required (e.g. DeleteObject).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/express_default_checksum.go', line 31</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddExpressDefaultChecksumMiddleware(s *middleware.Stack) <span class="hljs-constant">error</span> {
+	err := s.Finalize.Insert(
+		&expressDefaultChecksumMiddleware{},
+		<span class="hljs-string">"AWSChecksum:ComputeInputPayloadChecksum"</span>,
+		middleware.Before,
+	)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">"add expressDefaultChecksum: %v"</span>, err)
+	}
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetBucket-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetBucket-class_method" title="customizations.GetBucket() (method)">GetBucket</a></span></strong>(ctx context.Context) string 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetBucket retrieves a stored bucket name within a context.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/context.go', line 17</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetBucket(ctx context.Context) <span class="hljs-constant">string</span> {
+	v, _ := middleware.GetStackValue(ctx, bucketKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetIdentityPropertiesBucket-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetIdentityPropertiesBucket-class_method" title="customizations.GetIdentityPropertiesBucket() (method)">GetIdentityPropertiesBucket</a></span></strong>(ip *smithy.Properties) (string, bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetIdentityPropertiesBucket returns the S3 bucket from identity properties.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/express_properties.go', line 12</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetIdentityPropertiesBucket(ip *smithy.Properties) (<span class="hljs-constant">string</span>, <span class="hljs-constant">bool</span>) {
+	v, ok := ip.Get(bucketKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v, ok
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetPropertiesBackend-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetPropertiesBackend-class_method" title="customizations.GetPropertiesBackend() (method)">GetPropertiesBackend</a></span></strong>(p *smithy.Properties) string 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetPropertiesBackend returns a resolved endpoint backend from the property set.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/express_properties.go', line 6</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetPropertiesBackend(p *smithy.Properties) <span class="hljs-constant">string</span> {
+	v, _ := p.Get(<span class="hljs-string">"backend"</span>).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetSignerVersion-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetSignerVersion-class_method" title="customizations.GetSignerVersion() (method)">GetSignerVersion</a></span></strong>(ctx context.Context) (v string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetSignerVersion retrieves the signer version to use for signing</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/signer_wrapper.go', line 19</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetSignerVersion(ctx context.Context) (v <span class="hljs-constant">string</span>) {
+	v, _ = middleware.GetStackValue(ctx, signerVersionKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="HandleResponseErrorWith200Status-class_method">
+  
+    func <strong><span class='object_link'><a href="#HandleResponseErrorWith200Status-class_method" title="customizations.HandleResponseErrorWith200Status() (method)">HandleResponseErrorWith200Status</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>HandleResponseErrorWith200Status check for S3 200 error response. If an s3 200 error is found, status code for the response is modified temporarily to 5xx response status code.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/handle_200_error.go', line 20</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> HandleResponseErrorWith200Status(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Deserialize.Insert(&processResponseFor200ErrorMiddleware{}, <span class="hljs-string">"OperationDeserializer"</span>, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RegisterPreSigningMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#RegisterPreSigningMiddleware-class_method" title="customizations.RegisterPreSigningMiddleware() (method)">RegisterPreSigningMiddleware</a></span></strong>(stack *middleware.Stack, signingMiddleware *<span class='object_link'><a href="customizations/PresignHTTPRequestMiddleware.html" title="customizations.PresignHTTPRequestMiddleware (struct)">PresignHTTPRequestMiddleware</a></span>) (err error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>RegisterPreSigningMiddleware registers the wrapper pre-signing middleware to the stack. If a pre-signing middleware is already present, this provided middleware will be swapped. Otherwise the middleware will be added at the tail of the finalize step.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/signer_wrapper.go', line 217</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> RegisterPreSigningMiddleware(stack *middleware.Stack, signingMiddleware *PresignHTTPRequestMiddleware) (err <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">const</span> signedID = <span class="hljs-string">"PresignHTTPRequest"</span>
+	_, present := stack.Finalize.Get(signedID)
+	<span class="hljs-keyword">if</span> present {
+		_, err = stack.Finalize.Swap(signedID, signingMiddleware)
+	} <span class="hljs-keyword">else</span> {
+		err = stack.Finalize.Add(signingMiddleware, middleware.After)
+	}
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RegisterSigningMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#RegisterSigningMiddleware-class_method" title="customizations.RegisterSigningMiddleware() (method)">RegisterSigningMiddleware</a></span></strong>(stack *middleware.Stack, signingMiddleware *<span class='object_link'><a href="customizations/SignHTTPRequestMiddleware.html" title="customizations.SignHTTPRequestMiddleware (struct)">SignHTTPRequestMiddleware</a></span>) (err error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>RegisterSigningMiddleware registers the wrapper signing middleware to the stack. If a signing middleware is already present, this provided middleware will be swapped. Otherwise the middleware will be added at the tail of the finalize step.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/signer_wrapper.go', line 113</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> RegisterSigningMiddleware(stack *middleware.Stack, signingMiddleware *SignHTTPRequestMiddleware) (err <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">const</span> signedID = <span class="hljs-string">"Signing"</span>
+	_, present := stack.Finalize.Get(signedID)
+	<span class="hljs-keyword">if</span> present {
+		_, err = stack.Finalize.Swap(signedID, signingMiddleware)
+	} <span class="hljs-keyword">else</span> {
+		err = stack.Finalize.Add(signingMiddleware, middleware.After)
+	}
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ResolveDisableExpressAuth-class_method">
+  
+    func <strong><span class='object_link'><a href="#ResolveDisableExpressAuth-class_method" title="customizations.ResolveDisableExpressAuth() (method)">ResolveDisableExpressAuth</a></span></strong>(configs []interface{}) (value bool, exists bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ResolveDisableExpressAuth pulls S3DisableExpressAuth setting from config sources.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/express_config.go', line 8</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> ResolveDisableExpressAuth(configs []<span class="hljs-keyword">interface</span>{}) (value <span class="hljs-constant">bool</span>, exists <span class="hljs-constant">bool</span>) {
+	<span class="hljs-keyword">for</span> _, cfg := <span class="hljs-keyword">range</span> configs {
+		<span class="hljs-keyword">if</span> p, ok := cfg.(s3DisableExpressAuthProvider); ok {
+			<span class="hljs-keyword">if</span> value, exists = p.GetS3DisableExpressAuth(); exists {
+				<span class="hljs-keyword">break</span>
+			}
+		}
+	}
+	<span class="hljs-keyword">return</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetBucket-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetBucket-class_method" title="customizations.SetBucket() (method)">SetBucket</a></span></strong>(ctx context.Context, bucket string) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetBucket stores a bucket name within the request context, which is required for a variety of custom S3 behaviors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/context.go', line 12</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetBucket(ctx context.Context, bucket <span class="hljs-constant">string</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, bucketKey{}, bucket)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetIdentityPropertiesBucket-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetIdentityPropertiesBucket-class_method" title="customizations.SetIdentityPropertiesBucket() (method)">SetIdentityPropertiesBucket</a></span></strong>(ip *smithy.Properties, bucket string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetIdentityPropertiesBucket sets the S3 bucket to identity properties.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/express_properties.go', line 18</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetIdentityPropertiesBucket(ip *smithy.Properties, bucket <span class="hljs-constant">string</span>) {
+	ip.Set(bucketKey{}, bucket)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetSignerVersion-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetSignerVersion-class_method" title="customizations.SetSignerVersion() (method)">SetSignerVersion</a></span></strong>(ctx context.Context, version string) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetSignerVersion sets the signer version to be used for signing the request</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/signer_wrapper.go', line 28</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetSignerVersion(ctx context.Context, version <span class="hljs-constant">string</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, signerVersionKey{}, version)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UpdateEndpoint-class_method">
+  
+    func <strong><span class='object_link'><a href="#UpdateEndpoint-class_method" title="customizations.UpdateEndpoint() (method)">UpdateEndpoint</a></span></strong>(stack *middleware.Stack, options <span class='object_link'><a href="#type-UpdateEndpointOptions" title="customizations (package)">UpdateEndpointOptions</a></span>) (err error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>UpdateEndpoint adds the middleware to the middleware stack based on the UpdateEndpointOptions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/internal/customizations/update_endpoint.go', line 67</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> UpdateEndpo<span class="hljs-constant">int</span>(stack *middleware.Stack, options UpdateEndpointOptions) (err <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">const</span> serializerID = <span class="hljs-string">"OperationSerializer"</span>
+
+	<span class="hljs-comment">// initial arn look up middleware</span>
+	err = stack.Initialize.Insert(&s3shared.ARNLookup{
+		GetARNValue: options.Accessor.GetBucketFromInput,
+	}, <span class="hljs-string">"legacyEndpointContextSetter"</span>, middleware.After)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-comment">// process arn</span>
+	err = stack.Serialize.Insert(&processARNResource{
+		UseARNRegion:                   options.UseARNRegion,
+		UseAccelerate:                  options.UseAccelerate,
+		EndpointResolver:               options.EndpointResolver,
+		EndpointResolverOptions:        options.EndpointResolverOptions,
+		DisableMultiRegionAccessPoints: options.DisableMultiRegionAccessPoints,
+	}, serializerID, middleware.Before)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-comment">// process whether the operation requires the s3-object-lambda endpoint</span>
+	<span class="hljs-comment">// Occurs before operation serializer so that hostPrefix mutations</span>
+	<span class="hljs-comment">// can be handled correctly.</span>
+	err = stack.Serialize.Insert(&s3ObjectLambdaEndpo<span class="hljs-constant">int</span>{
+		UseEndpo<span class="hljs-constant">int</span>:             options.TargetS3ObjectLambda,
+		UseAccelerate:           options.UseAccelerate,
+		EndpointResolver:        options.EndpointResolver,
+		EndpointResolverOptions: options.EndpointResolverOptions,
+	}, serializerID, middleware.Before)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-comment">// remove bucket arn middleware</span>
+	err = stack.Serialize.Insert(&removeBucketFromPathMiddleware{}, serializerID, middleware.After)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-comment">// update endpoint to use options for path style and accelerate</span>
+	err = stack.Serialize.Insert(&updateEndpo<span class="hljs-constant">int</span>{
+		usePathStyle:       options.UsePathStyle,
+		getBucketFromInput: options.Accessor.GetBucketFromInput,
+		useAccelerate:      options.UseAccelerate,
+		supportsAccelerate: options.SupportsAccelerate,
+	}, serializerID, middleware.After)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:50 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

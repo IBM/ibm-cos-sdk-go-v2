@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: v4
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/signer/internal/v4";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (v)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../aws.html" title="aws (package)">aws</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../signer.html" title="signer (package)">signer</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../internal.html" title="internal (package)">internal</a></span></span>
+     &raquo; 
+    <span class="title">v4</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: v4
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/signer/internal/v4"
+</div>
+
+  
+    <h2>Constants</h2>
+    
+      <dl class="constants">
+        
+          <dt id="EmptyStringSHA256-constant" class="">
+          <div class="defn">const <strong>EmptyStringSHA256</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>EmptyStringSHA256 is the hex encoded sha256 value of an empty string</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`</span></div></pre>
+          </dd>
+        
+          <dt id="UnsignedPayload-constant" class="">
+          <div class="defn">const <strong>UnsignedPayload</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>UnsignedPayload indicates that the request payload body is unsigned</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"UNSIGNED-PAYLOAD"</span></div></pre>
+          </dd>
+        
+          <dt id="AmzAlgorithmKey-constant" class="">
+          <div class="defn">const <strong>AmzAlgorithmKey</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AmzAlgorithmKey indicates the signing algorithm</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"X-Amz-Algorithm"</span></div></pre>
+          </dd>
+        
+          <dt id="AmzSecurityTokenKey-constant" class="">
+          <div class="defn">const <strong>AmzSecurityTokenKey</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AmzSecurityTokenKey indicates the security token to be used with temporary credentials</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"X-Amz-Security-Token"</span></div></pre>
+          </dd>
+        
+          <dt id="AmzDateKey-constant" class="">
+          <div class="defn">const <strong>AmzDateKey</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AmzDateKey is the UTC timestamp for the request in the format YYYYMMDD’T’HHMMSS’Z’</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"X-Amz-Date"</span></div></pre>
+          </dd>
+        
+          <dt id="AmzCredentialKey-constant" class="">
+          <div class="defn">const <strong>AmzCredentialKey</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AmzCredentialKey is the access key ID and credential scope</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"X-Amz-Credential"</span></div></pre>
+          </dd>
+        
+          <dt id="AmzSignedHeadersKey-constant" class="">
+          <div class="defn">const <strong>AmzSignedHeadersKey</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AmzSignedHeadersKey is the set of headers signed for the request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"X-Amz-SignedHeaders"</span></div></pre>
+          </dd>
+        
+          <dt id="AmzSignatureKey-constant" class="">
+          <div class="defn">const <strong>AmzSignatureKey</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AmzSignatureKey is the query parameter to store the SigV4 signature</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"X-Amz-Signature"</span></div></pre>
+          </dd>
+        
+          <dt id="TimeFormat-constant" class="">
+          <div class="defn">const <strong>TimeFormat</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>TimeFormat is the time format to be used in the X-Amz-Date header or query parameter</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"20060102T150405Z"</span></div></pre>
+          </dd>
+        
+          <dt id="ShortTimeFormat-constant" class="">
+          <div class="defn">const <strong>ShortTimeFormat</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>ShortTimeFormat is the shorten time format used in the credential scope</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"20060102"</span></div></pre>
+          </dd>
+        
+          <dt id="ContentSHAKey-constant" class="">
+          <div class="defn">const <strong>ContentSHAKey</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>ContentSHAKey is the SHA256 of request body</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"X-Amz-Content-Sha256"</span></div></pre>
+          </dd>
+        
+          <dt id="StreamingEventsPayload-constant" class="">
+          <div class="defn">const <strong>StreamingEventsPayload</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>StreamingEventsPayload indicates that the request payload body is a signed event stream.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"STREAMING-AWS4-HMAC-SHA256-EVENTS"</span></div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+  
+    <h2>Variables</h2>
+    
+      <dl class="constants">
+        
+          <dt id="IgnoredHeaders-constant" class="">
+          <div class="defn">var <strong>IgnoredHeaders</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>IgnoredHeaders is a list of headers that are ignored during signing</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class='object_link'><a href="v4/Rules.html" title="v4.Rules (struct)">Rules</a></span>{
+	<span class='object_link'><a href="v4/ExcludeList.html" title="v4.ExcludeList (struct)">ExcludeList</a></span>{
+		<span class='object_link'><a href="v4/MapRule.html" title="v4.MapRule (struct)">MapRule</a></span>{
+			<span class="hljs-string">"Authorization"</span>:     <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"User-Agent"</span>:        <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amzn-Trace-Id"</span>:   <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Expect"</span>:            <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Transfer-Encoding"</span>: <span class="hljs-keyword">struct</span>{}{},
+		},
+	},
+}</div></pre>
+          </dd>
+        
+          <dt id="RequiredSignedHeaders-constant" class="">
+          <div class="defn">var <strong>RequiredSignedHeaders</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>RequiredSignedHeaders is a allow list for Build canonical headers.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class='object_link'><a href="v4/Rules.html" title="v4.Rules (struct)">Rules</a></span>{
+	<span class='object_link'><a href="v4/AllowList.html" title="v4.AllowList (struct)">AllowList</a></span>{
+		<span class='object_link'><a href="v4/MapRule.html" title="v4.MapRule (struct)">MapRule</a></span>{
+			<span class="hljs-string">"Cache-Control"</span>:                         <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Content-Disposition"</span>:                   <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Content-Encoding"</span>:                      <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Content-Language"</span>:                      <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Content-Md5"</span>:                           <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Content-Type"</span>:                          <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Expires"</span>:                               <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"If-Match"</span>:                              <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"If-Modified-Since"</span>:                     <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"If-None-Match"</span>:                         <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"If-Unmodified-Since"</span>:                   <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"Range"</span>:                                 <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Acl"</span>:                             <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source"</span>:                     <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source-If-Match"</span>:            <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source-If-Modified-Since"</span>:   <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source-If-None-Match"</span>:       <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source-If-Unmodified-Since"</span>: <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source-Range"</span>:               <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source-Server-Side-Encryption-Customer-Algorithm"</span>: <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source-Server-Side-Encryption-Customer-Key"</span>:       <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Copy-Source-Server-Side-Encryption-Customer-Key-Md5"</span>:   <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Grant-Full-control"</span>:                                    <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Grant-Read"</span>:                                            <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Grant-Read-Acp"</span>:                                        <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Grant-Write"</span>:                                           <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Grant-Write-Acp"</span>:                                       <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Metadata-Directive"</span>:                                    <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Mfa"</span>:                                                   <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Server-Side-Encryption"</span>:                                <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Server-Side-Encryption-Aws-Kms-Key-Id"</span>:                 <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Server-Side-Encryption-Context"</span>:                        <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Server-Side-Encryption-Customer-Algorithm"</span>:             <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Server-Side-Encryption-Customer-Key"</span>:                   <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Server-Side-Encryption-Customer-Key-Md5"</span>:               <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Storage-Class"</span>:                                         <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Website-Redirect-Location"</span>:                             <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Content-Sha256"</span>:                                        <span class="hljs-keyword">struct</span>{}{},
+			<span class="hljs-string">"X-Amz-Tagging"</span>:                                               <span class="hljs-keyword">struct</span>{}{},
+		},
+	},
+	<span class='object_link'><a href="v4/Patterns.html" title="v4.Patterns (struct)">Patterns</a></span>{<span class="hljs-string">"X-Amz-Object-Lock-"</span>},
+	<span class='object_link'><a href="v4/Patterns.html" title="v4.Patterns (struct)">Patterns</a></span>{<span class="hljs-string">"X-Amz-Meta-"</span>},
+}</div></pre>
+          </dd>
+        
+          <dt id="AllowedQueryHoisting-constant" class="">
+          <div class="defn">var <strong>AllowedQueryHoisting</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AllowedQueryHoisting is a allowed list for Build query headers. The boolean value represents whether or not it is a pattern.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class='object_link'><a href="v4/InclusiveRules.html" title="v4.InclusiveRules (struct)">InclusiveRules</a></span>{
+	<span class='object_link'><a href="v4/ExcludeList.html" title="v4.ExcludeList (struct)">ExcludeList</a></span>{<span class='object_link'><a href="#RequiredSignedHeaders-constant" title="aws/signer/internal/v4.RequiredSignedHeaders (constant)">RequiredSignedHeaders</a></span>},
+	<span class='object_link'><a href="v4/Patterns.html" title="v4.Patterns (struct)">Patterns</a></span>{<span class="hljs-string">"X-Amz-"</span>},
+}</div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/AllowList.html" title="v4.AllowList (struct)"><strong>AllowList</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AllowList is a generic Rule for include listing.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/ExcludeList.html" title="v4.ExcludeList (struct)"><strong>ExcludeList</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ExcludeList is a generic Rule for exclude listing.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/InclusiveRules.html" title="v4.InclusiveRules (struct)"><strong>InclusiveRules</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsValid will return true if all rules are true.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/MapRule.html" title="v4.MapRule (struct)"><strong>MapRule</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsValid for the map Rule satisfies whether it exists in the map.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/Patterns.html" title="v4.Patterns (struct)"><strong>Patterns</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsValid for Patterns checks each pattern and returns if a match has been found.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/Rules.html" title="v4.Rules (struct)"><strong>Rules</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsValid will iterate through all rules and see if any rules apply to the value and supports nested rules.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/SigningKeyDeriver.html" title="v4.SigningKeyDeriver (struct)"><strong>SigningKeyDeriver</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SigningKeyDeriver derives a signing key from a set of credentials.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/SigningTime.html" title="v4.SigningTime (struct)"><strong>SigningTime</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SigningTime provides a wrapper around a time.Time which provides cached values for SigV4 signing.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  <h2>
+    Interface Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/Rule.html" title="v4.Rule (interface)"><strong>Rule</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Rule interface allows for more flexible rules and just simply checks whether or not a value adheres to that Rule.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#BuildCredentialScope-class_method" title="v4.BuildCredentialScope() (method)">func <strong>BuildCredentialScope</strong>(signingTime SigningTime, region, service string) string </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>BuildCredentialScope builds the Signature Version 4 (SigV4) signing scope.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetURIPath-class_method" title="v4.GetURIPath() (method)">func <strong>GetURIPath</strong>(u *url.URL) string </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetURIPath returns the escaped URI component from the provided URL.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#HMACSHA256-class_method" title="v4.HMACSHA256() (method)">func <strong>HMACSHA256</strong>(key []byte, data []byte) []byte </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HMACSHA256 computes a HMAC-SHA256 of data given the provided key.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewSigningTime-class_method" title="v4.NewSigningTime() (method)">func <strong>NewSigningTime</strong>(t time.Time) SigningTime </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewSigningTime creates a new SigningTime given a time.Time.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SanitizeHostForHeader-class_method" title="v4.SanitizeHostForHeader() (method)">func <strong>SanitizeHostForHeader</strong>(r *http.Request) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SanitizeHostForHeader removes default port from host and updates request.Host.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#StripExcessSpaces-class_method" title="v4.StripExcessSpaces() (method)">func <strong>StripExcessSpaces</strong>(str string) string </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>StripExcessSpaces will rewrite the passed in slice’s string values to not contain multiple side-by-side spaces.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="BuildCredentialScope-class_method">
+  
+    func <strong><span class='object_link'><a href="#BuildCredentialScope-class_method" title="v4.BuildCredentialScope() (method)">BuildCredentialScope</a></span></strong>(signingTime <span class='object_link'><a href="v4/SigningTime.html" title="v4.SigningTime (struct)">SigningTime</a></span>, region, service string) string 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>BuildCredentialScope builds the Signature Version 4 (SigV4) signing scope</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+5
+6
+7
+8
+9
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/internal/v4/scope.go', line 5</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> BuildCredentialScope(signingTime SigningTime, region, service <span class="hljs-constant">string</span>) <span class="hljs-constant">string</span> {
+	<span class="hljs-keyword">return</span> strings.Join([]<span class="hljs-constant">string</span>{
+		signingTime.ShortTimeFormat(),
+		region,
+		service,
+		<span class="hljs-string">"aws4_request"</span>,
+	}, <span class="hljs-string">"/"</span>)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetURIPath-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetURIPath-class_method" title="v4.GetURIPath() (method)">GetURIPath</a></span></strong>(u *url.URL) string 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetURIPath returns the escaped URI component from the provided URL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/internal/v4/util.go', line 49</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetURIPath(u *url.URL) <span class="hljs-constant">string</span> {
+	<span class="hljs-keyword">var</span> uriPath <span class="hljs-constant">string</span>
+
+	<span class="hljs-keyword">if</span> len(u.Opaque) > 0 {
+		<span class="hljs-keyword">const</span> schemeSep, pathSep, queryStart = <span class="hljs-string">"//"</span>, <span class="hljs-string">"/"</span>, <span class="hljs-string">"?"</span>
+
+		opaque := u.Opaque
+		<span class="hljs-comment">// Cut off the query string if present.</span>
+		<span class="hljs-keyword">if</span> idx := strings.Index(opaque, queryStart); idx >= 0 {
+			opaque = opaque[:idx]
+		}
+
+		<span class="hljs-comment">// Cutout the scheme separator if present.</span>
+		<span class="hljs-keyword">if</span> strings.Index(opaque, schemeSep) == 0 {
+			opaque = opaque[len(schemeSep):]
+		}
+
+		<span class="hljs-comment">// capture URI path starting with first path separator.</span>
+		<span class="hljs-keyword">if</span> idx := strings.Index(opaque, pathSep); idx >= 0 {
+			uriPath = opaque[idx:]
+		}
+	} <span class="hljs-keyword">else</span> {
+		uriPath = u.EscapedPath()
+	}
+
+	<span class="hljs-keyword">if</span> len(uriPath) == 0 {
+		uriPath = <span class="hljs-string">"/"</span>
+	}
+
+	<span class="hljs-keyword">return</span> uriPath
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="HMACSHA256-class_method">
+  
+    func <strong><span class='object_link'><a href="#HMACSHA256-class_method" title="v4.HMACSHA256() (method)">HMACSHA256</a></span></strong>(key []byte, data []byte) []byte 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>HMACSHA256 computes a HMAC-SHA256 of data given the provided key.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/internal/v4/hmac.go', line 8</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> HMACSHA256(key []byte, data []byte) []byte {
+	hash := hmac.New(sha256.New, key)
+	hash.Write(data)
+	<span class="hljs-keyword">return</span> hash.Sum(<span class="hljs-constant">nil</span>)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewSigningTime-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewSigningTime-class_method" title="v4.NewSigningTime() (method)">NewSigningTime</a></span></strong>(t time.Time) <span class='object_link'><a href="v4/SigningTime.html" title="v4.SigningTime (struct)">SigningTime</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewSigningTime creates a new SigningTime given a time.Time</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/internal/v4/time.go', line 12</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewSigningTime(t time.Time) SigningTime {
+	<span class="hljs-keyword">return</span> SigningTime{
+		Time: t,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SanitizeHostForHeader-class_method">
+  
+    func <strong><span class='object_link'><a href="#SanitizeHostForHeader-class_method" title="v4.SanitizeHostForHeader() (method)">SanitizeHostForHeader</a></span></strong>(r *http.Request) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SanitizeHostForHeader removes default port from host and updates request.Host</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/internal/v4/host.go', line 8</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SanitizeHostForHeader(r *http.Request) {
+	host := getHost(r)
+	port := portOnly(host)
+	<span class="hljs-keyword">if</span> port != <span class="hljs-string">""</span> && isDefaultPort(r.URL.Scheme, port) {
+		r.Host = stripPort(host)
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="StripExcessSpaces-class_method">
+  
+    func <strong><span class='object_link'><a href="#StripExcessSpaces-class_method" title="v4.StripExcessSpaces() (method)">StripExcessSpaces</a></span></strong>(str string) string 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>StripExcessSpaces will rewrite the passed in slice’s string values to not contain multiple side-by-side spaces.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/internal/v4/util.go', line 11</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> StripExcessSpaces(str <span class="hljs-constant">string</span>) <span class="hljs-constant">string</span> {
+	<span class="hljs-keyword">var</span> j, k, l, m, spaces <span class="hljs-constant">int</span>
+	<span class="hljs-comment">// Trim trailing spaces</span>
+	<span class="hljs-keyword">for</span> j = len(str) - 1; j >= 0 && str[j] == ' '; j-- {
+	}
+
+	<span class="hljs-comment">// Trim leading spaces</span>
+	<span class="hljs-keyword">for</span> k = 0; k < j && str[k] == ' '; k++ {
+	}
+	str = str[k : j+1]
+
+	<span class="hljs-comment">// Strip multiple spaces.</span>
+	j = strings.Index(str, doubleSpace)
+	<span class="hljs-keyword">if</span> j < 0 {
+		<span class="hljs-keyword">return</span> str
+	}
+
+	buf := []byte(str)
+	<span class="hljs-keyword">for</span> k, m, l = j, j, len(buf); k < l; k++ {
+		<span class="hljs-keyword">if</span> buf[k] == ' ' {
+			<span class="hljs-keyword">if</span> spaces == 0 {
+				<span class="hljs-comment">// First space.</span>
+				buf[m] = buf[k]
+				m++
+			}
+			spaces++
+		} <span class="hljs-keyword">else</span> {
+			<span class="hljs-comment">// End of multiple spaces.</span>
+			spaces = 0
+			buf[m] = buf[k]
+			m++
+		}
+	}
+
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">string</span>(buf[:m])
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:39 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

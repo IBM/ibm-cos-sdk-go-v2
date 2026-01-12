@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: s3.UploadPartCopyInput
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/s3.UploadPartCopyInput";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (U)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../s3.html" title="s3 (package)">s3</a></span></span>
+     &raquo; 
+    <span class="title">UploadPartCopyInput</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: s3.UploadPartCopyInput
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/s3"
+</div>
+
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../aws/signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Structure Field Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Bucket-field" title="s3.UploadPartCopyInput.Bucket (field)"><strong>Bucket</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The bucket name.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySource-field" title="s3.UploadPartCopyInput.CopySource (field)"><strong>CopySource</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the source object for the copy operation.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySourceIfMatch-field" title="s3.UploadPartCopyInput.CopySourceIfMatch (field)"><strong>CopySourceIfMatch</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySourceIfModifiedSince-field" title="s3.UploadPartCopyInput.CopySourceIfModifiedSince (field)"><strong>CopySourceIfModifiedSince</strong> *time.Time</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Copies the object if it has been modified since the specified time.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySourceIfNoneMatch-field" title="s3.UploadPartCopyInput.CopySourceIfNoneMatch (field)"><strong>CopySourceIfNoneMatch</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySourceIfUnmodifiedSince-field" title="s3.UploadPartCopyInput.CopySourceIfUnmodifiedSince (field)"><strong>CopySourceIfUnmodifiedSince</strong> *time.Time</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Copies the object if it hasn’t been modified since the specified time.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySourceRange-field" title="s3.UploadPartCopyInput.CopySourceRange (field)"><strong>CopySourceRange</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The range of bytes to copy from the source object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySourceSSECustomerAlgorithm-field" title="s3.UploadPartCopyInput.CopySourceSSECustomerAlgorithm (field)"><strong>CopySourceSSECustomerAlgorithm</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the algorithm to use when decrypting the source object (for example, AES256 ).</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySourceSSECustomerKey-field" title="s3.UploadPartCopyInput.CopySourceSSECustomerKey (field)"><strong>CopySourceSSECustomerKey</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CopySourceSSECustomerKeyMD5-field" title="s3.UploadPartCopyInput.CopySourceSSECustomerKeyMD5 (field)"><strong>CopySourceSSECustomerKeyMD5</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ExpectedBucketOwner-field" title="s3.UploadPartCopyInput.ExpectedBucketOwner (field)"><strong>ExpectedBucketOwner</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The account ID of the expected destination bucket owner.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ExpectedSourceBucketOwner-field" title="s3.UploadPartCopyInput.ExpectedSourceBucketOwner (field)"><strong>ExpectedSourceBucketOwner</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The account ID of the expected source bucket owner.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Key-field" title="s3.UploadPartCopyInput.Key (field)"><strong>Key</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Object key for which the multipart upload was initiated.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#PartNumber-field" title="s3.UploadPartCopyInput.PartNumber (field)"><strong>PartNumber</strong> *int32</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Part number of part being copied.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RequestPayer-field" title="s3.UploadPartCopyInput.RequestPayer (field)"><strong>RequestPayer</strong> types.RequestPayer</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Confirms that the requester knows that they will be charged for the request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSECustomerAlgorithm-field" title="s3.UploadPartCopyInput.SSECustomerAlgorithm (field)"><strong>SSECustomerAlgorithm</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSECustomerKey-field" title="s3.UploadPartCopyInput.SSECustomerKey (field)"><strong>SSECustomerKey</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSECustomerKeyMD5-field" title="s3.UploadPartCopyInput.SSECustomerKeyMD5 (field)"><strong>SSECustomerKeyMD5</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UploadId-field" title="s3.UploadPartCopyInput.UploadId (field)"><strong>UploadId</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Upload ID identifying the multipart upload whose part is being copied.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Structure Field Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Bucket-field">
+  <strong>Bucket</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The bucket name.</p>
+
+<p>Directory buckets - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format Bucket-name.s3express-zone-id.region-code.amazonaws.com . Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format bucket-base-name–zone-id–x-s3 (for example, amzn-s3-demo-bucket–usw2-az1–x-s3 ). For information about bucket naming restrictions, see bucket naming rules[https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html]in the Amazon S3 User Guide.</p>
+
+<p>Copying objects across different Amazon Web Services Regions isn’t supported when the source or destination bucket is in Amazon Web Services Local Zones. The source and destination buckets must have the same parent Amazon Web Services Region. Otherwise, you get an HTTP 400 Bad Request error with the error code InvalidRequest .</p>
+
+<p>Access points - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form AccessPointName-AccountId.s3-accesspoint.Region.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see access points[https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html]in the Amazon S3 User Guide.</p>
+
+<p>Object Lambda access points are not supported by directory buckets.</p>
+
+<p>S3 on Outposts - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form AccessPointName-AccountId.outpostID.s3-outposts.Region.amazonaws.com . When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see is S3 on Outposts?[https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html]in the Amazon S3 User Guide.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySource-field">
+  <strong>CopySource</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the source object for the copy operation. You specify the value in one of two formats, depending on whether you want to access the source object through an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">access point</a>:</p>
+<ul><li>
+<p>For objects not accessed through an access point, specify the name of the  source bucket and key of the source object, separated by a slash (/). For  example, to copy the object reports/january.pdf from the bucket  awsexamplebucket , use awsexamplebucket/reports/january.pdf . The value must  be URL-encoded.</p>
+</li><li>
+<p>For objects accessed through access points, specify the Amazon Resource  Name (ARN) of the object as accessed through the access point, in the format  arn:aws:s3:::accesspoint//object/ . For example, to copy the object  reports/january.pdf through access point my-access-point owned by account  123456789012 in Region us-west-2 , use the URL encoding of  arn:aws:s3:us-west-2:123456789012:accesspoint/my-access-point/object/reports/january.pdf  . The value must be URL encoded.</p>
+</li><li>
+<p>Amazon S3 supports copy operations using Access points only when the source  and destination buckets are in the same Amazon Web Services Region.</p>
+</li><li>
+<p>Access points are not supported by directory buckets.</p>
+</li></ul>
+
+<p>Alternatively, for objects accessed through Amazon S3 on Outposts, specify the  ARN of the object as accessed in the format  arn:aws:s3-outposts:::outpost//object/ . For example, to copy the object  reports/january.pdf through outpost my-outpost owned by account 123456789012  in Region us-west-2 , use the URL encoding of  arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/object/reports/january.pdf  . The value must be URL-encoded.</p>
+
+<p>If your bucket has versioning enabled, you could have multiple versions of the same object. By default, x-amz-copy-source identifies the current version of the source object to copy. To copy a specific version of the source object to copy, append ?versionId= to the x-amz-copy-source request header (for example, x-amz-copy-source: /awsexamplebucket/reports/january.pdf?versionId=QUpfdndhfd8438MNFDN93jdnJFkdmqnh893 ).</p>
+
+<p>If the current version is a delete marker and you don’t specify a versionId in the x-amz-copy-source request header, Amazon S3 returns a 404 Not Found error, because the object does not exist. If you specify versionId in the x-amz-copy-source and the versionId is a delete marker, Amazon S3 returns an HTTP 400 Bad Request error, because you are not allowed to specify a delete marker as a version for the x-amz-copy-source .</p>
+
+<p>Directory buckets - S3 Versioning isn’t enabled and supported for directory buckets.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySourceIfMatch-field">
+  <strong>CopySourceIfMatch</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
+
+<p>If both of the x-amz-copy-source-if-match and x-amz-copy-source-if-unmodified-since headers are present in the request as follows:</p>
+
+<p>x-amz-copy-source-if-match condition evaluates to true , and;</p>
+
+<p>x-amz-copy-source-if-unmodified-since condition evaluates to false ;</p>
+
+<p>Amazon S3 returns 200 OK and copies the data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySourceIfModifiedSince-field">
+  <strong>CopySourceIfModifiedSince</strong> *time.Time 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Copies the object if it has been modified since the specified time.</p>
+
+<p>If both of the x-amz-copy-source-if-none-match and x-amz-copy-source-if-modified-since headers are present in the request as follows:</p>
+
+<p>x-amz-copy-source-if-none-match condition evaluates to false , and;</p>
+
+<p>x-amz-copy-source-if-modified-since condition evaluates to true ;</p>
+
+<p>Amazon S3 returns 412 Precondition Failed response code.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySourceIfNoneMatch-field">
+  <strong>CopySourceIfNoneMatch</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Copies the object if its entity tag (ETag) is different than the specified ETag.</p>
+
+<p>If both of the x-amz-copy-source-if-none-match and x-amz-copy-source-if-modified-since headers are present in the request as follows:</p>
+
+<p>x-amz-copy-source-if-none-match condition evaluates to false , and;</p>
+
+<p>x-amz-copy-source-if-modified-since condition evaluates to true ;</p>
+
+<p>Amazon S3 returns 412 Precondition Failed response code.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySourceIfUnmodifiedSince-field">
+  <strong>CopySourceIfUnmodifiedSince</strong> *time.Time 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Copies the object if it hasn’t been modified since the specified time.</p>
+
+<p>If both of the x-amz-copy-source-if-match and x-amz-copy-source-if-unmodified-since headers are present in the request as follows:</p>
+
+<p>x-amz-copy-source-if-match condition evaluates to true , and;</p>
+
+<p>x-amz-copy-source-if-unmodified-since condition evaluates to false ;</p>
+
+<p>Amazon S3 returns 200 OK and copies the data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySourceRange-field">
+  <strong>CopySourceRange</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first 10 bytes of the source. You can copy a range only if the source object is greater than 5 MB.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySourceSSECustomerAlgorithm-field">
+  <strong>CopySourceSSECustomerAlgorithm</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the algorithm to use when decrypting the source object (for example, AES256 ).</p>
+
+<p>This functionality is not supported when the source object is in a directory bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySourceSSECustomerKey-field">
+  <strong>CopySourceSSECustomerKey</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</p>
+
+<p>This functionality is not supported when the source object is in a directory bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CopySourceSSECustomerKeyMD5-field">
+  <strong>CopySourceSSECustomerKeyMD5</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+
+<p>This functionality is not supported when the source object is in a directory bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ExpectedBucketOwner-field">
+  <strong>ExpectedBucketOwner</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The account ID of the expected destination bucket owner. If the account ID that you provide does not match the actual owner of the destination bucket, the request fails with the HTTP status code 403 Forbidden (access denied).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ExpectedSourceBucketOwner-field">
+  <strong>ExpectedSourceBucketOwner</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The account ID of the expected source bucket owner. If the account ID that you provide does not match the actual owner of the source bucket, the request fails with the HTTP status code 403 Forbidden (access denied).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Key-field">
+  <strong>Key</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Object key for which the multipart upload was initiated.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="PartNumber-field">
+  <strong>PartNumber</strong> *int32 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Part number of part being copied. This is a positive integer between 1 and 10,000.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RequestPayer-field">
+  <strong>RequestPayer</strong> types.RequestPayer 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see Objects in Requester Pays Buckets[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html]in the Amazon S3 User Guide.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSECustomerAlgorithm-field">
+  <strong>SSECustomerAlgorithm</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the algorithm to use when encrypting the object (for example, AES256).</p>
+
+<p>This functionality is not supported when the destination bucket is a directory bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSECustomerKey-field">
+  <strong>SSECustomerKey</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the x-amz-server-side-encryption-customer-algorithm header. This must be the same encryption key specified in the initiate multipart upload request.</p>
+
+<p>This functionality is not supported when the destination bucket is a directory bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSECustomerKeyMD5-field">
+  <strong>SSECustomerKeyMD5</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
+
+<p>This functionality is not supported when the destination bucket is a directory bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UploadId-field">
+  <strong>UploadId</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Upload ID identifying the multipart upload whose part is being copied.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+  </div>
+
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:57 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

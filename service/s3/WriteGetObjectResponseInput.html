@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: s3.WriteGetObjectResponseInput
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/s3.WriteGetObjectResponseInput";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (W)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../s3.html" title="s3 (package)">s3</a></span></span>
+     &raquo; 
+    <span class="title">WriteGetObjectResponseInput</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: s3.WriteGetObjectResponseInput
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/s3"
+</div>
+
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../aws/signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Structure Field Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AcceptRanges-field" title="s3.WriteGetObjectResponseInput.AcceptRanges (field)"><strong>AcceptRanges</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates that a range of bytes was specified.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Body-field" title="s3.WriteGetObjectResponseInput.Body (field)"><strong>Body</strong> io.Reader</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The object data.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#BucketKeyEnabled-field" title="s3.WriteGetObjectResponseInput.BucketKeyEnabled (field)"><strong>BucketKeyEnabled</strong> *bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CacheControl-field" title="s3.WriteGetObjectResponseInput.CacheControl (field)"><strong>CacheControl</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies caching behavior along the request/reply chain.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ChecksumCRC32-field" title="s3.WriteGetObjectResponseInput.ChecksumCRC32 (field)"><strong>ChecksumCRC32</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ChecksumCRC32C-field" title="s3.WriteGetObjectResponseInput.ChecksumCRC32C (field)"><strong>ChecksumCRC32C</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ChecksumCRC64NVME-field" title="s3.WriteGetObjectResponseInput.ChecksumCRC64NVME (field)"><strong>ChecksumCRC64NVME</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ChecksumSHA1-field" title="s3.WriteGetObjectResponseInput.ChecksumSHA1 (field)"><strong>ChecksumSHA1</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ChecksumSHA256-field" title="s3.WriteGetObjectResponseInput.ChecksumSHA256 (field)"><strong>ChecksumSHA256</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentDisposition-field" title="s3.WriteGetObjectResponseInput.ContentDisposition (field)"><strong>ContentDisposition</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies presentational information for the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentEncoding-field" title="s3.WriteGetObjectResponseInput.ContentEncoding (field)"><strong>ContentEncoding</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentLanguage-field" title="s3.WriteGetObjectResponseInput.ContentLanguage (field)"><strong>ContentLanguage</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The language the content is in.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentLength-field" title="s3.WriteGetObjectResponseInput.ContentLength (field)"><strong>ContentLength</strong> *int64</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The size of the content body in bytes.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentRange-field" title="s3.WriteGetObjectResponseInput.ContentRange (field)"><strong>ContentRange</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The portion of the object returned in the response.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContentType-field" title="s3.WriteGetObjectResponseInput.ContentType (field)"><strong>ContentType</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A standard MIME type describing the format of the object data.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DeleteMarker-field" title="s3.WriteGetObjectResponseInput.DeleteMarker (field)"><strong>DeleteMarker</strong> *bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Specifies whether an object stored in Amazon S3 is ( true ) or is not ( false ) a delete marker.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ETag-field" title="s3.WriteGetObjectResponseInput.ETag (field)"><strong>ETag</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ErrorCode-field" title="s3.WriteGetObjectResponseInput.ErrorCode (field)"><strong>ErrorCode</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A string that uniquely identifies an error condition.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ErrorMessage-field" title="s3.WriteGetObjectResponseInput.ErrorMessage (field)"><strong>ErrorMessage</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Contains a generic description of the error condition.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Expiration-field" title="s3.WriteGetObjectResponseInput.Expiration (field)"><strong>Expiration</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Expires-field" title="s3.WriteGetObjectResponseInput.Expires (field)"><strong>Expires</strong> *time.Time</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The date and time at which the object is no longer cacheable.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#LastModified-field" title="s3.WriteGetObjectResponseInput.LastModified (field)"><strong>LastModified</strong> *time.Time</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The date and time that the object was last modified.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Metadata-field" title="s3.WriteGetObjectResponseInput.Metadata (field)"><strong>Metadata</strong> map[string]string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A map of metadata to store with the object in S3.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#MissingMeta-field" title="s3.WriteGetObjectResponseInput.MissingMeta (field)"><strong>MissingMeta</strong> *int32</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set to the number of metadata entries not returned in x-amz-meta headers.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ObjectLockLegalHoldStatus-field" title="s3.WriteGetObjectResponseInput.ObjectLockLegalHoldStatus (field)"><strong>ObjectLockLegalHoldStatus</strong> types.ObjectLockLegalHoldStatus</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ObjectLockMode-field" title="s3.WriteGetObjectResponseInput.ObjectLockMode (field)"><strong>ObjectLockMode</strong> types.ObjectLockMode</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates whether an object stored in Amazon S3 has Object Lock enabled.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ObjectLockRetainUntilDate-field" title="s3.WriteGetObjectResponseInput.ObjectLockRetainUntilDate (field)"><strong>ObjectLockRetainUntilDate</strong> *time.Time</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The date and time when Object Lock is configured to expire.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#PartsCount-field" title="s3.WriteGetObjectResponseInput.PartsCount (field)"><strong>PartsCount</strong> *int32</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The count of parts this object has.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ReplicationStatus-field" title="s3.WriteGetObjectResponseInput.ReplicationStatus (field)"><strong>ReplicationStatus</strong> types.ReplicationStatus</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates if request involves bucket that is either a source or destination in a Replication rule.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RequestCharged-field" title="s3.WriteGetObjectResponseInput.RequestCharged (field)"><strong>RequestCharged</strong> types.RequestCharged</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If present, indicates that the requester was successfully charged for the request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RequestRoute-field" title="s3.WriteGetObjectResponseInput.RequestRoute (field)"><strong>RequestRoute</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Route prefix to the HTTP URL generated.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RequestToken-field" title="s3.WriteGetObjectResponseInput.RequestToken (field)"><strong>RequestToken</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A single use encrypted token that maps WriteGetObjectResponse to the end user GetObject request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Restore-field" title="s3.WriteGetObjectResponseInput.Restore (field)"><strong>Restore</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSECustomerAlgorithm-field" title="s3.WriteGetObjectResponseInput.SSECustomerAlgorithm (field)"><strong>SSECustomerAlgorithm</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSECustomerKeyMD5-field" title="s3.WriteGetObjectResponseInput.SSECustomerKeyMD5 (field)"><strong>SSECustomerKeyMD5</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SSEKMSKeyId-field" title="s3.WriteGetObjectResponseInput.SSEKMSKeyId (field)"><strong>SSEKMSKeyId</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ServerSideEncryption-field" title="s3.WriteGetObjectResponseInput.ServerSideEncryption (field)"><strong>ServerSideEncryption</strong> types.ServerSideEncryption</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms ).</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#StatusCode-field" title="s3.WriteGetObjectResponseInput.StatusCode (field)"><strong>StatusCode</strong> *int32</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The integer status code for an HTTP response of a corresponding GetObject request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#StorageClass-field" title="s3.WriteGetObjectResponseInput.StorageClass (field)"><strong>StorageClass</strong> types.StorageClass</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Provides storage class information of the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#TagCount-field" title="s3.WriteGetObjectResponseInput.TagCount (field)"><strong>TagCount</strong> *int32</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The number of tags, if any, on the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#VersionId-field" title="s3.WriteGetObjectResponseInput.VersionId (field)"><strong>VersionId</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>An ID used to reference a specific version of the object.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Structure Field Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="AcceptRanges-field">
+  <strong>AcceptRanges</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates that a range of bytes was specified.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Body-field">
+  <strong>Body</strong> io.Reader 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The object data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="BucketKeyEnabled-field">
+  <strong>BucketKeyEnabled</strong> *bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates whether the object stored in Amazon S3 uses an S3 bucket key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CacheControl-field">
+  <strong>CacheControl</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies caching behavior along the request/reply chain.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ChecksumCRC32-field">
+  <strong>ChecksumCRC32</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the Base64 encoded, 32-bit CRC32 checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original GetObject request required checksum validation. For more information about checksums, see object integrity[https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html]in the Amazon S3 User Guide.</p>
+
+<p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ChecksumCRC32C-field">
+  <strong>ChecksumCRC32C</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the Base64 encoded, 32-bit CRC32C checksum of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original GetObject request required checksum validation. For more information about checksums, see object integrity[https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html]in the Amazon S3 User Guide.</p>
+
+<p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ChecksumCRC64NVME-field">
+  <strong>ChecksumCRC64NVME</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This header specifies the Base64 encoded, 64-bit CRC64NVME checksum of the part. For more information, see object integrity[https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html]in the Amazon S3 User Guide.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ChecksumSHA1-field">
+  <strong>ChecksumSHA1</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the Base64 encoded, 160-bit SHA1 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original GetObject request required checksum validation. For more information about checksums, see object integrity[https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html]in the Amazon S3 User Guide.</p>
+
+<p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ChecksumSHA256-field">
+  <strong>ChecksumSHA256</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>This header can be used as a data integrity check to verify that the data received is the same data that was originally sent. This specifies the Base64 encoded, 256-bit SHA256 digest of the object returned by the Object Lambda function. This may not match the checksum for the object stored in Amazon S3. Amazon S3 will perform validation of the checksum values only when the original GetObject request required checksum validation. For more information about checksums, see object integrity[https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html]in the Amazon S3 User Guide.</p>
+
+<p>Only one checksum header can be specified at a time. If you supply multiple checksum headers, this request will fail.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentDisposition-field">
+  <strong>ContentDisposition</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies presentational information for the object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentEncoding-field">
+  <strong>ContentEncoding</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentLanguage-field">
+  <strong>ContentLanguage</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The language the content is in.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentLength-field">
+  <strong>ContentLength</strong> *int64 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The size of the content body in bytes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentRange-field">
+  <strong>ContentRange</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The portion of the object returned in the response.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContentType-field">
+  <strong>ContentType</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A standard MIME type describing the format of the object data.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DeleteMarker-field">
+  <strong>DeleteMarker</strong> *bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Specifies whether an object stored in Amazon S3 is ( true ) or is not ( false ) a delete marker. To learn more about delete markers, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html">Working with delete markers</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ETag-field">
+  <strong>ETag</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>An opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ErrorCode-field">
+  <strong>ErrorCode</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A string that uniquely identifies an error condition. Returned in the tag of the error XML response for a corresponding GetObject call. Cannot be used with a successful StatusCode header or when the transformed object is provided in the body. All error codes from S3 are sentence-cased. The regular expression (regex) value is “<sup><a id="footmark-1" href="#foottext-1">1</a></sup>[a-zA-Z]+$” .</p>
+<hr>
+
+<p><sup><a id="foottext-1" href="#footmark-1">1</a></sup> A-Z</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ErrorMessage-field">
+  <strong>ErrorMessage</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Contains a generic description of the error condition. Returned in the tag of the error XML response for a corresponding GetObject call. Cannot be used with a successful StatusCode header or when the transformed object is provided in body.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Expiration-field">
+  <strong>Expiration</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the expiry-date and rule-id key-value pairs that provide the object expiration information. The value of the rule-id is URL-encoded.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Expires-field">
+  <strong>Expires</strong> *time.Time 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The date and time at which the object is no longer cacheable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="LastModified-field">
+  <strong>LastModified</strong> *time.Time 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The date and time that the object was last modified.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Metadata-field">
+  <strong>Metadata</strong> map[string]string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A map of metadata to store with the object in S3.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="MissingMeta-field">
+  <strong>MissingMeta</strong> *int32 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Set to the number of metadata entries not returned in x-amz-meta headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ObjectLockLegalHoldStatus-field">
+  <strong>ObjectLockLegalHoldStatus</strong> types.ObjectLockLegalHoldStatus 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates whether an object stored in Amazon S3 has an active legal hold.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ObjectLockMode-field">
+  <strong>ObjectLockMode</strong> types.ObjectLockMode 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates whether an object stored in Amazon S3 has Object Lock enabled. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Object Lock</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ObjectLockRetainUntilDate-field">
+  <strong>ObjectLockRetainUntilDate</strong> *time.Time 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The date and time when Object Lock is configured to expire.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="PartsCount-field">
+  <strong>PartsCount</strong> *int32 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The count of parts this object has.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ReplicationStatus-field">
+  <strong>ReplicationStatus</strong> types.ReplicationStatus 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates if request involves bucket that is either a source or destination in a Replication rule. For more information about S3 Replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html">Replication</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RequestCharged-field">
+  <strong>RequestCharged</strong> types.RequestCharged 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>If present, indicates that the requester was successfully charged for the request.</p>
+
+<p>This functionality is not supported for directory buckets.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RequestRoute-field">
+  <strong>RequestRoute</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Route prefix to the HTTP URL generated.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RequestToken-field">
+  <strong>RequestToken</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>A single use encrypted token that maps WriteGetObjectResponse to the end user GetObject request.</p>
+
+<p>This member is required.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Restore-field">
+  <strong>Restore</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Provides information about object restoration operation and expiration time of the restored object copy.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSECustomerAlgorithm-field">
+  <strong>SSECustomerAlgorithm</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Encryption algorithm used if server-side encryption with a customer-provided encryption key was specified for object stored in Amazon S3.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSECustomerKeyMD5-field">
+  <strong>SSECustomerKeyMD5</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>128-bit MD5 digest of customer-provided encryption key used in Amazon S3 to encrypt data stored in S3. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Protecting data using server-side encryption with customer-provided encryption keys (SSE-C)</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SSEKMSKeyId-field">
+  <strong>SSEKMSKeyId</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>If present, specifies the ID (Key ID, Key ARN, or Key Alias) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric encryption customer managed key that was used for stored in Amazon S3 object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ServerSideEncryption-field">
+  <strong>ServerSideEncryption</strong> types.ServerSideEncryption 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256, aws:kms ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="StatusCode-field">
+  <strong>StatusCode</strong> *int32 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The integer status code for an HTTP response of a corresponding GetObject request. The following is a list of status codes.</p>
+<ul><li>
+<p>200 - OK</p>
+</li><li>
+<p>206 - Partial Content</p>
+</li><li>
+<p>304 - Not Modified</p>
+</li><li>
+<p>400 - Bad Request</p>
+</li><li>
+<p>401 - Unauthorized</p>
+</li><li>
+<p>403 - Forbidden</p>
+</li><li>
+<p>404 - Not Found</p>
+</li><li>
+<p>405 - Method Not Allowed</p>
+</li><li>
+<p>409 - Conflict</p>
+</li><li>
+<p>411 - Length Required</p>
+</li><li>
+<p>412 - Precondition Failed</p>
+</li><li>
+<p>416 - Range Not Satisfiable</p>
+</li><li>
+<p>500 - Internal Server Error</p>
+</li><li>
+<p>503 - Service Unavailable</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="StorageClass-field">
+  <strong>StorageClass</strong> types.StorageClass 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
+
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="TagCount-field">
+  <strong>TagCount</strong> *int32 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The number of tags, if any, on the object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="VersionId-field">
+  <strong>VersionId</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>An ID used to reference a specific version of the object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+  </div>
+
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:21:00 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

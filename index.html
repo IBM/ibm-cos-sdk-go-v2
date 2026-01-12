@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <div id='filecontents'>
+<h1 id="label-IBM+Cloud+Object+Storage+-+Go+SDK+v2+Beta+Release">IBM Cloud Object Storage - Go SDK v2 Beta Release</h1>
+
+<p>Welcome to the Go SDK v2 Beta! This release is an early version of our SDK and is intended for testing and feedback purposes.</p>
+
+<p>This package allows Go developers to write software that interacts with <a href="https://www.ibm.com/cloud/object-storage">IBM Cloud Object Storage</a>. It is a fork of the SDK for Go v2</code><a href="https://github.com/aws/aws-sdk-go-v2"></a> library and can stand as a drop-in replacement if the application needs to connect to object storage using an S3-like API and does not make use of other AWS services.</p>
+<hr>
+
+<h2 id="label-Important+Notes">Important Notes</h2>
+
+<p>This is a <strong>beta release</strong> — APIs may change before the GA release and use in production environments is <strong>not recommended</strong> at this time.</p>
+<hr>
+
+<h2 id="label-Feedback+-26+Issue+Reporting">Feedback &amp; Issue Reporting</h2>
+
+<p>We value your feedback! Please help us improve by:</p>
+
+<p>Please report any bugs or issues in the <a href="https://github.com/ibm/ibm-cos-sdk-go-v2/issues/new">GitHub Issues</a> section. We also welcome suggestions for enhancements or reports of unexpected behavior.</p>
+
+<h2 id="label-Notice">Notice</h2>
+
+<p>IBM has added a <a href="#language-support-policy">Language Support Policy</a>. Language versions will be deprecated on the published schedule without additional notice.</p>
+
+<h2 id="label-Documentation">Documentation</h2>
+<ul><li>
+<p><a href="https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage">Core documentation for IBM COS</a></p>
+</li><li>
+<p><a href="https://ibm.github.io/ibm-cos-sdk-go-v2/">Go API reference documentation</a></p>
+</li><li>
+<p><a href="https://cloud.ibm.com/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api">REST API reference documentation</a></p>
+</li></ul>
+
+<p>For release notes, see the <a href="CHANGELOG_md.html">CHANGELOG</a>.</p>
+<ul><li>
+<p><a href="#getting-the-sdk">Getting the SDK</a></p>
+</li><li>
+<p><a href="#example-code">Example code</a></p>
+</li><li>
+<p><a href="#getting-help">Getting help</a></p>
+</li></ul>
+
+<h2 id="label-Quick+start">Quick start</h2>
+
+<p>You’ll need:</p>
+<ul><li>
+<p>An instance of COS.</p>
+</li><li>
+<p>An API key from <a href="https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui">IBM Cloud Identity and Access Management</a> with at least <code>Writer</code> permissions.</p>
+</li><li>
+<p>The ID of the instance of COS that you are working with.</p>
+</li><li>
+<p>Token acquisition endpoint</p>
+</li><li>
+<p>Service endpoint</p>
+</li></ul>
+
+<p>These values can be found in the IBM Cloud Console by <a href="https://cloud.ibm.com/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials#service-credentials">generating a ‘service credential’</a>.</p>
+
+<h2 id="label-Archive+Tier+Support">Archive Tier Support</h2>
+
+<p>You can automatically archive objects after a specified length of time or after a specified date. Once archived, a temporary copy of an object can be restored for access as needed. Restore time may take up to 15 hours.</p>
+
+<p>An archive policy is set at the bucket level by calling the <code>PutBucketLifecycleConfiguration</code> method on a client instance. A newly added or modified archive policy applies to new objects uploaded and does not affect existing objects. For more detail, see the <a href="https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-using-go">documentation</a>.</p>
+
+<h2 id="label-Immutable+Object+Storage">Immutable Object Storage</h2>
+
+<p>Users can configure buckets with an Immutable Object Storage policy to prevent objects from being modified or deleted for a defined period of time. The retention period can be specified on a per-object basis, or objects can inherit a default retention period set on the bucket. It is also possible to set open-ended and permanent retention periods. Immutable Object Storage meets the rules set forth by the SEC governing record retention, and IBM Cloud administrators are unable to bypass these restrictions. For more detail, see the <a href="https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-using-go">IBM Cloud documentation</a>.</p>
+
+<p>Note: Immutable Object Storage does not support Aspera transfers via the SDK to upload objects or directories at this stage.</p>
+
+<h2 id="label-Accelerated+Archive">Accelerated Archive</h2>
+
+<p>Users can set an archive rule that would allow data restore from an archive in 2 hours or 12 hours.</p>
+
+<h2 id="label-Getting+the+SDK">Getting the SDK</h2>
+
+<p>To begin using the SDK, initialize your project with Go modules and install the required dependencies using go get. The following example demonstrates how to create a bucket in IBM Cloud Object Storage using the v2 SDK and S3-compatible APIs. The SDK requires a minimum version of Go 1.23 or newer.</p>
+
+<h3 id="label-Initialize+Project">Initialize Project</h3>
+
+<pre class="code ruby"><code class="ruby">mkdir ~/ibmcos
+cd ~/ibmcos
+go mod init ibmcos
+</code></pre>
+
+<h3 id="label-Add+SDK+Dependencies">Add SDK Dependencies</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_go'>go</span> <span class='id identifier rubyid_get'>get</span> <span class='id identifier rubyid_github'>github</span><span class='period'>.</span><span class='id identifier rubyid_com'>com</span><span class='op'>/</span><span class='const'>IBM</span><span class='op'>/</span><span class='id identifier rubyid_ibm'>ibm</span><span class='op'>-</span><span class='id identifier rubyid_cos'>cos</span><span class='op'>-</span><span class='id identifier rubyid_sdk'>sdk</span><span class='op'>-</span><span class='id identifier rubyid_go'>go</span><span class='op'>-</span><span class='id identifier rubyid_v2'>v2</span><span class='op'>/</span><span class='id identifier rubyid_config'>config</span>
+<span class='id identifier rubyid_go'>go</span> <span class='id identifier rubyid_get'>get</span> <span class='id identifier rubyid_github'>github</span><span class='period'>.</span><span class='id identifier rubyid_com'>com</span><span class='op'>/</span><span class='const'>IBM</span><span class='op'>/</span><span class='id identifier rubyid_ibm'>ibm</span><span class='op'>-</span><span class='id identifier rubyid_cos'>cos</span><span class='op'>-</span><span class='id identifier rubyid_sdk'>sdk</span><span class='op'>-</span><span class='id identifier rubyid_go'>go</span><span class='op'>-</span><span class='id identifier rubyid_v2'>v2</span><span class='op'>/</span><span class='id identifier rubyid_service'>service</span><span class='op'>/</span><span class='id identifier rubyid_s3'>s3</span>
+<span class='id identifier rubyid_go'>go</span> <span class='id identifier rubyid_get'>get</span> <span class='id identifier rubyid_github'>github</span><span class='period'>.</span><span class='id identifier rubyid_com'>com</span><span class='op'>/</span><span class='const'>IBM</span><span class='op'>/</span><span class='id identifier rubyid_ibm'>ibm</span><span class='op'>-</span><span class='id identifier rubyid_cos'>cos</span><span class='op'>-</span><span class='id identifier rubyid_sdk'>sdk</span><span class='op'>-</span><span class='id identifier rubyid_go'>go</span><span class='op'>-</span><span class='id identifier rubyid_v2'>v2</span><span class='op'>/</span><span class='id identifier rubyid_credentials'>credentials</span>
+</code></pre>
+
+<h3 id="label-Example+code">Example code</h3>
+
+<p>In your preferred editor, copy the code below into <code>main.go</code>, and modify the API key <code>API_KEY</code> and instance ID <code>RESOURCE_INSTANCE_ID</code> fields with your credentials.</p>
+
+<pre class="code ruby"><code class="ruby">package main
+
+import ( &quot;context&quot;
+ &quot;fmt&quot;
+ &quot;log&quot;
+ &quot;strconv&quot;
+ &quot;time&quot;
+
+ &quot;github.com/IBM/ibm-cos-sdk-go-v2/aws&quot;
+ &quot;github.com/IBM/ibm-cos-sdk-go-v2/config&quot;
+ &quot;github.com/IBM/ibm-cos-sdk-go-v2/credentials/ibmiam&quot;
+ &quot;github.com/IBM/ibm-cos-sdk-go-v2/service/s3&quot;
+)
+
+// -------------------------------------------------------------------
+// IBM COS Example - Create Bucket using API KEY with Go v2 SDK
+// -------------------------------------------------------------------
+
+const (
+ region            = &quot;us-south&quot;
+ apiKey            = &quot;API_KEY&quot;
+ serviceInstanceID = &quot;RESOURCE_INSTANCE_ID&quot;
+ authEndpoint      = &quot;https://iam.cloud.ibm.com/identity/token&quot;
+ endpoint          = &quot;https://s3.us-south.cloud-object-storage.appdomain.cloud&quot;
+)
+
+func main() {
+ 
+ // Load configuration using IAM Auth (API key)
+ cfg, err := config.LoadDefaultConfig(context.TODO(),
+  config.WithCredentialsProvider(ibmiam.NewStaticCredentials(authEndpoint, apiKey, serviceInstanceID)),
+  config.WithEndpoint(endpoint),
+  config.WithRegion(region),
+ )
+ if err != nil {
+  log.Fatalf(&quot;Failed to load configuration: %v&quot;, err)
+ }
+
+ client := s3.NewFromConfig(cfg)
+
+ // Create unique bucket name
+ ms := time.Now().UnixMilli()
+ bucketName := &quot;v2-go-bucket-&quot; + strconv.FormatInt(ms, 10)
+
+ // Create bucket input
+ createBucketInput := &amp;s3.CreateBucketInput{
+  Bucket: aws.String(bucketName),
+ }
+
+ // Execute bucket creation
+ _, err = client.CreateBucket(context.Background(), createBucketInput)
+ if err != nil {
+  log.Fatalf(&quot;Failed to create bucket: %v&quot;, err)
+ }
+ fmt.Println(&quot;Bucket Created Successfully!&quot;)
+ fmt.Printf(&quot;Bucket Name: %s\n&quot;, bucketName)
+}
+</code></pre>
+<hr>
+
+<h3 id="label-Compile+and+Execute">Compile and Execute</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_go'>go</span> <span class='id identifier rubyid_run'>run</span> <span class='id identifier rubyid_main'>main</span><span class='period'>.</span><span class='id identifier rubyid_go'>go</span>
+</code></pre>
+
+<p>More examples can be found <a href="./examples">here</a>.</p>
+<hr>
+
+<h2 id="label-Getting+Help">Getting Help</h2>
+
+<p>Feel free to use GitHub issues for tracking bugs and feature requests, but for help please use one of the following resources:</p>
+<ul><li>
+<p>Read a quick start guide in <a href="https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-using-go-v2">IBM Cloud Docs</a>.</p>
+</li><li>
+<p>Ask a question on <a href="https://stackoverflow.com/questions/tagged/object-storage+ibm">Stack Overflow</a> and tag it with <code>ibm</code> and <code>object-storage</code>.</p>
+</li><li>
+<p>Open a support ticket with <a href="https://cloud.ibm.com/unifiedsupport/supportcenter/">IBM Cloud Support</a></p>
+</li><li>
+<p>If it turns out that you may have found a bug, please <a href="https://github.com/ibm/ibm-cos-sdk-go-v2/issues/new">open an issue</a>.</p>
+</li></ul>
+
+<h2 id="label-Language+Support+Policy">Language Support Policy</h2>
+
+<p>IBM supports <a href="https://golang.org/doc/devel/release.html">current public releases</a>. IBM will deprecate language versions 90 days after a version reaches end-of-life. All clients will need to upgrade to a supported version before the end of the grace period.</p>
+
+<h2 id="label-License">License</h2>
+
+<p>This SDK is distributed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>, see LICENSE.txt and NOTICE.txt for more information.</p>
+</div>
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:37 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: arn
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/internal/s3shared/arn";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (a)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../internal.html" title="internal (package)">internal</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../s3shared.html" title="s3shared (package)">s3shared</a></span></span>
+     &raquo; 
+    <span class="title">arn</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: arn
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/internal/s3shared/arn"
+</div>
+
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="arn/AccessPointARN.html" title="arn.AccessPointARN (struct)"><strong>AccessPointARN</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AccessPointARN provides representation.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="arn/InvalidARNError.html" title="arn.InvalidARNError (struct)"><strong>InvalidARNError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>InvalidARNError provides the error for an invalid ARN error.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="arn/OutpostAccessPointARN.html" title="arn.OutpostAccessPointARN (struct)"><strong>OutpostAccessPointARN</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>OutpostAccessPointARN represents outpost access point ARN.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="arn/OutpostBucketARN.html" title="arn.OutpostBucketARN (struct)"><strong>OutpostBucketARN</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>OutpostBucketARN represents the outpost bucket ARN.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="arn/S3ObjectLambdaAccessPointARN.html" title="arn.S3ObjectLambdaAccessPointARN (struct)"><strong>S3ObjectLambdaAccessPointARN</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>S3ObjectLambdaAccessPointARN is an S3ObjectLambdaARN for the Access Point resource type.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  <h2>
+    Interface Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="arn/OutpostARN.html" title="arn.OutpostARN (interface)"><strong>OutpostARN</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>OutpostARN interface that should be satisfied by outpost ARNs.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="arn/Resource.html" title="arn.Resource (interface)"><strong>Resource</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resource provides the interfaces abstracting ARNs of specific resource types.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)"><strong>S3ObjectLambdaARN</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>S3ObjectLambdaARN represents an ARN for the s3-object-lambda service.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetARNField-class_method" title="arn.GetARNField() (method)">func <strong>GetARNField</strong>(input interface{}) (*string, bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetARNField would be called during middleware execution to retrieve a member value that is an ARN in need of processing.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#IsARN-class_method" title="arn.IsARN() (method)">func <strong>IsARN</strong>(s string) bool </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsARN returns whether the given string is an ARN.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ParseAccessPointResource-class_method" title="arn.ParseAccessPointResource() (method)">func <strong>ParseAccessPointResource</strong>(a arn.ARN, resParts []string) (AccessPointARN, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ParseAccessPointResource attempts to parse the ARN’s resource as an AccessPoint resource.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ParseOutpostARNResource-class_method" title="arn.ParseOutpostARNResource() (method)">func <strong>ParseOutpostARNResource</strong>(a arn.ARN, resParts []string) (OutpostARN, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ParseOutpostARNResource will parse a provided ARNs resource using the appropriate ARN format and return a specific OutpostARN type.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ParseResource-class_method" title="arn.ParseResource() (method)">func <strong>ParseResource</strong>(a arn.ARN, resParser ResourceParser) (resARN Resource, err error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ParseResource parses an AWS ARN into a typed resource for the S3 API.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetARNField-class_method" title="arn.SetARNField() (method)">func <strong>SetARNField</strong>(input interface{}, v string) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetARNField would called during middleware exeuction to set a member value that required ARN processing.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SplitResource-class_method" title="arn.SplitResource() (method)">func <strong>SplitResource</strong>(v string) []string </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SplitResource splits the resource components by the ARN resource delimiters.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="GetARNField-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetARNField-class_method" title="arn.GetARNField() (method)">GetARNField</a></span></strong>(input interface{}) (*string, bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetARNField would be called during middleware execution to retrieve a member value that is an ARN in need of processing.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/arn/arn_member.go', line 15</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetARNField(input <span class="hljs-keyword">interface</span>{}) (*<span class="hljs-constant">string</span>, <span class="hljs-constant">bool</span>) {
+	v, ok := input.(arnable)
+	<span class="hljs-keyword">if</span> !ok {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, <span class="hljs-constant">false</span>
+	}
+	<span class="hljs-keyword">return</span> v.GetARNMember()
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="IsARN-class_method">
+  
+    func <strong><span class='object_link'><a href="#IsARN-class_method" title="arn.IsARN() (method)">IsARN</a></span></strong>(s string) bool 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>IsARN returns whether the given string is an ARN</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/arn/arn.go', line 71</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> IsARN(s <span class="hljs-constant">string</span>) <span class="hljs-constant">bool</span> {
+	<span class="hljs-keyword">return</span> arn.IsARN(s)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ParseAccessPointResource-class_method">
+  
+    func <strong><span class='object_link'><a href="#ParseAccessPointResource-class_method" title="arn.ParseAccessPointResource() (method)">ParseAccessPointResource</a></span></strong>(a arn.ARN, resParts []string) (<span class='object_link'><a href="arn/AccessPointARN.html" title="arn.AccessPointARN (struct)">AccessPointARN</a></span>, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ParseAccessPointResource attempts to parse the ARN’s resource as an AccessPoint resource.</p>
+
+<p>Supported Access point resource format:  - Access point format: arn:service/internal/s3shared/arnpartition:s3:service/internal/s3shared/arnregion:service/internal/s3shared/arnaccountId:accesspoint/service/internal/s3shared/arnaccesspointName  - example: arn:aws:s3:us-west-2:012345678901:accesspoint/myaccesspoint</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/arn/accesspoint_arn.go', line 25</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> ParseAccessPointResource(a arn.ARN, resParts []<span class="hljs-constant">string</span>) (AccessPointARN, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> isFIPS(a.Region) {
+		<span class="hljs-keyword">return</span> AccessPointARN{}, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"FIPS region not allowed in ARN"</span>}
+	}
+	<span class="hljs-keyword">if</span> len(a.AccountID) == 0 {
+		<span class="hljs-keyword">return</span> AccessPointARN{}, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"account-id not set"</span>}
+	}
+	<span class="hljs-keyword">if</span> len(resParts) == 0 {
+		<span class="hljs-keyword">return</span> AccessPointARN{}, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"resource-id not set"</span>}
+	}
+	<span class="hljs-keyword">if</span> len(resParts) > 1 {
+		<span class="hljs-keyword">return</span> AccessPointARN{}, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"sub resource not supported"</span>}
+	}
+
+	resID := resParts[0]
+	<span class="hljs-keyword">if</span> len(strings.TrimSpace(resID)) == 0 {
+		<span class="hljs-keyword">return</span> AccessPointARN{}, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"resource-id not set"</span>}
+	}
+
+	<span class="hljs-keyword">return</span> AccessPointARN{
+		ARN:             a,
+		AccessPointName: resID,
+	}, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ParseOutpostARNResource-class_method">
+  
+    func <strong><span class='object_link'><a href="#ParseOutpostARNResource-class_method" title="arn.ParseOutpostARNResource() (method)">ParseOutpostARNResource</a></span></strong>(a arn.ARN, resParts []string) (<span class='object_link'><a href="arn/OutpostARN.html" title="arn.OutpostARN (interface)">OutpostARN</a></span>, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ParseOutpostARNResource will parse a provided ARNs resource using the appropriate ARN format and return a specific OutpostARN type</p>
+
+<p>Currently supported outpost ARN formats: * Outpost AccessPoint ARN format:  - ARN format: arn:service/internal/s3shared/arnpartition:s3-outposts:service/internal/s3shared/arnregion:service/internal/s3shared/arnaccountId:outpost/service/internal/s3shared/arnoutpostId/accesspoint/service/internal/s3shared/arnaccesspointName  - example: arn:aws:s3-outposts:us-west-2:012345678901:outpost/op-1234567890123456/accesspoint/myaccesspoint</p>
+<ul><li>
+<p>Outpost Bucket ARN format:</p>
+</li><li>
+<p>ARN format: arn:service/internal/s3shared/arnpartition:s3-outposts:service/internal/s3shared/arnregion:service/internal/s3shared/arnaccountId:outpost/service/internal/s3shared/arnoutpostId/bucket/service/internal/s3shared/arnbucketName</p>
+</li><li>
+<p>example: arn:aws:s3-outposts:us-west-2:012345678901:outpost/op-1234567890123456/bucket/mybucket</p>
+</li></ul>
+
+<p>Other outpost ARN formats may be supported and added in the future.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/arn/outpost_arn.go', line 27</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> ParseOutpostARNResource(a arn.ARN, resParts []<span class="hljs-constant">string</span>) (OutpostARN, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> len(a.Region) == 0 {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"region not set"</span>}
+	}
+
+	<span class="hljs-keyword">if</span> isFIPS(a.Region) {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"FIPS region not allowed in ARN"</span>}
+	}
+
+	<span class="hljs-keyword">if</span> len(a.AccountID) == 0 {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"account-id not set"</span>}
+	}
+
+	<span class="hljs-comment">// verify if outpost id is present and valid</span>
+	<span class="hljs-keyword">if</span> len(resParts) == 0 || len(strings.TrimSpace(resParts[0])) == 0 {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"outpost resource-id not set"</span>}
+	}
+
+	<span class="hljs-comment">// verify possible resource type exists</span>
+	<span class="hljs-keyword">if</span> len(resParts) < 3 {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{
+			ARN: a, Reason: <span class="hljs-string">"incomplete outpost resource type. Expected bucket or access-point resource to be present"</span>,
+		}
+	}
+
+	<span class="hljs-comment">// Since we know this is a OutpostARN fetch outpostID</span>
+	outpostID := strings.TrimSpace(resParts[0])
+
+	<span class="hljs-keyword">switch</span> resParts[1] {
+	<span class="hljs-keyword">case</span> <span class="hljs-string">"accesspoint"</span>:
+		accesspointARN, err := ParseAccessPointResource(a, resParts[2:])
+		<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> OutpostAccessPointARN{}, err
+		}
+		<span class="hljs-keyword">return</span> OutpostAccessPointARN{
+			AccessPointARN: accesspointARN,
+			OutpostID:      outpostID,
+		}, <span class="hljs-constant">nil</span>
+
+	<span class="hljs-keyword">case</span> <span class="hljs-string">"bucket"</span>:
+		bucketName, err := parseBucketResource(a, resParts[2:])
+		<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+		}
+		<span class="hljs-keyword">return</span> OutpostBucketARN{
+			ARN:        a,
+			BucketName: bucketName,
+			OutpostID:  outpostID,
+		}, <span class="hljs-constant">nil</span>
+
+	<span class="hljs-keyword">default</span>:
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"unknown resource set for outpost ARN"</span>}
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ParseResource-class_method">
+  
+    func <strong><span class='object_link'><a href="#ParseResource-class_method" title="arn.ParseResource() (method)">ParseResource</a></span></strong>(a arn.ARN, resParser ResourceParser) (resARN <span class='object_link'><a href="arn/Resource.html" title="arn.Resource (interface)">Resource</a></span>, err error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ParseResource parses an AWS ARN into a typed resource for the S3 API.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/arn/arn.go', line 36</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> ParseResource(a arn.ARN, resParser ResourceParser) (resARN Resource, err <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> len(a.Partition) == 0 {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"partition not set"</span>}
+	}
+
+	<span class="hljs-keyword">if</span> !isSupportedServiceARN(a.Service) {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"service is not supported"</span>}
+	}
+
+	<span class="hljs-keyword">if</span> len(a.Resource) == 0 {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, InvalidARNError{ARN: a, Reason: <span class="hljs-string">"resource not set"</span>}
+	}
+
+	<span class="hljs-keyword">return</span> resParser(a)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetARNField-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetARNField-class_method" title="arn.SetARNField() (method)">SetARNField</a></span></strong>(input interface{}, v string) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetARNField would called during middleware exeuction to set a member value that required ARN processing.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/arn/arn_member.go', line 25</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetARNField(input <span class="hljs-keyword">interface</span>{}, v <span class="hljs-constant">string</span>) <span class="hljs-constant">error</span> {
+	params, ok := input.(arnable)
+	<span class="hljs-keyword">if</span> !ok {
+		<span class="hljs-keyword">return</span> fmt.Errorf(<span class="hljs-string">"Params does not contain arn field member"</span>)
+	}
+	<span class="hljs-keyword">return</span> params.SetARNMember(v)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SplitResource-class_method">
+  
+    func <strong><span class='object_link'><a href="#SplitResource-class_method" title="arn.SplitResource() (method)">SplitResource</a></span></strong>(v string) []string 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SplitResource splits the resource components by the ARN resource delimiters.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/arn/arn.go', line 53</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SplitResource(v <span class="hljs-constant">string</span>) []<span class="hljs-constant">string</span> {
+	<span class="hljs-keyword">var</span> parts []<span class="hljs-constant">string</span>
+	<span class="hljs-keyword">var</span> offset <span class="hljs-constant">int</span>
+
+	<span class="hljs-keyword">for</span> offset <= len(v) {
+		idx := strings.IndexAny(v[offset:], <span class="hljs-string">"/:"</span>)
+		<span class="hljs-keyword">if</span> idx < 0 {
+			parts = append(parts, v[offset:])
+			<span class="hljs-keyword">break</span>
+		}
+		parts = append(parts, v[offset:idx+offset])
+		offset += idx + 1
+	}
+
+	<span class="hljs-keyword">return</span> parts
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:49 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

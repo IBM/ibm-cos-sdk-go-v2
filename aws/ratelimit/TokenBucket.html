@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: ratelimit.TokenBucket
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/ratelimit.TokenBucket";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (T)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../aws.html" title="aws (package)">aws</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../ratelimit.html" title="ratelimit (package)">ratelimit</a></span></span>
+     &raquo; 
+    <span class="title">TokenBucket</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: ratelimit.TokenBucket
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/ratelimit"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>TokenBucket provides a concurrency safe utility for adding and removing tokens from the available token bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="../../service/s3/types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../CredentialsProvider.html" title="aws.CredentialsProvider (interface)">aws.CredentialsProvider</a></span>, <span class='object_link'><a href="../signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="../../service/s3/HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="../../service/s3/types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="../../service/s3/PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../../service/s3/internal/customizations/S3ExpressCredentialsProvider.html" title="customizations.S3ExpressCredentialsProvider (interface)">customizations.S3ExpressCredentialsProvider</a></span>, <span class='object_link'><a href="../../service/internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="../../service/s3/types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Constructor Functions
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewTokenBucket-class_method" title="ratelimit.TokenBucket.NewTokenBucket() (method)">func <strong>NewTokenBucket</strong>(i uint) *TokenBucket </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewTokenBucket returns an initialized TokenBucket with the capacity specified.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Capacity-instance_method" title="ratelimit.TokenBucket.Capacity() (method)">func (t *TokenBucket) <strong>Capacity</strong>() uint </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Capacity returns the maximum capacity of tokens that the bucket could contain.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Refund-instance_method" title="ratelimit.TokenBucket.Refund() (method)">func (t *TokenBucket) <strong>Refund</strong>(amount uint) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Refund returns the amount of tokens back to the available token bucket, up to the initial capacity.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Remaining-instance_method" title="ratelimit.TokenBucket.Remaining() (method)">func (t *TokenBucket) <strong>Remaining</strong>() uint </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Remaining returns the number of tokens that remaining in the bucket.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Resize-instance_method" title="ratelimit.TokenBucket.Resize() (method)">func (t *TokenBucket) <strong>Resize</strong>(size uint) uint </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resize adjusts the size of the token bucket.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Retrieve-instance_method" title="ratelimit.TokenBucket.Retrieve() (method)">func (t *TokenBucket) <strong>Retrieve</strong>(amount uint) (available uint, retrieved bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Retrieve attempts to reduce the available tokens by the amount requested.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="NewTokenBucket-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewTokenBucket-class_method" title="ratelimit.TokenBucket.NewTokenBucket() (method)">NewTokenBucket</a></span></strong>(i uint) *<span class='object_link'><a href="" title="ratelimit.TokenBucket (struct)">TokenBucket</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewTokenBucket returns an initialized TokenBucket with the capacity specified.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/ratelimit/token_bucket.go', line 17</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewTokenBucket(i u<span class="hljs-constant">int</span>) *TokenBucket {
+	<span class="hljs-keyword">return</span> &TokenBucket{
+		remainingTokens: i,
+		maxCapacity:     i,
+		minCapacity:     1,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Capacity-instance_method">
+  
+    func (t *<span class='object_link'><a href="" title="ratelimit.TokenBucket (struct)">TokenBucket</a></span>) <strong><span class='object_link'><a href="#Capacity-instance_method" title="ratelimit.TokenBucket.Capacity() (method)">Capacity</a></span></strong>() uint 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Capacity returns the maximum capacity of tokens that the bucket could contain.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/ratelimit/token_bucket.go', line 55</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (t *TokenBucket) Capacity() u<span class="hljs-constant">int</span> {
+	t.mu.Lock()
+	<span class="hljs-keyword">defer</span> t.mu.Unlock()
+
+	<span class="hljs-keyword">return</span> t.maxCapacity
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Refund-instance_method">
+  
+    func (t *<span class='object_link'><a href="" title="ratelimit.TokenBucket (struct)">TokenBucket</a></span>) <strong><span class='object_link'><a href="#Refund-instance_method" title="ratelimit.TokenBucket.Refund() (method)">Refund</a></span></strong>(amount uint) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Refund returns the amount of tokens back to the available token bucket, up to the initial capacity.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/ratelimit/token_bucket.go', line 45</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (t *TokenBucket) Refund(amount u<span class="hljs-constant">int</span>) {
+	t.mu.Lock()
+	<span class="hljs-keyword">defer</span> t.mu.Unlock()
+
+	<span class="hljs-comment">// Capacity cannot exceed max capacity.</span>
+	t.remainingTokens = uintMin(t.remainingTokens+amount, t.maxCapacity)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Remaining-instance_method">
+  
+    func (t *<span class='object_link'><a href="" title="ratelimit.TokenBucket (struct)">TokenBucket</a></span>) <strong><span class='object_link'><a href="#Remaining-instance_method" title="ratelimit.TokenBucket.Remaining() (method)">Remaining</a></span></strong>() uint 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Remaining returns the number of tokens that remaining in the bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/ratelimit/token_bucket.go', line 63</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (t *TokenBucket) Remaining() u<span class="hljs-constant">int</span> {
+	t.mu.Lock()
+	<span class="hljs-keyword">defer</span> t.mu.Unlock()
+
+	<span class="hljs-keyword">return</span> t.remainingTokens
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Resize-instance_method">
+  
+    func (t *<span class='object_link'><a href="" title="ratelimit.TokenBucket (struct)">TokenBucket</a></span>) <strong><span class='object_link'><a href="#Resize-instance_method" title="ratelimit.TokenBucket.Resize() (method)">Resize</a></span></strong>(size uint) uint 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Resize adjusts the size of the token bucket. Returns the capacity remaining.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/ratelimit/token_bucket.go', line 71</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (t *TokenBucket) Resize(size u<span class="hljs-constant">int</span>) u<span class="hljs-constant">int</span> {
+	t.mu.Lock()
+	<span class="hljs-keyword">defer</span> t.mu.Unlock()
+
+	t.maxCapacity = uintMax(size, t.minCapacity)
+
+	<span class="hljs-comment">// Capacity needs to be capped at max capacity, if max size reduced.</span>
+	t.remainingTokens = uintMin(t.remainingTokens, t.maxCapacity)
+
+	<span class="hljs-keyword">return</span> t.remainingTokens
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Retrieve-instance_method">
+  
+    func (t *<span class='object_link'><a href="" title="ratelimit.TokenBucket (struct)">TokenBucket</a></span>) <strong><span class='object_link'><a href="#Retrieve-instance_method" title="ratelimit.TokenBucket.Retrieve() (method)">Retrieve</a></span></strong>(amount uint) (available uint, retrieved bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Retrieve attempts to reduce the available tokens by the amount requested. If there are tokens available true will be returned along with the number of available tokens remaining. If amount requested is larger than the available capacity, false will be returned along with the available capacity. If the amount is less than the available capacity, the capacity will be reduced by that amount, and the remaining capacity and true will be returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/ratelimit/token_bucket.go', line 31</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (t *TokenBucket) Retrieve(amount u<span class="hljs-constant">int</span>) (available u<span class="hljs-constant">int</span>, retrieved <span class="hljs-constant">bool</span>) {
+	t.mu.Lock()
+	<span class="hljs-keyword">defer</span> t.mu.Unlock()
+
+	<span class="hljs-keyword">if</span> amount > t.remainingTokens {
+		<span class="hljs-keyword">return</span> t.remainingTokens, <span class="hljs-constant">false</span>
+	}
+
+	t.remainingTokens -= amount
+	<span class="hljs-keyword">return</span> t.remainingTokens, <span class="hljs-constant">true</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:51 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

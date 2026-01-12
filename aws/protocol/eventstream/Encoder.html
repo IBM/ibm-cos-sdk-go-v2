@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: eventstream.Encoder
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/protocol/eventstream.Encoder";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (E)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../aws.html" title="aws (package)">aws</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../protocol.html" title="protocol (package)">protocol</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../eventstream.html" title="eventstream (package)">eventstream</a></span></span>
+     &raquo; 
+    <span class="title">Encoder</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: eventstream.Encoder
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Encoder provides EventStream message encoding.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="../../../service/s3/types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="../../../service/s3/HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="../../../service/s3/types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="../../../service/s3/PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../../../service/internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="../../../service/s3/types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Encode-instance_method" title="eventstream.Encoder.Encode() (method)">func (e *Encoder) <strong>Encode</strong>(w io.Writer, msg Message) (err error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Encode encodes a single EventStream message to the io.Writer the Encoder was created with.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Encode-instance_method">
+  
+    func (e *<span class='object_link'><a href="" title="eventstream.Encoder (struct)">Encoder</a></span>) <strong><span class='object_link'><a href="#Encode-instance_method" title="eventstream.Encoder.Encode() (method)">Encode</a></span></strong>(w io.Writer, msg <span class='object_link'><a href="Message.html" title="eventstream.Message (struct)">Message</a></span>) (err error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Encode encodes a single EventStream message to the io.Writer the Encoder was created with. An error is returned if writing the message fails.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/protocol/eventstream/encode.go', line 46</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (e *Encoder) Encode(w io.Writer, msg Message) (err <span class="hljs-constant">error</span>) {
+	e.headersBuf.Reset()
+	e.messageBuf.Reset()
+
+	<span class="hljs-keyword">var</span> writer io.Writer = e.messageBuf
+	<span class="hljs-keyword">if</span> e.options.Logger != <span class="hljs-constant">nil</span> && e.options.LogMessages {
+		encodeMsgBuf := bytes.NewBuffer(<span class="hljs-constant">nil</span>)
+		writer = io.MultiWriter(writer, encodeMsgBuf)
+		<span class="hljs-keyword">defer</span> <span class="hljs-keyword">func</span>() {
+			logMessageEncode(e.options.Logger, encodeMsgBuf, msg, err)
+		}()
+	}
+
+	<span class="hljs-keyword">if</span> err = EncodeHeaders(e.headersBuf, msg.Headers); err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	crc := crc32.New(crc32IEEETable)
+	hashWriter := io.MultiWriter(writer, crc)
+
+	headersLen := u<span class="hljs-constant">int32</span>(e.headersBuf.Len())
+	payloadLen := u<span class="hljs-constant">int32</span>(len(msg.Payload))
+
+	<span class="hljs-keyword">if</span> err = encodePrelude(hashWriter, crc, headersLen, payloadLen); err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-keyword">if</span> headersLen > 0 {
+		<span class="hljs-keyword">if</span> _, err = io.Copy(hashWriter, e.headersBuf); err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> err
+		}
+	}
+
+	<span class="hljs-keyword">if</span> payloadLen > 0 {
+		<span class="hljs-keyword">if</span> _, err = hashWriter.Write(msg.Payload); err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> err
+		}
+	}
+
+	msgCRC := crc.Sum32()
+	<span class="hljs-keyword">if</span> err := binary.Write(writer, binary.BigEndian, msgCRC); err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	_, err = io.Copy(w, e.messageBuf)
+
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:51 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

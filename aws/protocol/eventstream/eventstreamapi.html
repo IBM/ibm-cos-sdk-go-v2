@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: eventstreamapi
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/protocol/eventstream/eventstreamapi";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (e)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../aws.html" title="aws (package)">aws</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../protocol.html" title="protocol (package)">protocol</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../eventstream.html" title="eventstream (package)">eventstream</a></span></span>
+     &raquo; 
+    <span class="title">eventstreamapi</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: eventstreamapi
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream/eventstreamapi"
+</div>
+
+  
+    <h2>Constants</h2>
+    
+      <dl class="constants">
+        
+          <dt id="ChunkSignatureHeader-constant" class="">
+          <div class="defn">const <strong>ChunkSignatureHeader</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`:chunk-signature`</span> <span class="hljs-comment">// chunk signature for message</span></div></pre>
+          </dd>
+        
+          <dt id="DateHeader-constant" class="">
+          <div class="defn">const <strong>DateHeader</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`:date`</span>            <span class="hljs-comment">// Date header for signature</span></div></pre>
+          </dd>
+        
+          <dt id="ContentTypeHeader-constant" class="">
+          <div class="defn">const <strong>ContentTypeHeader</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">":content-type"</span>    <span class="hljs-comment">// message payload content-type</span></div></pre>
+          </dd>
+        
+          <dt id="MessageTypeHeader-constant" class="">
+          <div class="defn">const <strong>MessageTypeHeader</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>Message header and values</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`:message-type`</span> <span class="hljs-comment">// Identifies type of message.</span></div></pre>
+          </dd>
+        
+          <dt id="EventMessageType-constant" class="">
+          <div class="defn">const <strong>EventMessageType</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`event`</span></div></pre>
+          </dd>
+        
+          <dt id="ErrorMessageType-constant" class="">
+          <div class="defn">const <strong>ErrorMessageType</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`error`</span></div></pre>
+          </dd>
+        
+          <dt id="ExceptionMessageType-constant" class="">
+          <div class="defn">const <strong>ExceptionMessageType</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`exception`</span></div></pre>
+          </dd>
+        
+          <dt id="EventTypeHeader-constant" class="">
+          <div class="defn">const <strong>EventTypeHeader</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>Message Events</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`:event-type`</span> <span class="hljs-comment">// Identifies message event type e.g. "Stats".</span></div></pre>
+          </dd>
+        
+          <dt id="ErrorCodeHeader-constant" class="">
+          <div class="defn">const <strong>ErrorCodeHeader</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>Message Error</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`:error-code`</span></div></pre>
+          </dd>
+        
+          <dt id="ErrorMessageHeader-constant" class="">
+          <div class="defn">const <strong>ErrorMessageHeader</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`:error-message`</span></div></pre>
+          </dd>
+        
+          <dt id="ExceptionTypeHeader-constant" class="">
+          <div class="defn">const <strong>ExceptionTypeHeader</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>Message Exception</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">`:exception-type`</span></div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="eventstreamapi/InitializeStreamWriter.html" title="eventstreamapi.InitializeStreamWriter (struct)"><strong>InitializeStreamWriter</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID returns the identifier for the middleware.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddInitializeStreamWriter-class_method" title="eventstreamapi.AddInitializeStreamWriter() (method)">func <strong>AddInitializeStreamWriter</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddInitializeStreamWriter adds the InitializeStreamWriter middleware to the provided stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ApplyHTTPTransportFixes-class_method" title="eventstreamapi.ApplyHTTPTransportFixes() (method)">func <strong>ApplyHTTPTransportFixes</strong>(r *smithyhttp.Request) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ApplyHTTPTransportFixes applies fixes to the HTTP request for proper event stream functionality.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetInputStreamWriter-class_method" title="eventstreamapi.GetInputStreamWriter() (method)">func <strong>GetInputStreamWriter</strong>(ctx context.Context) io.WriteCloser </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetInputStreamWriter returns EventTypeHeader io.PipeWriter used for the operation’s input event stream.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="AddInitializeStreamWriter-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddInitializeStreamWriter-class_method" title="eventstreamapi.AddInitializeStreamWriter() (method)">AddInitializeStreamWriter</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddInitializeStreamWriter adds the InitializeStreamWriter middleware to the provided stack.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/protocol/eventstream/eventstreamapi/middleware.go', line 27</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddInitializeStreamWriter(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Finalize.Add(&InitializeStreamWriter{}, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ApplyHTTPTransportFixes-class_method">
+  
+    func <strong><span class='object_link'><a href="#ApplyHTTPTransportFixes-class_method" title="eventstreamapi.ApplyHTTPTransportFixes() (method)">ApplyHTTPTransportFixes</a></span></strong>(r *smithyhttp.Request) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>ApplyHTTPTransportFixes applies fixes to the HTTP request for proper event stream functionality.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/protocol/eventstream/eventstreamapi/transport.go', line 10</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> ApplyHTTPTransportFixes(r *smithyhttp.Request) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetInputStreamWriter-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetInputStreamWriter-class_method" title="eventstreamapi.GetInputStreamWriter() (method)">GetInputStreamWriter</a></span></strong>(ctx context.Context) io.WriteCloser 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetInputStreamWriter returns EventTypeHeader io.PipeWriter used for the operation’s input event stream.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/protocol/eventstream/eventstreamapi/middleware.go', line 13</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetInputStreamWriter(ctx context.Context) io.WriteCloser {
+	writeCloser, _ := middleware.GetStackValue(ctx, eventStreamWriterKey{}).(io.WriteCloser)
+	<span class="hljs-keyword">return</span> writeCloser
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:39 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

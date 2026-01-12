@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: s3.SelectObjectContentEventStream
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/s3.SelectObjectContentEventStream";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (S)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../s3.html" title="s3 (package)">s3</a></span></span>
+     &raquo; 
+    <span class="title">SelectObjectContentEventStream</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: s3.SelectObjectContentEventStream
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/s3"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>SelectObjectContentEventStream provides the event stream handling for the SelectObjectContent operation.</p>
+
+<p>For testing and mocking the event stream this type should be initialized via the NewSelectObjectContentEventStream constructor function. Using the functional options to pass in nested mock behavior.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../aws/signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span>, <span class='object_link'><a href="SelectObjectContentEventStreamReader.html" title="s3.SelectObjectContentEventStreamReader (interface)">s3.SelectObjectContentEventStreamReader</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Structure Field Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Reader-field" title="s3.SelectObjectContentEventStream.Reader (field)"><strong>Reader</strong> SelectObjectContentEventStreamReader</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SelectObjectContentEventStreamReader is the EventStream reader for the SelectObjectContentEventStream events.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Close-instance_method" title="s3.SelectObjectContentEventStream.Close() (method)">func (es *SelectObjectContentEventStream) <strong>Close</strong>() error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Close closes the stream.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Err-instance_method" title="s3.SelectObjectContentEventStream.Err() (method)">func (es *SelectObjectContentEventStream) <strong>Err</strong>() error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Err returns any error that occurred while reading or writing EventStream Events from the service API’s response.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Events-instance_method" title="s3.SelectObjectContentEventStream.Events() (method)">func (es *SelectObjectContentEventStream) <strong>Events</strong>() <-chan types.SelectObjectContentEventStream </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Events returns a channel to read events from.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Structure Field Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Reader-field">
+  <strong>Reader</strong> <span class='object_link'><a href="SelectObjectContentEventStreamReader.html" title="s3.SelectObjectContentEventStreamReader (interface)">SelectObjectContentEventStreamReader</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>SelectObjectContentEventStreamReader is the EventStream reader for the SelectObjectContentEventStream events. This value is automatically set by the SDK when the API call is made Use this member when unit testing your code with the SDK to mock out the EventStream Reader.</p>
+
+<p>Must not be nil.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+  </div>
+
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Close-instance_method">
+  
+    func (es *<span class='object_link'><a href="" title="s3.SelectObjectContentEventStream (struct)">SelectObjectContentEventStream</a></span>) <strong><span class='object_link'><a href="#Close-instance_method" title="s3.SelectObjectContentEventStream.Close() (method)">Close</a></span></strong>() error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Close closes the stream. This will also cause the stream to be closed. Close must be called when done using the stream API. Not calling Close may result in resource leaks.</p>
+
+<p>Will close the underlying EventStream writer and reader, and no more events can be sent or received.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+435
+436
+437
+438</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/api_op_SelectObjectContent.go', line 435</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (es *SelectObjectContentEventStream) Close() <span class="hljs-constant">error</span> {
+	es.closeOnce.Do(es.safeClose)
+	<span class="hljs-keyword">return</span> es.Err()
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Err-instance_method">
+  
+    func (es *<span class='object_link'><a href="" title="s3.SelectObjectContentEventStream (struct)">SelectObjectContentEventStream</a></span>) <strong><span class='object_link'><a href="#Err-instance_method" title="s3.SelectObjectContentEventStream.Err() (method)">Err</a></span></strong>() error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Err returns any error that occurred while reading or writing EventStream Events from the service API’s response. Returns nil if there were no errors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/api_op_SelectObjectContent.go', line 448</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (es *SelectObjectContentEventStream) Err() <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">if</span> err := es.err.Err(); err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-keyword">if</span> err := es.Reader.Err(); err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Events-instance_method">
+  
+    func (es *<span class='object_link'><a href="" title="s3.SelectObjectContentEventStream (struct)">SelectObjectContentEventStream</a></span>) <strong><span class='object_link'><a href="#Events-instance_method" title="s3.SelectObjectContentEventStream.Events() (method)">Events</a></span></strong>() <-chan <span class='object_link'><a href="types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Events returns a channel to read events from.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+425
+426
+427</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/api_op_SelectObjectContent.go', line 425</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (es *SelectObjectContentEventStream) Events() <-<span class="hljs-keyword">chan</span> types.SelectObjectContentEventStream {
+	<span class="hljs-keyword">return</span> es.Reader.Events()
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:58 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

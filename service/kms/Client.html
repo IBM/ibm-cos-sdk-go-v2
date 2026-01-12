@@ -1,0 +1,4290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: kms.Client
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/kms.Client";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../kms.html" title="kms (package)">kms</a></span></span>
+     &raquo; 
+    <span class="title">Client</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: kms.Client
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/kms"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a unique asymmetric data key pair for use outside of KMS. This operation returns a plaintext public key and a copy of the private key that is encrypted under the symmetric encryption KMS key you specify. Unlike GenerateDataKeyPair, this operation does not return a plaintext private key. The bytes in the keys are random; they are not related to the caller or to the KMS key that is used to encrypt the private key.</p>
+
+<p>You can use the public key that GenerateDataKeyPairWithoutPlaintext returns to encrypt data or verify a signature outside of KMS. Then, store the encrypted private key with the data. When you are ready to decrypt data or sign a message, you can use the Decryptoperation to decrypt the encrypted private key.</p>
+
+<p>To generate a data key pair, you must specify a symmetric encryption KMS key to encrypt the private key in a data key pair. You cannot use an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the DescribeKeyoperation.</p>
+
+<p>Use the KeyPairSpec parameter to choose an RSA or Elliptic Curve (ECC) data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption or signing, but not both. However, KMS cannot enforce any restrictions on the use of data key pairs outside of KMS.</p>
+
+<p>GenerateDataKeyPairWithoutPlaintext returns a unique data key pair for each request. The bytes in the key are not related to the caller or KMS key that is used to encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p>
+
+<p>You can use an optional encryption context to add additional security to the encryption operation. If you specify an EncryptionContext , you must specify the same encryption context (a case-sensitive exact match) when decrypting the encrypted data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException . For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a> in the Key Management Service Developer Guide.</p>
+
+<p>The KMS key that you use for this operation must be in a compatible key state. For details, see states of KMS keys[https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html]in the Key Management Service Developer Guide.</p>
+
+<p>Cross-account use: Yes. To perform this operation with a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN in the value of the KeyId parameter.</p>
+
+<p>Required permissions: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateDataKeyPairWithoutPlaintext</a> (key policy)</p>
+
+<p>Related operations:</p>
+
+<h1 id="label-Decrypt">Decrypt</h1>
+
+<h1 id="label-Encrypt">Encrypt</h1>
+
+<h1 id="label-GenerateDataKey">GenerateDataKey</h1>
+
+<h1 id="label-GenerateDataKeyPair">GenerateDataKeyPair</h1>
+
+<h1 id="label-GenerateDataKeyWithoutPlaintext">GenerateDataKeyWithoutPlaintext</h1>
+
+<p>Eventual consistency: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="../s3/types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="DescribeCustomKeyStoresAPIClient.html" title="kms.DescribeCustomKeyStoresAPIClient (interface)">kms.DescribeCustomKeyStoresAPIClient</a></span>, <span class='object_link'><a href="../../aws/signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="../s3/HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="ListAliasesAPIClient.html" title="kms.ListAliasesAPIClient (interface)">kms.ListAliasesAPIClient</a></span>, <span class='object_link'><a href="ListGrantsAPIClient.html" title="kms.ListGrantsAPIClient (interface)">kms.ListGrantsAPIClient</a></span>, <span class='object_link'><a href="ListKeyPoliciesAPIClient.html" title="kms.ListKeyPoliciesAPIClient (interface)">kms.ListKeyPoliciesAPIClient</a></span>, <span class='object_link'><a href="ListKeyRotationsAPIClient.html" title="kms.ListKeyRotationsAPIClient (interface)">kms.ListKeyRotationsAPIClient</a></span>, <span class='object_link'><a href="ListKeysAPIClient.html" title="kms.ListKeysAPIClient (interface)">kms.ListKeysAPIClient</a></span>, <span class='object_link'><a href="ListResourceTagsAPIClient.html" title="kms.ListResourceTagsAPIClient (interface)">kms.ListResourceTagsAPIClient</a></span>, <span class='object_link'><a href="ListRetirableGrantsAPIClient.html" title="kms.ListRetirableGrantsAPIClient (interface)">kms.ListRetirableGrantsAPIClient</a></span>, <span class='object_link'><a href="../s3/types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="../s3/PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="../s3/types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CancelKeyDeletion-instance_method" title="kms.Client.CancelKeyDeletion() (method)">func (c *Client) <strong>CancelKeyDeletion</strong>(ctx context.Context, params *CancelKeyDeletionInput, optFns ...func(*Options)) (*CancelKeyDeletionOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ConnectCustomKeyStore-instance_method" title="kms.Client.ConnectCustomKeyStore() (method)">func (c *Client) <strong>ConnectCustomKeyStore</strong>(ctx context.Context, params *ConnectCustomKeyStoreInput, optFns ...func(*Options)) (*ConnectCustomKeyStoreOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CreateAlias-instance_method" title="kms.Client.CreateAlias() (method)">func (c *Client) <strong>CreateAlias</strong>(ctx context.Context, params *CreateAliasInput, optFns ...func(*Options)) (*CreateAliasOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CreateCustomKeyStore-instance_method" title="kms.Client.CreateCustomKeyStore() (method)">func (c *Client) <strong>CreateCustomKeyStore</strong>(ctx context.Context, params *CreateCustomKeyStoreInput, optFns ...func(*Options)) (*CreateCustomKeyStoreOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CreateGrant-instance_method" title="kms.Client.CreateGrant() (method)">func (c *Client) <strong>CreateGrant</strong>(ctx context.Context, params *CreateGrantInput, optFns ...func(*Options)) (*CreateGrantOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#CreateKey-instance_method" title="kms.Client.CreateKey() (method)">func (c *Client) <strong>CreateKey</strong>(ctx context.Context, params *CreateKeyInput, optFns ...func(*Options)) (*CreateKeyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Decrypt-instance_method" title="kms.Client.Decrypt() (method)">func (c *Client) <strong>Decrypt</strong>(ctx context.Context, params *DecryptInput, optFns ...func(*Options)) (*DecryptOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DeleteAlias-instance_method" title="kms.Client.DeleteAlias() (method)">func (c *Client) <strong>DeleteAlias</strong>(ctx context.Context, params *DeleteAliasInput, optFns ...func(*Options)) (*DeleteAliasOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DeleteCustomKeyStore-instance_method" title="kms.Client.DeleteCustomKeyStore() (method)">func (c *Client) <strong>DeleteCustomKeyStore</strong>(ctx context.Context, params *DeleteCustomKeyStoreInput, optFns ...func(*Options)) (*DeleteCustomKeyStoreOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DeleteImportedKeyMaterial-instance_method" title="kms.Client.DeleteImportedKeyMaterial() (method)">func (c *Client) <strong>DeleteImportedKeyMaterial</strong>(ctx context.Context, params *DeleteImportedKeyMaterialInput, optFns ...func(*Options)) (*DeleteImportedKeyMaterialOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DeriveSharedSecret-instance_method" title="kms.Client.DeriveSharedSecret() (method)">func (c *Client) <strong>DeriveSharedSecret</strong>(ctx context.Context, params *DeriveSharedSecretInput, optFns ...func(*Options)) (*DeriveSharedSecretOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DescribeCustomKeyStores-instance_method" title="kms.Client.DescribeCustomKeyStores() (method)">func (c *Client) <strong>DescribeCustomKeyStores</strong>(ctx context.Context, params *DescribeCustomKeyStoresInput, optFns ...func(*Options)) (*DescribeCustomKeyStoresOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DescribeKey-instance_method" title="kms.Client.DescribeKey() (method)">func (c *Client) <strong>DescribeKey</strong>(ctx context.Context, params *DescribeKeyInput, optFns ...func(*Options)) (*DescribeKeyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DisableKey-instance_method" title="kms.Client.DisableKey() (method)">func (c *Client) <strong>DisableKey</strong>(ctx context.Context, params *DisableKeyInput, optFns ...func(*Options)) (*DisableKeyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DisableKeyRotation-instance_method" title="kms.Client.DisableKeyRotation() (method)">func (c *Client) <strong>DisableKeyRotation</strong>(ctx context.Context, params *DisableKeyRotationInput, optFns ...func(*Options)) (*DisableKeyRotationOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DisconnectCustomKeyStore-instance_method" title="kms.Client.DisconnectCustomKeyStore() (method)">func (c *Client) <strong>DisconnectCustomKeyStore</strong>(ctx context.Context, params *DisconnectCustomKeyStoreInput, optFns ...func(*Options)) (*DisconnectCustomKeyStoreOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#EnableKey-instance_method" title="kms.Client.EnableKey() (method)">func (c *Client) <strong>EnableKey</strong>(ctx context.Context, params *EnableKeyInput, optFns ...func(*Options)) (*EnableKeyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#EnableKeyRotation-instance_method" title="kms.Client.EnableKeyRotation() (method)">func (c *Client) <strong>EnableKeyRotation</strong>(ctx context.Context, params *EnableKeyRotationInput, optFns ...func(*Options)) (*EnableKeyRotationOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Encrypt-instance_method" title="kms.Client.Encrypt() (method)">func (c *Client) <strong>Encrypt</strong>(ctx context.Context, params *EncryptInput, optFns ...func(*Options)) (*EncryptOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GenerateDataKey-instance_method" title="kms.Client.GenerateDataKey() (method)">func (c *Client) <strong>GenerateDataKey</strong>(ctx context.Context, params *GenerateDataKeyInput, optFns ...func(*Options)) (*GenerateDataKeyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GenerateDataKeyPair-instance_method" title="kms.Client.GenerateDataKeyPair() (method)">func (c *Client) <strong>GenerateDataKeyPair</strong>(ctx context.Context, params *GenerateDataKeyPairInput, optFns ...func(*Options)) (*GenerateDataKeyPairOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GenerateDataKeyPairWithoutPlaintext-instance_method" title="kms.Client.GenerateDataKeyPairWithoutPlaintext() (method)">func (c *Client) <strong>GenerateDataKeyPairWithoutPlaintext</strong>(ctx context.Context, params *GenerateDataKeyPairWithoutPlaintextInput, optFns ...func(*Options)) (*GenerateDataKeyPairWithoutPlaintextOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GenerateDataKeyWithoutPlaintext-instance_method" title="kms.Client.GenerateDataKeyWithoutPlaintext() (method)">func (c *Client) <strong>GenerateDataKeyWithoutPlaintext</strong>(ctx context.Context, params *GenerateDataKeyWithoutPlaintextInput, optFns ...func(*Options)) (*GenerateDataKeyWithoutPlaintextOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GenerateMac-instance_method" title="kms.Client.GenerateMac() (method)">func (c *Client) <strong>GenerateMac</strong>(ctx context.Context, params *GenerateMacInput, optFns ...func(*Options)) (*GenerateMacOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GenerateRandom-instance_method" title="kms.Client.GenerateRandom() (method)">func (c *Client) <strong>GenerateRandom</strong>(ctx context.Context, params *GenerateRandomInput, optFns ...func(*Options)) (*GenerateRandomOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetKeyPolicy-instance_method" title="kms.Client.GetKeyPolicy() (method)">func (c *Client) <strong>GetKeyPolicy</strong>(ctx context.Context, params *GetKeyPolicyInput, optFns ...func(*Options)) (*GetKeyPolicyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetKeyRotationStatus-instance_method" title="kms.Client.GetKeyRotationStatus() (method)">func (c *Client) <strong>GetKeyRotationStatus</strong>(ctx context.Context, params *GetKeyRotationStatusInput, optFns ...func(*Options)) (*GetKeyRotationStatusOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetParametersForImport-instance_method" title="kms.Client.GetParametersForImport() (method)">func (c *Client) <strong>GetParametersForImport</strong>(ctx context.Context, params *GetParametersForImportInput, optFns ...func(*Options)) (*GetParametersForImportOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetPublicKey-instance_method" title="kms.Client.GetPublicKey() (method)">func (c *Client) <strong>GetPublicKey</strong>(ctx context.Context, params *GetPublicKeyInput, optFns ...func(*Options)) (*GetPublicKeyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ImportKeyMaterial-instance_method" title="kms.Client.ImportKeyMaterial() (method)">func (c *Client) <strong>ImportKeyMaterial</strong>(ctx context.Context, params *ImportKeyMaterialInput, optFns ...func(*Options)) (*ImportKeyMaterialOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ListAliases-instance_method" title="kms.Client.ListAliases() (method)">func (c *Client) <strong>ListAliases</strong>(ctx context.Context, params *ListAliasesInput, optFns ...func(*Options)) (*ListAliasesOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ListGrants-instance_method" title="kms.Client.ListGrants() (method)">func (c *Client) <strong>ListGrants</strong>(ctx context.Context, params *ListGrantsInput, optFns ...func(*Options)) (*ListGrantsOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ListKeyPolicies-instance_method" title="kms.Client.ListKeyPolicies() (method)">func (c *Client) <strong>ListKeyPolicies</strong>(ctx context.Context, params *ListKeyPoliciesInput, optFns ...func(*Options)) (*ListKeyPoliciesOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ListKeyRotations-instance_method" title="kms.Client.ListKeyRotations() (method)">func (c *Client) <strong>ListKeyRotations</strong>(ctx context.Context, params *ListKeyRotationsInput, optFns ...func(*Options)) (*ListKeyRotationsOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ListKeys-instance_method" title="kms.Client.ListKeys() (method)">func (c *Client) <strong>ListKeys</strong>(ctx context.Context, params *ListKeysInput, optFns ...func(*Options)) (*ListKeysOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ListResourceTags-instance_method" title="kms.Client.ListResourceTags() (method)">func (c *Client) <strong>ListResourceTags</strong>(ctx context.Context, params *ListResourceTagsInput, optFns ...func(*Options)) (*ListResourceTagsOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ListRetirableGrants-instance_method" title="kms.Client.ListRetirableGrants() (method)">func (c *Client) <strong>ListRetirableGrants</strong>(ctx context.Context, params *ListRetirableGrantsInput, optFns ...func(*Options)) (*ListRetirableGrantsOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">func (c *Client) <strong>Options</strong>() Options </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Options returns a copy of the client configuration.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#PutKeyPolicy-instance_method" title="kms.Client.PutKeyPolicy() (method)">func (c *Client) <strong>PutKeyPolicy</strong>(ctx context.Context, params *PutKeyPolicyInput, optFns ...func(*Options)) (*PutKeyPolicyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ReEncrypt-instance_method" title="kms.Client.ReEncrypt() (method)">func (c *Client) <strong>ReEncrypt</strong>(ctx context.Context, params *ReEncryptInput, optFns ...func(*Options)) (*ReEncryptOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ReplicateKey-instance_method" title="kms.Client.ReplicateKey() (method)">func (c *Client) <strong>ReplicateKey</strong>(ctx context.Context, params *ReplicateKeyInput, optFns ...func(*Options)) (*ReplicateKeyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RetireGrant-instance_method" title="kms.Client.RetireGrant() (method)">func (c *Client) <strong>RetireGrant</strong>(ctx context.Context, params *RetireGrantInput, optFns ...func(*Options)) (*RetireGrantOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RevokeGrant-instance_method" title="kms.Client.RevokeGrant() (method)">func (c *Client) <strong>RevokeGrant</strong>(ctx context.Context, params *RevokeGrantInput, optFns ...func(*Options)) (*RevokeGrantOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RotateKeyOnDemand-instance_method" title="kms.Client.RotateKeyOnDemand() (method)">func (c *Client) <strong>RotateKeyOnDemand</strong>(ctx context.Context, params *RotateKeyOnDemandInput, optFns ...func(*Options)) (*RotateKeyOnDemandOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ScheduleKeyDeletion-instance_method" title="kms.Client.ScheduleKeyDeletion() (method)">func (c *Client) <strong>ScheduleKeyDeletion</strong>(ctx context.Context, params *ScheduleKeyDeletionInput, optFns ...func(*Options)) (*ScheduleKeyDeletionOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Sign-instance_method" title="kms.Client.Sign() (method)">func (c *Client) <strong>Sign</strong>(ctx context.Context, params *SignInput, optFns ...func(*Options)) (*SignOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#TagResource-instance_method" title="kms.Client.TagResource() (method)">func (c *Client) <strong>TagResource</strong>(ctx context.Context, params *TagResourceInput, optFns ...func(*Options)) (*TagResourceOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UntagResource-instance_method" title="kms.Client.UntagResource() (method)">func (c *Client) <strong>UntagResource</strong>(ctx context.Context, params *UntagResourceInput, optFns ...func(*Options)) (*UntagResourceOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UpdateAlias-instance_method" title="kms.Client.UpdateAlias() (method)">func (c *Client) <strong>UpdateAlias</strong>(ctx context.Context, params *UpdateAliasInput, optFns ...func(*Options)) (*UpdateAliasOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UpdateCustomKeyStore-instance_method" title="kms.Client.UpdateCustomKeyStore() (method)">func (c *Client) <strong>UpdateCustomKeyStore</strong>(ctx context.Context, params *UpdateCustomKeyStoreInput, optFns ...func(*Options)) (*UpdateCustomKeyStoreOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UpdateKeyDescription-instance_method" title="kms.Client.UpdateKeyDescription() (method)">func (c *Client) <strong>UpdateKeyDescription</strong>(ctx context.Context, params *UpdateKeyDescriptionInput, optFns ...func(*Options)) (*UpdateKeyDescriptionOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UpdatePrimaryRegion-instance_method" title="kms.Client.UpdatePrimaryRegion() (method)">func (c *Client) <strong>UpdatePrimaryRegion</strong>(ctx context.Context, params *UpdatePrimaryRegionInput, optFns ...func(*Options)) (*UpdatePrimaryRegionOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Verify-instance_method" title="kms.Client.Verify() (method)">func (c *Client) <strong>Verify</strong>(ctx context.Context, params *VerifyInput, optFns ...func(*Options)) (*VerifyOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#VerifyMac-instance_method" title="kms.Client.VerifyMac() (method)">func (c *Client) <strong>VerifyMac</strong>(ctx context.Context, params *VerifyMacInput, optFns ...func(*Options)) (*VerifyMacOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="CancelKeyDeletion-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CancelKeyDeletion-instance_method" title="kms.Client.CancelKeyDeletion() (method)">CancelKeyDeletion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CancelKeyDeletionInput" title="kms (package)">CancelKeyDeletionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CancelKeyDeletionOutput" title="kms (package)">CancelKeyDeletionOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_CancelKeyDeletion.go', line 35</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) CancelKeyDeletion(ctx context.Context, params *CancelKeyDeletionInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*CancelKeyDeletionOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &CancelKeyDeletionInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"CancelKeyDeletion"</span>, params, optFns, c.addOperationCancelKeyDeletionMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*CancelKeyDeletionOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ConnectCustomKeyStore-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ConnectCustomKeyStore-instance_method" title="kms.Client.ConnectCustomKeyStore() (method)">ConnectCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ConnectCustomKeyStoreInput" title="kms (package)">ConnectCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ConnectCustomKeyStoreOutput" title="kms (package)">ConnectCustomKeyStoreOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ConnectCustomKeyStore.go', line 105</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ConnectCustomKeyStore(ctx context.Context, params *ConnectCustomKeyStoreInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ConnectCustomKeyStoreOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ConnectCustomKeyStoreInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ConnectCustomKeyStore"</span>, params, optFns, c.addOperationConnectCustomKeyStoreMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ConnectCustomKeyStoreOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CreateAlias-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateAlias-instance_method" title="kms.Client.CreateAlias() (method)">CreateAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateAliasInput" title="kms (package)">CreateAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateAliasOutput" title="kms (package)">CreateAliasOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_CreateAlias.go', line 68</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) CreateAlias(ctx context.Context, params *CreateAliasInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*CreateAliasOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &CreateAliasInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"CreateAlias"</span>, params, optFns, c.addOperationCreateAliasMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*CreateAliasOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CreateCustomKeyStore-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateCustomKeyStore-instance_method" title="kms.Client.CreateCustomKeyStore() (method)">CreateCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateCustomKeyStoreInput" title="kms (package)">CreateCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateCustomKeyStoreOutput" title="kms (package)">CreateCustomKeyStoreOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_CreateCustomKeyStore.go', line 97</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) CreateCustomKeyStore(ctx context.Context, params *CreateCustomKeyStoreInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*CreateCustomKeyStoreOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &CreateCustomKeyStoreInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"CreateCustomKeyStore"</span>, params, optFns, c.addOperationCreateCustomKeyStoreMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*CreateCustomKeyStoreOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CreateGrant-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateGrant-instance_method" title="kms.Client.CreateGrant() (method)">CreateGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateGrantInput" title="kms (package)">CreateGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateGrantOutput" title="kms (package)">CreateGrantOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_CreateGrant.go', line 72</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) CreateGrant(ctx context.Context, params *CreateGrantInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*CreateGrantOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &CreateGrantInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"CreateGrant"</span>, params, optFns, c.addOperationCreateGrantMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*CreateGrantOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="CreateKey-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateKey-instance_method" title="kms.Client.CreateKey() (method)">CreateKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateKeyInput" title="kms (package)">CreateKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateKeyOutput" title="kms (package)">CreateKeyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_CreateKey.go', line 184</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) CreateKey(ctx context.Context, params *CreateKeyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*CreateKeyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &CreateKeyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"CreateKey"</span>, params, optFns, c.addOperationCreateKeyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*CreateKeyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Decrypt-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Decrypt-instance_method" title="kms.Client.Decrypt() (method)">Decrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DecryptInput" title="kms (package)">DecryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DecryptOutput" title="kms (package)">DecryptOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_Decrypt.go', line 97</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) Decrypt(ctx context.Context, params *DecryptInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DecryptOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DecryptInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"Decrypt"</span>, params, optFns, c.addOperationDecryptMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DecryptOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DeleteAlias-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteAlias-instance_method" title="kms.Client.DeleteAlias() (method)">DeleteAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteAliasInput" title="kms (package)">DeleteAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteAliasOutput" title="kms (package)">DeleteAliasOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DeleteAlias.go', line 54</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DeleteAlias(ctx context.Context, params *DeleteAliasInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DeleteAliasOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DeleteAliasInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DeleteAlias"</span>, params, optFns, c.addOperationDeleteAliasMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DeleteAliasOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DeleteCustomKeyStore-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteCustomKeyStore-instance_method" title="kms.Client.DeleteCustomKeyStore() (method)">DeleteCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteCustomKeyStoreInput" title="kms (package)">DeleteCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteCustomKeyStoreOutput" title="kms (package)">DeleteCustomKeyStoreOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DeleteCustomKeyStore.go', line 71</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DeleteCustomKeyStore(ctx context.Context, params *DeleteCustomKeyStoreInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DeleteCustomKeyStoreOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DeleteCustomKeyStoreInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DeleteCustomKeyStore"</span>, params, optFns, c.addOperationDeleteCustomKeyStoreMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DeleteCustomKeyStoreOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DeleteImportedKeyMaterial-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteImportedKeyMaterial-instance_method" title="kms.Client.DeleteImportedKeyMaterial() (method)">DeleteImportedKeyMaterial</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteImportedKeyMaterialInput" title="kms (package)">DeleteImportedKeyMaterialInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteImportedKeyMaterialOutput" title="kms (package)">DeleteImportedKeyMaterialOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DeleteImportedKeyMaterial.go', line 42</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DeleteImportedKeyMaterial(ctx context.Context, params *DeleteImportedKeyMaterialInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DeleteImportedKeyMaterialOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DeleteImportedKeyMaterialInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DeleteImportedKeyMaterial"</span>, params, optFns, c.addOperationDeleteImportedKeyMaterialMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DeleteImportedKeyMaterialOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DeriveSharedSecret-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeriveSharedSecret-instance_method" title="kms.Client.DeriveSharedSecret() (method)">DeriveSharedSecret</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeriveSharedSecretInput" title="kms (package)">DeriveSharedSecretInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeriveSharedSecretOutput" title="kms (package)">DeriveSharedSecretOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DeriveSharedSecret.go', line 95</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DeriveSharedSecret(ctx context.Context, params *DeriveSharedSecretInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DeriveSharedSecretOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DeriveSharedSecretInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DeriveSharedSecret"</span>, params, optFns, c.addOperationDeriveSharedSecretMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DeriveSharedSecretOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DescribeCustomKeyStores-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DescribeCustomKeyStores-instance_method" title="kms.Client.DescribeCustomKeyStores() (method)">DescribeCustomKeyStores</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DescribeCustomKeyStoresInput" title="kms (package)">DescribeCustomKeyStoresInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DescribeCustomKeyStoresOutput" title="kms (package)">DescribeCustomKeyStoresOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DescribeCustomKeyStores.go', line 68</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DescribeCustomKeyStores(ctx context.Context, params *DescribeCustomKeyStoresInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DescribeCustomKeyStoresOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DescribeCustomKeyStoresInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DescribeCustomKeyStores"</span>, params, optFns, c.addOperationDescribeCustomKeyStoresMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DescribeCustomKeyStoresOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DescribeKey-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DescribeKey-instance_method" title="kms.Client.DescribeKey() (method)">DescribeKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DescribeKeyInput" title="kms (package)">DescribeKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DescribeKeyOutput" title="kms (package)">DescribeKeyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DescribeKey.go', line 80</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DescribeKey(ctx context.Context, params *DescribeKeyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DescribeKeyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DescribeKeyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DescribeKey"</span>, params, optFns, c.addOperationDescribeKeyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DescribeKeyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DisableKey-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DisableKey-instance_method" title="kms.Client.DisableKey() (method)">DisableKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisableKeyInput" title="kms (package)">DisableKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisableKeyOutput" title="kms (package)">DisableKeyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DisableKey.go', line 35</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DisableKey(ctx context.Context, params *DisableKeyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DisableKeyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DisableKeyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DisableKey"</span>, params, optFns, c.addOperationDisableKeyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DisableKeyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DisableKeyRotation-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DisableKeyRotation-instance_method" title="kms.Client.DisableKeyRotation() (method)">DisableKeyRotation</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisableKeyRotationInput" title="kms (package)">DisableKeyRotationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisableKeyRotationOutput" title="kms (package)">DisableKeyRotationOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DisableKeyRotation.go', line 59</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DisableKeyRotation(ctx context.Context, params *DisableKeyRotationInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DisableKeyRotationOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DisableKeyRotationInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DisableKeyRotation"</span>, params, optFns, c.addOperationDisableKeyRotationMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DisableKeyRotationOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DisconnectCustomKeyStore-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DisconnectCustomKeyStore-instance_method" title="kms.Client.DisconnectCustomKeyStore() (method)">DisconnectCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisconnectCustomKeyStoreInput" title="kms (package)">DisconnectCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisconnectCustomKeyStoreOutput" title="kms (package)">DisconnectCustomKeyStoreOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_DisconnectCustomKeyStore.go', line 60</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) DisconnectCustomKeyStore(ctx context.Context, params *DisconnectCustomKeyStoreInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*DisconnectCustomKeyStoreOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &DisconnectCustomKeyStoreInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"DisconnectCustomKeyStore"</span>, params, optFns, c.addOperationDisconnectCustomKeyStoreMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*DisconnectCustomKeyStoreOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="EnableKey-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#EnableKey-instance_method" title="kms.Client.EnableKey() (method)">EnableKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EnableKeyInput" title="kms (package)">EnableKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EnableKeyOutput" title="kms (package)">EnableKeyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_EnableKey.go', line 32</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) EnableKey(ctx context.Context, params *EnableKeyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*EnableKeyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &EnableKeyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"EnableKey"</span>, params, optFns, c.addOperationEnableKeyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*EnableKeyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="EnableKeyRotation-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#EnableKeyRotation-instance_method" title="kms.Client.EnableKeyRotation() (method)">EnableKeyRotation</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EnableKeyRotationInput" title="kms (package)">EnableKeyRotationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EnableKeyRotationOutput" title="kms (package)">EnableKeyRotationOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_EnableKeyRotation.go', line 83</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) EnableKeyRotation(ctx context.Context, params *EnableKeyRotationInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*EnableKeyRotationOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &EnableKeyRotationInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"EnableKeyRotation"</span>, params, optFns, c.addOperationEnableKeyRotationMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*EnableKeyRotationOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Encrypt-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Encrypt-instance_method" title="kms.Client.Encrypt() (method)">Encrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EncryptInput" title="kms (package)">EncryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EncryptOutput" title="kms (package)">EncryptOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_Encrypt.go', line 94</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) Encrypt(ctx context.Context, params *EncryptInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*EncryptOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &EncryptInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"Encrypt"</span>, params, optFns, c.addOperationEncryptMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*EncryptOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GenerateDataKey-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateDataKey-instance_method" title="kms.Client.GenerateDataKey() (method)">GenerateDataKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyInput" title="kms (package)">GenerateDataKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyOutput" title="kms (package)">GenerateDataKeyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GenerateDataKey.go', line 112</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GenerateDataKey(ctx context.Context, params *GenerateDataKeyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GenerateDataKeyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GenerateDataKeyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GenerateDataKey"</span>, params, optFns, c.addOperationGenerateDataKeyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GenerateDataKeyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GenerateDataKeyPair-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateDataKeyPair-instance_method" title="kms.Client.GenerateDataKeyPair() (method)">GenerateDataKeyPair</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairInput" title="kms (package)">GenerateDataKeyPairInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairOutput" title="kms (package)">GenerateDataKeyPairOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GenerateDataKeyPair.go', line 103</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GenerateDataKeyPair(ctx context.Context, params *GenerateDataKeyPairInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GenerateDataKeyPairOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GenerateDataKeyPairInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GenerateDataKeyPair"</span>, params, optFns, c.addOperationGenerateDataKeyPairMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GenerateDataKeyPairOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GenerateDataKeyPairWithoutPlaintext-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateDataKeyPairWithoutPlaintext-instance_method" title="kms.Client.GenerateDataKeyPairWithoutPlaintext() (method)">GenerateDataKeyPairWithoutPlaintext</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairWithoutPlaintextInput" title="kms (package)">GenerateDataKeyPairWithoutPlaintextInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairWithoutPlaintextOutput" title="kms (package)">GenerateDataKeyPairWithoutPlaintextOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GenerateDataKeyPairWithoutPlaintext.go', line 77</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GenerateDataKeyPairWithoutPlaintext(ctx context.Context, params *GenerateDataKeyPairWithoutPlaintextInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GenerateDataKeyPairWithoutPlaintextOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GenerateDataKeyPairWithoutPlaintextInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GenerateDataKeyPairWithoutPlaintext"</span>, params, optFns, c.addOperationGenerateDataKeyPairWithoutPlaintextMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GenerateDataKeyPairWithoutPlaintextOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GenerateDataKeyWithoutPlaintext-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateDataKeyWithoutPlaintext-instance_method" title="kms.Client.GenerateDataKeyWithoutPlaintext() (method)">GenerateDataKeyWithoutPlaintext</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyWithoutPlaintextInput" title="kms (package)">GenerateDataKeyWithoutPlaintextInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyWithoutPlaintextOutput" title="kms (package)">GenerateDataKeyWithoutPlaintextOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GenerateDataKeyWithoutPlaintext.go', line 87</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GenerateDataKeyWithoutPlaintext(ctx context.Context, params *GenerateDataKeyWithoutPlaintextInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GenerateDataKeyWithoutPlaintextOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GenerateDataKeyWithoutPlaintextInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GenerateDataKeyWithoutPlaintext"</span>, params, optFns, c.addOperationGenerateDataKeyWithoutPlaintextMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GenerateDataKeyWithoutPlaintextOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GenerateMac-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateMac-instance_method" title="kms.Client.GenerateMac() (method)">GenerateMac</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateMacInput" title="kms (package)">GenerateMacInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateMacOutput" title="kms (package)">GenerateMacOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GenerateMac.go', line 51</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GenerateMac(ctx context.Context, params *GenerateMacInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GenerateMacOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GenerateMacInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GenerateMac"</span>, params, optFns, c.addOperationGenerateMacMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GenerateMacOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GenerateRandom-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateRandom-instance_method" title="kms.Client.GenerateRandom() (method)">GenerateRandom</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateRandomInput" title="kms (package)">GenerateRandomInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateRandomOutput" title="kms (package)">GenerateRandomOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GenerateRandom.go', line 47</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GenerateRandom(ctx context.Context, params *GenerateRandomInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GenerateRandomOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GenerateRandomInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GenerateRandom"</span>, params, optFns, c.addOperationGenerateRandomMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GenerateRandomOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetKeyPolicy-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetKeyPolicy-instance_method" title="kms.Client.GetKeyPolicy() (method)">GetKeyPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetKeyPolicyInput" title="kms (package)">GetKeyPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetKeyPolicyOutput" title="kms (package)">GetKeyPolicyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GetKeyPolicy.go', line 27</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GetKeyPolicy(ctx context.Context, params *GetKeyPolicyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GetKeyPolicyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GetKeyPolicyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GetKeyPolicy"</span>, params, optFns, c.addOperationGetKeyPolicyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GetKeyPolicyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetKeyRotationStatus-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetKeyRotationStatus-instance_method" title="kms.Client.GetKeyRotationStatus() (method)">GetKeyRotationStatus</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetKeyRotationStatusInput" title="kms (package)">GetKeyRotationStatusInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetKeyRotationStatusOutput" title="kms (package)">GetKeyRotationStatusOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GetKeyRotationStatus.go', line 82</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GetKeyRotationStatus(ctx context.Context, params *GetKeyRotationStatusInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GetKeyRotationStatusOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GetKeyRotationStatusInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GetKeyRotationStatus"</span>, params, optFns, c.addOperationGetKeyRotationStatusMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GetKeyRotationStatusOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetParametersForImport-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetParametersForImport-instance_method" title="kms.Client.GetParametersForImport() (method)">GetParametersForImport</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetParametersForImportInput" title="kms (package)">GetParametersForImportInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetParametersForImportOutput" title="kms (package)">GetParametersForImportOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GetParametersForImport.go', line 86</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GetParametersForImport(ctx context.Context, params *GetParametersForImportInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GetParametersForImportOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GetParametersForImportInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GetParametersForImport"</span>, params, optFns, c.addOperationGetParametersForImportMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GetParametersForImportOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetPublicKey-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetPublicKey-instance_method" title="kms.Client.GetPublicKey() (method)">GetPublicKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetPublicKeyInput" title="kms (package)">GetPublicKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetPublicKeyOutput" title="kms (package)">GetPublicKeyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_GetPublicKey.go', line 76</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) GetPublicKey(ctx context.Context, params *GetPublicKeyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*GetPublicKeyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &GetPublicKeyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"GetPublicKey"</span>, params, optFns, c.addOperationGetPublicKeyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*GetPublicKeyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ImportKeyMaterial-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ImportKeyMaterial-instance_method" title="kms.Client.ImportKeyMaterial() (method)">ImportKeyMaterial</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ImportKeyMaterialInput" title="kms (package)">ImportKeyMaterialInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ImportKeyMaterialOutput" title="kms (package)">ImportKeyMaterialOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ImportKeyMaterial.go', line 119</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ImportKeyMaterial(ctx context.Context, params *ImportKeyMaterialInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ImportKeyMaterialOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ImportKeyMaterialInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ImportKeyMaterial"</span>, params, optFns, c.addOperationImportKeyMaterialMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ImportKeyMaterialOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ListAliases-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListAliases-instance_method" title="kms.Client.ListAliases() (method)">ListAliases</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListAliasesInput" title="kms (package)">ListAliasesInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListAliasesOutput" title="kms (package)">ListAliasesOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ListAliases.go', line 53</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ListAliases(ctx context.Context, params *ListAliasesInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ListAliasesOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ListAliasesInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ListAliases"</span>, params, optFns, c.addOperationListAliasesMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ListAliasesOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ListGrants-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListGrants-instance_method" title="kms.Client.ListGrants() (method)">ListGrants</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListGrantsInput" title="kms (package)">ListGrantsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListGrantsOutput" title="kms (package)">ListGrantsOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ListGrants.go', line 52</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ListGrants(ctx context.Context, params *ListGrantsInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ListGrantsOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ListGrantsInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ListGrants"</span>, params, optFns, c.addOperationListGrantsMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ListGrantsOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ListKeyPolicies-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListKeyPolicies-instance_method" title="kms.Client.ListKeyPolicies() (method)">ListKeyPolicies</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeyPoliciesInput" title="kms (package)">ListKeyPoliciesInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeyPoliciesOutput" title="kms (package)">ListKeyPoliciesOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ListKeyPolicies.go', line 33</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ListKeyPolicies(ctx context.Context, params *ListKeyPoliciesInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ListKeyPoliciesOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ListKeyPoliciesInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ListKeyPolicies"</span>, params, optFns, c.addOperationListKeyPoliciesMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ListKeyPoliciesOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ListKeyRotations-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListKeyRotations-instance_method" title="kms.Client.ListKeyRotations() (method)">ListKeyRotations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeyRotationsInput" title="kms (package)">ListKeyRotationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeyRotationsOutput" title="kms (package)">ListKeyRotationsOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ListKeyRotations.go', line 43</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ListKeyRotations(ctx context.Context, params *ListKeyRotationsInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ListKeyRotationsOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ListKeyRotationsInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ListKeyRotations"</span>, params, optFns, c.addOperationListKeyRotationsMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ListKeyRotationsOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ListKeys-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListKeys-instance_method" title="kms.Client.ListKeys() (method)">ListKeys</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeysInput" title="kms (package)">ListKeysInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeysOutput" title="kms (package)">ListKeysOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ListKeys.go', line 36</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ListKeys(ctx context.Context, params *ListKeysInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ListKeysOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ListKeysInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ListKeys"</span>, params, optFns, c.addOperationListKeysMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ListKeysOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ListResourceTags-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListResourceTags-instance_method" title="kms.Client.ListResourceTags() (method)">ListResourceTags</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListResourceTagsInput" title="kms (package)">ListResourceTagsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListResourceTagsOutput" title="kms (package)">ListResourceTagsOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ListResourceTags.go', line 41</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ListResourceTags(ctx context.Context, params *ListResourceTagsInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ListResourceTagsOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ListResourceTagsInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ListResourceTags"</span>, params, optFns, c.addOperationListResourceTagsMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ListResourceTagsOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ListRetirableGrants-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListRetirableGrants-instance_method" title="kms.Client.ListRetirableGrants() (method)">ListRetirableGrants</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListRetirableGrantsInput" title="kms (package)">ListRetirableGrantsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListRetirableGrantsOutput" title="kms (package)">ListRetirableGrantsOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ListRetirableGrants.go', line 58</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ListRetirableGrants(ctx context.Context, params *ListRetirableGrantsInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ListRetirableGrantsOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ListRetirableGrantsInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ListRetirableGrants"</span>, params, optFns, c.addOperationListRetirableGrantsMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ListRetirableGrantsOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Options-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span></strong>() <span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Options returns a copy of the client configuration.</p>
+
+<p>Callers SHOULD NOT perform mutations on any inner structures within client config. Config overrides should instead be made on a per-operation basis through functional options.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+221
+222
+223</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_client.go', line 221</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) Options() Options {
+	<span class="hljs-keyword">return</span> c.options.Copy()
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="PutKeyPolicy-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutKeyPolicy-instance_method" title="kms.Client.PutKeyPolicy() (method)">PutKeyPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-PutKeyPolicyInput" title="kms (package)">PutKeyPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-PutKeyPolicyOutput" title="kms (package)">PutKeyPolicyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_PutKeyPolicy.go', line 35</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) PutKeyPolicy(ctx context.Context, params *PutKeyPolicyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*PutKeyPolicyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &PutKeyPolicyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"PutKeyPolicy"</span>, params, optFns, c.addOperationPutKeyPolicyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*PutKeyPolicyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ReEncrypt-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ReEncrypt-instance_method" title="kms.Client.ReEncrypt() (method)">ReEncrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ReEncryptInput" title="kms (package)">ReEncryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ReEncryptOutput" title="kms (package)">ReEncryptOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ReEncrypt.go', line 109</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ReEncrypt(ctx context.Context, params *ReEncryptInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ReEncryptOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ReEncryptInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ReEncrypt"</span>, params, optFns, c.addOperationReEncryptMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ReEncryptOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ReplicateKey-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ReplicateKey-instance_method" title="kms.Client.ReplicateKey() (method)">ReplicateKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ReplicateKeyInput" title="kms (package)">ReplicateKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ReplicateKeyOutput" title="kms (package)">ReplicateKeyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ReplicateKey.go', line 100</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ReplicateKey(ctx context.Context, params *ReplicateKeyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ReplicateKeyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ReplicateKeyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ReplicateKey"</span>, params, optFns, c.addOperationReplicateKeyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ReplicateKeyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RetireGrant-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#RetireGrant-instance_method" title="kms.Client.RetireGrant() (method)">RetireGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RetireGrantInput" title="kms (package)">RetireGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RetireGrantOutput" title="kms (package)">RetireGrantOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_RetireGrant.go', line 51</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) RetireGrant(ctx context.Context, params *RetireGrantInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*RetireGrantOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &RetireGrantInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"RetireGrant"</span>, params, optFns, c.addOperationRetireGrantMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*RetireGrantOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RevokeGrant-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#RevokeGrant-instance_method" title="kms.Client.RevokeGrant() (method)">RevokeGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RevokeGrantInput" title="kms (package)">RevokeGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RevokeGrantOutput" title="kms (package)">RevokeGrantOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_RevokeGrant.go', line 50</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) RevokeGrant(ctx context.Context, params *RevokeGrantInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*RevokeGrantOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &RevokeGrantInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"RevokeGrant"</span>, params, optFns, c.addOperationRevokeGrantMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*RevokeGrantOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RotateKeyOnDemand-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#RotateKeyOnDemand-instance_method" title="kms.Client.RotateKeyOnDemand() (method)">RotateKeyOnDemand</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RotateKeyOnDemandInput" title="kms (package)">RotateKeyOnDemandInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RotateKeyOnDemandOutput" title="kms (package)">RotateKeyOnDemandOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_RotateKeyOnDemand.go', line 74</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) RotateKeyOnDemand(ctx context.Context, params *RotateKeyOnDemandInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*RotateKeyOnDemandOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &RotateKeyOnDemandInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"RotateKeyOnDemand"</span>, params, optFns, c.addOperationRotateKeyOnDemandMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*RotateKeyOnDemandOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ScheduleKeyDeletion-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ScheduleKeyDeletion-instance_method" title="kms.Client.ScheduleKeyDeletion() (method)">ScheduleKeyDeletion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ScheduleKeyDeletionInput" title="kms (package)">ScheduleKeyDeletionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ScheduleKeyDeletionOutput" title="kms (package)">ScheduleKeyDeletionOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_ScheduleKeyDeletion.go', line 75</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) ScheduleKeyDeletion(ctx context.Context, params *ScheduleKeyDeletionInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ScheduleKeyDeletionOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ScheduleKeyDeletionInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"ScheduleKeyDeletion"</span>, params, optFns, c.addOperationScheduleKeyDeletionMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*ScheduleKeyDeletionOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Sign-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Sign-instance_method" title="kms.Client.Sign() (method)">Sign</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-SignInput" title="kms (package)">SignInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-SignOutput" title="kms (package)">SignOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_Sign.go', line 70</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) Sign(ctx context.Context, params *SignInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*SignOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &SignInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"Sign"</span>, params, optFns, c.addOperationSignMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*SignOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="TagResource-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#TagResource-instance_method" title="kms.Client.TagResource() (method)">TagResource</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-TagResourceInput" title="kms (package)">TagResourceInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-TagResourceOutput" title="kms (package)">TagResourceOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_TagResource.go', line 63</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) TagResource(ctx context.Context, params *TagResourceInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*TagResourceOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &TagResourceInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"TagResource"</span>, params, optFns, c.addOperationTagResourceMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*TagResourceOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UntagResource-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UntagResource-instance_method" title="kms.Client.UntagResource() (method)">UntagResource</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UntagResourceInput" title="kms (package)">UntagResourceInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UntagResourceOutput" title="kms (package)">UntagResourceOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_UntagResource.go', line 54</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) UntagResource(ctx context.Context, params *UntagResourceInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*UntagResourceOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &UntagResourceInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"UntagResource"</span>, params, optFns, c.addOperationUntagResourceMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*UntagResourceOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UpdateAlias-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UpdateAlias-instance_method" title="kms.Client.UpdateAlias() (method)">UpdateAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateAliasInput" title="kms (package)">UpdateAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateAliasOutput" title="kms (package)">UpdateAliasOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_UpdateAlias.go', line 69</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) UpdateAlias(ctx context.Context, params *UpdateAliasInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*UpdateAliasOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &UpdateAliasInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"UpdateAlias"</span>, params, optFns, c.addOperationUpdateAliasMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*UpdateAliasOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UpdateCustomKeyStore-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UpdateCustomKeyStore-instance_method" title="kms.Client.UpdateCustomKeyStore() (method)">UpdateCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateCustomKeyStoreInput" title="kms (package)">UpdateCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateCustomKeyStoreOutput" title="kms (package)">UpdateCustomKeyStoreOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_UpdateCustomKeyStore.go', line 100</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) UpdateCustomKeyStore(ctx context.Context, params *UpdateCustomKeyStoreInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*UpdateCustomKeyStoreOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &UpdateCustomKeyStoreInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"UpdateCustomKeyStore"</span>, params, optFns, c.addOperationUpdateCustomKeyStoreMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*UpdateCustomKeyStoreOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UpdateKeyDescription-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UpdateKeyDescription-instance_method" title="kms.Client.UpdateKeyDescription() (method)">UpdateKeyDescription</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateKeyDescriptionInput" title="kms (package)">UpdateKeyDescriptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateKeyDescriptionOutput" title="kms (package)">UpdateKeyDescriptionOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_UpdateKeyDescription.go', line 35</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) UpdateKeyDescription(ctx context.Context, params *UpdateKeyDescriptionInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*UpdateKeyDescriptionOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &UpdateKeyDescriptionInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"UpdateKeyDescription"</span>, params, optFns, c.addOperationUpdateKeyDescriptionMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*UpdateKeyDescriptionOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UpdatePrimaryRegion-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UpdatePrimaryRegion-instance_method" title="kms.Client.UpdatePrimaryRegion() (method)">UpdatePrimaryRegion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdatePrimaryRegionInput" title="kms (package)">UpdatePrimaryRegionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdatePrimaryRegionOutput" title="kms (package)">UpdatePrimaryRegionOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_UpdatePrimaryRegion.go', line 87</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) UpdatePrimaryRegion(ctx context.Context, params *UpdatePrimaryRegionInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*UpdatePrimaryRegionOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &UpdatePrimaryRegionInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"UpdatePrimaryRegion"</span>, params, optFns, c.addOperationUpdatePrimaryRegionMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*UpdatePrimaryRegionOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Verify-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Verify-instance_method" title="kms.Client.Verify() (method)">Verify</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-VerifyInput" title="kms (package)">VerifyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-VerifyOutput" title="kms (package)">VerifyOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_Verify.go', line 64</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) Verify(ctx context.Context, params *VerifyInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*VerifyOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &VerifyInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"Verify"</span>, params, optFns, c.addOperationVerifyMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*VerifyOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="VerifyMac-instance_method">
+  
+    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#VerifyMac-instance_method" title="kms.Client.VerifyMac() (method)">VerifyMac</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-VerifyMacInput" title="kms (package)">VerifyMacInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-VerifyMacOutput" title="kms (package)">VerifyMacOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/kms/api_op_VerifyMac.go', line 46</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (c *Client) VerifyMac(ctx context.Context, params *VerifyMacInput, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*VerifyMacOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &VerifyMacInput{}
+	}
+
+	result, metadata, err := c.invokeOperation(ctx, <span class="hljs-string">"VerifyMac"</span>, params, optFns, c.addOperationVerifyMacMiddlewares)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+
+	out := result.(*VerifyMacOutput)
+	out.ResultMetadata = metadata
+	<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:52 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

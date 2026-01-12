@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: retry
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/retry";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (r)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../aws.html" title="aws (package)">aws</a></span></span>
+     &raquo; 
+    <span class="title">retry</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: retry
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/retry"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Package retry provides interfaces and implementations for SDK request retry behavior.</p>
+
+<h1 id="label-Retryer+Interface+and+Implementations">Retryer Interface and Implementations</h1>
+
+<p>This package defines Retryer interface that is used to either implement custom retry behavior or to extend the existing retry implementations provided by the SDK. This package provides a single retry implementation: Standard.</p>
+
+<h1 id="label-Standard">Standard</h1>
+
+<p>Standard is the default retryer implementation used by service clients. The standard retryer is a rate limited retryer that has a configurable max attempts to limit the number of retry attempts when a retryable error occurs. In addition, the retryer uses a configurable token bucket to rate limit the retry attempts across the client, and uses an additional delay policy to limit the time between a requests subsequent attempts.</p>
+
+<p>By default the standard retryer uses the DefaultRetryables slice of IsErrorRetryable types to determine whether a given error is retryable. By default this list of retryables includes the following:  - Retrying errors that implement the RetryableError method, and return true.  - Connection Errors  - Errors that implement a ConnectionError, Temporary, or Timeout method that return true.  - Connection Reset Errors.  - net.OpErr types that are dialing errors or are temporary.  - HTTP Status Codes: 500, 502, 503, and 504.  - API Error Codes  - RequestTimeout, RequestTimeoutException  - Throttling, ThrottlingException, ThrottledException, RequestThrottledException, TooManyRequestsException,  RequestThrottled, SlowDown, EC2ThrottledException  - ProvisionedThroughputExceededException, RequestLimitExceeded, BandwidthLimitExceeded, LimitExceededException  - TransactionInProgressException, PriorRequestNotComplete</p>
+
+<p>The standard retryer will not retry a request in the event if the context associated with the request has been cancelled. Applications must handle this case explicitly if they wish to retry with a different context value.</p>
+
+<p>You can configure the standard retryer implementation to fit your applications by constructing a standard retryer using the NewStandard function, and providing one more functional argument that mutate the StandardOptions structure. StandardOptions provides the ability to modify the token bucket rate limiter, retryable error conditions, and the retry delay policy.</p>
+
+<p>For example to modify the default retry attempts for the standard retryer:</p>
+
+<pre class="code go"><code class="go"><div class="hljs"><span class="hljs-comment">// configure the custom retryer</span>
+customRetry := retry.NewStandard(<span class="hljs-keyword">func</span>(o *retry.StandardOptions) {
+    o.MaxAttempts = 5
+})
+
+<span class="hljs-comment">// create a service client with the retryer</span>
+s3.NewFromConfig(cfg, <span class="hljs-keyword">func</span>(o *s3.Options) {
+    o.Retryer = customRetry
+})
+</div></code></pre>
+
+<h1 id="label-Utilities">Utilities</h1>
+
+<p>A number of package functions have been provided to easily wrap retryer implementations in an implementation agnostic way. These are:</p>
+
+<pre class="code go"><code class="go"><div class="hljs">AddWithErrorCodes      - Provides the ability to add additional API <span class="hljs-constant">error</span> codes that should be considered retryable
+                        in addition to those considered retryable by the provided retryer.
+
+AddWithMaxAttempts     - Provides the ability to set the max number of attempts <span class="hljs-keyword">for</span> retrying a request by wrapping
+                         a retryer implementation.
+
+AddWithMaxBackoffDelay - Provides the ability to set the max back off delay that can occur before retrying a
+                         request by wrapping a retryer implementation.
+</div></code></pre>
+
+<p>The following package functions have been provided to easily satisfy different retry interfaces to further customize a given retryer’s behavior:</p>
+
+<pre class="code go"><code class="go"><div class="hljs">BackoffDelayerFunc   - Can be used to wrap a function to satisfy the BackoffDelayer <span class="hljs-keyword">interface</span>. For example,
+                       you can use this method to easily create custom back off policies to be used with the
+                       standard retryer.
+
+IsErrorRetryableFunc - Can be used to wrap a function to satisfy the IsErrorRetryable <span class="hljs-keyword">interface</span>. For example,
+                       this can be used to extend the standard retryer to add additional logic to determine <span class="hljs-keyword">if</span> an
+                       <span class="hljs-constant">error</span> should be retried.
+
+IsErrorTimeoutFunc   - Can be used to wrap a function to satisfy IsErrorTimeout <span class="hljs-keyword">interface</span>. For example,
+                       this can be used to extend the standard retryer to add additional logic to determine <span class="hljs-keyword">if</span> an
+                        <span class="hljs-constant">error</span> should be considered a timeout.
+</div></code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div id="subpackages">
+<h2 class="packages">Sub-Packages</h2>
+<p class="children"><span class='object_link'><a href="retry/internal.html" title="internal (package)">internal</a></span></p>
+</div>
+
+  
+    <h2>Constants</h2>
+    
+      <dl class="constants">
+        
+          <dt id="DefaultRequestCost-constant" class="">
+          <div class="defn">const <strong>DefaultRequestCost</strong> uint = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultRequestCost is the cost of a single request from the adaptive rate limited token bucket.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">1</div></pre>
+          </dd>
+        
+          <dt id="DefaultMaxAttempts-constant" class="">
+          <div class="defn">const <strong>DefaultMaxAttempts</strong> int = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultMaxAttempts is the maximum of attempts for an API request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">3</div></pre>
+          </dd>
+        
+          <dt id="DefaultMaxBackoff-constant" class="">
+          <div class="defn">const <strong>DefaultMaxBackoff</strong> time.Duration = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultMaxBackoff is the maximum back off delay between attempts</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">20 * time.Second</div></pre>
+          </dd>
+        
+          <dt id="DefaultRetryRateTokens-constant" class="">
+          <div class="defn">const <strong>DefaultRetryRateTokens</strong> uint = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">500</div></pre>
+          </dd>
+        
+          <dt id="DefaultRetryCost-constant" class="">
+          <div class="defn">const <strong>DefaultRetryCost</strong> uint = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">5</div></pre>
+          </dd>
+        
+          <dt id="DefaultRetryTimeoutCost-constant" class="">
+          <div class="defn">const <strong>DefaultRetryTimeoutCost</strong> uint = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">10</div></pre>
+          </dd>
+        
+          <dt id="DefaultNoRetryIncrement-constant" class="">
+          <div class="defn">const <strong>DefaultNoRetryIncrement</strong> uint = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">1</div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+  
+    <h2>Variables</h2>
+    
+      <dl class="constants">
+        
+          <dt id="DefaultThrottles-constant" class="">
+          <div class="defn">var <strong>DefaultThrottles</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultThrottles provides the set of errors considered throttle errors that are checked by default.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">[]<span class='object_link'><a href="retry/IsErrorThrottle.html" title="retry.IsErrorThrottle (interface)">IsErrorThrottle</a></span>{
+	<span class='object_link'><a href="retry/ThrottleErrorCode.html" title="retry.ThrottleErrorCode (struct)">ThrottleErrorCode</a></span>{
+		Codes: <span class='object_link'><a href="#DefaultThrottleErrorCodes-constant" title="aws/retry.DefaultThrottleErrorCodes (constant)">DefaultThrottleErrorCodes</a></span>,
+	},
+}</div></pre>
+          </dd>
+        
+          <dt id="DefaultRetryableHTTPStatusCodes-constant" class="">
+          <div class="defn">var <strong>DefaultRetryableHTTPStatusCodes</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultRetryableHTTPStatusCodes is the default set of HTTP status codes the SDK should consider as retryable errors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-keyword">map</span>[<span class="hljs-constant">int</span>]<span class="hljs-keyword">struct</span>{}{
+	500: {},
+	502: {},
+	503: {},
+	504: {},
+}</div></pre>
+          </dd>
+        
+          <dt id="DefaultRetryableErrorCodes-constant" class="">
+          <div class="defn">var <strong>DefaultRetryableErrorCodes</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultRetryableErrorCodes provides the set of API error codes that should be retried.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-keyword">map</span>[<span class="hljs-constant">string</span>]<span class="hljs-keyword">struct</span>{}{
+	<span class="hljs-string">"RequestTimeout"</span>:          {},
+	<span class="hljs-string">"RequestTimeoutException"</span>: {},
+}</div></pre>
+          </dd>
+        
+          <dt id="DefaultThrottleErrorCodes-constant" class="">
+          <div class="defn">var <strong>DefaultThrottleErrorCodes</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultThrottleErrorCodes provides the set of API error codes that are considered throttle errors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-keyword">map</span>[<span class="hljs-constant">string</span>]<span class="hljs-keyword">struct</span>{}{
+	<span class="hljs-string">"Throttling"</span>:                             {},
+	<span class="hljs-string">"ThrottlingException"</span>:                    {},
+	<span class="hljs-string">"ThrottledException"</span>:                     {},
+	<span class="hljs-string">"RequestThrottledException"</span>:              {},
+	<span class="hljs-string">"TooManyRequestsException"</span>:               {},
+	<span class="hljs-string">"ProvisionedThroughputExceededException"</span>: {},
+	<span class="hljs-string">"TransactionInProgressException"</span>:         {},
+	<span class="hljs-string">"RequestLimitExceeded"</span>:                   {},
+	<span class="hljs-string">"BandwidthLimitExceeded"</span>:                 {},
+	<span class="hljs-string">"LimitExceededException"</span>:                 {},
+	<span class="hljs-string">"RequestThrottled"</span>:                       {},
+	<span class="hljs-string">"SlowDown"</span>:                               {},
+	<span class="hljs-string">"PriorRequestNotComplete"</span>:                {},
+	<span class="hljs-string">"EC2ThrottledException"</span>:                  {},
+}</div></pre>
+          </dd>
+        
+          <dt id="DefaultRetryables-constant" class="">
+          <div class="defn">var <strong>DefaultRetryables</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultRetryables provides the set of retryable checks that are used by default.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">[]<span class='object_link'><a href="retry/IsErrorRetryable.html" title="retry.IsErrorRetryable (interface)">IsErrorRetryable</a></span>{
+	NoRetryCanceledError{},
+	RetryableError{},
+	<span class='object_link'><a href="retry/RetryableConnectionError.html" title="retry.RetryableConnectionError (struct)">RetryableConnectionError</a></span>{},
+	<span class='object_link'><a href="retry/RetryableHTTPStatusCode.html" title="retry.RetryableHTTPStatusCode (struct)">RetryableHTTPStatusCode</a></span>{
+		Codes: <span class='object_link'><a href="#DefaultRetryableHTTPStatusCodes-constant" title="aws/retry.DefaultRetryableHTTPStatusCodes (constant)">DefaultRetryableHTTPStatusCodes</a></span>,
+	},
+	<span class='object_link'><a href="retry/RetryableErrorCode.html" title="retry.RetryableErrorCode (struct)">RetryableErrorCode</a></span>{
+		Codes: <span class='object_link'><a href="#DefaultRetryableErrorCodes-constant" title="aws/retry.DefaultRetryableErrorCodes (constant)">DefaultRetryableErrorCodes</a></span>,
+	},
+	<span class='object_link'><a href="retry/RetryableErrorCode.html" title="retry.RetryableErrorCode (struct)">RetryableErrorCode</a></span>{
+		Codes: <span class='object_link'><a href="#DefaultThrottleErrorCodes-constant" title="aws/retry.DefaultThrottleErrorCodes (constant)">DefaultThrottleErrorCodes</a></span>,
+	},
+}</div></pre>
+          </dd>
+        
+          <dt id="DefaultTimeouts-constant" class="">
+          <div class="defn">var <strong>DefaultTimeouts</strong>  = 
+          <span class="note title writeonly">writable</span>
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>DefaultTimeouts provides the set of timeout checks that are used by default.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">[]<span class='object_link'><a href="retry/IsErrorTimeout.html" title="retry.IsErrorTimeout (interface)">IsErrorTimeout</a></span>{
+	<span class='object_link'><a href="retry/TimeouterError.html" title="retry.TimeouterError (struct)">TimeouterError</a></span>{},
+}</div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/AdaptiveMode.html" title="retry.AdaptiveMode (struct)"><strong>AdaptiveMode</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AdaptiveMode provides an experimental retry strategy that expands on the Standard retry strategy, adding client attempt rate limits.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-AdaptiveModeOptions" title="retry (package)"><strong>AdaptiveModeOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AdaptiveModeOptions provides the functional options for configuring the adaptive retry mode, and delay behavior.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-AddRetryMiddlewaresOptions" title="retry (package)"><strong>AddRetryMiddlewaresOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddRetryMiddlewaresOptions is the set of options that can be passed to AddRetryMiddlewares for configuring retry associated middleware.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/Attempt.html" title="retry.Attempt (struct)"><strong>Attempt</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Attempt is a Smithy Finalize middleware that handles retry attempts using the provided Retryer implementation.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/AttemptResult.html" title="retry.AttemptResult (struct)"><strong>AttemptResult</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AttemptResult represents attempt result returned by a single request attempt.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-AttemptResults" title="retry (package)"><strong>AttemptResults</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AttemptResults represents struct containing metadata returned by all request attempts.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/BackoffDelayerFunc.html" title="retry.BackoffDelayerFunc (struct)"><strong>BackoffDelayerFunc</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>BackoffDelay returns the delay before attempt to retry a request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/ExponentialJitterBackoff.html" title="retry.ExponentialJitterBackoff (struct)"><strong>ExponentialJitterBackoff</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ExponentialJitterBackoff provides backoff delays with jitter based on the number of attempts.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorRetryableFunc.html" title="retry.IsErrorRetryableFunc (struct)"><strong>IsErrorRetryableFunc</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorRetryable returns if the error is retryable.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorRetryables.html" title="retry.IsErrorRetryables (struct)"><strong>IsErrorRetryables</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorRetryable returns if the error is retryable if any of the checks in the list return a value other than unknown.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorThrottleFunc.html" title="retry.IsErrorThrottleFunc (struct)"><strong>IsErrorThrottleFunc</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorThrottle returns if the error is a throttle error.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorThrottles.html" title="retry.IsErrorThrottles (struct)"><strong>IsErrorThrottles</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorThrottle returns if the error is a throttle error if any of the checks in the list return a value other than unknown.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorTimeoutFunc.html" title="retry.IsErrorTimeoutFunc (struct)"><strong>IsErrorTimeoutFunc</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorTimeout returns if the error is retryable.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorTimeouts.html" title="retry.IsErrorTimeouts (struct)"><strong>IsErrorTimeouts</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorTimeout returns if the error is retryable if any of the checks in the list return a value other than unknown.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/MaxAttemptsError.html" title="retry.MaxAttemptsError (struct)"><strong>MaxAttemptsError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>MaxAttemptsError provides the error when the maximum number of attempts have been exceeded.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/MetricsHeader.html" title="retry.MetricsHeader (struct)"><strong>MetricsHeader</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID returns the middleware identifier.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/RetryableConnectionError.html" title="retry.RetryableConnectionError (struct)"><strong>RetryableConnectionError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorRetryable returns if the error is caused by and HTTP connection error, and should be retried.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/RetryableErrorCode.html" title="retry.RetryableErrorCode (struct)"><strong>RetryableErrorCode</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RetryableErrorCode determines if an attempt should be retried based on the API error code.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/RetryableHTTPStatusCode.html" title="retry.RetryableHTTPStatusCode (struct)"><strong>RetryableHTTPStatusCode</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RetryableHTTPStatusCode provides a IsErrorRetryable based on HTTP status codes.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/Standard.html" title="retry.Standard (struct)"><strong>Standard</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Standard is the standard retry pattern for the SDK.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-StandardOptions" title="retry (package)"><strong>StandardOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>StandardOptions provides the functional options for configuring the standard retryable, and delay behavior.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/ThrottleErrorCode.html" title="retry.ThrottleErrorCode (struct)"><strong>ThrottleErrorCode</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ThrottleErrorCode determines if an attempt should be retried based on the API error code.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/TimeouterError.html" title="retry.TimeouterError (struct)"><strong>TimeouterError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorTimeout returns if the error is a timeout error.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  <h2>
+    Interface Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/BackoffDelayer.html" title="retry.BackoffDelayer (interface)"><strong>BackoffDelayer</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>BackoffDelayer provides the interface for determining the delay to before another request attempt, that previously failed.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorRetryable.html" title="retry.IsErrorRetryable (interface)"><strong>IsErrorRetryable</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorRetryable provides the interface of an implementation to determine if a error as the result of an operation is retryable.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorThrottle.html" title="retry.IsErrorThrottle (interface)"><strong>IsErrorThrottle</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorThrottle provides the interface of an implementation to determine if a error response from an operation is a throttling error.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/IsErrorTimeout.html" title="retry.IsErrorTimeout (interface)"><strong>IsErrorTimeout</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsErrorTimeout provides the interface of an implementation to determine if a error matches.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="retry/RateLimiter.html" title="retry.RateLimiter (interface)"><strong>RateLimiter</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RateLimiter provides the interface for limiting the rate of attempt retries allowed by the retryer.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddRetryMiddlewares-class_method" title="retry.AddRetryMiddlewares() (method)">func <strong>AddRetryMiddlewares</strong>(stack *smithymiddle.Stack, options AddRetryMiddlewaresOptions) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddRetryMiddlewares adds retry middleware to operation middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddWithErrorCodes-class_method" title="retry.AddWithErrorCodes() (method)">func <strong>AddWithErrorCodes</strong>(r aws.Retryer, codes ...string) aws.Retryer </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddWithErrorCodes returns a Retryer with additional error codes considered for determining if the error should be retried.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddWithMaxAttempts-class_method" title="retry.AddWithMaxAttempts() (method)">func <strong>AddWithMaxAttempts</strong>(r aws.Retryer, max int) aws.Retryer </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddWithMaxAttempts returns a Retryer with MaxAttempts set to the value specified.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddWithMaxBackoffDelay-class_method" title="retry.AddWithMaxBackoffDelay() (method)">func <strong>AddWithMaxBackoffDelay</strong>(r aws.Retryer, delay time.Duration) aws.Retryer </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddWithMaxBackoffDelay returns a retryer wrapping the passed in retryer overriding the RetryDelay behavior for a alternate minimum initial backoff delay.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetAttemptResults-class_method" title="retry.GetAttemptResults() (method)">func <strong>GetAttemptResults</strong>(metadata middleware.Metadata) (AttemptResults, bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetAttemptResults retrieves attempts results from middleware metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewAdaptiveMode-class_method" title="retry.NewAdaptiveMode() (method)">func <strong>NewAdaptiveMode</strong>(optFns ...func(*AdaptiveModeOptions)) *AdaptiveMode </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewAdaptiveMode returns an initialized AdaptiveMode retry strategy.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewAttemptMiddleware-class_method" title="retry.NewAttemptMiddleware() (method)">func <strong>NewAttemptMiddleware</strong>(retryer aws.Retryer, requestCloner RequestCloner, optFns ...func(*Attempt)) *Attempt </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewAttemptMiddleware returns a new Attempt retry middleware.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewStandard-class_method" title="retry.NewStandard() (method)">func <strong>NewStandard</strong>(fnOpts ...func(*StandardOptions)) *Standard </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewStandard initializes a standard retry behavior with defaults that can be overridden via functional options.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Type Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="type-AdaptiveModeOptions">
+  
+    <strong>AdaptiveModeOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>AdaptiveModeOptions provides the functional options for configuring the adaptive retry mode, and delay behavior.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>FailOnNoAttemptTokens</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>If the adaptive token bucket is empty, when an attempt will be made AdaptiveMode will sleep until a token is available. This can occur when attempts fail with throttle errors. Use this option to disable the sleep until token is available, and return error immediately.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>RequestCost</strong> uint 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>The cost of an attempt from the AdaptiveMode’s adaptive token bucket.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>Throttles</strong> []<span class='object_link'><a href="IsErrorThrottle.html" title="retry.IsErrorThrottle (interface)">IsErrorThrottle</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Set of strategies to determine if the attempt failed due to a throttle error.</p>
+
+<p>It is safe to append to this list in NewAdaptiveMode’s functional options.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>StandardOptions</strong> []func(*<span class='object_link'><a href="#StandardOptions-field" title="retry.AdaptiveModeOptions.StandardOptions (field)">StandardOptions</a></span>) 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Set of options for standard retry mode that AdaptiveMode is built on top of. AdaptiveMode may apply its own defaults to Standard retry mode that are different than the defaults of NewStandard. Use these options to override the default options.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-AddRetryMiddlewaresOptions">
+  
+    <strong>AddRetryMiddlewaresOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>AddRetryMiddlewaresOptions is the set of options that can be passed to AddRetryMiddlewares for configuring retry associated middleware.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>Retryer</strong> aws.Retryer 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>LogRetryAttempts</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Enable the logging of retry attempts performed by the SDK. This will include logging retry attempts, unretryable errors, and when max attempts are reached.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-AttemptResults">
+  
+    <strong>AttemptResults</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>AttemptResults represents struct containing metadata returned by all request attempts.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>Results</strong> []<span class='object_link'><a href="AttemptResult.html" title="retry.AttemptResult (struct)">AttemptResult</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Results is a slice consisting attempt result from all request attempts. Results are stored in order request attempt is made.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-StandardOptions">
+  
+    <strong>StandardOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>StandardOptions provides the functional options for configuring the standard retryable, and delay behavior.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>MaxAttempts</strong> int 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Maximum number of attempts that should be made.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>MaxBackoff</strong> time.Duration 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>MaxBackoff duration between retried attempts.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>Backoff</strong> <span class='object_link'><a href="BackoffDelayer.html" title="retry.BackoffDelayer (interface)">BackoffDelayer</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Provides the backoff strategy the retryer will use to determine the delay between retry attempts.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>Retryables</strong> []<span class='object_link'><a href="IsErrorRetryable.html" title="retry.IsErrorRetryable (interface)">IsErrorRetryable</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Set of strategies to determine if the attempt should be retried based on the error response received.</p>
+
+<p>It is safe to append to this list in NewStandard’s functional options.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>Timeouts</strong> []<span class='object_link'><a href="IsErrorTimeout.html" title="retry.IsErrorTimeout (interface)">IsErrorTimeout</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Set of strategies to determine if the attempt failed due to a timeout error.</p>
+
+<p>It is safe to append to this list in NewStandard’s functional options.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>RateLimiter</strong> <span class='object_link'><a href="#RateLimiter-field" title="retry.StandardOptions.RateLimiter (field)">RateLimiter</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Provides the rate limiting strategy for rate limiting attempt retries across all attempts the retryer is being used with.</p>
+
+<p>A RateLimiter operates as a token bucket with a set capacity, where attempt failures events consume tokens. A retry attempt that attempts to consume more tokens than what’s available results in operation failure. The default implementation is parameterized as follows:  - a capacity of 500 (DefaultRetryRateTokens)  - a retry caused by a timeout costs 10 tokens (DefaultRetryCost)  - a retry caused by other errors costs 5 tokens (DefaultRetryTimeoutCost)  - an operation that succeeds on the 1st attempt adds 1 token (DefaultNoRetryIncrement)</p>
+
+<p>You can disable rate limiting by setting this field to ratelimit.None.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>RetryCost</strong> uint 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>The cost to deduct from the RateLimiter’s token bucket per retry.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>RetryTimeoutCost</strong> uint 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>The cost to deduct from the RateLimiter’s token bucket per retry caused by timeout error.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>NoRetryIncrement</strong> uint 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>The cost to payback to the RateLimiter’s token bucket for successful attempts.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+  </div>
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="AddRetryMiddlewares-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddRetryMiddlewares-class_method" title="retry.AddRetryMiddlewares() (method)">AddRetryMiddlewares</a></span></strong>(stack *smithymiddle.Stack, options <span class='object_link'><a href="#type-AddRetryMiddlewaresOptions" title="retry (package)">AddRetryMiddlewaresOptions</a></span>) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddRetryMiddlewares adds retry middleware to operation middleware stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/middleware.go', line 393</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddRetryMiddlewares(stack *smithymiddle.Stack, options AddRetryMiddlewaresOptions) <span class="hljs-constant">error</span> {
+	attempt := NewAttemptMiddleware(options.Retryer, http.RequestCloner, <span class="hljs-keyword">func</span>(middleware *Attempt) {
+		middleware.LogAttempts = options.LogRetryAttempts
+	})
+
+	<span class="hljs-comment">// index retry to before signing, if signing exists</span>
+	<span class="hljs-keyword">if</span> err := stack.Finalize.Insert(attempt, <span class="hljs-string">"Signing"</span>, smithymiddle.Before); err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-keyword">if</span> err := stack.Finalize.Insert(&MetricsHeader{}, attempt.ID(), smithymiddle.After); err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddWithErrorCodes-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddWithErrorCodes-class_method" title="retry.AddWithErrorCodes() (method)">AddWithErrorCodes</a></span></strong>(r aws.Retryer, codes ...string) aws.Retryer 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddWithErrorCodes returns a Retryer with additional error codes considered for determining if the error should be retried.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><div class="hljs"><span class="hljs-comment">// Wrap a standard retyer and add the types.NoSuchBucketException Amazon S3 error code as retryable</span>
+custom := retry.AddWithErrorCodes(retry.NewStandard(), (*types.NoSuchBucketException)(<span class="hljs-constant">nil</span>).ErrorCode())
+
+fmt.Println(custom.IsErrorRetryable(&types.NoSuchBucketException{}))</div></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/retry.go', line 11</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddWithErrorCodes(r aws.Retryer, codes ...<span class="hljs-constant">string</span>) aws.Retryer {
+	retryable := &RetryableErrorCode{
+		Codes: <span class="hljs-keyword">map</span>[<span class="hljs-constant">string</span>]<span class="hljs-keyword">struct</span>{}{},
+	}
+	<span class="hljs-keyword">for</span> _, c := <span class="hljs-keyword">range</span> codes {
+		retryable.Codes[c] = <span class="hljs-keyword">struct</span>{}{}
+	}
+
+	<span class="hljs-keyword">return</span> &withIsErrorRetryable{
+		RetryerV2: wrapAsRetryerV2(r),
+		Retryable: retryable,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddWithMaxAttempts-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddWithMaxAttempts-class_method" title="retry.AddWithMaxAttempts() (method)">AddWithMaxAttempts</a></span></strong>(r aws.Retryer, max int) aws.Retryer 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddWithMaxAttempts returns a Retryer with MaxAttempts set to the value specified.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><div class="hljs"><span class="hljs-comment">// Wrap a standard retyer and set the max attempts to 5</span>
+custom := retry.AddWithMaxAttempts(retry.NewStandard(), 5)
+
+fmt.Println(custom.MaxAttempts())</div></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/retry.go', line 39</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddWithMaxAttempts(r aws.Retryer, max <span class="hljs-constant">int</span>) aws.Retryer {
+	<span class="hljs-keyword">return</span> &withMaxAttempts{
+		RetryerV2: wrapAsRetryerV2(r),
+		Max:       max,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddWithMaxBackoffDelay-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddWithMaxBackoffDelay-class_method" title="retry.AddWithMaxBackoffDelay() (method)">AddWithMaxBackoffDelay</a></span></strong>(r aws.Retryer, delay time.Duration) aws.Retryer 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddWithMaxBackoffDelay returns a retryer wrapping the passed in retryer overriding the RetryDelay behavior for a alternate minimum initial backoff delay.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h4 class="tag_title">Examples:</h4>
+    
+      
+      <pre class="example code"><code><div class="hljs"><span class="hljs-comment">// Wrap a standard retyer and add tthe NoSuchBucket API error code to the list of retryables</span>
+custom := retry.AddWithMaxBackoffDelay(retry.NewStandard(), time.Second*5)
+_ = custom</div></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/retry.go', line 58</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddWithMaxBackoffDelay(r aws.Retryer, delay time.Duration) aws.Retryer {
+	<span class="hljs-keyword">return</span> &withMaxBackoffDelay{
+		RetryerV2: wrapAsRetryerV2(r),
+		backoff:   NewExponentialJitterBackoff(delay),
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetAttemptResults-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetAttemptResults-class_method" title="retry.GetAttemptResults() (method)">GetAttemptResults</a></span></strong>(metadata middleware.Metadata) (<span class='object_link'><a href="#type-AttemptResults" title="retry (package)">AttemptResults</a></span>, bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetAttemptResults retrieves attempts results from middleware metadata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/metadata.go', line 13</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetAttemptResults(metadata middleware.Metadata) (AttemptResults, <span class="hljs-constant">bool</span>) {
+	m, ok := metadata.Get(attemptResultsKey{}).(AttemptResults)
+	<span class="hljs-keyword">return</span> m, ok
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewAdaptiveMode-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewAdaptiveMode-class_method" title="retry.NewAdaptiveMode() (method)">NewAdaptiveMode</a></span></strong>(optFns ...func(*<span class='object_link'><a href="#type-AdaptiveModeOptions" title="retry (package)">AdaptiveModeOptions</a></span>)) *<span class='object_link'><a href="retry/AdaptiveMode.html" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewAdaptiveMode returns an initialized AdaptiveMode retry strategy.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/adaptive.go', line 70</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewAdaptiveMode(optFns ...<span class="hljs-keyword">func</span>(*AdaptiveModeOptions)) *AdaptiveMode {
+	o := AdaptiveModeOptions{
+		RequestCost: DefaultRequestCost,
+		Throttles:   append([]IsErrorThrottle{}, DefaultThrottles...),
+	}
+	<span class="hljs-keyword">for</span> _, fn := <span class="hljs-keyword">range</span> optFns {
+		fn(&o)
+	}
+
+	<span class="hljs-keyword">return</span> &AdaptiveMode{
+		options:   o,
+		throttles: IsErrorThrottles(o.Throttles),
+		retryer:   NewStandard(o.StandardOptions...),
+		rateLimit: newAdaptiveRateLimit(),
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewAttemptMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewAttemptMiddleware-class_method" title="retry.NewAttemptMiddleware() (method)">NewAttemptMiddleware</a></span></strong>(retryer aws.Retryer, requestCloner RequestCloner, optFns ...func(*<span class='object_link'><a href="retry/Attempt.html" title="retry.Attempt (struct)">Attempt</a></span>)) *<span class='object_link'><a href="retry/Attempt.html" title="retry.Attempt (struct)">Attempt</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewAttemptMiddleware returns a new Attempt retry middleware.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/middleware.go', line 54</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewAttemptMiddleware(retryer aws.Retryer, requestCloner RequestCloner, optFns ...<span class="hljs-keyword">func</span>(*Attempt)) *Attempt {
+	m := &Attempt{
+		retryer:       wrapAsRetryerV2(retryer),
+		requestCloner: requestCloner,
+	}
+	<span class="hljs-keyword">for</span> _, fn := <span class="hljs-keyword">range</span> optFns {
+		fn(m)
+	}
+	<span class="hljs-keyword">if</span> m.OperationMeter == <span class="hljs-constant">nil</span> {
+		m.OperationMeter = metrics.NopMeterProvider{}.Meter(<span class="hljs-string">""</span>)
+	}
+
+	<span class="hljs-keyword">return</span> m
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewStandard-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewStandard-class_method" title="retry.NewStandard() (method)">NewStandard</a></span></strong>(fnOpts ...func(*<span class='object_link'><a href="#type-StandardOptions" title="retry (package)">StandardOptions</a></span>)) *<span class='object_link'><a href="retry/Standard.html" title="retry.Standard (struct)">Standard</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewStandard initializes a standard retry behavior with defaults that can be overridden via functional options.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/retry/standard.go', line 170</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewStandard(fnOpts ...<span class="hljs-keyword">func</span>(*StandardOptions)) *Standard {
+	o := StandardOptions{
+		MaxAttempts: DefaultMaxAttempts,
+		MaxBackoff:  DefaultMaxBackoff,
+		Retryables:  append([]IsErrorRetryable{}, DefaultRetryables...),
+		Timeouts:    append([]IsErrorTimeout{}, DefaultTimeouts...),
+
+		RateLimiter:      ratelimit.NewTokenRateLimit(DefaultRetryRateTokens),
+		RetryCost:        DefaultRetryCost,
+		RetryTimeoutCost: DefaultRetryTimeoutCost,
+		NoRetryIncrement: DefaultNoRetryIncrement,
+	}
+	<span class="hljs-keyword">for</span> _, fn := <span class="hljs-keyword">range</span> fnOpts {
+		fn(&o)
+	}
+	<span class="hljs-keyword">if</span> o.MaxAttempts <= 0 {
+		o.MaxAttempts = DefaultMaxAttempts
+	}
+
+	backoff := o.Backoff
+	<span class="hljs-keyword">if</span> backoff == <span class="hljs-constant">nil</span> {
+		backoff = NewExponentialJitterBackoff(o.MaxBackoff)
+	}
+
+	<span class="hljs-keyword">return</span> &Standard{
+		options:   o,
+		backoff:   backoff,
+		retryable: IsErrorRetryables(o.Retryables),
+		timeout:   IsErrorTimeouts(o.Timeouts),
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:38 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

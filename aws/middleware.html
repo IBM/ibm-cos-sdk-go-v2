@@ -1,0 +1,3251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: middleware
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/middleware";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (m)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../aws.html" title="aws (package)">aws</a></span></span>
+     &raquo; 
+    <span class="title">middleware</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: middleware
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/middleware"
+</div>
+
+  
+    <h2>Constants</h2>
+    
+      <dl class="constants">
+        
+          <dt id="_-constant" class="">
+          <div class="defn">const <strong>_</strong> <span class='object_link'><a href="middleware/SDKAgentKeyType.html" title="middleware.SDKAgentKeyType (struct)">SDKAgentKeyType</a></span> = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs">iota</div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureResourceModel-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureResourceModel</strong> UserAgentFeature = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"A"</span> <span class="hljs-comment">// n/a (we don't generate separate resource types)</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureWaiter-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureWaiter</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"B"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeaturePaginator-constant" class="">
+          <div class="defn">const <strong>UserAgentFeaturePaginator</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"C"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRetryModeLegacy-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRetryModeLegacy</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"D"</span> <span class="hljs-comment">// n/a (equivalent to standard)</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRetryModeStandard-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRetryModeStandard</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"E"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRetryModeAdaptive-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRetryModeAdaptive</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"F"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureS3Transfer-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureS3Transfer</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"G"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureS3CryptoV1N-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureS3CryptoV1N</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"H"</span> <span class="hljs-comment">// n/a (crypto client is external)</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureS3CryptoV2-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureS3CryptoV2</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"I"</span> <span class="hljs-comment">// n/a</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureS3ExpressBucket-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureS3ExpressBucket</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"J"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureS3AccessGrants-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureS3AccessGrants</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"K"</span> <span class="hljs-comment">// not yet implemented</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureGZIPRequestCompression-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureGZIPRequestCompression</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"L"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureProtocolRPCV2CBOR-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureProtocolRPCV2CBOR</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"M"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureAccountIDEndpoint-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureAccountIDEndpoint</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"O"</span> <span class="hljs-comment">// DO NOT IMPLEMENT: rules output is not currently defined. SDKs should not parse endpoints for feature information.</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureAccountIDModePreferred-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureAccountIDModePreferred</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"P"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureAccountIDModeDisabled-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureAccountIDModeDisabled</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"Q"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureAccountIDModeRequired-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureAccountIDModeRequired</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"R"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRequestChecksumCRC32-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRequestChecksumCRC32</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"U"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRequestChecksumCRC32C-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRequestChecksumCRC32C</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"V"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRequestChecksumCRC64-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRequestChecksumCRC64</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"W"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRequestChecksumSHA1-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRequestChecksumSHA1</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"X"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRequestChecksumSHA256-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRequestChecksumSHA256</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"Y"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRequestChecksumWhenSupported-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRequestChecksumWhenSupported</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"Z"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureRequestChecksumWhenRequired-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureRequestChecksumWhenRequired</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"a"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureResponseChecksumWhenSupported-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureResponseChecksumWhenSupported</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"b"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureResponseChecksumWhenRequired-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureResponseChecksumWhenRequired</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"c"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureDynamoDBUserAgent-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureDynamoDBUserAgent</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"d"</span> <span class="hljs-comment">// not yet implemented</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsCode-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsCode</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"e"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsJvmSystemProperties-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsJvmSystemProperties</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"f"</span> <span class="hljs-comment">// n/a (this is not a JVM sdk)</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsEnvVars-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsEnvVars</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"g"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsEnvVarsStsWebIDToken-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsEnvVarsStsWebIDToken</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"h"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsStsAssumeRole-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsStsAssumeRole</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"i"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsStsAssumeRoleSaml-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsStsAssumeRoleSaml</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"j"</span> <span class="hljs-comment">// not yet implemented</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsStsAssumeRoleWebID-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsStsAssumeRoleWebID</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"k"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsStsFederationToken-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsStsFederationToken</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"l"</span> <span class="hljs-comment">// not yet implemented</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsStsSessionToken-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsStsSessionToken</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"m"</span> <span class="hljs-comment">// not yet implemented</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsProfile-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsProfile</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"n"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsProfileSourceProfile-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsProfileSourceProfile</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"o"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsProfileNamedProvider-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsProfileNamedProvider</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"p"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsProfileStsWebIDToken-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsProfileStsWebIDToken</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"q"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsProfileSso-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsProfileSso</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"r"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsSso-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsSso</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"s"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsProfileSsoLegacy-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsProfileSsoLegacy</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"t"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsSsoLegacy-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsSsoLegacy</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"u"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsProfileProcess-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsProfileProcess</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"v"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsProcess-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsProcess</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"w"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsBoto2ConfigFile-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsBoto2ConfigFile</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"x"</span> <span class="hljs-comment">// n/a (this is not boto/Python)</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsAwsSdkStore-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsAwsSdkStore</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"y"</span> <span class="hljs-comment">// n/a (this is used by .NET based sdk)</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsHTTP-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsHTTP</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"z"</span></div></pre>
+          </dd>
+        
+          <dt id="UserAgentFeatureCredentialsIMDS-constant" class="">
+          <div class="defn">const <strong>UserAgentFeatureCredentialsIMDS</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"0"</span></div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="middleware/AddRawResponse.html" title="middleware.AddRawResponse (struct)"><strong>AddRawResponse</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID the identifier for the ClientRequestID.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="middleware/ClientRequestID.html" title="middleware.ClientRequestID (struct)"><strong>ClientRequestID</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID the identifier for the ClientRequestID.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="middleware/RecordResponseTiming.html" title="middleware.RecordResponseTiming (struct)"><strong>RecordResponseTiming</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID is the middleware identifier.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="middleware/RecursionDetection.html" title="middleware.RecursionDetection (struct)"><strong>RecursionDetection</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID returns the middleware identifier.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="middleware/RegisterServiceMetadata.html" title="middleware.RegisterServiceMetadata (struct)"><strong>RegisterServiceMetadata</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RegisterServiceMetadata registers metadata about the service and operation into the middleware context so that it is available at runtime for other middleware to introspect.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="middleware/RequestIDRetriever.html" title="middleware.RequestIDRetriever (struct)"><strong>RequestIDRetriever</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RequestIDRetriever middleware captures the AWS service request ID from the raw response.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="middleware/RequestUserAgent.html" title="middleware.RequestUserAgent (struct)"><strong>RequestUserAgent</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RequestUserAgent is a build middleware that set the User-Agent for the request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="middleware/SDKAgentKeyType.html" title="middleware.SDKAgentKeyType (struct)"><strong>SDKAgentKeyType</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddClientRequestIDMiddleware-class_method" title="middleware.AddClientRequestIDMiddleware() (method)">func <strong>AddClientRequestIDMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddClientRequestIDMiddleware adds ClientRequestID to the middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddRawResponseToMetadata-class_method" title="middleware.AddRawResponseToMetadata() (method)">func <strong>AddRawResponseToMetadata</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddRawResponseToMetadata adds middleware to the middleware stack that store raw response on to the metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddRecordResponseTiming-class_method" title="middleware.AddRecordResponseTiming() (method)">func <strong>AddRecordResponseTiming</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddRecordResponseTiming adds RecordResponseTiming middleware to the middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddRecursionDetection-class_method" title="middleware.AddRecursionDetection() (method)">func <strong>AddRecursionDetection</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddRecursionDetection adds recursionDetection to the middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddRequestIDRetrieverMiddleware-class_method" title="middleware.AddRequestIDRetrieverMiddleware() (method)">func <strong>AddRequestIDRetrieverMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddRequestIDRetrieverMiddleware adds request id retriever middleware.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddRequestUserAgentMiddleware-class_method" title="middleware.AddRequestUserAgentMiddleware() (method)">func <strong>AddRequestUserAgentMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddRequestUserAgentMiddleware registers a requestUserAgent middleware on the stack if not present.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddSDKAgentKey-class_method" title="middleware.AddSDKAgentKey() (method)">func <strong>AddSDKAgentKey</strong>(keyType SDKAgentKeyType, key string) func(*middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddSDKAgentKey retrieves a requestUserAgent from the provided stack, or initializes one.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddSDKAgentKeyValue-class_method" title="middleware.AddSDKAgentKeyValue() (method)">func <strong>AddSDKAgentKeyValue</strong>(keyType SDKAgentKeyType, key, value string) func(*middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddSDKAgentKeyValue retrieves a requestUserAgent from the provided stack, or initializes one.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddUserAgentKey-class_method" title="middleware.AddUserAgentKey() (method)">func <strong>AddUserAgentKey</strong>(key string) func(*middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddUserAgentKey retrieves a requestUserAgent from the provided stack, or initializes one.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddUserAgentKeyValue-class_method" title="middleware.AddUserAgentKeyValue() (method)">func <strong>AddUserAgentKeyValue</strong>(key, value string) func(*middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddUserAgentKeyValue retrieves a requestUserAgent from the provided stack, or initializes one.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetAttemptSkew-class_method" title="middleware.GetAttemptSkew() (method)">func <strong>GetAttemptSkew</strong>(metadata middleware.Metadata) (v time.Duration, ok bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetAttemptSkew returns Attempt clock skew for response from metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetEndpointSource-class_method" title="middleware.GetEndpointSource() (method)">func <strong>GetEndpointSource</strong>(ctx context.Context) (v aws.EndpointSource) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetEndpointSource returns an endpoint source if set on context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetOperationName-class_method" title="middleware.GetOperationName() (method)">func <strong>GetOperationName</strong>(ctx context.Context) (v string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetOperationName retrieves the service operation metadata from the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetPartitionID-class_method" title="middleware.GetPartitionID() (method)">func <strong>GetPartitionID</strong>(ctx context.Context) string </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetPartitionID retrieves the endpoint partition id from the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetRawResponse-class_method" title="middleware.GetRawResponse() (method)">func <strong>GetRawResponse</strong>(metadata middleware.Metadata) interface{} </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetRawResponse returns raw response set on metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetRegion-class_method" title="middleware.GetRegion() (method)">func <strong>GetRegion</strong>(ctx context.Context) (v string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetRegion retrieves the endpoint region from the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetRequestIDMetadata-class_method" title="middleware.GetRequestIDMetadata() (method)">func <strong>GetRequestIDMetadata</strong>(metadata middleware.Metadata) (string, bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetRequestIDMetadata retrieves the request id from middleware metadata returns string and bool indicating value of request id, whether request id was set.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetRequiresLegacyEndpoints-class_method" title="middleware.GetRequiresLegacyEndpoints() (method)">func <strong>GetRequiresLegacyEndpoints</strong>(ctx context.Context) bool </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetRequiresLegacyEndpoints the flag used to indicate if legacy endpoint customizations need to be executed.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetResponseAt-class_method" title="middleware.GetResponseAt() (method)">func <strong>GetResponseAt</strong>(metadata middleware.Metadata) (v time.Time, ok bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetResponseAt returns the time response was received at.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetServerTime-class_method" title="middleware.GetServerTime() (method)">func <strong>GetServerTime</strong>(metadata middleware.Metadata) (v time.Time, ok bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetServerTime returns the server time for response.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetServiceID-class_method" title="middleware.GetServiceID() (method)">func <strong>GetServiceID</strong>(ctx context.Context) (v string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetServiceID retrieves the service id from the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetSigningCredentials-class_method" title="middleware.GetSigningCredentials() (method)">func <strong>GetSigningCredentials</strong>(ctx context.Context) (v aws.Credentials) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetSigningCredentials returns the credentials that were used for signing if set on context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetSigningName-class_method" title="middleware.GetSigningName() (method)">func <strong>GetSigningName</strong>(ctx context.Context) (v string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetSigningName retrieves the service signing name from the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetSigningRegion-class_method" title="middleware.GetSigningRegion() (method)">func <strong>GetSigningRegion</strong>(ctx context.Context) (v string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetSigningRegion retrieves the region from the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetEndpointSource-class_method" title="middleware.SetEndpointSource() (method)">func <strong>SetEndpointSource</strong>(ctx context.Context, value aws.EndpointSource) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetEndpointSource sets endpoint source on context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetPartitionID-class_method" title="middleware.SetPartitionID() (method)">func <strong>SetPartitionID</strong>(ctx context.Context, value string) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetPartitionID sets the partition id of a resolved region on the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetRequestIDMetadata-class_method" title="middleware.SetRequestIDMetadata() (method)">func <strong>SetRequestIDMetadata</strong>(metadata *middleware.Metadata, id string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetRequestIDMetadata sets the provided request id over middleware metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetRequiresLegacyEndpoints-class_method" title="middleware.SetRequiresLegacyEndpoints() (method)">func <strong>SetRequiresLegacyEndpoints</strong>(ctx context.Context, value bool) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetRequiresLegacyEndpoints set or modifies the flag indicated that legacy endpoint customizations are needed.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetServiceID-class_method" title="middleware.SetServiceID() (method)">func <strong>SetServiceID</strong>(ctx context.Context, value string) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetServiceID sets the service id on the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetSigningCredentials-class_method" title="middleware.SetSigningCredentials() (method)">func <strong>SetSigningCredentials</strong>(ctx context.Context, value aws.Credentials) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetSigningCredentials sets the credentails used for signing on the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetSigningName-class_method" title="middleware.SetSigningName() (method)">func <strong>SetSigningName</strong>(ctx context.Context, value string) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetSigningName set or modifies the sigv4 or sigv4a signing name on the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetSigningRegion-class_method" title="middleware.SetSigningRegion() (method)">func <strong>SetSigningRegion</strong>(ctx context.Context, value string) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetSigningRegion sets or modifies the region on the context.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="AddClientRequestIDMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddClientRequestIDMiddleware-class_method" title="middleware.AddClientRequestIDMiddleware() (method)">AddClientRequestIDMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddClientRequestIDMiddleware adds ClientRequestID to the middleware stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/middleware.go', line 127</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddClientRequestIDMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Build.Add(&ClientRequestID{}, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddRawResponseToMetadata-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddRawResponseToMetadata-class_method" title="middleware.AddRawResponseToMetadata() (method)">AddRawResponseToMetadata</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddRawResponseToMetadata adds middleware to the middleware stack that store raw response on to the metadata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+160
+161
+162</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/middleware.go', line 160</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddRawResponseToMetadata(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Deserialize.Add(&AddRawResponse{}, middleware.Before)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddRecordResponseTiming-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddRecordResponseTiming-class_method" title="middleware.AddRecordResponseTiming() (method)">AddRecordResponseTiming</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddRecordResponseTiming adds RecordResponseTiming middleware to the middleware stack.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/middleware.go', line 133</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddRecordResponseTiming(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Deserialize.Add(&RecordResponseTiming{}, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddRecursionDetection-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddRecursionDetection-class_method" title="middleware.AddRecursionDetection() (method)">AddRecursionDetection</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddRecursionDetection adds recursionDetection to the middleware stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/recursion_detection.go', line 15</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddRecursionDetection(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Build.Add(&RecursionDetection{}, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddRequestIDRetrieverMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddRequestIDRetrieverMiddleware-class_method" title="middleware.AddRequestIDRetrieverMiddleware() (method)">AddRequestIDRetrieverMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddRequestIDRetrieverMiddleware adds request id retriever middleware</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/request_id_retriever.go', line 11</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddRequestIDRetrieverMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-comment">// add error wrapper middleware before operation deserializers so that it can wrap the error response</span>
+	<span class="hljs-comment">// returned by operation deserializers</span>
+	<span class="hljs-keyword">return</span> stack.Deserialize.Insert(&RequestIDRetriever{}, <span class="hljs-string">"OperationDeserializer"</span>, middleware.Before)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddRequestUserAgentMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddRequestUserAgentMiddleware-class_method" title="middleware.AddRequestUserAgentMiddleware() (method)">AddRequestUserAgentMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddRequestUserAgentMiddleware registers a requestUserAgent middleware on the stack if not present.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+262
+263
+264
+265</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/user_agent.go', line 262</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddRequestUserAgentMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	_, err := getOrAddRequestUserAgent(stack)
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddSDKAgentKey-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddSDKAgentKey-class_method" title="middleware.AddSDKAgentKey() (method)">AddSDKAgentKey</a></span></strong>(keyType <span class='object_link'><a href="middleware/SDKAgentKeyType.html" title="middleware.SDKAgentKeyType (struct)">SDKAgentKeyType</a></span>, key string) func(*middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddSDKAgentKey retrieves a requestUserAgent from the provided stack, or initializes one.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/user_agent.go', line 238</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddSDKAgentKey(keyType SDKAgentKeyType, key <span class="hljs-constant">string</span>) <span class="hljs-keyword">func</span>(*middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">func</span>(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+		requestUserAgent, err := getOrAddRequestUserAgent(stack)
+		<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> err
+		}
+		requestUserAgent.AddSDKAgentKey(keyType, key)
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddSDKAgentKeyValue-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddSDKAgentKeyValue-class_method" title="middleware.AddSDKAgentKeyValue() (method)">AddSDKAgentKeyValue</a></span></strong>(keyType <span class='object_link'><a href="middleware/SDKAgentKeyType.html" title="middleware.SDKAgentKeyType (struct)">SDKAgentKeyType</a></span>, key, value string) func(*middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddSDKAgentKeyValue retrieves a requestUserAgent from the provided stack, or initializes one.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/user_agent.go', line 250</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddSDKAgentKeyValue(keyType SDKAgentKeyType, key, value <span class="hljs-constant">string</span>) <span class="hljs-keyword">func</span>(*middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">func</span>(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+		requestUserAgent, err := getOrAddRequestUserAgent(stack)
+		<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> err
+		}
+		requestUserAgent.AddSDKAgentKeyValue(keyType, key, value)
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddUserAgentKey-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddUserAgentKey-class_method" title="middleware.AddUserAgentKey() (method)">AddUserAgentKey</a></span></strong>(key string) func(*middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddUserAgentKey retrieves a requestUserAgent from the provided stack, or initializes one.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/user_agent.go', line 214</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddUserAgentKey(key <span class="hljs-constant">string</span>) <span class="hljs-keyword">func</span>(*middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">func</span>(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+		requestUserAgent, err := getOrAddRequestUserAgent(stack)
+		<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> err
+		}
+		requestUserAgent.AddUserAgentKey(key)
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddUserAgentKeyValue-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddUserAgentKeyValue-class_method" title="middleware.AddUserAgentKeyValue() (method)">AddUserAgentKeyValue</a></span></strong>(key, value string) func(*middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddUserAgentKeyValue retrieves a requestUserAgent from the provided stack, or initializes one.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/user_agent.go', line 226</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddUserAgentKeyValue(key, value <span class="hljs-constant">string</span>) <span class="hljs-keyword">func</span>(*middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> <span class="hljs-keyword">func</span>(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+		requestUserAgent, err := getOrAddRequestUserAgent(stack)
+		<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> err
+		}
+		requestUserAgent.AddUserAgentKeyValue(key, value)
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetAttemptSkew-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetAttemptSkew-class_method" title="middleware.GetAttemptSkew() (method)">GetAttemptSkew</a></span></strong>(metadata middleware.Metadata) (v time.Duration, ok bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetAttemptSkew returns Attempt clock skew for response from metadata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/middleware.go', line 116</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetAttemptSkew(metadata middleware.Metadata) (v time.Duration, ok <span class="hljs-constant">bool</span>) {
+	v, ok = metadata.Get(attemptSkewKey{}).(time.Duration)
+	<span class="hljs-keyword">return</span> v, ok
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetEndpointSource-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetEndpointSource-class_method" title="middleware.GetEndpointSource() (method)">GetEndpointSource</a></span></strong>(ctx context.Context) (v aws.EndpointSource) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetEndpointSource returns an endpoint source if set on context</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+191
+192
+193
+194</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 191</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetEndpointSource(ctx context.Context) (v aws.EndpointSource) {
+	v, _ = middleware.GetStackValue(ctx, endpointSourceKey{}).(aws.EndpointSource)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetOperationName-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetOperationName-class_method" title="middleware.GetOperationName() (method)">GetOperationName</a></span></strong>(ctx context.Context) (v string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetOperationName retrieves the service operation metadata from the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 100</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetOperationName(ctx context.Context) (v <span class="hljs-constant">string</span>) {
+	v, _ = middleware.GetStackValue(ctx, operationNameKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetPartitionID-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetPartitionID-class_method" title="middleware.GetPartitionID() (method)">GetPartitionID</a></span></strong>(ctx context.Context) string 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetPartitionID retrieves the endpoint partition id from the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111
+112</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 109</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetPartitionID(ctx context.Context) <span class="hljs-constant">string</span> {
+	v, _ := middleware.GetStackValue(ctx, partitionIDKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetRawResponse-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetRawResponse-class_method" title="middleware.GetRawResponse() (method)">GetRawResponse</a></span></strong>(metadata middleware.Metadata) interface{} 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetRawResponse returns raw response set on metadata</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+165
+166
+167</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/middleware.go', line 165</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetRawResponse(metadata middleware.Metadata) <span class="hljs-keyword">interface</span>{} {
+	<span class="hljs-keyword">return</span> metadata.Get(rawResponseKey{})
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetRegion-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetRegion-class_method" title="middleware.GetRegion() (method)">GetRegion</a></span></strong>(ctx context.Context) (v string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetRegion retrieves the endpoint region from the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91
+92
+93
+94</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 91</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetRegion(ctx context.Context) (v <span class="hljs-constant">string</span>) {
+	v, _ = middleware.GetStackValue(ctx, regionKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetRequestIDMetadata-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetRequestIDMetadata-class_method" title="middleware.GetRequestIDMetadata() (method)">GetRequestIDMetadata</a></span></strong>(metadata middleware.Metadata) (string, bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetRequestIDMetadata retrieves the request id from middleware metadata returns string and bool indicating value of request id, whether request id was set.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/request_id.go', line 16</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetRequestIDMetadata(metadata middleware.Metadata) (<span class="hljs-constant">string</span>, <span class="hljs-constant">bool</span>) {
+	<span class="hljs-keyword">if</span> !metadata.Has(requestIDKey{}) {
+		<span class="hljs-keyword">return</span> <span class="hljs-string">""</span>, <span class="hljs-constant">false</span>
+	}
+
+	v, ok := metadata.Get(requestIDKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">if</span> !ok {
+		<span class="hljs-keyword">return</span> <span class="hljs-string">""</span>, <span class="hljs-constant">true</span>
+	}
+	<span class="hljs-keyword">return</span> v, <span class="hljs-constant">true</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetRequiresLegacyEndpoints-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetRequiresLegacyEndpoints-class_method" title="middleware.GetRequiresLegacyEndpoints() (method)">GetRequiresLegacyEndpoints</a></span></strong>(ctx context.Context) bool 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetRequiresLegacyEndpoints the flag used to indicate if legacy endpoint customizations need to be executed.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 119</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetRequiresLegacyEndpoints(ctx context.Context) <span class="hljs-constant">bool</span> {
+	v, _ := middleware.GetStackValue(ctx, requiresLegacyEndpointsKey{}).(<span class="hljs-constant">bool</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetResponseAt-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetResponseAt-class_method" title="middleware.GetResponseAt() (method)">GetResponseAt</a></span></strong>(metadata middleware.Metadata) (v time.Time, ok bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetResponseAt returns the time response was received at.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/middleware.go', line 90</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetResponseAt(metadata middleware.Metadata) (v time.Time, ok <span class="hljs-constant">bool</span>) {
+	v, ok = metadata.Get(responseAtKey{}).(time.Time)
+	<span class="hljs-keyword">return</span> v, ok
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetServerTime-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetServerTime-class_method" title="middleware.GetServerTime() (method)">GetServerTime</a></span></strong>(metadata middleware.Metadata) (v time.Time, ok bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetServerTime returns the server time for response.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/middleware.go', line 103</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetServerTime(metadata middleware.Metadata) (v time.Time, ok <span class="hljs-constant">bool</span>) {
+	v, ok = metadata.Get(serverTimeKey{}).(time.Time)
+	<span class="hljs-keyword">return</span> v, ok
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetServiceID-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetServiceID-class_method" title="middleware.GetServiceID() (method)">GetServiceID</a></span></strong>(ctx context.Context) (v string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetServiceID retrieves the service id from the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 58</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetServiceID(ctx context.Context) (v <span class="hljs-constant">string</span>) {
+	v, _ = middleware.GetStackValue(ctx, serviceIDKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetSigningCredentials-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetSigningCredentials-class_method" title="middleware.GetSigningCredentials() (method)">GetSigningCredentials</a></span></strong>(ctx context.Context) (v <span class='object_link'><a href="Credentials.html" title="aws.Credentials (struct)">aws.Credentials</a></span>) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetSigningCredentials returns the credentials that were used for signing if set on context.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206
+207</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 204</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetSigningCredentials(ctx context.Context) (v aws.Credentials) {
+	v, _ = middleware.GetStackValue(ctx, signingCredentialsKey{}).(aws.Credentials)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetSigningName-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetSigningName-class_method" title="middleware.GetSigningName() (method)">GetSigningName</a></span></strong>(ctx context.Context) (v string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetSigningName retrieves the service signing name from the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+<p>Deprecated: This value is unstable. The resolved signing name is available in the signer properties object passed to the signer.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 70</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetSigningName(ctx context.Context) (v <span class="hljs-constant">string</span>) {
+	v, _ = middleware.GetStackValue(ctx, signingNameKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetSigningRegion-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetSigningRegion-class_method" title="middleware.GetSigningRegion() (method)">GetSigningRegion</a></span></strong>(ctx context.Context) (v string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetSigningRegion retrieves the region from the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+<p>Deprecated: This value is unstable. The resolved signing region is available in the signer properties object passed to the signer.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 82</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetSigningRegion(ctx context.Context) (v <span class="hljs-constant">string</span>) {
+	v, _ = middleware.GetStackValue(ctx, signingRegionKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetEndpointSource-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetEndpointSource-class_method" title="middleware.SetEndpointSource() (method)">SetEndpointSource</a></span></strong>(ctx context.Context, value aws.EndpointSource) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetEndpointSource sets endpoint source on context</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+197
+198
+199</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 197</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetEndpointSource(ctx context.Context, value aws.EndpointSource) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, endpointSourceKey{}, value)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetPartitionID-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetPartitionID-class_method" title="middleware.SetPartitionID() (method)">SetPartitionID</a></span></strong>(ctx context.Context, value string) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetPartitionID sets the partition id of a resolved region on the context</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+183
+184
+185</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 183</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetPartitionID(ctx context.Context, value <span class="hljs-constant">string</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, partitionIDKey{}, value)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetRequestIDMetadata-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetRequestIDMetadata-class_method" title="middleware.SetRequestIDMetadata() (method)">SetRequestIDMetadata</a></span></strong>(metadata *middleware.Metadata, id string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetRequestIDMetadata sets the provided request id over middleware metadata</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/request_id.go', line 10</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetRequestIDMetadata(metadata *middleware.Metadata, id <span class="hljs-constant">string</span>) {
+	metadata.Set(requestIDKey{}, id)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetRequiresLegacyEndpoints-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetRequiresLegacyEndpoints-class_method" title="middleware.SetRequiresLegacyEndpoints() (method)">SetRequiresLegacyEndpoints</a></span></strong>(ctx context.Context, value bool) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetRequiresLegacyEndpoints set or modifies the flag indicated that legacy endpoint customizations are needed.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+129
+130
+131</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 129</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetRequiresLegacyEndpoints(ctx context.Context, value <span class="hljs-constant">bool</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, requiresLegacyEndpointsKey{}, value)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetServiceID-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetServiceID-class_method" title="middleware.SetServiceID() (method)">SetServiceID</a></span></strong>(ctx context.Context, value string) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetServiceID sets the service id on the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 159</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetServiceID(ctx context.Context, value <span class="hljs-constant">string</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, serviceIDKey{}, value)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetSigningCredentials-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetSigningCredentials-class_method" title="middleware.SetSigningCredentials() (method)">SetSigningCredentials</a></span></strong>(ctx context.Context, value <span class='object_link'><a href="Credentials.html" title="aws.Credentials (struct)">aws.Credentials</a></span>) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetSigningCredentials sets the credentails used for signing on the context.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210
+211
+212</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 210</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetSigningCredentials(ctx context.Context, value aws.Credentials) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, signingCredentialsKey{}, value)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetSigningName-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetSigningName-class_method" title="middleware.SetSigningName() (method)">SetSigningName</a></span></strong>(ctx context.Context, value string) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetSigningName set or modifies the sigv4 or sigv4a signing name on the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+<p>Deprecated: This value is unstable. Use WithSigV4SigningName client option funcs instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+140
+141
+142</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 140</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetSigningName(ctx context.Context, value <span class="hljs-constant">string</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, signingNameKey{}, value)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetSigningRegion-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetSigningRegion-class_method" title="middleware.SetSigningRegion() (method)">SetSigningRegion</a></span></strong>(ctx context.Context, value string) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetSigningRegion sets or modifies the region on the context.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+<p>Deprecated: This value is unstable. Use WithSigV4SigningRegion client option funcs instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151
+152
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/middleware/metadata.go', line 151</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetSigningRegion(ctx context.Context, value <span class="hljs-constant">string</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, signingRegionKey{}, value)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:39 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

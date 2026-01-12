@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: http.BuildableClient
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/transport/http.BuildableClient";
+  relpath = '../../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../../_index.html">Index (B)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../aws.html" title="aws (package)">aws</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../transport.html" title="transport (package)">transport</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../http.html" title="http (package)">http</a></span></span>
+     &raquo; 
+    <span class="title">BuildableClient</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: http.BuildableClient
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/transport/http"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>BuildableClient provides a HTTPClient implementation with options to create copies of the HTTPClient when additional configuration is provided.</p>
+
+<p>The client’s methods will not share the http.Transport value between copies of the BuildableClient. Only exported member values of the Transport and optional Dialer will be copied between copies of BuildableClient.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="../../../service/s3/types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../HTTPClient.html" title="aws.HTTPClient (interface)">aws.HTTPClient</a></span>, <span class='object_link'><a href="../../../service/s3/HTTPClient.html" title="s3.HTTPClient (interface)">s3.HTTPClient</a></span>, <span class='object_link'><a href="../../../service/kms/HTTPClient.html" title="kms.HTTPClient (interface)">kms.HTTPClient</a></span>, <span class='object_link'><a href="../../signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="../../../service/s3/HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="../../../service/s3/types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="../../../service/s3/PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../../../service/internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="../../../service/s3/types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Constructor Functions
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewBuildableClient-class_method" title="http.BuildableClient.NewBuildableClient() (method)">func <strong>NewBuildableClient</strong>() *BuildableClient </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewBuildableClient returns an initialized client for invoking HTTP requests.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Do-instance_method" title="http.BuildableClient.Do() (method)">func (b *BuildableClient) <strong>Do</strong>(req *http.Request) (*http.Response, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Do implements the HTTPClient interface’s Do method to invoke a HTTP request, and receive the response.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Freeze-instance_method" title="http.BuildableClient.Freeze() (method)">func (b *BuildableClient) <strong>Freeze</strong>() aws.HTTPClient </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Freeze returns a frozen aws.HTTPClient implementation that is no longer a BuildableClient.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetDialer-instance_method" title="http.BuildableClient.GetDialer() (method)">func (b *BuildableClient) <strong>GetDialer</strong>() *net.Dialer </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetDialer returns a copy of the client’s network dialer.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetTimeout-instance_method" title="http.BuildableClient.GetTimeout() (method)">func (b *BuildableClient) <strong>GetTimeout</strong>() time.Duration </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetTimeout returns a copy of the client’s timeout to cancel requests with.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetTransport-instance_method" title="http.BuildableClient.GetTransport() (method)">func (b *BuildableClient) <strong>GetTransport</strong>() *http.Transport </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetTransport returns a copy of the client’s HTTP Transport.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#WithDialerOptions-instance_method" title="http.BuildableClient.WithDialerOptions() (method)">func (b *BuildableClient) <strong>WithDialerOptions</strong>(opts ...func(*net.Dialer)) *BuildableClient </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>WithDialerOptions copies the BuildableClient and returns it with the net.Dialer options applied.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#WithTimeout-instance_method" title="http.BuildableClient.WithTimeout() (method)">func (b *BuildableClient) <strong>WithTimeout</strong>(timeout time.Duration) *BuildableClient </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>WithTimeout Sets the timeout used by the client for all requests.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#WithTransportOptions-instance_method" title="http.BuildableClient.WithTransportOptions() (method)">func (b *BuildableClient) <strong>WithTransportOptions</strong>(opts ...func(*http.Transport)) *BuildableClient </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>WithTransportOptions copies the BuildableClient and returns it with the http.Transport options applied.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="NewBuildableClient-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewBuildableClient-class_method" title="http.BuildableClient.NewBuildableClient() (method)">NewBuildableClient</a></span></strong>() *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewBuildableClient returns an initialized client for invoking HTTP requests.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 54</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewBuildableClient() *BuildableClient {
+	<span class="hljs-keyword">return</span> &BuildableClient{}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Do-instance_method">
+  
+    func (b *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span>) <strong><span class='object_link'><a href="#Do-instance_method" title="http.BuildableClient.Do() (method)">Do</a></span></strong>(req *http.Request) (*http.Response, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Do implements the HTTPClient interface’s Do method to invoke a HTTP request, and receive the response. Uses the BuildableClient’s current configuration to invoke the http.Request.</p>
+
+<p>If connection pooling is enabled (aka HTTP KeepAlive) the client will only share pooled connections with its own instance. Copies of the BuildableClient will have their own connection pools.</p>
+
+<p>Redirect (3xx) responses will not be followed, the HTTP response received will returned instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 68</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (b *BuildableClient) Do(req *http.Request) (*http.Response, <span class="hljs-constant">error</span>) {
+	b.initOnce.Do(b.build)
+
+	<span class="hljs-keyword">return</span> b.client.Do(req)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Freeze-instance_method">
+  
+    func (b *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span>) <strong><span class='object_link'><a href="#Freeze-instance_method" title="http.BuildableClient.Freeze() (method)">Freeze</a></span></strong>() <span class='object_link'><a href="../../HTTPClient.html" title="aws.HTTPClient (interface)">aws.HTTPClient</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Freeze returns a frozen aws.HTTPClient implementation that is no longer a BuildableClient. Use this to prevent the SDK from applying DefaultMode configuration values to a buildable client.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 76</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (b *BuildableClient) Freeze() aws.HTTPClient {
+	cpy := b.clone()
+	cpy.build()
+	<span class="hljs-keyword">return</span> cpy.client
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetDialer-instance_method">
+  
+    func (b *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span>) <strong><span class='object_link'><a href="#GetDialer-instance_method" title="http.BuildableClient.GetDialer() (method)">GetDialer</a></span></strong>() *net.Dialer 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetDialer returns a copy of the client’s network dialer.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 155</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (b *BuildableClient) GetDialer() *net.Dialer {
+	<span class="hljs-keyword">var</span> dialer *net.Dialer
+	<span class="hljs-keyword">if</span> b.dialer != <span class="hljs-constant">nil</span> {
+		dialer = shallowCopyStruct(b.dialer).(*net.Dialer)
+	} <span class="hljs-keyword">else</span> {
+		dialer = defaultDialer()
+	}
+
+	<span class="hljs-keyword">return</span> dialer
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetTimeout-instance_method">
+  
+    func (b *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span>) <strong><span class='object_link'><a href="#GetTimeout-instance_method" title="http.BuildableClient.GetTimeout() (method)">GetTimeout</a></span></strong>() time.Duration 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetTimeout returns a copy of the client’s timeout to cancel requests with.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+167
+168
+169</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 167</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (b *BuildableClient) GetTimeout() time.Duration {
+	<span class="hljs-keyword">return</span> b.clientTimeout
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetTransport-instance_method">
+  
+    func (b *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span>) <strong><span class='object_link'><a href="#GetTransport-instance_method" title="http.BuildableClient.GetTransport() (method)">GetTransport</a></span></strong>() *http.Transport 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetTransport returns a copy of the client’s HTTP Transport.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 143</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (b *BuildableClient) GetTransport() *http.Transport {
+	<span class="hljs-keyword">var</span> tr *http.Transport
+	<span class="hljs-keyword">if</span> b.transport != <span class="hljs-constant">nil</span> {
+		tr = b.transport.Clone()
+	} <span class="hljs-keyword">else</span> {
+		tr = defaultHTTPTransport()
+	}
+
+	<span class="hljs-keyword">return</span> tr
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="WithDialerOptions-instance_method">
+  
+    func (b *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span>) <strong><span class='object_link'><a href="#WithDialerOptions-instance_method" title="http.BuildableClient.WithDialerOptions() (method)">WithDialerOptions</a></span></strong>(opts ...func(*net.Dialer)) *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>WithDialerOptions copies the BuildableClient and returns it with the net.Dialer options applied. Will set the client’s http.Transport DialContext member.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 119</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (b *BuildableClient) WithDialerOptions(opts ...<span class="hljs-keyword">func</span>(*net.Dialer)) *BuildableClient {
+	cpy := b.clone()
+
+	dialer := cpy.GetDialer()
+	<span class="hljs-keyword">for</span> _, opt := <span class="hljs-keyword">range</span> opts {
+		opt(dialer)
+	}
+	cpy.dialer = dialer
+
+	tr := cpy.GetTransport()
+	tr.DialContext = cpy.dialer.DialContext
+	cpy.transport = tr
+
+	<span class="hljs-keyword">return</span> cpy
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="WithTimeout-instance_method">
+  
+    func (b *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span>) <strong><span class='object_link'><a href="#WithTimeout-instance_method" title="http.BuildableClient.WithTimeout() (method)">WithTimeout</a></span></strong>(timeout time.Duration) *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>WithTimeout Sets the timeout used by the client for all requests.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+136
+137
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 136</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (b *BuildableClient) WithTimeout(timeout time.Duration) *BuildableClient {
+	cpy := b.clone()
+	cpy.clientTimeout = timeout
+	<span class="hljs-keyword">return</span> cpy
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="WithTransportOptions-instance_method">
+  
+    func (b *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span>) <strong><span class='object_link'><a href="#WithTransportOptions-instance_method" title="http.BuildableClient.WithTransportOptions() (method)">WithTransportOptions</a></span></strong>(opts ...func(*http.Transport)) *<span class='object_link'><a href="" title="http.BuildableClient (struct)">BuildableClient</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>WithTransportOptions copies the BuildableClient and returns it with the http.Transport options applied.</p>
+
+<p>If a non (*http.Transport) was set as the round tripper, the round tripper will be replaced with a default Transport value before invoking the option functions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/transport/http/client.go', line 104</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (b *BuildableClient) WithTransportOptions(opts ...<span class="hljs-keyword">func</span>(*http.Transport)) *BuildableClient {
+	cpy := b.clone()
+
+	tr := cpy.GetTransport()
+	<span class="hljs-keyword">for</span> _, opt := <span class="hljs-keyword">range</span> opts {
+		opt(tr)
+	}
+	cpy.transport = tr
+
+	<span class="hljs-keyword">return</span> cpy
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:51 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

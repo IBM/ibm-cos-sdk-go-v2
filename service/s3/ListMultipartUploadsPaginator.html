@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: s3.ListMultipartUploadsPaginator
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/s3.ListMultipartUploadsPaginator";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (L)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../s3.html" title="s3 (package)">s3</a></span></span>
+     &raquo; 
+    <span class="title">ListMultipartUploadsPaginator</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: s3.ListMultipartUploadsPaginator
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/s3"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>ListMultipartUploadsPaginator is a paginator for ListMultipartUploads</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../aws/signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#HasMorePages-instance_method" title="s3.ListMultipartUploadsPaginator.HasMorePages() (method)">func (p *ListMultipartUploadsPaginator) <strong>HasMorePages</strong>() bool </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HasMorePages returns a boolean indicating whether more pages are available.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NextPage-instance_method" title="s3.ListMultipartUploadsPaginator.NextPage() (method)">func (p *ListMultipartUploadsPaginator) <strong>NextPage</strong>(ctx context.Context, optFns ...func(*Options)) (*ListMultipartUploadsOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NextPage retrieves the next ListMultipartUploads page.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="HasMorePages-instance_method">
+  
+    func (p *<span class='object_link'><a href="" title="s3.ListMultipartUploadsPaginator (struct)">ListMultipartUploadsPaginator</a></span>) <strong><span class='object_link'><a href="#HasMorePages-instance_method" title="s3.ListMultipartUploadsPaginator.HasMorePages() (method)">HasMorePages</a></span></strong>() bool 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>HasMorePages returns a boolean indicating whether more pages are available</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/handwritten_paginators.go', line 168</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (p *ListMultipartUploadsPaginator) HasMorePages() <span class="hljs-constant">bool</span> {
+	<span class="hljs-keyword">return</span> p.firstPage || p.isTruncated
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NextPage-instance_method">
+  
+    func (p *<span class='object_link'><a href="" title="s3.ListMultipartUploadsPaginator (struct)">ListMultipartUploadsPaginator</a></span>) <strong><span class='object_link'><a href="#NextPage-instance_method" title="s3.ListMultipartUploadsPaginator.NextPage() (method)">NextPage</a></span></strong>(ctx context.Context, optFns ...func(*<span class='object_link'><a href="Options.html" title="s3.Options (struct)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListMultipartUploadsOutput" title="s3 (package)">ListMultipartUploadsOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NextPage retrieves the next ListMultipartUploads page.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/handwritten_paginators.go', line 173</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (p *ListMultipartUploadsPaginator) NextPage(ctx context.Context, optFns ...<span class="hljs-keyword">func</span>(*Options)) (*ListMultipartUploadsOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> !p.HasMorePages() {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"no more pages available"</span>)
+	}
+
+	params := *p.params
+	params.KeyMarker = p.keyMarker
+	params.UploadIdMarker = p.uploadIDMarker
+
+	<span class="hljs-keyword">var</span> limit <span class="hljs-constant">int32</span>
+	<span class="hljs-keyword">if</span> p.options.Limit > 0 {
+		limit = p.options.Limit
+	}
+	<span class="hljs-keyword">if</span> limit > 0 {
+		params.MaxUploads = aws.Int32(limit)
+	}
+
+	result, err := p.client.ListMultipartUploads(ctx, &params, optFns...)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+	}
+	p.firstPage = <span class="hljs-constant">false</span>
+
+	prevToken := p.keyMarker
+	p.isTruncated = aws.ToBool(result.IsTruncated)
+	p.keyMarker = <span class="hljs-constant">nil</span>
+	p.uploadIDMarker = <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">if</span> aws.ToBool(result.IsTruncated) {
+		p.keyMarker = result.NextKeyMarker
+		p.uploadIDMarker = result.NextUploadIdMarker
+	}
+
+	<span class="hljs-keyword">if</span> p.options.StopOnDuplicateToken &&
+		prevToken != <span class="hljs-constant">nil</span> &&
+		p.keyMarker != <span class="hljs-constant">nil</span> &&
+		*prevToken == *p.keyMarker {
+		p.isTruncated = <span class="hljs-constant">false</span>
+	}
+
+	<span class="hljs-keyword">return</span> result, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:57 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

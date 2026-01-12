@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: s3.Options
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/s3.Options";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (O)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../s3.html" title="s3 (package)">s3</a></span></span>
+     &raquo; 
+    <span class="title">Options</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: s3.Options
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/s3"
+</div>
+
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../aws/signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Structure Field Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AppID-field" title="s3.Options.AppID (field)"><strong>AppID</strong> string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The optional application specific identifier appended to the User-Agent header.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AuthSchemeResolver-field" title="s3.Options.AuthSchemeResolver (field)"><strong>AuthSchemeResolver</strong> AuthSchemeResolver</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The auth scheme resolver which determines how to authenticate for each operation.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AuthSchemes-field" title="s3.Options.AuthSchemes (field)"><strong>AuthSchemes</strong> []smithyhttp.AuthScheme</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The list of auth schemes supported by the client.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#BaseEndpoint-field" title="s3.Options.BaseEndpoint (field)"><strong>BaseEndpoint</strong> *string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This endpoint will be given as input to an EndpointResolverV2.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ClientLogMode-field" title="s3.Options.ClientLogMode (field)"><strong>ClientLogMode</strong> aws.ClientLogMode</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Configures the events that will be sent to the configured logger.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ContinueHeaderThresholdBytes-field" title="s3.Options.ContinueHeaderThresholdBytes (field)"><strong>ContinueHeaderThresholdBytes</strong> int64</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The threshold ContentLength in bytes for HTTP PUT request to receive 100-continue header.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Credentials-field" title="s3.Options.Credentials (field)"><strong>Credentials</strong> aws.CredentialsProvider</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The credentials object to use when signing requests.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DefaultsMode-field" title="s3.Options.DefaultsMode (field)"><strong>DefaultsMode</strong> aws.DefaultsMode</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The configuration DefaultsMode that the SDK should use when constructing the clients initial default settings.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DisableLogOutputChecksumValidationSkipped-field" title="s3.Options.DisableLogOutputChecksumValidationSkipped (field)"><strong>DisableLogOutputChecksumValidationSkipped</strong> bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Disables logging when the client skips output checksum validation due to lack of algorithm support.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DisableMultiRegionAccessPoints-field" title="s3.Options.DisableMultiRegionAccessPoints (field)"><strong>DisableMultiRegionAccessPoints</strong> bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Allows you to disable S3 Multi-Region access points feature.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#DisableS3ExpressSessionAuth-field" title="s3.Options.DisableS3ExpressSessionAuth (field)"><strong>DisableS3ExpressSessionAuth</strong> *bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Disables this client’s usage of Session Auth for S3Express buckets and reverts to using conventional SigV4 for those.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#EndpointOptions-field" title="s3.Options.EndpointOptions (field)"><strong>EndpointOptions</strong> EndpointResolverOptions</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The endpoint options to be used when attempting to resolve an endpoint.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#EndpointResolver-field" title="s3.Options.EndpointResolver (field)"><strong>EndpointResolver</strong> EndpointResolver</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The service endpoint resolver.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#EndpointResolverV2-field" title="s3.Options.EndpointResolverV2 (field)"><strong>EndpointResolverV2</strong> EndpointResolverV2</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Resolves the endpoint used for a particular service operation.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ExpressCredentials-field" title="s3.Options.ExpressCredentials (field)"><strong>ExpressCredentials</strong> ExpressCredentialsProvider</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The credentials provider for S3Express requests.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#HTTPClient-field" title="s3.Options.HTTPClient (field)"><strong>HTTPClient</strong> HTTPClient</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The HTTP client to invoke API calls with.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#HTTPSignerV4-field" title="s3.Options.HTTPSignerV4 (field)"><strong>HTTPSignerV4</strong> HTTPSignerV4</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Signature Version 4 (SigV4) Signer.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Logger-field" title="s3.Options.Logger (field)"><strong>Logger</strong> logging.Logger</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The logger writer interface to write logging messages to.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#MeterProvider-field" title="s3.Options.MeterProvider (field)"><strong>MeterProvider</strong> metrics.MeterProvider</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The client meter provider.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Region-field" title="s3.Options.Region (field)"><strong>Region</strong> string</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The region to send requests to.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RequestChecksumCalculation-field" title="s3.Options.RequestChecksumCalculation (field)"><strong>RequestChecksumCalculation</strong> aws.RequestChecksumCalculation</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates how user opt-in/out request checksum calculation.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#ResponseChecksumValidation-field" title="s3.Options.ResponseChecksumValidation (field)"><strong>ResponseChecksumValidation</strong> aws.ResponseChecksumValidation</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indicates how user opt-in/out response checksum validation.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RetryMaxAttempts-field" title="s3.Options.RetryMaxAttempts (field)"><strong>RetryMaxAttempts</strong> int</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RetryMaxAttempts specifies the maximum number attempts an API client will call an operation that fails with a retryable error.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RetryMode-field" title="s3.Options.RetryMode (field)"><strong>RetryMode</strong> aws.RetryMode</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RetryMode specifies the retry mode the API client will be created with, if Retryer option is not also specified.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Retryer-field" title="s3.Options.Retryer (field)"><strong>Retryer</strong> aws.Retryer</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Retryer guides how HTTP requests should be retried in case of recoverable failures.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RuntimeEnvironment-field" title="s3.Options.RuntimeEnvironment (field)"><strong>RuntimeEnvironment</strong> aws.RuntimeEnvironment</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The RuntimeEnvironment configuration, only populated if the DefaultsMode is set to DefaultsModeAuto and is initialized using config.LoadDefaultConfig .</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#TracerProvider-field" title="s3.Options.TracerProvider (field)"><strong>TracerProvider</strong> tracing.TracerProvider</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The client tracer provider.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UseARNRegion-field" title="s3.Options.UseARNRegion (field)"><strong>UseARNRegion</strong> bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Allows you to enable arn region support for the service.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UseAccelerate-field" title="s3.Options.UseAccelerate (field)"><strong>UseAccelerate</strong> bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Allows you to enable S3 Accelerate feature.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UseDualstack-field" title="s3.Options.UseDualstack (field)"><strong>UseDualstack</strong> bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Allows you to enable dual-stack endpoint support for the service.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UsePathStyle-field" title="s3.Options.UsePathStyle (field)"><strong>UsePathStyle</strong> bool</a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Allows you to enable the client to use path-style addressing, i.e., <a href="https://s3.amazonaws.com/BUCKET/KEY">s3.amazonaws.com/BUCKET/KEY</a> .</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Copy-instance_method" title="s3.Options.Copy() (method)">func (o Options) <strong>Copy</strong>() Options </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Copy creates a clone where the APIOptions list is deep copied.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetIdentityResolver-instance_method" title="s3.Options.GetIdentityResolver() (method)">func (o Options) <strong>GetIdentityResolver</strong>(schemeID string) smithyauth.IdentityResolver </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Structure Field Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="AppID-field">
+  <strong>AppID</strong> string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The optional application specific identifier appended to the User-Agent header.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AuthSchemeResolver-field">
+  <strong>AuthSchemeResolver</strong> <span class='object_link'><a href="#AuthSchemeResolver-field" title="s3.Options.AuthSchemeResolver (field)">AuthSchemeResolver</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The auth scheme resolver which determines how to authenticate for each operation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AuthSchemes-field">
+  <strong>AuthSchemes</strong> []smithyhttp.AuthScheme 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The list of auth schemes supported by the client.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="BaseEndpoint-field">
+  <strong>BaseEndpoint</strong> *string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>This endpoint will be given as input to an EndpointResolverV2. It is used for providing a custom base endpoint that is subject to modifications by the processing EndpointResolverV2.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ClientLogMode-field">
+  <strong>ClientLogMode</strong> <span class='object_link'><a href="../../aws/ClientLogMode.html" title="aws.ClientLogMode (struct)">aws.ClientLogMode</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Configures the events that will be sent to the configured logger.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ContinueHeaderThresholdBytes-field">
+  <strong>ContinueHeaderThresholdBytes</strong> int64 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The threshold ContentLength in bytes for HTTP PUT request to receive 100-continue header. Setting to -1 will disable adding the Expect header to requests; setting to 0 will set the threshold to default 2MB</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Credentials-field">
+  <strong>Credentials</strong> <span class='object_link'><a href="../../aws/CredentialsProvider.html" title="aws.CredentialsProvider (interface)">aws.CredentialsProvider</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The credentials object to use when signing requests.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DefaultsMode-field">
+  <strong>DefaultsMode</strong> <span class='object_link'><a href="../../aws/DefaultsMode.html" title="aws.DefaultsMode (struct)">aws.DefaultsMode</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The configuration DefaultsMode that the SDK should use when constructing the clients initial default settings.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DisableLogOutputChecksumValidationSkipped-field">
+  <strong>DisableLogOutputChecksumValidationSkipped</strong> bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Disables logging when the client skips output checksum validation due to lack of algorithm support.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DisableMultiRegionAccessPoints-field">
+  <strong>DisableMultiRegionAccessPoints</strong> bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Allows you to disable S3 Multi-Region access points feature.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="DisableS3ExpressSessionAuth-field">
+  <strong>DisableS3ExpressSessionAuth</strong> *bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Disables this client’s usage of Session Auth for S3Express buckets and reverts to using conventional SigV4 for those.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="EndpointOptions-field">
+  <strong>EndpointOptions</strong> EndpointResolverOptions 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The endpoint options to be used when attempting to resolve an endpoint.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="EndpointResolver-field">
+  <strong>EndpointResolver</strong> <span class='object_link'><a href="#EndpointResolver-field" title="s3.Options.EndpointResolver (field)">EndpointResolver</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The service endpoint resolver.</p>
+
+<p>Deprecated: Deprecated: EndpointResolver and WithEndpointResolver. Providing a value for this field will likely prevent you from using any endpoint-related service features released after the introduction of EndpointResolverV2 and BaseEndpoint.</p>
+
+<p>To migrate an EndpointResolver implementation that uses a custom endpoint, set the client option BaseEndpoint instead.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="EndpointResolverV2-field">
+  <strong>EndpointResolverV2</strong> <span class='object_link'><a href="#EndpointResolverV2-field" title="s3.Options.EndpointResolverV2 (field)">EndpointResolverV2</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Resolves the endpoint used for a particular service operation. This should be used over the deprecated EndpointResolver.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ExpressCredentials-field">
+  <strong>ExpressCredentials</strong> ExpressCredentialsProvider 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The credentials provider for S3Express requests.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="HTTPClient-field">
+  <strong>HTTPClient</strong> <span class='object_link'><a href="#HTTPClient-field" title="s3.Options.HTTPClient (field)">HTTPClient</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The HTTP client to invoke API calls with. Defaults to client’s default HTTP implementation if nil.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="HTTPSignerV4-field">
+  <strong>HTTPSignerV4</strong> <span class='object_link'><a href="#HTTPSignerV4-field" title="s3.Options.HTTPSignerV4 (field)">HTTPSignerV4</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Signature Version 4 (SigV4) Signer</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Logger-field">
+  <strong>Logger</strong> logging.Logger 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The logger writer interface to write logging messages to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="MeterProvider-field">
+  <strong>MeterProvider</strong> metrics.MeterProvider 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The client meter provider.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Region-field">
+  <strong>Region</strong> string 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The region to send requests to. (Required)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RequestChecksumCalculation-field">
+  <strong>RequestChecksumCalculation</strong> aws.RequestChecksumCalculation 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates how user opt-in/out request checksum calculation</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ResponseChecksumValidation-field">
+  <strong>ResponseChecksumValidation</strong> aws.ResponseChecksumValidation 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Indicates how user opt-in/out response checksum validation</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RetryMaxAttempts-field">
+  <strong>RetryMaxAttempts</strong> int 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>RetryMaxAttempts specifies the maximum number attempts an API client will call an operation that fails with a retryable error. A value of 0 is ignored, and will not be used to configure the API client created default retryer, or modify per operation call’s retry max attempts.</p>
+
+<p>If specified in an operation call’s functional options with a value that is different than the constructed client’s Options, the Client’s Retryer will be wrapped to use the operation’s specific RetryMaxAttempts value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RetryMode-field">
+  <strong>RetryMode</strong> <span class='object_link'><a href="../../aws.html#type-RetryMode" title="aws (package)">aws.RetryMode</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>RetryMode specifies the retry mode the API client will be created with, if Retryer option is not also specified.</p>
+
+<p>When creating a new API Clients this member will only be used if the Retryer Options member is nil. This value will be ignored if Retryer is not nil.</p>
+
+<p>Currently does not support per operation call overrides, may in the future.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="Retryer-field">
+  <strong>Retryer</strong> aws.Retryer 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Retryer guides how HTTP requests should be retried in case of recoverable failures. When nil the API client will use a default retryer. The kind of default retry created by the API client can be changed with the RetryMode option.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RuntimeEnvironment-field">
+  <strong>RuntimeEnvironment</strong> <span class='object_link'><a href="../../aws.html#type-RuntimeEnvironment" title="aws (package)">aws.RuntimeEnvironment</a></span> 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The RuntimeEnvironment configuration, only populated if the DefaultsMode is set to DefaultsModeAuto and is initialized using config.LoadDefaultConfig . You should not populate this structure programmatically, or rely on the values here within your applications.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="TracerProvider-field">
+  <strong>TracerProvider</strong> tracing.TracerProvider 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>The client tracer provider.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UseARNRegion-field">
+  <strong>UseARNRegion</strong> bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Allows you to enable arn region support for the service.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UseAccelerate-field">
+  <strong>UseAccelerate</strong> bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Allows you to enable S3 Accelerate feature. All operations compatible with S3 Accelerate will use the accelerate endpoint for requests. Requests not compatible will fall back to normal S3 requests. The bucket must be enabled for accelerate to be used with S3 client with accelerate enabled. If the bucket is not enabled for accelerate an error will be returned. The bucket name must be DNS compatible to work with accelerate.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UseDualstack-field">
+  <strong>UseDualstack</strong> bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Allows you to enable dual-stack endpoint support for the service.</p>
+
+<p>Deprecated: Set dual-stack by setting UseDualStackEndpoint on EndpointResolverOptions. When EndpointResolverOptions’ UseDualStackEndpoint field is set it overrides this field value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UsePathStyle-field">
+  <strong>UsePathStyle</strong> bool 
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>Allows you to enable the client to use path-style addressing, i.e., <a href="https://s3.amazonaws.com/BUCKET/KEY">s3.amazonaws.com/BUCKET/KEY</a> . By default, the S3 client will use virtual hosted bucket addressing when possible( <a href="https://BUCKET.s3.amazonaws.com/KEY">BUCKET.s3.amazonaws.com/KEY</a> ).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+</div>
+    
+  </div>
+
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Copy-instance_method">
+  
+    func (o <span class='object_link'><a href="" title="s3.Options (struct)">Options</a></span>) <strong><span class='object_link'><a href="#Copy-instance_method" title="s3.Options.Copy() (method)">Copy</a></span></strong>() <span class='object_link'><a href="" title="s3.Options (struct)">Options</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Copy creates a clone where the APIOptions list is deep copied.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+184
+185
+186
+187
+188
+189
+190</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/options.go', line 184</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (o Options) Copy() Options {
+	to := o
+	to.APIOptions = make([]<span class="hljs-keyword">func</span>(*middleware.Stack) <span class="hljs-constant">error</span>, len(o.APIOptions))
+	copy(to.APIOptions, o.APIOptions)
+
+	<span class="hljs-keyword">return</span> to
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetIdentityResolver-instance_method">
+  
+    func (o <span class='object_link'><a href="" title="s3.Options (struct)">Options</a></span>) <strong><span class='object_link'><a href="#GetIdentityResolver-instance_method" title="s3.Options.GetIdentityResolver() (method)">GetIdentityResolver</a></span></strong>(schemeID string) smithyauth.IdentityResolver 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/options.go', line 192</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (o Options) GetIdentityResolver(schemeID <span class="hljs-constant">string</span>) smithyauth.IdentityResolver {
+	<span class="hljs-keyword">if</span> schemeID == <span class="hljs-string">"aws.auth#sigv4"</span> {
+		<span class="hljs-keyword">return</span> getSigV4IdentityResolver(o)
+	}
+	<span class="hljs-keyword">if</span> schemeID == <span class="hljs-string">"com.amazonaws.s3#sigv4express"</span> {
+		<span class="hljs-keyword">return</span> getExpressIdentityResolver(o)
+	}
+	<span class="hljs-keyword">if</span> schemeID == <span class="hljs-string">"aws.auth#sigv4a"</span> {
+		<span class="hljs-keyword">return</span> getSigV4AIdentityResolver(o)
+	}
+	<span class="hljs-keyword">if</span> schemeID == <span class="hljs-string">"smithy.api#noAuth"</span> {
+		<span class="hljs-keyword">return</span> &smithyauth.AnonymousIdentityResolver{}
+	}
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:51 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

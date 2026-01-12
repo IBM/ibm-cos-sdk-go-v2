@@ -1,0 +1,2347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: s3shared
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/internal/s3shared";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (s)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../internal.html" title="internal (package)">internal</a></span></span>
+     &raquo; 
+    <span class="title">s3shared</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: s3shared
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
+</div>
+<div id="subpackages">
+<h2 class="packages">Sub-Packages</h2>
+<p class="children"><span class='object_link'><a href="s3shared/arn.html" title="arn (package)">arn</a></span>, <span class='object_link'><a href="s3shared/config.html" title="config (package)">config</a></span></p>
+</div>
+
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3shared/ARNLookup.html" title="s3shared.ARNLookup (struct)"><strong>ARNLookup</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ARNLookup is the initial middleware that looks up if an arn is provided.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)"><strong>ConfigurationError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ConfigurationError is used to denote a client configuration error.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-EnableDualstack" title="s3shared (package)"><strong>EnableDualstack</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>EnableDualstack represents middleware struct for enabling dualstack support.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-ErrorComponents" title="s3shared (package)"><strong>ErrorComponents</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ErrorComponents represents the error response fields that will be deserialized from an xml error response body.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-ErrorResponseDeserializerOptions" title="s3shared (package)"><strong>ErrorResponseDeserializerOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ErrorResponseDeserializerOptions represents error response deserializer options for s3 and s3-control service.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3shared/InvalidARNError.html" title="s3shared.InvalidARNError (struct)"><strong>InvalidARNError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>InvalidARNError denotes the error for Invalid ARN.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3shared/ResourceRequest.html" title="s3shared.ResourceRequest (struct)"><strong>ResourceRequest</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ResourceRequest represents an ARN resource and api request metadata.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3shared/ResponseError.html" title="s3shared.ResponseError (struct)"><strong>ResponseError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ResponseError provides the HTTP centric error type wrapping the underlying error with the HTTP response value and the deserialized RequestID.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Add100Continue-class_method" title="s3shared.Add100Continue() (method)">func <strong>Add100Continue</strong>(stack *middleware.Stack, continueHeaderThresholdBytes int64) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Add100Continue add middleware, which adds 100-continue header for s3 client HTTP PUT request larger than 2MB or with unknown size streaming bodies, during operation builder step.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddMetadataRetrieverMiddleware-class_method" title="s3shared.AddMetadataRetrieverMiddleware() (method)">func <strong>AddMetadataRetrieverMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddMetadataRetrieverMiddleware adds request id, host id retriever middleware.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddResponseErrorMiddleware-class_method" title="s3shared.AddResponseErrorMiddleware() (method)">func <strong>AddResponseErrorMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddResponseErrorMiddleware adds response error wrapper middleware.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetARNResourceFromContext-class_method" title="s3shared.GetARNResourceFromContext() (method)">func <strong>GetARNResourceFromContext</strong>(ctx context.Context) (arn.ARN, bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetARNResourceFromContext returns an ARN from context and a bool indicating presence of ARN on ctx.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetErrorResponseComponents-class_method" title="s3shared.GetErrorResponseComponents() (method)">func <strong>GetErrorResponseComponents</strong>(r io.Reader, options ErrorResponseDeserializerOptions) (ErrorComponents, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetErrorResponseComponents retrieves error components according to passed in options.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetHostIDMetadata-class_method" title="s3shared.GetHostIDMetadata() (method)">func <strong>GetHostIDMetadata</strong>(metadata middleware.Metadata) (string, bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetHostIDMetadata retrieves the host id from middleware metadata returns host id as string along with a boolean indicating presence of hostId on middleware metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetUnwrappedErrorResponseComponents-class_method" title="s3shared.GetUnwrappedErrorResponseComponents() (method)">func <strong>GetUnwrappedErrorResponseComponents</strong>(r io.Reader) (ErrorComponents, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetUnwrappedErrorResponseComponents returns the error fields from an xml error response body.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetWrappedErrorResponseComponents-class_method" title="s3shared.GetWrappedErrorResponseComponents() (method)">func <strong>GetWrappedErrorResponseComponents</strong>(r io.Reader) (ErrorComponents, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetWrappedErrorResponseComponents returns the error fields from an xml error response body in which error code, and message are wrapped by a &lt;Error&gt; tag.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#IsClonedInput-class_method" title="s3shared.IsClonedInput() (method)">func <strong>IsClonedInput</strong>(ctx context.Context) bool </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsClonedInput retrieves if context key for cloned input was set.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#IsFIPS-class_method" title="s3shared.IsFIPS() (method)">func <strong>IsFIPS</strong>(region string) bool </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>IsFIPS returns true if region is a fips pseudo-region.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewClientConfiguredForAccelerateError-class_method" title="s3shared.NewClientConfiguredForAccelerateError() (method)">func <strong>NewClientConfiguredForAccelerateError</strong>(resource arn.Resource, clientPartitionID, clientRegion string, err error) ConfigurationError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewClientConfiguredForAccelerateError denotes client config error for unsupported S3 accelerate.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewClientConfiguredForCrossRegionFIPSError-class_method" title="s3shared.NewClientConfiguredForCrossRegionFIPSError() (method)">func <strong>NewClientConfiguredForCrossRegionFIPSError</strong>(resource arn.Resource, clientPartitionID, clientRegion string, err error) ConfigurationError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewClientConfiguredForCrossRegionFIPSError denotes client config error for unsupported cross region FIPS request.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewClientConfiguredForDualStackError-class_method" title="s3shared.NewClientConfiguredForDualStackError() (method)">func <strong>NewClientConfiguredForDualStackError</strong>(resource arn.Resource, clientPartitionID, clientRegion string, err error) ConfigurationError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewClientConfiguredForDualStackError denotes client config error for unsupported S3 Dual-stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewClientConfiguredForFIPSError-class_method" title="s3shared.NewClientConfiguredForFIPSError() (method)">func <strong>NewClientConfiguredForFIPSError</strong>(resource arn.Resource, clientPartitionID, clientRegion string, err error) ConfigurationError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewClientConfiguredForFIPSError denotes client config error for unsupported cross region FIPS access.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewClientPartitionMismatchError-class_method" title="s3shared.NewClientPartitionMismatchError() (method)">func <strong>NewClientPartitionMismatchError</strong>(resource arn.Resource, clientPartitionID, clientRegion string, err error) ConfigurationError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewClientPartitionMismatchError stub.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewClientRegionMismatchError-class_method" title="s3shared.NewClientRegionMismatchError() (method)">func <strong>NewClientRegionMismatchError</strong>(resource arn.Resource, clientPartitionID, clientRegion string, err error) ConfigurationError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewClientRegionMismatchError denotes cross region access error.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewFailedToResolveEndpointError-class_method" title="s3shared.NewFailedToResolveEndpointError() (method)">func <strong>NewFailedToResolveEndpointError</strong>(resource arn.Resource, clientPartitionID, clientRegion string, err error) ConfigurationError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewFailedToResolveEndpointError denotes endpoint resolving error.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewFIPSConfigurationError-class_method" title="s3shared.NewFIPSConfigurationError() (method)">func <strong>NewFIPSConfigurationError</strong>(resource arn.Resource, clientPartitionID, clientRegion string, err error) ConfigurationError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewFIPSConfigurationError denotes a configuration error when a client or request is configured for FIPS.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewInvalidARNError-class_method" title="s3shared.NewInvalidARNError() (method)">func <strong>NewInvalidARNError</strong>(resource arn.Resource, err error) InvalidARNError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewInvalidARNError denotes invalid arn error.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewInvalidARNWithFIPSError-class_method" title="s3shared.NewInvalidARNWithFIPSError() (method)">func <strong>NewInvalidARNWithFIPSError</strong>(resource arn.Resource, err error) InvalidARNError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewInvalidARNWithFIPSError ARN not supported for FIPS region.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewInvalidARNWithUnsupportedPartitionError-class_method" title="s3shared.NewInvalidARNWithUnsupportedPartitionError() (method)">func <strong>NewInvalidARNWithUnsupportedPartitionError</strong>(resource arn.Resource, err error) InvalidARNError </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewInvalidARNWithUnsupportedPartitionError ARN not supported for the target partition.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetClonedInputKey-class_method" title="s3shared.SetClonedInputKey() (method)">func <strong>SetClonedInputKey</strong>(ctx context.Context, value bool) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetClonedInputKey sets a key on context to denote input was cloned previously.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetHostIDMetadata-class_method" title="s3shared.SetHostIDMetadata() (method)">func <strong>SetHostIDMetadata</strong>(metadata *middleware.Metadata, id string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetHostIDMetadata sets the provided host id over middleware metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Type Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="type-EnableDualstack">
+  
+    <strong>EnableDualstack</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>EnableDualstack represents middleware struct for enabling dualstack support</p>
+
+<p>Deprecated: See EndpointResolverOptions’ UseDualStackEndpoint support</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>UseDualstack</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>UseDualstack indicates if dualstack endpoint resolving is to be enabled</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>DefaultServiceID</strong> string 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>DefaultServiceID is the service id prefix used in endpoint resolving by default service-id is ‘s3’ and ‘s3-control’ for service s3, s3control.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-ErrorComponents">
+  
+    <strong>ErrorComponents</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>ErrorComponents represents the error response fields that will be deserialized from an xml error response body</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>Code</strong> string 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>Message</strong> string 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>RequestID</strong> string 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>HostID</strong> string 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-ErrorResponseDeserializerOptions">
+  
+    <strong>ErrorResponseDeserializerOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>ErrorResponseDeserializerOptions represents error response deserializer options for s3 and s3-control service</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>UseStatusCode</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>UseStatusCode denotes if status code should be used to retrieve error code, msg</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>StatusCode</strong> int 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>StatusCode is status code of error response</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>IsWrappedWithErrorTag</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>IsWrappedWithErrorTag represents if error response’s code, msg is wrapped within an additional &lt;Error&gt; tag</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+  </div>
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Add100Continue-class_method">
+  
+    func <strong><span class='object_link'><a href="#Add100Continue-class_method" title="s3shared.Add100Continue() (method)">Add100Continue</a></span></strong>(stack *middleware.Stack, continueHeaderThresholdBytes int64) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Add100Continue add middleware, which adds 100-continue header for s3 client HTTP PUT request larger than 2MB or with unknown size streaming bodies, during operation builder step</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/s3100continue.go', line 14</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> Add100Continue(stack *middleware.Stack, continueHeaderThresholdBytes <span class="hljs-constant">int64</span>) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Build.Add(&s3100Continue{
+		continueHeaderThresholdBytes: continueHeaderThresholdBytes,
+	}, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddMetadataRetrieverMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddMetadataRetrieverMiddleware-class_method" title="s3shared.AddMetadataRetrieverMiddleware() (method)">AddMetadataRetrieverMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddMetadataRetrieverMiddleware adds request id, host id retriever middleware</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+14
+15
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/metadata_retriever.go', line 14</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddMetadataRetrieverMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-comment">// add metadata retriever middleware before operation deserializers so that it can retrieve metadata such as</span>
+	<span class="hljs-comment">// host id, request id from response header returned by operation deserializers</span>
+	<span class="hljs-keyword">return</span> stack.Deserialize.Insert(&metadataRetriever{}, <span class="hljs-string">"OperationDeserializer"</span>, middleware.Before)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddResponseErrorMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddResponseErrorMiddleware-class_method" title="s3shared.AddResponseErrorMiddleware() (method)">AddResponseErrorMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddResponseErrorMiddleware adds response error wrapper middleware</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/response_error_middleware.go', line 12</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddResponseErrorMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-comment">// add error wrapper middleware before request id retriever middleware so that it can wrap the error response</span>
+	<span class="hljs-comment">// returned by operation deserializers</span>
+	<span class="hljs-keyword">return</span> stack.Deserialize.Insert(&errorWrapper{}, metadataRetrieverID, middleware.Before)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetARNResourceFromContext-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetARNResourceFromContext-class_method" title="s3shared.GetARNResourceFromContext() (method)">GetARNResourceFromContext</a></span></strong>(ctx context.Context) (arn.ARN, bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetARNResourceFromContext returns an ARN from context and a bool indicating presence of ARN on ctx.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/arn_lookup.go', line 69</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetARNResourceFromContext(ctx context.Context) (arn.ARN, <span class="hljs-constant">bool</span>) {
+	v, ok := middleware.GetStackValue(ctx, arnResourceKey{}).(arn.ARN)
+	<span class="hljs-keyword">return</span> v, ok
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetErrorResponseComponents-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetErrorResponseComponents-class_method" title="s3shared.GetErrorResponseComponents() (method)">GetErrorResponseComponents</a></span></strong>(r io.Reader, options <span class='object_link'><a href="#type-ErrorResponseDeserializerOptions" title="s3shared (package)">ErrorResponseDeserializerOptions</a></span>) (<span class='object_link'><a href="#type-ErrorComponents" title="s3shared (package)">ErrorComponents</a></span>, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetErrorResponseComponents retrieves error components according to passed in options</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/xml_utils.go', line 51</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetErrorResponseComponents(r io.Reader, options ErrorResponseDeserializerOptions) (ErrorComponents, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">var</span> errComponents ErrorComponents
+	<span class="hljs-keyword">var</span> err <span class="hljs-constant">error</span>
+
+	<span class="hljs-keyword">if</span> options.IsWrappedWithErrorTag {
+		errComponents, err = GetWrappedErrorResponseComponents(r)
+	} <span class="hljs-keyword">else</span> {
+		errComponents, err = GetUnwrappedErrorResponseComponents(r)
+	}
+
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> ErrorComponents{}, err
+	}
+
+	<span class="hljs-comment">// If an error code or message is not retrieved, it is derived from the http status code</span>
+	<span class="hljs-comment">// eg, for S3 service, we derive err code and message, if none is found</span>
+	<span class="hljs-keyword">if</span> options.UseStatusCode && len(errComponents.Code) == 0 &&
+		len(errComponents.Message) == 0 {
+		<span class="hljs-comment">// derive code and message from status code</span>
+		statusText := http.StatusText(options.StatusCode)
+		errComponents.Code = strings.Replace(statusText, <span class="hljs-string">" "</span>, <span class="hljs-string">""</span>, -1)
+		errComponents.Message = statusText
+	}
+	<span class="hljs-keyword">return</span> errComponents, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetHostIDMetadata-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetHostIDMetadata-class_method" title="s3shared.GetHostIDMetadata() (method)">GetHostIDMetadata</a></span></strong>(metadata middleware.Metadata) (string, bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetHostIDMetadata retrieves the host id from middleware metadata returns host id as string along with a boolean indicating presence of hostId on middleware metadata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/host_id.go', line 18</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetHostIDMetadata(metadata middleware.Metadata) (<span class="hljs-constant">string</span>, <span class="hljs-constant">bool</span>) {
+	<span class="hljs-keyword">if</span> !metadata.Has(hostID{}) {
+		<span class="hljs-keyword">return</span> <span class="hljs-string">""</span>, <span class="hljs-constant">false</span>
+	}
+
+	v, ok := metadata.Get(hostID{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">if</span> !ok {
+		<span class="hljs-keyword">return</span> <span class="hljs-string">""</span>, <span class="hljs-constant">true</span>
+	}
+	<span class="hljs-keyword">return</span> v, <span class="hljs-constant">true</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetUnwrappedErrorResponseComponents-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetUnwrappedErrorResponseComponents-class_method" title="s3shared.GetUnwrappedErrorResponseComponents() (method)">GetUnwrappedErrorResponseComponents</a></span></strong>(r io.Reader) (<span class='object_link'><a href="#type-ErrorComponents" title="s3shared (package)">ErrorComponents</a></span>, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetUnwrappedErrorResponseComponents returns the error fields from an xml error response body</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+20
+21
+22
+23
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/xml_utils.go', line 20</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetUnwrappedErrorResponseComponents(r io.Reader) (ErrorComponents, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">var</span> errComponents ErrorComponents
+	<span class="hljs-keyword">if</span> err := xml.NewDecoder(r).Decode(&errComponents); err != <span class="hljs-constant">nil</span> && err != io.EOF {
+		<span class="hljs-keyword">return</span> ErrorComponents{}, fmt.Errorf(<span class="hljs-string">"error while deserializing xml error response : %w"</span>, err)
+	}
+	<span class="hljs-keyword">return</span> errComponents, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetWrappedErrorResponseComponents-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetWrappedErrorResponseComponents-class_method" title="s3shared.GetWrappedErrorResponseComponents() (method)">GetWrappedErrorResponseComponents</a></span></strong>(r io.Reader) (<span class='object_link'><a href="#type-ErrorComponents" title="s3shared (package)">ErrorComponents</a></span>, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetWrappedErrorResponseComponents returns the error fields from an xml error response body in which error code, and message are wrapped by a &lt;Error&gt; tag</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/xml_utils.go', line 30</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetWrappedErrorResponseComponents(r io.Reader) (ErrorComponents, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">var</span> errComponents <span class="hljs-keyword">struct</span> {
+		Code      <span class="hljs-constant">string</span> <span class="hljs-string">`xml:"Error>Code"`</span>
+		Message   <span class="hljs-constant">string</span> <span class="hljs-string">`xml:"Error>Message"`</span>
+		RequestID <span class="hljs-constant">string</span> <span class="hljs-string">`xml:"RequestId"`</span>
+		HostID    <span class="hljs-constant">string</span> <span class="hljs-string">`xml:"HostId"`</span>
+	}
+
+	<span class="hljs-keyword">if</span> err := xml.NewDecoder(r).Decode(&errComponents); err != <span class="hljs-constant">nil</span> && err != io.EOF {
+		<span class="hljs-keyword">return</span> ErrorComponents{}, fmt.Errorf(<span class="hljs-string">"error while deserializing xml error response : %w"</span>, err)
+	}
+
+	<span class="hljs-keyword">return</span> ErrorComponents{
+		Code:      errComponents.Code,
+		Message:   errComponents.Message,
+		RequestID: errComponents.RequestID,
+		HostID:    errComponents.HostID,
+	}, <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="IsClonedInput-class_method">
+  
+    func <strong><span class='object_link'><a href="#IsClonedInput-class_method" title="s3shared.IsClonedInput() (method)">IsClonedInput</a></span></strong>(ctx context.Context) bool 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>IsClonedInput retrieves if context key for cloned input was set. If set, we can infer that the reuqest input was cloned previously.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/metadata.go', line 24</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> IsClonedInput(ctx context.Context) <span class="hljs-constant">bool</span> {
+	v, _ := middleware.GetStackValue(ctx, clonedInputKey{}).(<span class="hljs-constant">bool</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="IsFIPS-class_method">
+  
+    func <strong><span class='object_link'><a href="#IsFIPS-class_method" title="s3shared.IsFIPS() (method)">IsFIPS</a></span></strong>(region string) bool 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>IsFIPS returns true if region is a fips pseudo-region</p>
+
+<p>Deprecated: FIPS should be specified via EndpointOptions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/resource_request.go', line 73</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> IsFIPS(region <span class="hljs-constant">string</span>) <span class="hljs-constant">bool</span> {
+	<span class="hljs-keyword">return</span> strings.HasPrefix(region, <span class="hljs-string">"fips-"</span>) ||
+		strings.HasSuffix(region, <span class="hljs-string">"-fips"</span>)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewClientConfiguredForAccelerateError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewClientConfiguredForAccelerateError-class_method" title="s3shared.NewClientConfiguredForAccelerateError() (method)">NewClientConfiguredForAccelerateError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, clientPartitionID, clientRegion string, err error) <span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)">ConfigurationError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewClientConfiguredForAccelerateError denotes client config error for unsupported S3 accelerate</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152
+153
+154
+155
+156
+157
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 152</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewClientConfiguredForAccelerateError(resource arn.Resource, clientPartitionID, clientRegion <span class="hljs-constant">string</span>, err <span class="hljs-constant">error</span>) ConfigurationError {
+	<span class="hljs-keyword">return</span> ConfigurationError{
+		message:           <span class="hljs-string">"client configured for S3 Accelerate but is not supported with resource ARN"</span>,
+		origErr:           err,
+		resource:          resource,
+		clientPartitionID: clientPartitionID,
+		clientRegion:      clientRegion,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewClientConfiguredForCrossRegionFIPSError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewClientConfiguredForCrossRegionFIPSError-class_method" title="s3shared.NewClientConfiguredForCrossRegionFIPSError() (method)">NewClientConfiguredForCrossRegionFIPSError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, clientPartitionID, clientRegion string, err error) <span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)">ConfigurationError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewClientConfiguredForCrossRegionFIPSError denotes client config error for unsupported cross region FIPS request</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+163
+164
+165
+166
+167
+168
+169
+170
+171</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 163</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewClientConfiguredForCrossRegionFIPSError(resource arn.Resource, clientPartitionID, clientRegion <span class="hljs-constant">string</span>, err <span class="hljs-constant">error</span>) ConfigurationError {
+	<span class="hljs-keyword">return</span> ConfigurationError{
+		message:           <span class="hljs-string">"client configured for FIPS with cross-region enabled but is supported with cross-region resource ARN"</span>,
+		origErr:           err,
+		resource:          resource,
+		clientPartitionID: clientPartitionID,
+		clientRegion:      clientRegion,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewClientConfiguredForDualStackError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewClientConfiguredForDualStackError-class_method" title="s3shared.NewClientConfiguredForDualStackError() (method)">NewClientConfiguredForDualStackError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, clientPartitionID, clientRegion string, err error) <span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)">ConfigurationError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewClientConfiguredForDualStackError denotes client config error for unsupported S3 Dual-stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+174
+175
+176
+177
+178
+179
+180
+181
+182</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 174</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewClientConfiguredForDualStackError(resource arn.Resource, clientPartitionID, clientRegion <span class="hljs-constant">string</span>, err <span class="hljs-constant">error</span>) ConfigurationError {
+	<span class="hljs-keyword">return</span> ConfigurationError{
+		message:           <span class="hljs-string">"client configured for S3 Dual-stack but is not supported with resource ARN"</span>,
+		origErr:           err,
+		resource:          resource,
+		clientPartitionID: clientPartitionID,
+		clientRegion:      clientRegion,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewClientConfiguredForFIPSError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewClientConfiguredForFIPSError-class_method" title="s3shared.NewClientConfiguredForFIPSError() (method)">NewClientConfiguredForFIPSError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, clientPartitionID, clientRegion string, err error) <span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)">ConfigurationError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewClientConfiguredForFIPSError denotes client config error for unsupported cross region FIPS access</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130
+131
+132
+133
+134
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 130</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewClientConfiguredForFIPSError(resource arn.Resource, clientPartitionID, clientRegion <span class="hljs-constant">string</span>, err <span class="hljs-constant">error</span>) ConfigurationError {
+	<span class="hljs-keyword">return</span> ConfigurationError{
+		message:           <span class="hljs-string">"client configured for fips but cross-region resource ARN provided"</span>,
+		origErr:           err,
+		resource:          resource,
+		clientPartitionID: clientPartitionID,
+		clientRegion:      clientRegion,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewClientPartitionMismatchError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewClientPartitionMismatchError-class_method" title="s3shared.NewClientPartitionMismatchError() (method)">NewClientPartitionMismatchError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, clientPartitionID, clientRegion string, err error) <span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)">ConfigurationError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewClientPartitionMismatchError stub</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99
+100
+101
+102
+103
+104
+105</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 97</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewClientPartitionMismatchError(resource arn.Resource, clientPartitionID, clientRegion <span class="hljs-constant">string</span>, err <span class="hljs-constant">error</span>) ConfigurationError {
+	<span class="hljs-keyword">return</span> ConfigurationError{
+		message:           <span class="hljs-string">"client partition does not match provided ARN partition"</span>,
+		origErr:           err,
+		resource:          resource,
+		clientPartitionID: clientPartitionID,
+		clientRegion:      clientRegion,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewClientRegionMismatchError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewClientRegionMismatchError-class_method" title="s3shared.NewClientRegionMismatchError() (method)">NewClientRegionMismatchError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, clientPartitionID, clientRegion string, err error) <span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)">ConfigurationError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewClientRegionMismatchError denotes cross region access error</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+108
+109
+110
+111
+112
+113
+114
+115
+116</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 108</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewClientRegionMismatchError(resource arn.Resource, clientPartitionID, clientRegion <span class="hljs-constant">string</span>, err <span class="hljs-constant">error</span>) ConfigurationError {
+	<span class="hljs-keyword">return</span> ConfigurationError{
+		message:           <span class="hljs-string">"client region does not match provided ARN region"</span>,
+		origErr:           err,
+		resource:          resource,
+		clientPartitionID: clientPartitionID,
+		clientRegion:      clientRegion,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewFailedToResolveEndpointError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewFailedToResolveEndpointError-class_method" title="s3shared.NewFailedToResolveEndpointError() (method)">NewFailedToResolveEndpointError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, clientPartitionID, clientRegion string, err error) <span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)">ConfigurationError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewFailedToResolveEndpointError denotes endpoint resolving error</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121
+122
+123
+124
+125
+126
+127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 119</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewFailedToResolveEndpointError(resource arn.Resource, clientPartitionID, clientRegion <span class="hljs-constant">string</span>, err <span class="hljs-constant">error</span>) ConfigurationError {
+	<span class="hljs-keyword">return</span> ConfigurationError{
+		message:           <span class="hljs-string">"endpoint resolver failed to find an endpoint for the provided ARN region"</span>,
+		origErr:           err,
+		resource:          resource,
+		clientPartitionID: clientPartitionID,
+		clientRegion:      clientRegion,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewFIPSConfigurationError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewFIPSConfigurationError-class_method" title="s3shared.NewFIPSConfigurationError() (method)">NewFIPSConfigurationError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, clientPartitionID, clientRegion string, err error) <span class='object_link'><a href="s3shared/ConfigurationError.html" title="s3shared.ConfigurationError (struct)">ConfigurationError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewFIPSConfigurationError denotes a configuration error when a client or request is configured for FIPS</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+141
+142
+143
+144
+145
+146
+147
+148
+149</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 141</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewFIPSConfigurationError(resource arn.Resource, clientPartitionID, clientRegion <span class="hljs-constant">string</span>, err <span class="hljs-constant">error</span>) ConfigurationError {
+	<span class="hljs-keyword">return</span> ConfigurationError{
+		message:           <span class="hljs-string">"use of ARN is not supported when client or request is configured for FIPS"</span>,
+		origErr:           err,
+		resource:          resource,
+		clientPartitionID: clientPartitionID,
+		clientRegion:      clientRegion,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewInvalidARNError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewInvalidARNError-class_method" title="s3shared.NewInvalidARNError() (method)">NewInvalidARNError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, err error) <span class='object_link'><a href="s3shared/InvalidARNError.html" title="s3shared.InvalidARNError (struct)">InvalidARNError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewInvalidARNError denotes invalid arn error</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 42</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewInvalidARNError(resource arn.Resource, err <span class="hljs-constant">error</span>) InvalidARNError {
+	<span class="hljs-keyword">return</span> InvalidARNError{
+		message:  <span class="hljs-string">"invalid ARN"</span>,
+		origErr:  err,
+		resource: resource,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewInvalidARNWithFIPSError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewInvalidARNWithFIPSError-class_method" title="s3shared.NewInvalidARNWithFIPSError() (method)">NewInvalidARNWithFIPSError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, err error) <span class='object_link'><a href="s3shared/InvalidARNError.html" title="s3shared.InvalidARNError (struct)">InvalidARNError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewInvalidARNWithFIPSError ARN not supported for FIPS region</p>
+
+<p>Deprecated: FIPS will not appear in the ARN region component.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65
+66
+67
+68</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 62</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewInvalidARNWithFIPSError(resource arn.Resource, err <span class="hljs-constant">error</span>) InvalidARNError {
+	<span class="hljs-keyword">return</span> InvalidARNError{
+		message:  <span class="hljs-string">"resource ARN not supported for FIPS region"</span>,
+		resource: resource,
+		origErr:  err,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewInvalidARNWithUnsupportedPartitionError-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewInvalidARNWithUnsupportedPartitionError-class_method" title="s3shared.NewInvalidARNWithUnsupportedPartitionError() (method)">NewInvalidARNWithUnsupportedPartitionError</a></span></strong>(resource <span class='object_link'><a href="s3shared/arn/Resource.html" title="arn.Resource (interface)">arn.Resource</a></span>, err error) <span class='object_link'><a href="s3shared/InvalidARNError.html" title="s3shared.InvalidARNError (struct)">InvalidARNError</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewInvalidARNWithUnsupportedPartitionError ARN not supported for the target partition</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/endpoint_error.go', line 51</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewInvalidARNWithUnsupportedPartitionError(resource arn.Resource, err <span class="hljs-constant">error</span>) InvalidARNError {
+	<span class="hljs-keyword">return</span> InvalidARNError{
+		message:  <span class="hljs-string">"resource ARN not supported for the target ARN partition"</span>,
+		origErr:  err,
+		resource: resource,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetClonedInputKey-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetClonedInputKey-class_method" title="s3shared.SetClonedInputKey() (method)">SetClonedInputKey</a></span></strong>(ctx context.Context, value bool) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetClonedInputKey sets a key on context to denote input was cloned previously.</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/metadata.go', line 15</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetClonedInputKey(ctx context.Context, value <span class="hljs-constant">bool</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, clonedInputKey{}, value)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetHostIDMetadata-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetHostIDMetadata-class_method" title="s3shared.SetHostIDMetadata() (method)">SetHostIDMetadata</a></span></strong>(metadata *middleware.Metadata, id string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetHostIDMetadata sets the provided host id over middleware metadata</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/s3shared/host_id.go', line 11</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetHostIDMetadata(metadata *middleware.Metadata, id <span class="hljs-constant">string</span>) {
+	metadata.Set(hostID{}, id)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:49 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

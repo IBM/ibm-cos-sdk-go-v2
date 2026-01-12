@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: v4
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "aws/signer/v4";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (v)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../aws.html" title="aws (package)">aws</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../signer.html" title="signer (package)">signer</a></span></span>
+     &raquo; 
+    <span class="title">v4</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: v4
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/aws/signer/v4"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Package v4 implements the AWS signature version 4 algorithm (commonly known as SigV4).</p>
+
+<p>For more information about SigV4, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing AWS API requests</a> in the IAM user guide.</p>
+
+<p>While this implementation CAN work in an external context, it is developed primarily for SDK use and you may encounter fringe behaviors around header canonicalization.</p>
+
+<h1 id="label-Pre-escaping+a+request+URI">Pre-escaping a request URI</h1>
+
+<p>AWS v4 signature validation requires that the canonical string’s URI path component must be the escaped form of the HTTP request’s path.</p>
+
+<p>The Go HTTP client will perform escaping automatically on the HTTP request. This may cause signature validation errors because the request differs from the URI path or query from which the signature was generated.</p>
+
+<p>Because of this, we recommend that you explicitly escape the request when using this signer outside of the SDK to prevent possible signature mismatch. This can be done by setting URL.Opaque on the request. The signer will prefer that value, falling back to the return of URL.EscapedPath if unset.</p>
+
+<p>When setting URL.Opaque you must do so in the form of:</p>
+
+<pre class="code go"><code class="go"><div class="hljs"><span class="hljs-string">"//<hostname>/<path>"</span>
+
+<span class="hljs-comment">// e.g.</span>
+<span class="hljs-string">"//example.com/some/path"</span>
+</div></code></pre>
+
+<p>The leading “//” and hostname are required or the escaping will not work correctly.</p>
+
+<p>The TestStandaloneSign unit test provides a complete example of using the signer outside of the SDK and pre-escaping the URI path.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  
+    <h2>Constants</h2>
+    
+      <dl class="constants">
+        
+          <dt id="Version-constant" class="">
+          <div class="defn">const <strong>Version</strong>  = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>Version of signing v4</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"SigV4"</span></div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/ComputePayloadSHA256.html" title="v4.ComputePayloadSHA256 (struct)"><strong>ComputePayloadSHA256</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID is the middleware name.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/ContentSHA256Header.html" title="v4.ContentSHA256Header (struct)"><strong>ContentSHA256Header</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID returns the ContentSHA256HeaderMiddleware identifier.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/HashComputationError.html" title="v4.HashComputationError (struct)"><strong>HashComputationError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HashComputationError indicates an error occurred while computing the signing hash.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/PresignHTTPRequestMiddleware.html" title="v4.PresignHTTPRequestMiddleware (struct)"><strong>PresignHTTPRequestMiddleware</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>PresignHTTPRequestMiddleware provides the Finalize middleware for creating a presigned URL for an HTTP request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-PresignHTTPRequestMiddlewareOptions" title="v4 (package)"><strong>PresignHTTPRequestMiddlewareOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>PresignHTTPRequestMiddlewareOptions is the options for the PresignHTTPRequestMiddleware middleware.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-PresignedHTTPRequest" title="v4 (package)"><strong>PresignedHTTPRequest</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>PresignedHTTPRequest provides the URL and signed headers that are included in the presigned URL.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/SignHTTPRequestMiddleware.html" title="v4.SignHTTPRequestMiddleware (struct)"><strong>SignHTTPRequestMiddleware</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SignHTTPRequestMiddleware is a <code>FinalizeMiddleware</code> implementation for SigV4 HTTP Signing.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-SignHTTPRequestMiddlewareOptions" title="v4 (package)"><strong>SignHTTPRequestMiddlewareOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SignHTTPRequestMiddlewareOptions is the configuration options for [SignHTTPRequestMiddleware].</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/Signer.html" title="v4.Signer (struct)"><strong>Signer</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Signer applies AWS v4 signing to given request.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-SignerOptions" title="v4 (package)"><strong>SignerOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SignerOptions is the SigV4 Signer options.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/SigningError.html" title="v4.SigningError (struct)"><strong>SigningError</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SigningError indicates an error condition occurred while performing SigV4 signing.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/StreamSigner.html" title="v4.StreamSigner (struct)"><strong>StreamSigner</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>StreamSigner implements Signature Version 4 (SigV4) signing of event stream encoded payloads.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/StreamingEventsPayload.html" title="v4.StreamingEventsPayload (struct)"><strong>StreamingEventsPayload</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID identifies the middleware.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/UnsignedPayload.html" title="v4.UnsignedPayload (struct)"><strong>UnsignedPayload</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ID returns the unsignedPayload identifier.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  <h2>
+    Interface Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/EventStreamSigner.html" title="v4.EventStreamSigner (interface)"><strong>EventStreamSigner</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>EventStreamSigner is an AWS EventStream protocol signer.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)"><strong>HTTPPresigner</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HTTPPresigner is an interface to a SigV4 signer that can sign create a presigned URL for a HTTP requests.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="v4/HTTPSigner.html" title="v4.HTTPSigner (interface)"><strong>HTTPSigner</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>HTTPSigner is an interface to a SigV4 signer that can sign HTTP requests.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddComputePayloadSHA256Middleware-class_method" title="v4.AddComputePayloadSHA256Middleware() (method)">func <strong>AddComputePayloadSHA256Middleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddComputePayloadSHA256Middleware adds computePayloadSHA256 to the operation middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddContentSHA256HeaderMiddleware-class_method" title="v4.AddContentSHA256HeaderMiddleware() (method)">func <strong>AddContentSHA256HeaderMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddContentSHA256HeaderMiddleware adds ContentSHA256Header to the operation middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddStreamingEventsPayload-class_method" title="v4.AddStreamingEventsPayload() (method)">func <strong>AddStreamingEventsPayload</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddStreamingEventsPayload adds the streamingEventsPayload middleware to the stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddUnsignedPayloadMiddleware-class_method" title="v4.AddUnsignedPayloadMiddleware() (method)">func <strong>AddUnsignedPayloadMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddUnsignedPayloadMiddleware adds unsignedPayload to the operation middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetPayloadHash-class_method" title="v4.GetPayloadHash() (method)">func <strong>GetPayloadHash</strong>(ctx context.Context) (v string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetPayloadHash retrieves the payload hash to use for signing.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetSignedRequestSignature-class_method" title="v4.GetSignedRequestSignature() (method)">func <strong>GetSignedRequestSignature</strong>(r *http.Request) ([]byte, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetSignedRequestSignature attempts to extract the signature of the request.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewSigner-class_method" title="v4.NewSigner() (method)">func <strong>NewSigner</strong>(optFns ...func(signer *SignerOptions)) *Signer </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewSigner returns a new SigV4 Signer.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewStreamSigner-class_method" title="v4.NewStreamSigner() (method)">func <strong>NewStreamSigner</strong>(credentials aws.Credentials, service, region string, seedSignature []byte, optFns ...func(*StreamSignerOptions)) *StreamSigner </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewStreamSigner returns a new AWS EventStream protocol signer.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RemoveComputePayloadSHA256Middleware-class_method" title="v4.RemoveComputePayloadSHA256Middleware() (method)">func <strong>RemoveComputePayloadSHA256Middleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RemoveComputePayloadSHA256Middleware removes computePayloadSHA256 from the operation middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RemoveContentSHA256HeaderMiddleware-class_method" title="v4.RemoveContentSHA256HeaderMiddleware() (method)">func <strong>RemoveContentSHA256HeaderMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RemoveContentSHA256HeaderMiddleware removes contentSHA256Header middleware from the operation middleware stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetPayloadHash-class_method" title="v4.SetPayloadHash() (method)">func <strong>SetPayloadHash</strong>(ctx context.Context, hash string) context.Context </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetPayloadHash sets the payload hash to be used for signing the request.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SwapComputePayloadSHA256ForUnsignedPayloadMiddleware-class_method" title="v4.SwapComputePayloadSHA256ForUnsignedPayloadMiddleware() (method)">func <strong>SwapComputePayloadSHA256ForUnsignedPayloadMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SwapComputePayloadSHA256ForUnsignedPayloadMiddleware replaces the ComputePayloadSHA256 middleware with the UnsignedPayload middleware.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#UseDynamicPayloadSigningMiddleware-class_method" title="v4.UseDynamicPayloadSigningMiddleware() (method)">func <strong>UseDynamicPayloadSigningMiddleware</strong>(stack *middleware.Stack) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>UseDynamicPayloadSigningMiddleware swaps the compute payload sha256 middleware with a resolver middleware that switches between unsigned and signed payload based on TLS state for request.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Type Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="type-PresignHTTPRequestMiddlewareOptions">
+  
+    <strong>PresignHTTPRequestMiddlewareOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>PresignHTTPRequestMiddlewareOptions is the options for the PresignHTTPRequestMiddleware middleware.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>CredentialsProvider</strong> <span class='object_link'><a href="../../CredentialsProvider.html" title="aws.CredentialsProvider (interface)">aws.CredentialsProvider</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>Presigner</strong> <span class='object_link'><a href="HTTPPresigner.html" title="v4.HTTPPresigner (interface)">HTTPPresigner</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>LogSigning</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-PresignedHTTPRequest">
+  
+    <strong>PresignedHTTPRequest</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>PresignedHTTPRequest provides the URL and signed headers that are included in the presigned URL.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>URL</strong> string 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>Method</strong> string 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>SignedHeader</strong> http.Header 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-SignHTTPRequestMiddlewareOptions">
+  
+    <strong>SignHTTPRequestMiddlewareOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>SignHTTPRequestMiddlewareOptions is the configuration options for [SignHTTPRequestMiddleware].</p>
+
+<p>Deprecated: [SignHTTPRequestMiddleware] is deprecated.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>CredentialsProvider</strong> <span class='object_link'><a href="../../CredentialsProvider.html" title="aws.CredentialsProvider (interface)">aws.CredentialsProvider</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>Signer</strong> <span class='object_link'><a href="HTTPSigner.html" title="v4.HTTPSigner (interface)">HTTPSigner</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+  <dt><code>
+    <strong>LogSigning</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-SignerOptions">
+  
+    <strong>SignerOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>SignerOptions is the SigV4 Signer options.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>DisableHeaderHoisting</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Disables the Signer’s moving HTTP header key/value pairs from the HTTP request header to the request’s query string. This is most commonly used with pre-signed requests preventing headers from being added to the request’s query string.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>DisableURIPathEscaping</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Disables the automatic escaping of the URI path of the request for the siganture’s canonical string’s path. For services that do not need additional escaping then use this to disable the signer escaping the path.</p>
+
+<p>S3 is an example of a service that does not need additional escaping.</p>
+
+<p><a href="http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html">docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html</a></p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>Logger</strong> logging.Logger 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>The logger to send log messages to.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>LogSigning</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Enable logging of signed requests. This will enable logging of the canonical request, the string to sign, and for presigning the subsequent presigned URL.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>DisableSessionToken</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Disables setting the session token on the request as part of signing through X-Amz-Security-Token. This is needed for variations of v4 that present the token elsewhere.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+  </div>
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="AddComputePayloadSHA256Middleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddComputePayloadSHA256Middleware-class_method" title="v4.AddComputePayloadSHA256Middleware() (method)">AddComputePayloadSHA256Middleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddComputePayloadSHA256Middleware adds computePayloadSHA256 to the operation middleware stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 137</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddComputePayloadSHA256Middleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Finalize.Insert(&ComputePayloadSHA256{}, <span class="hljs-string">"ResolveEndpointV2"</span>, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddContentSHA256HeaderMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddContentSHA256HeaderMiddleware-class_method" title="v4.AddContentSHA256HeaderMiddleware() (method)">AddContentSHA256HeaderMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddContentSHA256HeaderMiddleware adds ContentSHA256Header to the operation middleware stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+212
+213
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 212</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddContentSHA256HeaderMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Finalize.Insert(&ContentSHA256Header{}, computePayloadHashMiddlewareID, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddStreamingEventsPayload-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddStreamingEventsPayload-class_method" title="v4.AddStreamingEventsPayload() (method)">AddStreamingEventsPayload</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddStreamingEventsPayload adds the streamingEventsPayload middleware to the stack.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+342
+343
+344</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 342</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddStreamingEventsPayload(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Finalize.Add(&StreamingEventsPayload{}, middleware.Before)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddUnsignedPayloadMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddUnsignedPayloadMiddleware-class_method" title="v4.AddUnsignedPayloadMiddleware() (method)">AddUnsignedPayloadMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddUnsignedPayloadMiddleware adds unsignedPayload to the operation middleware stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 104</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddUnsignedPayloadMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	<span class="hljs-keyword">return</span> stack.Finalize.Insert(&UnsignedPayload{}, <span class="hljs-string">"ResolveEndpointV2"</span>, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetPayloadHash-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetPayloadHash-class_method" title="v4.GetPayloadHash() (method)">GetPayloadHash</a></span></strong>(ctx context.Context) (v string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetPayloadHash retrieves the payload hash to use for signing</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+408
+409
+410
+411</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 408</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetPayloadHash(ctx context.Context) (v <span class="hljs-constant">string</span>) {
+	v, _ = middleware.GetStackValue(ctx, payloadHashKey{}).(<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> v
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetSignedRequestSignature-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetSignedRequestSignature-class_method" title="v4.GetSignedRequestSignature() (method)">GetSignedRequestSignature</a></span></strong>(r *http.Request) ([]byte, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetSignedRequestSignature attempts to extract the signature of the request. Returning an error if the request is unsigned, or unable to extract the signature.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 370</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetSignedRequestSignature(r *http.Request) ([]byte, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">const</span> authHeaderSignatureElem = <span class="hljs-string">"Signature="</span>
+
+	<span class="hljs-keyword">if</span> auth := r.Header.Get(authorizationHeader); len(auth) != 0 {
+		ps := strings.Split(auth, <span class="hljs-string">","</span>)
+		<span class="hljs-keyword">for</span> _, p := <span class="hljs-keyword">range</span> ps {
+			p = strings.TrimSpace(p)
+			<span class="hljs-keyword">if</span> idx := strings.Index(p, authHeaderSignatureElem); idx >= 0 {
+				sig := p[len(authHeaderSignatureElem):]
+				<span class="hljs-keyword">if</span> len(sig) == 0 {
+					<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"invalid request signature authorization header"</span>)
+				}
+				<span class="hljs-keyword">return</span> hex.DecodeString(sig)
+			}
+		}
+	}
+
+	<span class="hljs-keyword">if</span> sig := r.URL.Query().Get(<span class="hljs-string">"X-Amz-Signature"</span>); len(sig) != 0 {
+		<span class="hljs-keyword">return</span> hex.DecodeString(sig)
+	}
+
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"request not signed"</span>)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewSigner-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewSigner-class_method" title="v4.NewSigner() (method)">NewSigner</a></span></strong>(optFns ...func(signer *<span class='object_link'><a href="#type-SignerOptions" title="v4 (package)">SignerOptions</a></span>)) *<span class='object_link'><a href="v4/Signer.html" title="v4.Signer (struct)">Signer</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewSigner returns a new SigV4 Signer</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120
+121
+122
+123
+124
+125
+126</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/v4.go', line 118</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewSigner(optFns ...<span class="hljs-keyword">func</span>(signer *SignerOptions)) *Signer {
+	options := SignerOptions{}
+
+	<span class="hljs-keyword">for</span> _, fn := <span class="hljs-keyword">range</span> optFns {
+		fn(&options)
+	}
+
+	<span class="hljs-keyword">return</span> &Signer{options: options, keyDerivator: v4Internal.NewSigningKeyDeriver()}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewStreamSigner-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewStreamSigner-class_method" title="v4.NewStreamSigner() (method)">NewStreamSigner</a></span></strong>(credentials <span class='object_link'><a href="../Credentials.html" title="aws.Credentials (struct)">aws.Credentials</a></span>, service, region string, seedSignature []byte, optFns ...func(*StreamSignerOptions)) *<span class='object_link'><a href="v4/StreamSigner.html" title="v4.StreamSigner (struct)">StreamSigner</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewStreamSigner returns a new AWS EventStream protocol signer.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/stream.go', line 34</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewStreamSigner(credentials aws.Credentials, service, region <span class="hljs-constant">string</span>, seedSignature []byte, optFns ...<span class="hljs-keyword">func</span>(*StreamSignerOptions)) *StreamSigner {
+	o := StreamSignerOptions{}
+
+	<span class="hljs-keyword">for</span> _, fn := <span class="hljs-keyword">range</span> optFns {
+		fn(&o)
+	}
+
+	<span class="hljs-keyword">return</span> &StreamSigner{
+		options:           o,
+		credentials:       credentials,
+		service:           service,
+		region:            region,
+		signingKeyDeriver: v4Internal.NewSigningKeyDeriver(),
+		prevSignature:     seedSignature,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RemoveComputePayloadSHA256Middleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#RemoveComputePayloadSHA256Middleware-class_method" title="v4.RemoveComputePayloadSHA256Middleware() (method)">RemoveComputePayloadSHA256Middleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>RemoveComputePayloadSHA256Middleware removes computePayloadSHA256 from the operation middleware stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+143
+144
+145
+146</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 143</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> RemoveComputePayloadSHA256Middleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	_, err := stack.Finalize.Remove(computePayloadHashMiddlewareID)
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RemoveContentSHA256HeaderMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#RemoveContentSHA256HeaderMiddleware-class_method" title="v4.RemoveContentSHA256HeaderMiddleware() (method)">RemoveContentSHA256HeaderMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>RemoveContentSHA256HeaderMiddleware removes contentSHA256Header middleware from the operation middleware stack</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+218
+219
+220
+221</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 218</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> RemoveContentSHA256HeaderMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	_, err := stack.Finalize.Remove((*ContentSHA256Header)(<span class="hljs-constant">nil</span>).ID())
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetPayloadHash-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetPayloadHash-class_method" title="v4.SetPayloadHash() (method)">SetPayloadHash</a></span></strong>(ctx context.Context, hash string) context.Context 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetPayloadHash sets the payload hash to be used for signing the request</p>
+
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+417
+418
+419</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 417</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetPayloadHash(ctx context.Context, hash <span class="hljs-constant">string</span>) context.Context {
+	<span class="hljs-keyword">return</span> middleware.WithStackValue(ctx, payloadHashKey{}, hash)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SwapComputePayloadSHA256ForUnsignedPayloadMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#SwapComputePayloadSHA256ForUnsignedPayloadMiddleware-class_method" title="v4.SwapComputePayloadSHA256ForUnsignedPayloadMiddleware() (method)">SwapComputePayloadSHA256ForUnsignedPayloadMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SwapComputePayloadSHA256ForUnsignedPayloadMiddleware replaces the ComputePayloadSHA256 middleware with the UnsignedPayload middleware.</p>
+
+<p>Use this to disable computing the Payload SHA256 checksum and instead use UNSIGNED-PAYLOAD for the SHA256 value.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+201
+202
+203
+204</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 201</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SwapComputePayloadSHA256ForUnsignedPayloadMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	_, err := stack.Finalize.Swap(computePayloadHashMiddlewareID, &UnsignedPayload{})
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="UseDynamicPayloadSigningMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#UseDynamicPayloadSigningMiddleware-class_method" title="v4.UseDynamicPayloadSigningMiddleware() (method)">UseDynamicPayloadSigningMiddleware</a></span></strong>(stack *middleware.Stack) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>UseDynamicPayloadSigningMiddleware swaps the compute payload sha256 middleware with a resolver middleware that switches between unsigned and signed payload based on TLS state for request. This middleware should not be used for AWS APIs that do not support unsigned payload signing auth. By default, SDK uses this middleware for known AWS APIs that support such TLS based auth selection .</p>
+
+<p>Usage example - S3 PutObject API allows unsigned payload signing auth usage when TLS is enabled, and uses this middleware to dynamically switch between unsigned and signed payload based on TLS state for request.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'aws/signer/v4/middleware.go', line 60</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> UseDynamicPayloadSigningMiddleware(stack *middleware.Stack) <span class="hljs-constant">error</span> {
+	_, err := stack.Finalize.Swap(computePayloadHashMiddlewareID, &dynamicPayloadSigningMiddleware{})
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:38 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

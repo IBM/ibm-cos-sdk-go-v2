@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Struct: s3.ObjectExistsWaiter
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/s3.ObjectExistsWaiter";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (O)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../s3.html" title="s3 (package)">s3</a></span></span>
+     &raquo; 
+    <span class="title">ObjectExistsWaiter</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Struct: s3.ObjectExistsWaiter
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/s3"
+</div>
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>ObjectExistsWaiter defines the waiters for ObjectExists</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+  <h3 class="inherited">Implemented Interfaces</h3>
+  <p class="inherited"><span class='object_link'><a href="types/AnalyticsFilter.html" title="types.AnalyticsFilter (interface)">types.AnalyticsFilter</a></span>, <span class='object_link'><a href="../../aws/signer/v4/HTTPPresigner.html" title="v4.HTTPPresigner (interface)">v4.HTTPPresigner</a></span>, <span class='object_link'><a href="HTTPPresignerV4.html" title="s3.HTTPPresignerV4 (interface)">s3.HTTPPresignerV4</a></span>, <span class='object_link'><a href="types/MetricsFilter.html" title="types.MetricsFilter (interface)">types.MetricsFilter</a></span>, <span class='object_link'><a href="PresignPost.html" title="s3.PresignPost (interface)">s3.PresignPost</a></span>, <span class='object_link'><a href="../internal/s3shared/arn/S3ObjectLambdaARN.html" title="arn.S3ObjectLambdaARN (interface)">arn.S3ObjectLambdaARN</a></span>, <span class='object_link'><a href="types/SelectObjectContentEventStream.html" title="types.SelectObjectContentEventStream (interface)">types.SelectObjectContentEventStream</a></span></p>
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Method  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#Wait-instance_method" title="s3.ObjectExistsWaiter.Wait() (method)">func (w *ObjectExistsWaiter) <strong>Wait</strong>(ctx context.Context, params *HeadObjectInput, maxWaitDur time.Duration, optFns ...func(*ObjectExistsWaiterOptions)) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Wait calls the waiter function for ObjectExists waiter.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#WaitForOutput-instance_method" title="s3.ObjectExistsWaiter.WaitForOutput() (method)">func (w *ObjectExistsWaiter) <strong>WaitForOutput</strong>(ctx context.Context, params *HeadObjectInput, maxWaitDur time.Duration, optFns ...func(*ObjectExistsWaiterOptions)) (*HeadObjectOutput, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>WaitForOutput calls the waiter function for ObjectExists waiter and returns the output of the successful operation.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+
+  <div id="Method_method_details" class="method_details_list">
+    <h2>Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="Wait-instance_method">
+  
+    func (w *<span class='object_link'><a href="" title="s3.ObjectExistsWaiter (struct)">ObjectExistsWaiter</a></span>) <strong><span class='object_link'><a href="#Wait-instance_method" title="s3.ObjectExistsWaiter.Wait() (method)">Wait</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, maxWaitDur time.Duration, optFns ...func(*<span class='object_link'><a href="../s3.html#type-ObjectExistsWaiterOptions" title="s3 (package)">ObjectExistsWaiterOptions</a></span>)) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Wait calls the waiter function for ObjectExists waiter. The maxWaitDur is the maximum wait duration the waiter will wait. The maxWaitDur is required and must be greater than zero.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+873
+874
+875
+876</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/api_op_HeadObject.go', line 873</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (w *ObjectExistsWaiter) Wait(ctx context.Context, params *HeadObjectInput, maxWaitDur time.Duration, optFns ...<span class="hljs-keyword">func</span>(*ObjectExistsWaiterOptions)) <span class="hljs-constant">error</span> {
+	_, err := w.WaitForOutput(ctx, params, maxWaitDur, optFns...)
+	<span class="hljs-keyword">return</span> err
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="WaitForOutput-instance_method">
+  
+    func (w *<span class='object_link'><a href="" title="s3.ObjectExistsWaiter (struct)">ObjectExistsWaiter</a></span>) <strong><span class='object_link'><a href="#WaitForOutput-instance_method" title="s3.ObjectExistsWaiter.WaitForOutput() (method)">WaitForOutput</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, maxWaitDur time.Duration, optFns ...func(*<span class='object_link'><a href="../s3.html#type-ObjectExistsWaiterOptions" title="s3 (package)">ObjectExistsWaiterOptions</a></span>)) (*<span class='object_link'><a href="../s3.html#type-HeadObjectOutput" title="s3 (package)">HeadObjectOutput</a></span>, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>WaitForOutput calls the waiter function for ObjectExists waiter and returns the output of the successful operation. The maxWaitDur is the maximum wait duration the waiter will wait. The maxWaitDur is required and must be greater than zero.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+881
+882
+883
+884
+885
+886
+887
+888
+889
+890
+891
+892
+893
+894
+895
+896
+897
+898
+899
+900
+901
+902
+903
+904
+905
+906
+907
+908
+909
+910
+911
+912
+913
+914
+915
+916
+917
+918
+919
+920
+921
+922
+923
+924
+925
+926
+927
+928
+929
+930
+931
+932
+933
+934
+935
+936
+937
+938
+939
+940
+941
+942
+943
+944
+945
+946
+947
+948
+949
+950
+951
+952
+953
+954
+955
+956
+957
+958
+959</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/api_op_HeadObject.go', line 881</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> (w *ObjectExistsWaiter) WaitForOutput(ctx context.Context, params *HeadObjectInput, maxWaitDur time.Duration, optFns ...<span class="hljs-keyword">func</span>(*ObjectExistsWaiterOptions)) (*HeadObjectOutput, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">if</span> maxWaitDur <= 0 {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"maximum wait time for waiter must be greater than zero"</span>)
+	}
+
+	options := w.options
+	<span class="hljs-keyword">for</span> _, fn := <span class="hljs-keyword">range</span> optFns {
+		fn(&options)
+	}
+
+	<span class="hljs-keyword">if</span> options.MaxDelay <= 0 {
+		options.MaxDelay = 120 * time.Second
+	}
+
+	<span class="hljs-keyword">if</span> options.MinDelay > options.MaxDelay {
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"minimum waiter delay %v must be lesser than or equal to maximum waiter delay of %v."</span>, options.MinDelay, options.MaxDelay)
+	}
+
+	ctx, cancelFn := context.WithTimeout(ctx, maxWaitDur)
+	<span class="hljs-keyword">defer</span> cancelFn()
+
+	logger := smithywaiter.Logger{}
+	remainingTime := maxWaitDur
+
+	<span class="hljs-keyword">var</span> attempt <span class="hljs-constant">int64</span>
+	<span class="hljs-keyword">for</span> {
+
+		attempt++
+		apiOptions := options.APIOptions
+		start := time.Now()
+
+		<span class="hljs-keyword">if</span> options.LogWaitAttempts {
+			logger.Attempt = attempt
+			apiOptions = append([]<span class="hljs-keyword">func</span>(*middleware.Stack) <span class="hljs-constant">error</span>{}, options.APIOptions...)
+			apiOptions = append(apiOptions, logger.AddLogger)
+		}
+
+		out, err := w.client.HeadObject(ctx, params, <span class="hljs-keyword">func</span>(o *Options) {
+			baseOpts := []<span class="hljs-keyword">func</span>(*Options){
+				addIsWaiterUserAgent,
+			}
+			o.APIOptions = append(o.APIOptions, apiOptions...)
+			<span class="hljs-keyword">for</span> _, opt := <span class="hljs-keyword">range</span> baseOpts {
+				opt(o)
+			}
+			<span class="hljs-keyword">for</span> _, opt := <span class="hljs-keyword">range</span> options.ClientOptions {
+				opt(o)
+			}
+		})
+
+		retryable, err := options.Retryable(ctx, params, out, err)
+		<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, err
+		}
+		<span class="hljs-keyword">if</span> !retryable {
+			<span class="hljs-keyword">return</span> out, <span class="hljs-constant">nil</span>
+		}
+
+		remainingTime -= time.Since(start)
+		<span class="hljs-keyword">if</span> remainingTime < options.MinDelay || remainingTime <= 0 {
+			<span class="hljs-keyword">break</span>
+		}
+
+		<span class="hljs-comment">// compute exponential backoff between waiter retries</span>
+		delay, err := smithywaiter.ComputeDelay(
+			attempt, options.MinDelay, options.MaxDelay, remainingTime,
+		)
+		<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"error computing waiter delay, %w"</span>, err)
+		}
+
+		remainingTime -= delay
+		<span class="hljs-comment">// sleep for the delay amount before invoking a request</span>
+		<span class="hljs-keyword">if</span> err := smithytime.SleepWithContext(ctx, delay); err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"request cancelled while waiting, %w"</span>, err)
+		}
+	}
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"exceeded max wait time for ObjectExists waiter"</span>)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:55 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Package: checksum
+  
+    &mdash; IBM COS SDK for Go
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "service/internal/checksum";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../package_list.html"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (c)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../service.html" title="service (package)">service</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../internal.html" title="internal (package)">internal</a></span></span>
+     &raquo; 
+    <span class="title">checksum</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="package_list_link"
+        href="../../package_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame"></iframe>
+
+      <div id="content">
+        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+        <h1>Package: checksum
+  
+  
+  
+</h1>
+<div class="package signature">
+import "../ibm-cos-sdk-go-v2/service/internal/checksum"
+</div>
+
+  
+    <h2>Constants</h2>
+    
+      <dl class="constants">
+        
+          <dt id="AlgorithmCRC32C-constant" class="">
+          <div class="defn">const <strong>AlgorithmCRC32C</strong> <span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span> = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AlgorithmCRC32C represents CRC32C hash algorithm</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"CRC32C"</span></div></pre>
+          </dd>
+        
+          <dt id="AlgorithmCRC32-constant" class="">
+          <div class="defn">const <strong>AlgorithmCRC32</strong> <span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span> = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AlgorithmCRC32 represents CRC32 hash algorithm</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"CRC32"</span></div></pre>
+          </dd>
+        
+          <dt id="AlgorithmSHA1-constant" class="">
+          <div class="defn">const <strong>AlgorithmSHA1</strong> <span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span> = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AlgorithmSHA1 represents SHA1 hash algorithm</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"SHA1"</span></div></pre>
+          </dd>
+        
+          <dt id="AlgorithmSHA256-constant" class="">
+          <div class="defn">const <strong>AlgorithmSHA256</strong> <span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span> = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AlgorithmSHA256 represents SHA256 hash algorithm</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"SHA256"</span></div></pre>
+          </dd>
+        
+          <dt id="AlgorithmCRC64NVME-constant" class="">
+          <div class="defn">const <strong>AlgorithmCRC64NVME</strong> <span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span> = 
+          <span class="note title readonly">readonly</span>
+          
+          </div>
+            <div class="docstring">
+  <div class="discussion">
+    
+<p>AlgorithmCRC64NVME represents CRC64NVME hash algorithm</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+          </dt>
+          <dd>
+            <h3>Value:</h3>
+            <pre class="code"><div class="hljs"><span class="hljs-string">"CRC64NVME"</span></div></pre>
+          </dd>
+        
+      </dl>
+    
+  
+
+  
+
+
+
+
+
+
+
+  <h2>
+    Type Summary
+    <small><a href="#" class="summary_toggle">collapse</a></small>
+  </h2>
+
+  <ul class="summary">
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-Algorithm" title="checksum (package)"><strong>Algorithm</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="checksum/ComputeInputPayloadChecksum.html" title="checksum.ComputeInputPayloadChecksum (struct)"><strong>ComputeInputPayloadChecksum</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ComputeInputPayloadChecksum middleware computes payload checksum.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-InputMiddlewareOptions" title="checksum (package)"><strong>InputMiddlewareOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>InputMiddlewareOptions provides the options for the request checksum middleware setup.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-OutputMiddlewareOptions" title="checksum (package)"><strong>OutputMiddlewareOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>OutputMiddlewareOptions provides options for configuring output checksum validation middleware.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="checksum/RequestChecksumMetricsTracking.html" title="checksum.RequestChecksumMetricsTracking (struct)"><strong>RequestChecksumMetricsTracking</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RequestChecksumMetricsTracking is the middleware to track operation request’s checksum usage.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="checksum/ResponseChecksumMetricsTracking.html" title="checksum.ResponseChecksumMetricsTracking (struct)"><strong>ResponseChecksumMetricsTracking</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>ResponseChecksumMetricsTracking is the middleware to track operation response’s checksum usage.</p>
+</div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="checksum/SetupInputContext.html" title="checksum.SetupInputContext (struct)"><strong>SetupInputContext</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetupInputContext is the initial middleware that looks up the input used to configure checksum behavior.</p>
+</div></span>
+  
+</li>
+
+
+    
+  </ul>
+
+
+
+  
+    <h2>
+      Function  Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddInputMiddleware-class_method" title="checksum.AddInputMiddleware() (method)">func <strong>AddInputMiddleware</strong>(stack *middleware.Stack, options InputMiddlewareOptions) (err error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddInputMiddleware adds the middleware for performing checksum computing of request payloads, and checksum validation of response payloads.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AddOutputMiddleware-class_method" title="checksum.AddOutputMiddleware() (method)">func <strong>AddOutputMiddleware</strong>(stack *middleware.Stack, options OutputMiddlewareOptions) error </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AddOutputMiddleware adds the middleware for validating response payload’s checksum.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AlgorithmChecksumLength-class_method" title="checksum.AlgorithmChecksumLength() (method)">func <strong>AlgorithmChecksumLength</strong>(v Algorithm) (int, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AlgorithmChecksumLength returns the length of the algorithm’s checksum in bytes.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#AlgorithmHTTPHeader-class_method" title="checksum.AlgorithmHTTPHeader() (method)">func <strong>AlgorithmHTTPHeader</strong>(v Algorithm) string </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>AlgorithmHTTPHeader returns the HTTP header for the algorithm’s hash.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#FilterSupportedAlgorithms-class_method" title="checksum.FilterSupportedAlgorithms() (method)">func <strong>FilterSupportedAlgorithms</strong>(vs []string) []Algorithm </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>FilterSupportedAlgorithms filters the set of algorithms, returning a slice of algorithms that are supported.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetComputedInputChecksums-class_method" title="checksum.GetComputedInputChecksums() (method)">func <strong>GetComputedInputChecksums</strong>(m middleware.Metadata) (map[string]string, bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetComputedInputChecksums returns the map of checksum algorithm to their computed value stored in the middleware Metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#GetOutputValidationAlgorithmsUsed-class_method" title="checksum.GetOutputValidationAlgorithmsUsed() (method)">func <strong>GetOutputValidationAlgorithmsUsed</strong>(m middleware.Metadata) ([]string, bool) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>GetOutputValidationAlgorithmsUsed returns the checksum algorithms used stored in the middleware Metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewAlgorithmHash-class_method" title="checksum.NewAlgorithmHash() (method)">func <strong>NewAlgorithmHash</strong>(v Algorithm) (hash.Hash, error) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>NewAlgorithmHash returns a hash.Hash for the checksum algorithm.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RemoveInputMiddleware-class_method" title="checksum.RemoveInputMiddleware() (method)">func <strong>RemoveInputMiddleware</strong>(stack *middleware.Stack) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RemoveInputMiddleware Removes the compute input payload checksum middleware handlers from the stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#RemoveOutputMiddleware-class_method" title="checksum.RemoveOutputMiddleware() (method)">func <strong>RemoveOutputMiddleware</strong>(stack *middleware.Stack) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>RemoveOutputMiddleware Removes the compute input payload checksum middleware handlers from the stack.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetComputedInputChecksums-class_method" title="checksum.SetComputedInputChecksums() (method)">func <strong>SetComputedInputChecksums</strong>(m *middleware.Metadata, vs map[string]string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetComputedInputChecksums stores the map of checksum algorithm to their computed value in the middleware Metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#SetOutputValidationAlgorithmsUsed-class_method" title="checksum.SetOutputValidationAlgorithmsUsed() (method)">func <strong>SetOutputValidationAlgorithmsUsed</strong>(m *middleware.Metadata, vs []string) </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>SetOutputValidationAlgorithmsUsed stores the checksum algorithms used in the middleware Metadata.</p>
+</div></span>
+  
+</li>
+
+
+      
+    </ul>
+  
+
+
+
+
+  <div id="type_details" class="method_details_list">
+    <h2>Type Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="type-Algorithm">
+  
+    <strong>Algorithm</strong> struct
+  
+
+  
+</h3>
+<div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+
+  <dt><em>(empty struct)</em></dt>
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-InputMiddlewareOptions">
+  
+    <strong>InputMiddlewareOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>InputMiddlewareOptions provides the options for the request checksum middleware setup.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>RequireChecksum</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>RequireChecksum indicates whether operation model forces middleware to compute the input payload’s checksum. If RequireChecksum is set to true, checksum will be calculated and RequestChecksumCalculation will be ignored, otherwise RequestChecksumCalculation will be used to indicate if checksum will be calculated</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>RequestChecksumCalculation</strong> aws.RequestChecksumCalculation 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>RequestChecksumCalculation is the user config to opt-in/out request checksum calculation. If RequireChecksum is set to true, checksum will be calculated and this field will be ignored, otherwise RequestChecksumCalculation will be used to indicate if checksum will be calculated</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>EnableTrailingChecksum</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Enables support for wrapping the serialized input payload with a content-encoding: aws-check wrapper, and including a trailer for the algorithm’s checksum value.</p>
+
+<p>The checksum will not be computed, nor added as trailing checksum, if the Algorithm’s header is already set on the request.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>EnableComputeSHA256PayloadHash</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Enables support for computing the SHA256 checksum of input payloads along with the algorithm specified checksum. Prevents downstream middleware handlers (computePayloadSHA256) re-reading the payload.</p>
+
+<p>The SHA256 payload checksum will only be used for computed for requests that are not TLS, or do not enable trailing checksums.</p>
+
+<p>The SHA256 payload hash will not be computed, if the Algorithm’s header is already set on the request.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>EnableDecodedContentLengthHeader</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>Enables support for setting the aws-chunked decoded content length header for the decoded length of the underlying stream. Will only be set when used with trailing checksums, and aws-chunked content-encoding.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-OutputMiddlewareOptions">
+  
+    <strong>OutputMiddlewareOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    
+<p>OutputMiddlewareOptions provides options for configuring output checksum validation middleware.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>ResponseChecksumValidation</strong> aws.ResponseChecksumValidation 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>ResponseChecksumValidation is the user config to opt-in/out response checksum validation</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>ValidationAlgorithms</strong> []string 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>The set of checksum algorithms that should be used for response payload checksum validation. The algorithm(s) used will be a union of the output’s returned algorithms and this set.</p>
+
+<p>Only the first algorithm in the union is currently used.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>IgnoreMultipartValidation</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>If set the middleware will ignore output multipart checksums. Otherwise a checksum format error will be returned by the middleware.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>LogValidationSkipped</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>When set the middleware will log when output does not have checksum or algorithm to validate.</p>
+
+    
+  </dd>
+
+  <dt><code>
+    <strong>LogMultipartValidationSkipped</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    
+<p>When set the middleware will log when the output contains a multipart checksum that was, skipped and not validated.</p>
+
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+  </div>
+
+
+  <div id="Function_method_details" class="method_details_list">
+    <h2>Function Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="AddInputMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddInputMiddleware-class_method" title="checksum.AddInputMiddleware() (method)">AddInputMiddleware</a></span></strong>(stack *middleware.Stack, options <span class='object_link'><a href="#type-InputMiddlewareOptions" title="checksum (package)">InputMiddlewareOptions</a></span>) (err error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddInputMiddleware adds the middleware for performing checksum computing of request payloads, and checksum validation of response payloads.</p>
+
+<p>Deprecated: This internal-only runtime API is frozen. Do not call or modify it in new code. Checksum-enabled service operations now generate this middleware setup code inline per #2507.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/middleware_add.go', line 58</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddInputMiddleware(stack *middleware.Stack, options InputMiddlewareOptions) (err <span class="hljs-constant">error</span>) {
+	<span class="hljs-comment">// Initial checksum configuration look up middleware</span>
+	err = stack.Initialize.Add(&SetupInputContext{
+		GetAlgorithm:               options.GetAlgorithm,
+		RequireChecksum:            options.RequireChecksum,
+		RequestChecksumCalculation: options.RequestChecksumCalculation,
+	}, middleware.Before)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	stack.Build.Remove(<span class="hljs-string">"ContentChecksum"</span>)
+
+	inputChecksum := &ComputeInputPayloadChecksum{
+		EnableTrailingChecksum:           options.EnableTrailingChecksum,
+		EnableComputePayloadHash:         options.EnableComputeSHA256PayloadHash,
+		EnableDecodedContentLengthHeader: options.EnableDecodedContentLengthHeader,
+	}
+	<span class="hljs-keyword">if</span> err := stack.Finalize.Insert(inputChecksum, <span class="hljs-string">"ResolveEndpointV2"</span>, middleware.After); err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-comment">// If trailing checksum is not supported no need for finalize handler to be added.</span>
+	<span class="hljs-keyword">if</span> options.EnableTrailingChecksum {
+		trailerMiddleware := &AddInputChecksumTrailer{
+			EnableTrailingChecksum:           inputChecksum.EnableTrailingChecksum,
+			EnableComputePayloadHash:         inputChecksum.EnableComputePayloadHash,
+			EnableDecodedContentLengthHeader: inputChecksum.EnableDecodedContentLengthHeader,
+		}
+		<span class="hljs-keyword">if</span> err := stack.Finalize.Insert(trailerMiddleware, <span class="hljs-string">"Retry"</span>, middleware.After); err != <span class="hljs-constant">nil</span> {
+			<span class="hljs-keyword">return</span> err
+		}
+	}
+
+	<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AddOutputMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#AddOutputMiddleware-class_method" title="checksum.AddOutputMiddleware() (method)">AddOutputMiddleware</a></span></strong>(stack *middleware.Stack, options <span class='object_link'><a href="#type-OutputMiddlewareOptions" title="checksum (package)">OutputMiddlewareOptions</a></span>) error 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AddOutputMiddleware adds the middleware for validating response payload’s checksum.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/middleware_add.go', line 143</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AddOutputMiddleware(stack *middleware.Stack, options OutputMiddlewareOptions) <span class="hljs-constant">error</span> {
+	err := stack.Initialize.Add(&setupOutputContext{
+		GetValidationMode:          options.GetValidationMode,
+		SetValidationMode:          options.SetValidationMode,
+		ResponseChecksumValidation: options.ResponseChecksumValidation,
+	}, middleware.Before)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-constant">nil</span> {
+		<span class="hljs-keyword">return</span> err
+	}
+
+	<span class="hljs-comment">// Resolve a supported priority order list of algorithms to validate.</span>
+	algorithms := FilterSupportedAlgorithms(options.ValidationAlgorithms)
+
+	m := &validateOutputPayloadChecksum{
+		Algorithms:                    algorithms,
+		IgnoreMultipartValidation:     options.IgnoreMultipartValidation,
+		LogMultipartValidationSkipped: options.LogMultipartValidationSkipped,
+		LogValidationSkipped:          options.LogValidationSkipped,
+	}
+
+	<span class="hljs-keyword">return</span> stack.Deserialize.Add(m, middleware.After)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AlgorithmChecksumLength-class_method">
+  
+    func <strong><span class='object_link'><a href="#AlgorithmChecksumLength-class_method" title="checksum.AlgorithmChecksumLength() (method)">AlgorithmChecksumLength</a></span></strong>(v <span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span>) (int, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AlgorithmChecksumLength returns the length of the algorithm’s checksum in bytes. If the algorithm is not known, an error is returned.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/algorithms.go', line 108</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AlgorithmChecksumLength(v Algorithm) (<span class="hljs-constant">int</span>, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">switch</span> v {
+	<span class="hljs-keyword">case</span> AlgorithmSHA1:
+		<span class="hljs-keyword">return</span> sha1.Size, <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">case</span> AlgorithmSHA256:
+		<span class="hljs-keyword">return</span> sha256.Size, <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">case</span> AlgorithmCRC32:
+		<span class="hljs-keyword">return</span> crc32.Size, <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">case</span> AlgorithmCRC32C:
+		<span class="hljs-keyword">return</span> crc32.Size, <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">case</span> AlgorithmCRC64NVME:
+		<span class="hljs-keyword">return</span> crc64.Size, <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">default</span>:
+		<span class="hljs-keyword">return</span> 0, fmt.Errorf(<span class="hljs-string">"unknown checksum algorithm, %v"</span>, v)
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="AlgorithmHTTPHeader-class_method">
+  
+    func <strong><span class='object_link'><a href="#AlgorithmHTTPHeader-class_method" title="checksum.AlgorithmHTTPHeader() (method)">AlgorithmHTTPHeader</a></span></strong>(v <span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span>) string 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>AlgorithmHTTPHeader returns the HTTP header for the algorithm’s hash.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129
+130</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/algorithms.go', line 128</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> AlgorithmHTTPHeader(v Algorithm) <span class="hljs-constant">string</span> {
+	<span class="hljs-keyword">return</span> awsChecksumHeaderPrefix + strings.ToLower(<span class="hljs-constant">string</span>(v))
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="FilterSupportedAlgorithms-class_method">
+  
+    func <strong><span class='object_link'><a href="#FilterSupportedAlgorithms-class_method" title="checksum.FilterSupportedAlgorithms() (method)">FilterSupportedAlgorithms</a></span></strong>(vs []string) []<span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>FilterSupportedAlgorithms filters the set of algorithms, returning a slice of algorithms that are supported.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/algorithms.go', line 65</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> FilterSupportedAlgorithms(vs []<span class="hljs-constant">string</span>) []Algorithm {
+	found := <span class="hljs-keyword">map</span>[Algorithm]<span class="hljs-keyword">struct</span>{}{}
+
+	supported := make([]Algorithm, 0, len(supportedAlgorithms))
+	<span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> vs {
+		<span class="hljs-keyword">for</span> _, a := <span class="hljs-keyword">range</span> supportedAlgorithms {
+			<span class="hljs-comment">// Only consider algorithms that are supported</span>
+			<span class="hljs-keyword">if</span> !strings.EqualFold(v, <span class="hljs-constant">string</span>(a)) {
+				<span class="hljs-keyword">continue</span>
+			}
+			<span class="hljs-comment">// Ignore duplicate algorithms in list.</span>
+			<span class="hljs-keyword">if</span> _, ok := found[a]; ok {
+				<span class="hljs-keyword">continue</span>
+			}
+
+			supported = append(supported, a)
+			found[a] = <span class="hljs-keyword">struct</span>{}{}
+		}
+	}
+	<span class="hljs-keyword">return</span> supported
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetComputedInputChecksums-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetComputedInputChecksums-class_method" title="checksum.GetComputedInputChecksums() (method)">GetComputedInputChecksums</a></span></strong>(m middleware.Metadata) (map[string]string, bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetComputedInputChecksums returns the map of checksum algorithm to their computed value stored in the middleware Metadata. Returns false if no values were stored in the Metadata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/middleware_compute_input_checksum.go', line 29</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetComputedInputChecksums(m middleware.Metadata) (<span class="hljs-keyword">map</span>[<span class="hljs-constant">string</span>]<span class="hljs-constant">string</span>, <span class="hljs-constant">bool</span>) {
+	vs, ok := m.Get(computedInputChecksumsKey{}).(<span class="hljs-keyword">map</span>[<span class="hljs-constant">string</span>]<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> vs, ok
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GetOutputValidationAlgorithmsUsed-class_method">
+  
+    func <strong><span class='object_link'><a href="#GetOutputValidationAlgorithmsUsed-class_method" title="checksum.GetOutputValidationAlgorithmsUsed() (method)">GetOutputValidationAlgorithmsUsed</a></span></strong>(m middleware.Metadata) ([]string, bool) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>GetOutputValidationAlgorithmsUsed returns the checksum algorithms used stored in the middleware Metadata. Returns false if no algorithms were stored in the Metadata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/middleware_validate_output.go', line 21</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> GetOutputValidationAlgorithmsUsed(m middleware.Metadata) ([]<span class="hljs-constant">string</span>, <span class="hljs-constant">bool</span>) {
+	vs, ok := m.Get(outputValidationAlgorithmsUsedKey{}).([]<span class="hljs-constant">string</span>)
+	<span class="hljs-keyword">return</span> vs, ok
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="NewAlgorithmHash-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewAlgorithmHash-class_method" title="checksum.NewAlgorithmHash() (method)">NewAlgorithmHash</a></span></strong>(v <span class='object_link'><a href="#type-Algorithm" title="checksum (package)">Algorithm</a></span>) (hash.Hash, error) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>NewAlgorithmHash returns a hash.Hash for the checksum algorithm. Error is returned if the algorithm is unknown.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/algorithms.go', line 89</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewAlgorithmHash(v Algorithm) (hash.Hash, <span class="hljs-constant">error</span>) {
+	<span class="hljs-keyword">switch</span> v {
+	<span class="hljs-keyword">case</span> AlgorithmSHA1:
+		<span class="hljs-keyword">return</span> sha1.New(), <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">case</span> AlgorithmSHA256:
+		<span class="hljs-keyword">return</span> sha256.New(), <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">case</span> AlgorithmCRC32:
+		<span class="hljs-keyword">return</span> crc32.NewIEEE(), <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">case</span> AlgorithmCRC32C:
+		<span class="hljs-keyword">return</span> crc32.New(crc32.MakeTable(crc32.Castagnoli)), <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">case</span> AlgorithmCRC64NVME:
+		<span class="hljs-keyword">return</span> crc64.New(crc64.MakeTable(crc64NVME)), <span class="hljs-constant">nil</span>
+	<span class="hljs-keyword">default</span>:
+		<span class="hljs-keyword">return</span> <span class="hljs-constant">nil</span>, fmt.Errorf(<span class="hljs-string">"unknown checksum algorithm, %v"</span>, v)
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RemoveInputMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#RemoveInputMiddleware-class_method" title="checksum.RemoveInputMiddleware() (method)">RemoveInputMiddleware</a></span></strong>(stack *middleware.Stack) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>RemoveInputMiddleware Removes the compute input payload checksum middleware handlers from the stack.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+97
+98
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/middleware_add.go', line 97</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> RemoveInputMiddleware(stack *middleware.Stack) {
+	id := (*SetupInputContext)(<span class="hljs-constant">nil</span>).ID()
+	stack.Initialize.Remove(id)
+
+	id = (*ComputeInputPayloadChecksum)(<span class="hljs-constant">nil</span>).ID()
+	stack.Finalize.Remove(id)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="RemoveOutputMiddleware-class_method">
+  
+    func <strong><span class='object_link'><a href="#RemoveOutputMiddleware-class_method" title="checksum.RemoveOutputMiddleware() (method)">RemoveOutputMiddleware</a></span></strong>(stack *middleware.Stack) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>RemoveOutputMiddleware Removes the compute input payload checksum middleware handlers from the stack.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170
+171
+172
+173
+174</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/middleware_add.go', line 168</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> RemoveOutputMiddleware(stack *middleware.Stack) {
+	id := (*setupOutputContext)(<span class="hljs-constant">nil</span>).ID()
+	stack.Initialize.Remove(id)
+
+	id = (*validateOutputPayloadChecksum)(<span class="hljs-constant">nil</span>).ID()
+	stack.Deserialize.Remove(id)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetComputedInputChecksums-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetComputedInputChecksums-class_method" title="checksum.SetComputedInputChecksums() (method)">SetComputedInputChecksums</a></span></strong>(m *middleware.Metadata, vs map[string]string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetComputedInputChecksums stores the map of checksum algorithm to their computed value in the middleware Metadata. Overwrites any values that currently exist in the metadata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/middleware_compute_input_checksum.go', line 37</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetComputedInputChecksums(m *middleware.Metadata, vs <span class="hljs-keyword">map</span>[<span class="hljs-constant">string</span>]<span class="hljs-constant">string</span>) {
+	m.Set(computedInputChecksumsKey{}, vs)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="SetOutputValidationAlgorithmsUsed-class_method">
+  
+    func <strong><span class='object_link'><a href="#SetOutputValidationAlgorithmsUsed-class_method" title="checksum.SetOutputValidationAlgorithmsUsed() (method)">SetOutputValidationAlgorithmsUsed</a></span></strong>(m *middleware.Metadata, vs []string) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>SetOutputValidationAlgorithmsUsed stores the checksum algorithms used in the middleware Metadata.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/internal/checksum/middleware_validate_output.go', line 28</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> SetOutputValidationAlgorithmsUsed(m *middleware.Metadata, vs []<span class="hljs-constant">string</span>) {
+	m.Set(outputValidationAlgorithmsUsedKey{}, vs)
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+  </div>
+
+
+      </div>
+
+      <div id="footer">
+  Generated on Mon Jan 12 07:20:49 2026 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.38 (ruby-3.1.2).
+</div>
+
+<!-- BEGIN-SECTION -->
+<script type="text/javascript" src="https://media.amazonwebservices.com/amznUrchin.js"></script>
+<!-- SiteCatalyst code version: H.25.2. Copyright 1996-2012 Adobe, Inc. All Rights Reserved.
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js">
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--
+  s.prop66='AWS SDK for Go';
+  s.eVar66='D=c66';
+  s.prop65='API Reference';
+  s.eVar65='D=c65';
+  var s_code=s.t();if(s_code)document.write(s_code)
+  //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+  <!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //-->
+</script>
+<noscript>
+  <img src="http://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="">
+</noscript>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.2. -->
+<!-- END-SECTION -->
+
+    </div>
+  </body>
+</html>
