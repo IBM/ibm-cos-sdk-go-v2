@@ -19,10 +19,7 @@ import (
 	"github.com/IBM/ibm-cos-sdk-go-v2/aws"
 	"github.com/IBM/ibm-cos-sdk-go-v2/aws/arn"
 	"github.com/IBM/ibm-cos-sdk-go-v2/service/internal/integrationtest"
-	"github.com/IBM/ibm-cos-sdk-go-v2/service/internal/integrationtest/s3shared"
 	"github.com/IBM/ibm-cos-sdk-go-v2/service/s3"
-	"github.com/IBM/ibm-cos-sdk-go-v2/service/s3control"
-	"github.com/IBM/ibm-cos-sdk-go-v2/service/sts"
 )
 
 var setupMetadata = struct {

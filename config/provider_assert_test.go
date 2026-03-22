@@ -6,6 +6,7 @@ package config
 var (
 	_ apiOptionsProvider = &LoadOptions{}
 )
+
 // bearerAuthTokenCacheOptionsProvider implementor assertions
 var (
 	_ bearerAuthTokenCacheOptionsProvider = &LoadOptions{}
@@ -43,14 +44,12 @@ var (
 	_ defaultRegionProvider = &LoadOptions{}
 )
 
-
 // defaultsModeProvider implementor assertions
 var (
 	_ defaultsModeProvider = &EnvConfig{}
 	_ defaultsModeProvider = &SharedConfig{}
 	_ defaultsModeProvider = &LoadOptions{}
 )
-
 
 // endpointCredentialOptionsProvider implementor assertions
 var (
@@ -76,7 +75,6 @@ var (
 var (
 	_ loggerProvider = &LoadOptions{}
 )
-
 
 // regionProvider implementor assertions
 var (
@@ -115,4 +113,3 @@ var (
 	_ sharedConfigProfileProvider = &EnvConfig{}
 	_ sharedConfigProfileProvider = &LoadOptions{}
 )
-

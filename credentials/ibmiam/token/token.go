@@ -25,7 +25,7 @@ type Token struct {
 
 // Error type to help parse errors of IAM calls
 type Error struct {
-	Context      map[string] interface{} `json:"context"`
+	Context      map[string]interface{} `json:"context"`
 	ErrorCode    string                 `json:"errorCode"`
 	ErrorMessage string                 `json:"errorMessage"`
 }

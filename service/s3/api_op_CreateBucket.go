@@ -233,6 +233,18 @@ type CreateBucketInput struct {
 	// [Controlling ownership of objects and disabling ACLs for your bucket]: https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html
 	ObjectOwnership types.ObjectOwnership
 
+	// The root key used by Key Protect to encrypt this bucket. This value must
+	// be the full CRN of the root key.
+	IBMSSEKPCustomerRootKeyCrn *string
+
+	// The algorithm and key size to use with the encryption key stored by using
+	// Key Protect. This value must be set to the string "AES256".
+	IBMSSEKPEncryptionAlgorithm *string
+
+	// Sets the IBM Service Instance Id in the request.
+	//
+	// Only Valid for IBM IAM Authentication
+	IBMServiceInstanceId *string
 	noSmithyDocumentSerde
 }
 

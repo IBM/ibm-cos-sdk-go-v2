@@ -555,6 +555,33 @@ type CopyObjectInput struct {
 	// [Downloading Objects in Requester Pays Buckets]: https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html
 	RequestPayer types.RequestPayer
 
+	// This header controls how the Protection state of the source object is copied
+	// to the destination object.If copied, the retention period and all legal holds
+	// are copied onto the new object. The legal hold date's is set to the date
+	// of the copy.
+	RetentionDirective *string `location:"header" locationName:"Retention-Directive" type:"string" enum:"RetentionDirective"`
+
+	// Date on which it will be legal to delete or modify the object. This field
+	// can only be specified if Retention-Directive is REPLACE. You can only specify
+	// this or the Retention-Period header. If both are specified a 400 error will
+	// be returned. If neither is specified the bucket's DefaultRetention period
+	// will be used.
+	RetentionExpirationDate *time.Time `location:"header" locationName:"Retention-Expiration-Date" type:"timestamp"`
+
+	// A single legal hold to apply to the object. This field can only be specified
+	// if Retention-Directive is REPLACE. A legal hold is a character long string
+	// of max length 64. The object cannot be overwritten or deleted until all legal
+	// holds associated with the object are removed.
+	RetentionLegalHoldId *string `location:"header" locationName:"Retention-Legal-Hold-ID" type:"string"`
+
+	// Retention period to store on the object in seconds. The object can be neither
+	// overwritten nor deleted until the amount of time specified in the retention
+	// period has elapsed. If this field and Retention-Expiration-Date are specified
+	// a 400 error is returned. If neither is specified the bucket's DefaultRetention
+	// period will be used. 0 is a legal value assuming the bucket's minimum retention
+	// period is also 0.
+	RetentionPeriod *int64 `location:"header" locationName:"Retention-Period" type:"integer"`
+
 	// Specifies the algorithm to use when encrypting the object (for example, AES256 ).
 	//
 	// When you perform a CopyObject operation, if you want to use a different type of

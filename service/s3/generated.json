@@ -72,6 +72,7 @@
         "api_op_HeadBucket.go",
         "api_op_HeadObject.go",
         "api_op_ListBucketAnalyticsConfigurations.go",
+        "api_op_ListBucketExtended.go",
         "api_op_ListBucketIntelligentTieringConfigurations.go",
         "api_op_ListBucketInventoryConfigurations.go",
         "api_op_ListBucketMetricsConfigurations.go",

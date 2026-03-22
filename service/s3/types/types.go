@@ -3468,7 +3468,7 @@ type ReplicationConfiguration struct {
 	//
 	// [How to Set Up Replication]: https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html
 	//
-	// This member is required.
+	// This member is not required.
 	Role *string
 
 	// A container for one or more replication rules. A replication configuration must
@@ -4463,6 +4463,66 @@ type WebsiteConfiguration struct {
 
 	// Rules that define when a redirect is applied and the redirect behavior.
 	RoutingRules []RoutingRule
+
+	noSmithyDocumentSerde
+}
+
+type BucketProtectionDefaultRetention struct {
+	// Days is a required field
+	Days *int64 `type:"integer" required:"true"`
+
+	noSmithyDocumentSerde
+}
+
+type BucketProtectionMaximumRetention struct {
+	// Days is a required field
+	Days *int64 `type:"integer" required:"true"`
+
+	noSmithyDocumentSerde
+}
+
+type BucketProtectionMinimumRetention struct {
+	// Days is a required field
+	Days *int64 `type:"integer" required:"true"`
+
+	noSmithyDocumentSerde
+}
+type ProtectionConfiguration struct {
+	_ struct{} `type:"structure"`
+
+	// Default retention period for an object, if a PUT of an object does not specify
+	// a retention period this value will be converted to seconds and used.
+	//
+	// DefaultRetention is a required field
+	DefaultRetention *BucketProtectionDefaultRetention `type:"structure" required:"true"`
+
+	// Enable permanent retention for an object.
+	EnablePermanentRetention *bool `type:"boolean"`
+
+	// Maximum retention period for an object, if a PUT of an object specifies a
+	// longer retention period the PUT object will fail.
+	//
+	// MaximumRetention is a required field
+	MaximumRetention *BucketProtectionMaximumRetention `type:"structure" required:"true"`
+
+	// Minimum retention period for an object, if a PUT of an object specifies a
+	// shorter retention period the PUT object will fail.
+	//
+	// MinimumRetention is a required field
+	MinimumRetention *BucketProtectionMinimumRetention `type:"structure" required:"true"`
+
+	// Retention status of a bucket.
+	//
+	// Status is a required field
+	Status *string `type:"string" required:"true" enum:"BucketProtectionStatus"`
+
+	noSmithyDocumentSerde
+}
+
+type LegalHold struct {
+	Date *time.Time `timestampFormat:"iso8601"`
+
+	ID *string
 
 	noSmithyDocumentSerde
 }

@@ -84,6 +84,10 @@ type ListBucketsInput struct {
 	// prefix.
 	Prefix *string
 
+	// Sets the IBM Service Instance Id in the request.
+	// Only Valid for IBM IAM Authentication
+	IBMServiceInstanceId *string
+
 	noSmithyDocumentSerde
 }
 

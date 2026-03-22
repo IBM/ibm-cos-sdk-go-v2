@@ -234,6 +234,13 @@ type ListObjectsOutput struct {
 	// Metadata pertaining to the operation's result.
 	ResultMetadata middleware.Metadata
 
+	// The root key used by Key Protect to encrypt this bucket. This value must
+	// be the full CRN of the root key.
+	IBMSSEKPCrkId *string
+
+	// Specifies whether the Bucket has Key Protect enabled.
+	IBMSSEKPEnabled *bool
+
 	noSmithyDocumentSerde
 }
 

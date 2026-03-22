@@ -12,39 +12,13 @@ import (
 	"github.com/IBM/ibm-cos-sdk-go-v2/aws"
 	"github.com/IBM/ibm-cos-sdk-go-v2/credentials"
 	"github.com/IBM/ibm-cos-sdk-go-v2/credentials/endpointcreds"
+	"github.com/IBM/ibm-cos-sdk-go-v2/credentials/ibmiam"
 )
 
 const (
 	// valid credential source values
-	credSourceEc2Metadata      = "Ec2InstanceMetadata"
 	credSourceEnvironment      = "Environment"
-	credSourceECSContainer     = "EcsContainer"
 	httpProviderAuthFileEnvVar = "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE"
-)
-
-// direct representation of the IPv4 address for the ECS container
-// "169.254.170.2"
-var ecsContainerIPv4 net.IP = []byte{
-	169, 254, 170, 2,
-}
-
-// direct representation of the IPv4 address for the EKS container
-// "169.254.170.23"
-var eksContainerIPv4 net.IP = []byte{
-	169, 254, 170, 23,
-}
-
-// direct representation of the IPv6 address for the EKS container
-// "fd00:ec2::23"
-var eksContainerIPv6 net.IP = []byte{
-	0xFD, 0, 0xE, 0xC2,
-	0, 0, 0, 0,
-	0, 0, 0, 0,
-	0, 0, 0, 0x23,
-}
-
-var (
-	ecsContainerEndpoint = "http://169.254.170.2" // not constant to allow for swapping during unit-testing
 )
 
 // resolveCredentials extracts a credential provider from slice of config
@@ -91,29 +65,56 @@ func resolveCredentialProvider(ctx context.Context, cfg *aws.Config, configs con
 // The resolved CredentialProvider will be wrapped in a cache to ensure the
 // credentials are only refreshed when needed. This also protects the
 // credential provider to be used concurrently.
+
+// resolveCredentialProvider extracts the first instance of Credentials from the
+// config slices.
+//
+// The resolved CredentialProvider will be wrapped in a cache to ensure the
+// credentials are only refreshed when needed. This also protects the
+// credential provider to be used concurrently.
+//
+// Config providers used:
+// * credentialsProviderProvider
+
+// resolveCredentialChain resolves a credential provider chain using EnvConfig
+// and SharedConfig if present in the slice of provided configs.
+//
+// The resolved CredentialProvider will be wrapped in a cache to ensure the
+// credentials are only refreshed when needed. This also protects the
+// credential provider to be used concurrently.
 func resolveCredentialChain(ctx context.Context, cfg *aws.Config, configs configs) (err error) {
-	envConfig, _, _ := getAWSConfigSources(configs)
+	envConfig, sharedConfig, other := getAWSConfigSources(configs)
 
 	// When checking if a profile was specified programmatically we should only consider the "other"
 	// configuration sources that have been provided. This ensures we correctly honor the expected credential
 	// hierarchy.
-
-	switch {
-	case envConfig.Credentials.HasKeys():
-		ctx = addCredentialSource(ctx, aws.CredentialSourceEnvVars)
-		cfg.Credentials = credentials.StaticCredentialsProvider{Value: envConfig.Credentials, Source: getCredentialSources(ctx)}
-	case len(envConfig.WebIdentityTokenFilePath) > 0:
-		ctx = addCredentialSource(ctx, aws.CredentialSourceEnvVarsSTSWebIDToken)
-		//err = assumeWebIdentity(ctx, cfg, envConfig.WebIdentityTokenFilePath, envConfig.RoleARN, envConfig.RoleSessionName, configs)
-	default:
-		//ctx, err = resolveCredsFromProfile(ctx, cfg, envConfig, sharedConfig, other)
-	}
+	_, sharedProfileSet, err := getSharedConfigProfile(ctx, other)
 	if err != nil {
 		return err
 	}
 
-	fmt.Printf("Reached credential provider chain resolution code\n")
-	fmt.Printf("Resolved credential sources: %v\n", getCredentialSources(ctx))
+	ibmCreds, err := ibmiam.GetIBMCredentials(ctx)
+
+	switch {
+	case sharedProfileSet:
+		ctx, err = resolveCredsFromProfile(ctx, cfg, envConfig, sharedConfig, other)
+
+	case ibmCreds != nil:
+		ctx = addCredentialSource(ctx, aws.CredentialSourceEnvVars)
+		cfg.Credentials = ibmCreds
+
+	case envConfig.Credentials.HasKeys():
+		ctx = addCredentialSource(ctx, aws.CredentialSourceEnvVars)
+		cfg.Credentials = credentials.StaticCredentialsProvider{Value: envConfig.Credentials, Source: getCredentialSources(ctx)}
+	//case len(envConfig.WebIdentityTokenFilePath) > 0:
+	//	ctx = addCredentialSource(ctx, aws.CredentialSourceEnvVarsSTSWebIDToken)
+	//	err = assumeWebIdentity(ctx, cfg, envConfig.WebIdentityTokenFilePath, envConfig.RoleARN, envConfig.RoleSessionName, configs)
+	default:
+		ctx, err = resolveCredsFromProfile(ctx, cfg, envConfig, sharedConfig, other)
+	}
+	if err != nil {
+		return err
+	}
 
 	// Wrap the resolved provider in a cache so the SDK will cache credentials.
 	cfg.Credentials, err = wrapWithCredentialsCache(ctx, configs, cfg.Credentials)
@@ -122,6 +123,51 @@ func resolveCredentialChain(ctx context.Context, cfg *aws.Config, configs config
 	}
 
 	return nil
+}
+
+func resolveCredsFromProfile(ctx context.Context, cfg *aws.Config, envConfig *EnvConfig, sharedConfig *SharedConfig, configs configs) (ctx2 context.Context, err error) {
+	switch {
+	case sharedConfig.Source != nil:
+		ctx = addCredentialSource(ctx, aws.CredentialSourceProfileSourceProfile)
+		// Assume IAM role with credentials source from a different profile.
+		ctx, err = resolveCredsFromProfile(ctx, cfg, envConfig, sharedConfig.Source, configs)
+
+	case sharedConfig.Credentials.HasKeys():
+		// Static Credentials from Shared Config/Credentials file.
+		ctx = addCredentialSource(ctx, aws.CredentialSourceProfile)
+		cfg.Credentials = credentials.StaticCredentialsProvider{
+			Value:  sharedConfig.Credentials,
+			Source: getCredentialSources(ctx),
+		}
+
+	case len(sharedConfig.CredentialSource) != 0:
+		ctx = addCredentialSource(ctx, aws.CredentialSourceProfileNamedProvider)
+		ctx, err = resolveCredsFromSource(ctx, cfg, envConfig, sharedConfig, configs)
+
+	//case sharedConfig.hasSSOConfiguration():
+	//	if sharedConfig.hasLegacySSOConfiguration() {
+	//		ctx = addCredentialSource(ctx, aws.CredentialSourceProfileSSOLegacy)
+	//		ctx = addCredentialSource(ctx, aws.CredentialSourceSSOLegacy)
+	//	} else {
+	//		ctx = addCredentialSource(ctx, aws.CredentialSourceSSO)
+	//	}
+	//	if sharedConfig.SSOSession != nil {
+	//		ctx = addCredentialSource(ctx, aws.CredentialSourceProfileSSO)
+	//	}
+
+	case len(sharedConfig.CredentialProcess) != 0:
+		// Get credentials from CredentialProcess
+		ctx = addCredentialSource(ctx, aws.CredentialSourceProfileProcess)
+		ctx = addCredentialSource(ctx, aws.CredentialSourceProcess)
+
+	default:
+		ctx = addCredentialSource(ctx, aws.CredentialSourceIMDS)
+	}
+	if err != nil {
+		return ctx, err
+	}
+
+	return ctx, nil
 }
 
 // isAllowedHost allows host to be loopback or known ECS/EKS container IPs
@@ -148,10 +194,7 @@ func isAllowedHost(host string) (bool, error) {
 }
 
 func isIPAllowed(ip net.IP) bool {
-	return ip.IsLoopback() ||
-		ip.Equal(ecsContainerIPv4) ||
-		ip.Equal(eksContainerIPv4) ||
-		ip.Equal(eksContainerIPv6)
+	return ip.IsLoopback()
 }
 
 func resolveLocalHTTPCredProvider(ctx context.Context, cfg *aws.Config, endpointURL, authToken string, configs configs) error {
@@ -226,20 +269,9 @@ func resolveHTTPCredProvider(ctx context.Context, cfg *aws.Config, url, authToke
 
 func resolveCredsFromSource(ctx context.Context, cfg *aws.Config, envConfig *EnvConfig, sharedCfg *SharedConfig, configs configs) (context.Context, error) {
 	switch sharedCfg.CredentialSource {
-
 	case credSourceEnvironment:
 		ctx = addCredentialSource(ctx, aws.CredentialSourceHTTP)
 		cfg.Credentials = credentials.StaticCredentialsProvider{Value: envConfig.Credentials, Source: getCredentialSources(ctx)}
-
-	case credSourceECSContainer:
-		ctx = addCredentialSource(ctx, aws.CredentialSourceHTTP)
-		if len(envConfig.ContainerCredentialsRelativePath) != 0 {
-			//return ctx, resolveHTTPCredProvider(ctx, cfg, ecsContainerURI(envConfig.ContainerCredentialsRelativePath), envConfig.ContainerAuthorizationToken, configs)
-		}
-		if len(envConfig.ContainerCredentialsEndpoint) != 0 {
-			return ctx, resolveLocalHTTPCredProvider(ctx, cfg, envConfig.ContainerCredentialsEndpoint, envConfig.ContainerAuthorizationToken, configs)
-		}
-		return ctx, fmt.Errorf("EcsContainer was specified as the credential_source, but neither 'AWS_CONTAINER_CREDENTIALS_RELATIVE_URI' or AWS_CONTAINER_CREDENTIALS_FULL_URI' was set")
 
 	default:
 		return ctx, fmt.Errorf("credential_source values must be EcsContainer, Ec2InstanceMetadata, or Environment")
@@ -250,6 +282,7 @@ func resolveCredsFromSource(ctx context.Context, cfg *aws.Config, envConfig *Env
 
 func getAWSConfigSources(cfgs configs) (*EnvConfig, *SharedConfig, configs) {
 	var (
+		//ibmEnvConfig *EnvConfig
 		envConfig    *EnvConfig
 		sharedConfig *SharedConfig
 		other        configs
@@ -287,16 +320,6 @@ func getAWSConfigSources(cfgs configs) (*EnvConfig, *SharedConfig, configs) {
 	}
 
 	return envConfig, sharedConfig, other
-}
-
-// AssumeRoleTokenProviderNotSetError is an error returned when creating a
-// session when the MFAToken option is not set when shared config is configured
-// load assume a role with an MFA token.
-type AssumeRoleTokenProviderNotSetError struct{}
-
-// Error is the error message
-func (e AssumeRoleTokenProviderNotSetError) Error() string {
-	return fmt.Sprintf("assume role with MFA enabled, but AssumeRoleTokenProvider session option not set.")
 }
 
 // wrapWithCredentialsCache will wrap provider with an aws.CredentialsCache

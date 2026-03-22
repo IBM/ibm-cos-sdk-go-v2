@@ -1,13 +1,12 @@
 module github.com/IBM/ibm-cos-sdk-go-v2/credentials
 
-go 1.23.0
+go 1.24.0
 
 toolchain go1.24.4
 
 require (
-	github.com/aws/aws-sdk-go v1.55.7
-	github.com/IBM/ibm-cos-sdk-go-v2 v1.36.5
-	github.com/aws/smithy-go v1.22.2
+	github.com/IBM/ibm-cos-sdk-go-v2 v1.0.0
+	github.com/aws/smithy-go v1.24.0
 )
 
 require (
@@ -25,19 +24,16 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/oklog/ulid v1.3.1 // indirect
 	go.mongodb.org/mongo-driver v1.17.2 // indirect
-	golang.org/x/crypto v0.36.0 // indirect
-	golang.org/x/net v0.38.0 // indirect
-	golang.org/x/sys v0.31.0 // indirect
-	golang.org/x/text v0.23.0 // indirect
+	golang.org/x/crypto v0.46.0 // indirect
+	golang.org/x/sys v0.39.0 // indirect
+	golang.org/x/text v0.32.0 // indirect
 	sigs.k8s.io/yaml v1.4.0 // indirect
 )
 
 require (
 	github.com/IBM/go-sdk-core/v5 v5.20.1
-	github.com/IBM/ibm-cos-sdk-go-v2/internal/configsources v1.3.34 // indirect
-	github.com/IBM/ibm-cos-sdk-go-v2/internal/endpoints/v2 v2.6.34 // indirect
-	github.com/IBM/ibm-cos-sdk-go-v2/service/internal/accept-encoding v1.12.3 // indirect
-	github.com/IBM/ibm-cos-sdk-go-v2/service/internal/presigned-url v1.12.15 // indirect
+	github.com/IBM/ibm-cos-sdk-go-v2/internal/ini v1.8.3
+	golang.org/x/net v0.47.0
 )
 
 replace github.com/IBM/ibm-cos-sdk-go-v2 => ../
@@ -50,3 +46,4 @@ replace github.com/IBM/ibm-cos-sdk-go-v2/service/internal/accept-encoding => ../
 
 replace github.com/IBM/ibm-cos-sdk-go-v2/service/internal/presigned-url => ../service/internal/presigned-url/
 
+replace github.com/IBM/ibm-cos-sdk-go-v2/internal/ini => ../internal/ini

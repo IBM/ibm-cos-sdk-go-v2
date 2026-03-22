@@ -61,7 +61,7 @@ func SizeToName(size int) string {
 }
 
 // BucketPrefix is the root prefix of integration test buckets.
-const BucketPrefix = "aws-sdk-go-v2-integration"
+const BucketPrefix = "ibm-cos-sdk-go-v2-integration"
 
 // GenerateBucketName returns a unique bucket name.
 func GenerateBucketName() string {

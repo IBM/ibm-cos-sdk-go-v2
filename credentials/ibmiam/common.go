@@ -2,24 +2,21 @@ package ibmiam
 
 import (
 	"context"
+	"os"
+
 	"github.com/IBM/go-sdk-core/v5/core"
 	"github.com/IBM/ibm-cos-sdk-go-v2/aws"
 	"github.com/IBM/ibm-cos-sdk-go-v2/credentials/ibmiam/token"
 	"github.com/aws/smithy-go"
 	"github.com/aws/smithy-go/logging"
+	"github.com/aws/smithy-go/middleware"
 )
 
-const (
-	// Constants
-	// Default IBM IAM Authentication Server Endpoint
-	defaultAuthEndPoint = `https://iam.cloud.ibm.com/identity/token`
-
-	// Logger constants
-	// Debug Log constant
-	debugLog = "DEBUG"
-	// IBM IAM Provider Log constant
-	ibmIamProviderLog = "IBM IAM PROVIDER"
-)
+type ExtendedCredentialsProvider interface {
+	aws.CredentialsProvider
+	IsValid() bool
+	GetProviderName() string
+}
 
 // Provider Struct
 type Provider struct {
@@ -44,9 +41,9 @@ type Provider struct {
 
 func NewProvider(providerName string, apiKey string, authEndPoint string, serviceInstanceID string) (provider Provider) { //linter complain about (provider *Provider) {
 	provider = *new(Provider)
-
 	provider.providerName = providerName
-	provider.providerType = "oauth"
+	provider.providerType = ProviderTypeOauth
+	provider.logger = logging.NewStandardLogger(os.Stderr)
 
 	if apiKey == "" {
 		provider.ErrorStatus = &smithy.GenericAPIError{
@@ -54,7 +51,7 @@ func NewProvider(providerName string, apiKey string, authEndPoint string, servic
 			Message: "IBM API Key Id not found",
 			Fault:   smithy.FaultClient,
 		}
-		provider.logger.Logf(debugLog, "<IBM IAM PROVIDER BUILD>", "IBM API Key Id not found", provider.ErrorStatus)
+		provider.logger.Logf(logging.Debug, "[%s] %s error: %v", "<IBM IAM PROVIDER BUILD>", "IBM API Key Id not found", provider.ErrorStatus)
 		return
 	}
 
@@ -62,13 +59,14 @@ func NewProvider(providerName string, apiKey string, authEndPoint string, servic
 
 	if authEndPoint == "" {
 		authEndPoint = defaultAuthEndPoint
-		provider.logger.Logf(debugLog, "<IBM IAM PROVIDER BUILD>", "using default auth endpoint", authEndPoint)
+		provider.logger.Logf(logging.Debug, "[%s] %s: %v", "<IBM IAM PROVIDER BUILD>", "using default auth endpoint", authEndPoint)
 	}
 
 	// New code to create a new authenticator using the API Key and auth endpoint
 	authenticator, err := core.NewIamAuthenticatorBuilder().
 		SetApiKey(apiKey).
 		SetURL(authEndPoint).
+		SetDisableSSLVerification(true).
 		Build()
 
 	if err != nil {
@@ -77,7 +75,7 @@ func NewProvider(providerName string, apiKey string, authEndPoint string, servic
 			Message: "error creating authenticator",
 			Fault:   smithy.FaultClient,
 		}
-		provider.logger.Logf(debugLog, ibmIamProviderLog, provider.providerName, provider.ErrorStatus)
+		provider.logger.Logf(logging.Debug, "[%s], %s error: %v", ibmIamProviderLog, provider.providerName, provider.ErrorStatus)
 		return
 	}
 	provider.authenticator = authenticator
@@ -88,23 +86,25 @@ func NewProvider(providerName string, apiKey string, authEndPoint string, servic
 
 func (p Provider) Retrieve(ctx context.Context) (aws.Credentials, error) {
 
+	logger := middleware.GetLogger(ctx)
+
 	if p.ErrorStatus != nil {
-		// if p.logLevel.Matches(aws.LogDebug) {
-		// 	p.logger.Log(debugLog, ibmIamProviderLog, p.providerName, p.ErrorStatus)
-		// }
+		logger.Logf(logging.Debug, "[%s] Provider %s error: %v", ibmIamProviderLog, p.providerName, p.ErrorStatus)
 		return aws.Credentials{Source: p.providerName}, p.ErrorStatus
 	}
 	tokenValue, err := p.authenticator.(*core.IamAuthenticator).GetToken()
+
 	if err != nil {
+		logger.Logf(logging.Warn, "Token retrieval failed for provider %s: %v", p.providerName, err)
 		var returnErr error
 		returnErr = &smithy.GenericAPIError{
 			Code:    "TokenManagerRetrieveError",
 			Message: "error retrieving the token",
 			Fault:   smithy.FaultClient,
 		}
-		p.logger.Logf(debugLog, ibmIamProviderLog, p.providerName, returnErr)
 		return aws.Credentials{}, returnErr
 	}
+
 	return aws.Credentials{
 		Token: token.Token{
 			AccessToken: tokenValue,
@@ -120,7 +120,7 @@ func (p Provider) Retrieve(ctx context.Context) (aws.Credentials, error) {
 // Returns: bool
 //
 //	Provider validation - boolean
-func (p *Provider) IsValid() bool {
+func (p Provider) IsValid() bool {
 	return nil == p.ErrorStatus
 }
 
@@ -128,6 +128,10 @@ func (p *Provider) IsValid() bool {
 // Returns: bool
 //
 //	Provider expired or not - boolean
-func (p *Provider) IsExpired() bool {
+func (p Provider) IsExpired() bool {
 	return true
+}
+
+func (p Provider) GetProviderName() string {
+	return p.providerName
 }

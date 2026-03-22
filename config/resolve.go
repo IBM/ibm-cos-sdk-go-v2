@@ -123,7 +123,7 @@ func resolveBaseEndpoint(ctx context.Context, cfg *aws.Config, configs configs) 
 	}
 
 	if !found {
-		ibmBaseEndpoint := fmt.Sprintf("https://s3.%s.cloud-object-storage.test.appdomain.cloud", cfg.Region)
+		ibmBaseEndpoint := fmt.Sprintf("https://s3.%s.cloud-object-storage.appdomain.cloud", cfg.Region)
 		cfg.BaseEndpoint = aws.String(ibmBaseEndpoint)
 		return nil
 	}

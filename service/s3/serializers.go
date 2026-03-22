@@ -5,6 +5,8 @@ package s3
 import (
 	"bytes"
 	"context"
+	"crypto/md5"
+	"encoding/base64"
 	"fmt"
 	"github.com/IBM/ibm-cos-sdk-go-v2/service/s3/types"
 	smithy "github.com/aws/smithy-go"
@@ -172,7 +174,13 @@ func (m *awsRestxml_serializeOpCompleteMultipartUpload) HandleSerialize(ctx cont
 		if err := awsRestxml_serializeDocumentCompletedMultipartUpload(input.MultipartUpload, xmlEncoder.RootElement(payloadRoot)); err != nil {
 			return out, metadata, &smithy.SerializationError{Err: err}
 		}
-		payload := bytes.NewReader(xmlEncoder.Bytes())
+		// Adding CONTENT-MD5 header to payload.
+		payloadBytes := xmlEncoder.Bytes()
+		hash := md5.Sum(payloadBytes)
+		contentMD5Base64 := base64.StdEncoding.EncodeToString(hash[:])
+		restEncoder.SetHeader("Content-MD5").String(contentMD5Base64)
+
+		payload := bytes.NewReader(payloadBytes)
 		if request, err = request.SetStream(payload); err != nil {
 			return out, metadata, &smithy.SerializationError{Err: err}
 		}
@@ -543,6 +551,26 @@ func awsRestxml_serializeOpHttpBindingsCopyObjectInput(v *CopyObjectInput, encod
 		encoder.SetHeader(locationName).String(*v.WebsiteRedirectLocation)
 	}
 
+	if v.RetentionExpirationDate != nil {
+		locationName := "Retention-Expiration-Date"
+		encoder.SetHeader(locationName).String(smithytime.FormatDateTime(*v.RetentionExpirationDate))
+	}
+
+	if v.RetentionDirective != nil {
+		locationName := "Retention-Directive"
+		encoder.SetHeader(locationName).String(string(*v.RetentionDirective))
+	}
+
+	if v.RetentionPeriod != nil {
+		locationName := "Retention-Period"
+		encoder.SetHeader(locationName).Long(*v.RetentionPeriod)
+	}
+
+	if v.RetentionLegalHoldId != nil {
+		locationName := "Retention-Legal-Hold-ID"
+		encoder.SetHeader(locationName).String(*v.RetentionLegalHoldId)
+	}
+
 	return nil
 }
 
@@ -667,6 +695,21 @@ func awsRestxml_serializeOpHttpBindingsCreateBucketInput(v *CreateBucketInput, e
 	if len(v.ObjectOwnership) > 0 {
 		locationName := "X-Amz-Object-Ownership"
 		encoder.SetHeader(locationName).String(string(v.ObjectOwnership))
+	}
+
+	if v.IBMServiceInstanceId != nil {
+		locationName := http.CanonicalHeaderKey("ibm-service-instance-id")
+		encoder.SetHeader(locationName).String(*v.IBMServiceInstanceId)
+	}
+
+	if v.IBMSSEKPEncryptionAlgorithm != nil {
+		locationName := http.CanonicalHeaderKey("ibm-sse-kp-encryption-algorithm")
+		encoder.SetHeader(locationName).String(*v.IBMSSEKPEncryptionAlgorithm)
+	}
+
+	if v.IBMSSEKPCustomerRootKeyCrn != nil {
+		locationName := http.CanonicalHeaderKey("ibm-sse-kp-customer-root-key-crn")
+		encoder.SetHeader(locationName).String(*v.IBMSSEKPCustomerRootKeyCrn)
 	}
 
 	return nil
@@ -5237,6 +5280,571 @@ func awsRestxml_serializeOpHttpBindingsListBucketsInput(v *ListBucketsInput, enc
 		encoder.SetQuery("prefix").String(*v.Prefix)
 	}
 
+	if v.IBMServiceInstanceId != nil {
+		locationName := http.CanonicalHeaderKey("ibm-service-instance-id")
+		encoder.SetHeader(locationName).String(*v.IBMServiceInstanceId)
+	}
+
+	return nil
+}
+
+type awsRestxml_serializeOpListBucketsExtended struct {
+}
+
+func (*awsRestxml_serializeOpListBucketsExtended) ID() string {
+	return "OperationSerializer"
+}
+
+func (m *awsRestxml_serializeOpListBucketsExtended) HandleSerialize(ctx context.Context, in middleware.SerializeInput, next middleware.SerializeHandler) (
+	out middleware.SerializeOutput, metadata middleware.Metadata, err error,
+) {
+	_, span := tracing.StartSpan(ctx, "OperationSerializer")
+	endTimer := startMetricTimer(ctx, "client.call.serialization_duration")
+	defer endTimer()
+	defer span.End()
+	request, ok := in.Request.(*smithyhttp.Request)
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown transport type %T", in.Request)}
+	}
+
+	input, ok := in.Parameters.(*ListBucketsExtendedInput)
+	_ = input
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown input parameters type %T", in.Parameters)}
+	}
+
+	opPath, opQuery := httpbinding.SplitURI("/?extended")
+	request.URL.Path = smithyhttp.JoinPath(request.URL.Path, opPath)
+	request.URL.RawQuery = smithyhttp.JoinRawQuery(request.URL.RawQuery, opQuery)
+	request.Method = "GET"
+	var restEncoder *httpbinding.Encoder
+	if request.URL.RawPath == "" {
+		restEncoder, err = httpbinding.NewEncoder(request.URL.Path, request.URL.RawQuery, request.Header)
+	} else {
+		request.URL.RawPath = smithyhttp.JoinPath(request.URL.RawPath, opPath)
+		restEncoder, err = httpbinding.NewEncoderWithRawPath(request.URL.Path, request.URL.RawPath, request.URL.RawQuery, request.Header)
+	}
+
+	if err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if err := awsRestxml_serializeOpHttpBindingsListBucketsExtendedInput(input, restEncoder); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if request.Request, err = restEncoder.Encode(request.Request); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+	in.Request = request
+	endTimer()
+	span.End()
+	return next.HandleSerialize(ctx, in)
+}
+func awsRestxml_serializeOpHttpBindingsListBucketsExtendedInput(v *ListBucketsExtendedInput, encoder *httpbinding.Encoder) error {
+	if v == nil {
+		return fmt.Errorf("unsupported serialization of nil %T", v)
+	}
+
+	if v.ContinuationToken != nil {
+		encoder.SetQuery("continuation-token").String(*v.ContinuationToken)
+	}
+
+	if v.Marker != nil {
+		encoder.SetQuery("marker").String(*v.Marker)
+	}
+
+	if v.MaxKeys != nil {
+		encoder.SetQuery("max-keys").Integer(*v.MaxKeys)
+	}
+
+	if v.MaxBuckets != nil {
+		encoder.SetQuery("max-buckets").Integer(*v.MaxBuckets)
+	}
+
+	if v.Prefix != nil {
+		encoder.SetQuery("prefix").String(*v.Prefix)
+	}
+
+	if v.IBMServiceInstanceId != nil {
+		locationName := http.CanonicalHeaderKey("ibm-service-instance-id")
+		encoder.SetHeader(locationName).String(*v.IBMServiceInstanceId)
+	}
+	return nil
+}
+
+type awsRestxml_serializeOpDeleteLegalHold struct {
+}
+
+func (*awsRestxml_serializeOpDeleteLegalHold) ID() string {
+	return "OperationSerializer"
+}
+
+func (m *awsRestxml_serializeOpDeleteLegalHold) HandleSerialize(ctx context.Context, in middleware.SerializeInput, next middleware.SerializeHandler) (
+	out middleware.SerializeOutput, metadata middleware.Metadata, err error,
+) {
+	_, span := tracing.StartSpan(ctx, "OperationSerializer")
+	endTimer := startMetricTimer(ctx, "client.call.serialization_duration")
+	defer endTimer()
+	defer span.End()
+	request, ok := in.Request.(*smithyhttp.Request)
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown transport type %T", in.Request)}
+	}
+
+	input, ok := in.Parameters.(*DeleteLegalHoldInput)
+	_ = input
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown input parameters type %T", in.Parameters)}
+	}
+
+	opPath, opQuery := httpbinding.SplitURI("/{Key+}?legalHold")
+	request.URL.Path = smithyhttp.JoinPath(request.URL.Path, opPath)
+	request.URL.RawQuery = smithyhttp.JoinRawQuery(request.URL.RawQuery, opQuery)
+	request.Method = "POST"
+	var restEncoder *httpbinding.Encoder
+	if request.URL.RawPath == "" {
+		restEncoder, err = httpbinding.NewEncoder(request.URL.Path, request.URL.RawQuery, request.Header)
+	} else {
+		request.URL.RawPath = smithyhttp.JoinPath(request.URL.RawPath, opPath)
+		restEncoder, err = httpbinding.NewEncoderWithRawPath(request.URL.Path, request.URL.RawPath, request.URL.RawQuery, request.Header)
+	}
+
+	if err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if err := awsRestxml_serializeOpHttpBindingsDeleteLegalHoldInput(input, restEncoder); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if request.Request, err = restEncoder.Encode(request.Request); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+	in.Request = request
+
+	endTimer()
+	span.End()
+	return next.HandleSerialize(ctx, in)
+}
+func awsRestxml_serializeOpHttpBindingsDeleteLegalHoldInput(v *DeleteLegalHoldInput, encoder *httpbinding.Encoder) error {
+	if v == nil {
+		return fmt.Errorf("unsupported serialization of nil %T", v)
+	}
+
+	if v.Bucket == nil || len(*v.Bucket) == 0 {
+		return &smithy.SerializationError{Err: fmt.Errorf("input member Bucket must not be empty")}
+	}
+
+	if v.Key == nil || len(*v.Key) == 0 {
+		return &smithy.SerializationError{Err: fmt.Errorf("input member Key must not be empty")}
+	}
+	if v.Key != nil {
+		if err := encoder.SetURI("Key").String(*v.Key); err != nil {
+			return err
+		}
+	}
+
+	if v.RetentionLegalHoldId != nil {
+		locationName := "remove"
+		encoder.SetQuery(locationName).String(*v.RetentionLegalHoldId)
+	}
+
+	return nil
+}
+
+type awsRestxml_serializeOpAddLegalHold struct {
+}
+
+func (*awsRestxml_serializeOpAddLegalHold) ID() string {
+	return "OperationSerializer"
+}
+
+func (m *awsRestxml_serializeOpAddLegalHold) HandleSerialize(ctx context.Context, in middleware.SerializeInput, next middleware.SerializeHandler) (
+	out middleware.SerializeOutput, metadata middleware.Metadata, err error,
+) {
+	_, span := tracing.StartSpan(ctx, "OperationSerializer")
+	endTimer := startMetricTimer(ctx, "client.call.serialization_duration")
+	defer endTimer()
+	defer span.End()
+	request, ok := in.Request.(*smithyhttp.Request)
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown transport type %T", in.Request)}
+	}
+
+	input, ok := in.Parameters.(*AddLegalHoldInput)
+	_ = input
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown input parameters type %T", in.Parameters)}
+	}
+
+	opPath, opQuery := httpbinding.SplitURI("/{Key+}?legalHold")
+	request.URL.Path = smithyhttp.JoinPath(request.URL.Path, opPath)
+	request.URL.RawQuery = smithyhttp.JoinRawQuery(request.URL.RawQuery, opQuery)
+	request.Method = "POST"
+	var restEncoder *httpbinding.Encoder
+	if request.URL.RawPath == "" {
+		restEncoder, err = httpbinding.NewEncoder(request.URL.Path, request.URL.RawQuery, request.Header)
+	} else {
+		request.URL.RawPath = smithyhttp.JoinPath(request.URL.RawPath, opPath)
+		restEncoder, err = httpbinding.NewEncoderWithRawPath(request.URL.Path, request.URL.RawPath, request.URL.RawQuery, request.Header)
+	}
+
+	if err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if err := awsRestxml_serializeOpHttpBindingsAddLegalHoldInput(input, restEncoder); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if request.Request, err = restEncoder.Encode(request.Request); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+	in.Request = request
+
+	endTimer()
+	span.End()
+	return next.HandleSerialize(ctx, in)
+}
+func awsRestxml_serializeOpHttpBindingsAddLegalHoldInput(v *AddLegalHoldInput, encoder *httpbinding.Encoder) error {
+	if v == nil {
+		return fmt.Errorf("unsupported serialization of nil %T", v)
+	}
+
+	if v.Bucket == nil || len(*v.Bucket) == 0 {
+		return &smithy.SerializationError{Err: fmt.Errorf("input member Bucket must not be empty")}
+	}
+
+	if v.Key == nil || len(*v.Key) == 0 {
+		return &smithy.SerializationError{Err: fmt.Errorf("input member Key must not be empty")}
+	}
+	if v.Key != nil {
+		if err := encoder.SetURI("Key").String(*v.Key); err != nil {
+			return err
+		}
+	}
+	if v.RetentionLegalHoldId != nil {
+		locationName := "add"
+		encoder.SetQuery(locationName).String(*v.RetentionLegalHoldId)
+	}
+
+	return nil
+}
+
+type awsRestxml_serializeOpExtendObjectRetention struct {
+}
+
+func (*awsRestxml_serializeOpExtendObjectRetention) ID() string {
+	return "OperationSerializer"
+}
+
+func (m *awsRestxml_serializeOpExtendObjectRetention) HandleSerialize(ctx context.Context, in middleware.SerializeInput, next middleware.SerializeHandler) (
+	out middleware.SerializeOutput, metadata middleware.Metadata, err error,
+) {
+	_, span := tracing.StartSpan(ctx, "OperationSerializer")
+	endTimer := startMetricTimer(ctx, "client.call.serialization_duration")
+	defer endTimer()
+	defer span.End()
+	request, ok := in.Request.(*smithyhttp.Request)
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown transport type %T", in.Request)}
+	}
+
+	input, ok := in.Parameters.(*ExtendObjectRetentionInput)
+	_ = input
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown input parameters type %T", in.Parameters)}
+	}
+
+	opPath, opQuery := httpbinding.SplitURI("{Key+}?extendRetention")
+	request.URL.Path = smithyhttp.JoinPath(request.URL.Path, opPath)
+	request.URL.RawQuery = smithyhttp.JoinRawQuery(request.URL.RawQuery, opQuery)
+	request.Method = "POST"
+	var restEncoder *httpbinding.Encoder
+	if request.URL.RawPath == "" {
+		restEncoder, err = httpbinding.NewEncoder(request.URL.Path, request.URL.RawQuery, request.Header)
+	} else {
+		request.URL.RawPath = smithyhttp.JoinPath(request.URL.RawPath, opPath)
+		restEncoder, err = httpbinding.NewEncoderWithRawPath(request.URL.Path, request.URL.RawPath, request.URL.RawQuery, request.Header)
+	}
+
+	if err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if err := awsRestxml_serializeOpHttpBindingsExtendObjectRetentionInput(input, restEncoder); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if request.Request, err = restEncoder.Encode(request.Request); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+	in.Request = request
+
+	endTimer()
+	span.End()
+	return next.HandleSerialize(ctx, in)
+}
+func awsRestxml_serializeOpHttpBindingsExtendObjectRetentionInput(v *ExtendObjectRetentionInput, encoder *httpbinding.Encoder) error {
+	if v == nil {
+		return fmt.Errorf("unsupported serialization of nil %T", v)
+	}
+
+	if v.Key == nil || len(*v.Key) == 0 {
+		return &smithy.SerializationError{Err: fmt.Errorf("input member Key must not be empty")}
+	}
+	if v.Key != nil {
+		if err := encoder.SetURI("Key").String(*v.Key); err != nil {
+			return err
+		}
+	}
+
+	if v.AdditionalRetentionPeriod != nil {
+		locationName := "Additional-Retention-Period"
+		encoder.SetHeader(locationName).Long(*v.AdditionalRetentionPeriod)
+	}
+
+	if v.ExtendRetentionFromCurrentTime != nil {
+		locationName := "Extend-Retention-From-Current-Time"
+		encoder.SetHeader(locationName).Long(*v.ExtendRetentionFromCurrentTime)
+	}
+
+	if v.NewRetentionExpirationDate != nil {
+		locationName := "New-Retention-Expiration-Date"
+		encoder.SetHeader(locationName).String(smithytime.FormatHTTPDate(*v.NewRetentionExpirationDate))
+	}
+
+	if v.NewRetentionPeriod != nil {
+		locationName := "New-Retention-Period"
+		encoder.SetHeader(locationName).Long(*v.NewRetentionPeriod)
+	}
+
+	return nil
+}
+
+type awsRestxml_serializeOpGetBucketProtectionConfiguration struct {
+}
+
+func (*awsRestxml_serializeOpGetBucketProtectionConfiguration) ID() string {
+	return "OperationSerializer"
+}
+
+func (m *awsRestxml_serializeOpGetBucketProtectionConfiguration) HandleSerialize(ctx context.Context, in middleware.SerializeInput, next middleware.SerializeHandler) (
+	out middleware.SerializeOutput, metadata middleware.Metadata, err error,
+) {
+	_, span := tracing.StartSpan(ctx, "OperationSerializer")
+	endTimer := startMetricTimer(ctx, "client.call.serialization_duration")
+	defer endTimer()
+	defer span.End()
+	request, ok := in.Request.(*smithyhttp.Request)
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown transport type %T", in.Request)}
+	}
+
+	input, ok := in.Parameters.(*GetBucketProtectionConfigurationInput)
+	_ = input
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown input parameters type %T", in.Parameters)}
+	}
+
+	opPath, opQuery := httpbinding.SplitURI("/?protection")
+	request.URL.Path = smithyhttp.JoinPath(request.URL.Path, opPath)
+	request.URL.RawQuery = smithyhttp.JoinRawQuery(request.URL.RawQuery, opQuery)
+	request.Method = "GET"
+	var restEncoder *httpbinding.Encoder
+	if request.URL.RawPath == "" {
+		restEncoder, err = httpbinding.NewEncoder(request.URL.Path, request.URL.RawQuery, request.Header)
+	} else {
+		request.URL.RawPath = smithyhttp.JoinPath(request.URL.RawPath, opPath)
+		restEncoder, err = httpbinding.NewEncoderWithRawPath(request.URL.Path, request.URL.RawPath, request.URL.RawQuery, request.Header)
+	}
+
+	if err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if err := awsRestxml_serializeOpHttpBindingsGetBucketProtectionConfigurationInput(input, restEncoder); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if request.Request, err = restEncoder.Encode(request.Request); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+	in.Request = request
+
+	endTimer()
+	span.End()
+	return next.HandleSerialize(ctx, in)
+}
+func awsRestxml_serializeOpHttpBindingsGetBucketProtectionConfigurationInput(v *GetBucketProtectionConfigurationInput, encoder *httpbinding.Encoder) error {
+	if v == nil {
+		return fmt.Errorf("unsupported serialization of nil %T", v)
+	}
+
+	return nil
+}
+
+type awsRestxml_serializeOpListLegalHolds struct {
+}
+
+func (*awsRestxml_serializeOpListLegalHolds) ID() string {
+	return "OperationSerializer"
+}
+
+func (m *awsRestxml_serializeOpListLegalHolds) HandleSerialize(ctx context.Context, in middleware.SerializeInput, next middleware.SerializeHandler) (
+	out middleware.SerializeOutput, metadata middleware.Metadata, err error,
+) {
+	_, span := tracing.StartSpan(ctx, "OperationSerializer")
+	endTimer := startMetricTimer(ctx, "client.call.serialization_duration")
+	defer endTimer()
+	defer span.End()
+	request, ok := in.Request.(*smithyhttp.Request)
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown transport type %T", in.Request)}
+	}
+
+	input, ok := in.Parameters.(*ListLegalHoldsInput)
+	_ = input
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown input parameters type %T", in.Parameters)}
+	}
+
+	opPath, opQuery := httpbinding.SplitURI("/{Key+}?legalHold")
+	request.URL.Path = smithyhttp.JoinPath(request.URL.Path, opPath)
+	request.URL.RawQuery = smithyhttp.JoinRawQuery(request.URL.RawQuery, opQuery)
+	request.Method = "GET"
+	var restEncoder *httpbinding.Encoder
+	if request.URL.RawPath == "" {
+		restEncoder, err = httpbinding.NewEncoder(request.URL.Path, request.URL.RawQuery, request.Header)
+	} else {
+		request.URL.RawPath = smithyhttp.JoinPath(request.URL.RawPath, opPath)
+		restEncoder, err = httpbinding.NewEncoderWithRawPath(request.URL.Path, request.URL.RawPath, request.URL.RawQuery, request.Header)
+	}
+
+	if err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if err := awsRestxml_serializeOpHttpBindingsListLegalHoldsInput(input, restEncoder); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if request.Request, err = restEncoder.Encode(request.Request); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+	in.Request = request
+
+	endTimer()
+	span.End()
+	return next.HandleSerialize(ctx, in)
+}
+func awsRestxml_serializeOpHttpBindingsListLegalHoldsInput(v *ListLegalHoldsInput, encoder *httpbinding.Encoder) error {
+	if v == nil {
+		return fmt.Errorf("unsupported serialization of nil %T", v)
+	}
+
+	if v.Key == nil || len(*v.Key) == 0 {
+		return &smithy.SerializationError{Err: fmt.Errorf("input member Key must not be empty")}
+	}
+	if v.Key != nil {
+		if err := encoder.SetURI("Key").String(*v.Key); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+type awsRestxml_serializeOpPutBucketProtectionConfiguration struct {
+}
+
+func (*awsRestxml_serializeOpPutBucketProtectionConfiguration) ID() string {
+	return "OperationSerializer"
+}
+
+func (m *awsRestxml_serializeOpPutBucketProtectionConfiguration) HandleSerialize(ctx context.Context, in middleware.SerializeInput, next middleware.SerializeHandler) (
+	out middleware.SerializeOutput, metadata middleware.Metadata, err error,
+) {
+	_, span := tracing.StartSpan(ctx, "OperationSerializer")
+	endTimer := startMetricTimer(ctx, "client.call.serialization_duration")
+	defer endTimer()
+	defer span.End()
+	request, ok := in.Request.(*smithyhttp.Request)
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown transport type %T", in.Request)}
+	}
+
+	input, ok := in.Parameters.(*PutBucketProtectionConfigurationInput)
+	_ = input
+	if !ok {
+		return out, metadata, &smithy.SerializationError{Err: fmt.Errorf("unknown input parameters type %T", in.Parameters)}
+	}
+
+	opPath, opQuery := httpbinding.SplitURI("/?protection")
+	request.URL.Path = smithyhttp.JoinPath(request.URL.Path, opPath)
+	request.URL.RawQuery = smithyhttp.JoinRawQuery(request.URL.RawQuery, opQuery)
+	request.Method = "PUT"
+	var restEncoder *httpbinding.Encoder
+	if request.URL.RawPath == "" {
+		restEncoder, err = httpbinding.NewEncoder(request.URL.Path, request.URL.RawQuery, request.Header)
+	} else {
+		request.URL.RawPath = smithyhttp.JoinPath(request.URL.RawPath, opPath)
+		restEncoder, err = httpbinding.NewEncoderWithRawPath(request.URL.Path, request.URL.RawPath, request.URL.RawQuery, request.Header)
+	}
+
+	if err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if err := awsRestxml_serializeOpHttpBindingsPutBucketProtectionConfigurationInput(input, restEncoder); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+
+	if input.ProtectionConfiguration != nil {
+		if !restEncoder.HasHeader("Content-Type") {
+			ctx = smithyhttp.SetIsContentTypeDefaultValue(ctx, true)
+			restEncoder.SetHeader("Content-Type").String("application/xml")
+		}
+
+		xmlEncoder := smithyxml.NewEncoder(bytes.NewBuffer(nil))
+		payloadRootAttr := []smithyxml.Attr{}
+		payloadRoot := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "ProtectionConfiguration",
+			},
+			Attr: payloadRootAttr,
+		}
+		payloadRoot.Attr = append(payloadRoot.Attr, smithyxml.NewNamespaceAttribute("", "http://s3.amazonaws.com/doc/2006-03-01/"))
+		if err := awsRestxml_serializeDocumentProtectionConfiguration(input.ProtectionConfiguration, xmlEncoder.RootElement(payloadRoot)); err != nil {
+			return out, metadata, &smithy.SerializationError{Err: err}
+		}
+		// Adding CONTENT-MD5 header to payload.
+		payloadBytes := xmlEncoder.Bytes()
+		hash := md5.Sum(payloadBytes)
+		contentMD5Base64 := base64.StdEncoding.EncodeToString(hash[:])
+		restEncoder.SetHeader("Content-MD5").String(contentMD5Base64)
+		payload := bytes.NewReader(payloadBytes)
+		if request, err = request.SetStream(payload); err != nil {
+			return out, metadata, &smithy.SerializationError{Err: err}
+		}
+	}
+
+	if request.Request, err = restEncoder.Encode(request.Request); err != nil {
+		return out, metadata, &smithy.SerializationError{Err: err}
+	}
+	in.Request = request
+
+	endTimer()
+	span.End()
+	return next.HandleSerialize(ctx, in)
+}
+
+func awsRestxml_serializeOpHttpBindingsPutBucketProtectionConfigurationInput(v *PutBucketProtectionConfigurationInput, encoder *httpbinding.Encoder) error {
+	if v == nil {
+		return fmt.Errorf("unsupported serialization of nil %T", v)
+	}
+
 	return nil
 }
 
@@ -7930,6 +8538,21 @@ func awsRestxml_serializeOpHttpBindingsPutObjectInput(v *PutObjectInput, encoder
 	if v.WriteOffsetBytes != nil {
 		locationName := "X-Amz-Write-Offset-Bytes"
 		encoder.SetHeader(locationName).Long(*v.WriteOffsetBytes)
+	}
+
+	if v.RetentionLegalHoldId != nil {
+		locationName := "Retention-Legal-Hold-ID"
+		encoder.SetHeader(locationName).String(*v.RetentionLegalHoldId)
+	}
+
+	if v.RetentionExpirationDate != nil {
+		locationName := "Retention-Expiration-Date"
+		encoder.SetHeader(locationName).String(smithytime.FormatDateTime(*v.RetentionExpirationDate))
+	}
+
+	if v.RetentionPeriod != nil {
+		locationName := "Retention-Period"
+		encoder.SetHeader(locationName).Long(*v.RetentionPeriod)
 	}
 
 	return nil
@@ -12599,6 +13222,119 @@ func awsRestxml_serializeDocumentReplicaModifications(v *types.ReplicaModificati
 		}
 		el := value.MemberElement(root)
 		el.String(string(v.Status))
+	}
+	return nil
+}
+
+func awsRestxml_serializeDocumentProtectionConfiguration(v *types.ProtectionConfiguration, value smithyxml.Value) error {
+	defer value.Close()
+	if v.EnablePermanentRetention != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "EnablePermanentRetention",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		el.Boolean(*v.EnablePermanentRetention)
+	}
+	if v.Status != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "Status",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		el.String(string(*v.Status))
+	}
+	if v.DefaultRetention != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "DefaultRetention",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		if err := awsRestxml_serializeDocumentBucketProtectionDefaultRetention(v.DefaultRetention, el); err != nil {
+			return err
+		}
+	}
+	if v.MaximumRetention != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "MaximumRetention",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		if err := awsRestxml_serializeDocumentBucketProtectionMaximumRetention(v.MaximumRetention, el); err != nil {
+			return err
+		}
+	}
+	if v.MinimumRetention != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "MinimumRetention",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		if err := awsRestxml_serializeDocumentBucketProtectionMinimumRetention(v.MinimumRetention, el); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func awsRestxml_serializeDocumentBucketProtectionDefaultRetention(v *types.BucketProtectionDefaultRetention, value smithyxml.Value) error {
+	defer value.Close()
+	if v.Days != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "Days",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		el.Long(*v.Days)
+	}
+	return nil
+}
+func awsRestxml_serializeDocumentBucketProtectionMaximumRetention(v *types.BucketProtectionMaximumRetention, value smithyxml.Value) error {
+	defer value.Close()
+	if v.Days != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "Days",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		el.Long(*v.Days)
+	}
+	return nil
+}
+
+func awsRestxml_serializeDocumentBucketProtectionMinimumRetention(v *types.BucketProtectionMinimumRetention, value smithyxml.Value) error {
+	defer value.Close()
+	if v.Days != nil {
+		rootAttr := []smithyxml.Attr{}
+		root := smithyxml.StartElement{
+			Name: smithyxml.Name{
+				Local: "Days",
+			},
+			Attr: rootAttr,
+		}
+		el := value.MemberElement(root)
+		el.Long(*v.Days)
 	}
 	return nil
 }

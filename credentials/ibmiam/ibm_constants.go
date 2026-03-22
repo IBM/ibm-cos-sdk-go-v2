@@ -4,17 +4,35 @@ import (
 	"reflect"
 )
 
+const (
+	// Default IBM IAM Authentication Server Endpoint
+	defaultAuthEndPoint = `https://iam.cloud.ibm.com/identity/token`
+	// Debug Log constant
+	debugLog                = "DEBUG"
+	ibmIamProviderLog       = "IBM IAM PROVIDER"
+	ProviderTypeOauth       = "oauth"
+	ResourceComputeResource = "CR"
+	profilePrefix           = "profile "
+	defaultProfile          = "default"
+)
+
 type ProviderEnum struct {
-	StaticProviderName         string
-	TrustedProfileProviderName string
-	IBMIAMProviderLog          string
+	StaticProviderName            string
+	TrustedProfileProviderName    string
+	EnvProviderTrustedProfileName string
+	SharedConfigProviderName      string
+	SharedCredentialsProviderName string
+	EnvProviderName               string
 }
 
-// Create the enum instance with values
+// IBMProvider -> enum instance with values
 var IBMProvider = ProviderEnum{
-	StaticProviderName:         "StaticProviderIBM",
-	TrustedProfileProviderName: "TrustedProfileProviderIBM",
-	IBMIAMProviderLog:          "IBM IAM PROVIDER", // New enum - only add here!
+	StaticProviderName:            "StaticProviderIBM",
+	TrustedProfileProviderName:    "TrustedProfileProviderIBM",
+	EnvProviderTrustedProfileName: "EnvProviderTrustedProfileIBM",
+	SharedConfigProviderName:      "SharedConfigProviderIBM",
+	SharedCredentialsProviderName: "SharedCredentialsProviderIBM",
+	EnvProviderName:               "EnvProviderIBM",
 }
 
 func (p ProviderEnum) IsValid(value string) bool {

@@ -2314,6 +2314,18 @@ func addOpWriteGetObjectResponseValidationMiddleware(stack *middleware.Stack) er
 	return stack.Initialize.Add(&validateOpWriteGetObjectResponse{}, middleware.After)
 }
 
+func addOpPutBucketProtectionConfigurationValidationMiddleware(stack *middleware.Stack) error {
+	return stack.Initialize.Add(&validateOpPutBucketProtectionConfiguration{}, middleware.After)
+}
+
+func addOpAddLegalHoldValidationMiddleware(stack *middleware.Stack) error {
+	return stack.Initialize.Add(&validateOpAddLegalHold{}, middleware.After)
+}
+
+func addOpDeleteLegalHoldValidationMiddleware(stack *middleware.Stack) error {
+	return stack.Initialize.Add(&validateOpDeleteLegalHold{}, middleware.After)
+}
+
 func validateAccessControlPolicy(v *types.AccessControlPolicy) error {
 	if v == nil {
 		return nil
@@ -3338,9 +3350,9 @@ func validateReplicationConfiguration(v *types.ReplicationConfiguration) error {
 		return nil
 	}
 	invalidParams := smithy.InvalidParamsError{Context: "ReplicationConfiguration"}
-	if v.Role == nil {
-		invalidParams.Add(smithy.NewErrParamRequired("Role"))
-	}
+	//if v.Role == nil {
+	//	invalidParams.Add(smithy.NewErrParamRequired("Role"))
+	//}
 	if v.Rules == nil {
 		invalidParams.Add(smithy.NewErrParamRequired("Rules"))
 	} else if v.Rules != nil {
@@ -5694,6 +5706,247 @@ func validateOpWriteGetObjectResponseInput(v *WriteGetObjectResponseInput) error
 	if v.RequestToken == nil {
 		invalidParams.Add(smithy.NewErrParamRequired("RequestToken"))
 	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+}
+
+type validateOpPutBucketProtectionConfiguration struct {
+}
+
+func (*validateOpPutBucketProtectionConfiguration) ID() string {
+	return "OperationInputValidation"
+}
+
+func (m *validateOpPutBucketProtectionConfiguration) HandleInitialize(ctx context.Context, in middleware.InitializeInput, next middleware.InitializeHandler) (
+	out middleware.InitializeOutput, metadata middleware.Metadata, err error,
+) {
+	input, ok := in.Parameters.(*PutBucketProtectionConfigurationInput)
+	if !ok {
+		return out, metadata, fmt.Errorf("unknown input parameters type %T", in.Parameters)
+	}
+	if err := validateOpPutBucketProtectionConfigurationInput(input); err != nil {
+		return out, metadata, err
+	}
+	return next.HandleInitialize(ctx, in)
+}
+
+
+func validateOpPutBucketProtectionConfigurationInput(v *PutBucketProtectionConfigurationInput) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "PutBucketProtectionConfigurationInput"}
+	if v.Bucket == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket"))
+	}
+
+	if v.Bucket != nil && len(*v.Bucket) < 1{
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket Length must be greater than or equal to 1 characters"))
+	}
+
+	if v.ProtectionConfiguration == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("ProtectionConfiguration"))
+	} else if v.ProtectionConfiguration != nil {
+		if err := validateProtectionConfiguration(v.ProtectionConfiguration); err != nil {
+			invalidParams.AddNested("ProtectionConfiguration", err.(smithy.InvalidParamsError))
+		}
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+}
+
+func validateProtectionConfiguration(v *types.ProtectionConfiguration) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "ProtectionConfiguration"}
+
+	if v.Status == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Status"))
+	}
+
+	if v.DefaultRetention == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("DefaultRetention"))
+	} else if v.DefaultRetention != nil {
+		if err := validateBucketProtectionDefaultRetention(v.DefaultRetention); err != nil {
+			invalidParams.AddNested("DefaultRetention", err.(smithy.InvalidParamsError))
+		}
+	}
+
+	if v.MinimumRetention == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("MinimumRetention"))
+	} else if v.MinimumRetention != nil {
+		if err := validateBucketProtectionMinimumRetention(v.MinimumRetention); err != nil {
+			invalidParams.AddNested("MinimumRetention", err.(smithy.InvalidParamsError))
+		}
+	}
+
+	if v.MaximumRetention == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("MaximumRetention"))
+	} else if v.MaximumRetention != nil {
+		if err := validateBucketProtectionMaximumRetention(v.MaximumRetention); err != nil {
+			invalidParams.AddNested("MaximumRetention", err.(smithy.InvalidParamsError))
+		}
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+}
+
+func validateBucketProtectionDefaultRetention(v *types.BucketProtectionDefaultRetention) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "BucketProtectionDefaultRetention"}
+	if v.Days == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Days"))
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+}
+
+func validateBucketProtectionMinimumRetention(v *types.BucketProtectionMinimumRetention) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "BucketProtectionMinimumRetention"}
+	if v.Days == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Days"))
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+}
+
+func validateBucketProtectionMaximumRetention(v *types.BucketProtectionMaximumRetention) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "BucketProtectionMaximumRetention"}
+	if v.Days == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Days"))
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+}
+
+type validateOpAddLegalHold struct {
+}
+
+func (*validateOpAddLegalHold) ID() string {
+	return "OperationInputValidation"
+}
+
+func (m *validateOpAddLegalHold) HandleInitialize(ctx context.Context, in middleware.InitializeInput, next middleware.InitializeHandler) (
+	out middleware.InitializeOutput, metadata middleware.Metadata, err error,
+) {
+	input, ok := in.Parameters.(*AddLegalHoldInput)
+	if !ok {
+		return out, metadata, fmt.Errorf("unknown input parameters type %T", in.Parameters)
+	}
+	if err := validateOpAddLegalHoldInput(input); err != nil {
+		return out, metadata, err
+	}
+	return next.HandleInitialize(ctx, in)
+}
+
+
+func validateOpAddLegalHoldInput(v *AddLegalHoldInput) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "AddLegalHoldInput"}
+	if v.Bucket == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket"))
+	}
+
+	if v.Bucket != nil && len(*v.Bucket) < 1{
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket Length must be greater than or equal to 1 characters"))
+	}
+
+	if v.Key == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Key"))
+	}
+
+	if v.RetentionLegalHoldId == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("RetentionLegalHoldId"))
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+}
+
+type validateOpDeleteLegalHold struct {
+}
+
+func (*validateOpDeleteLegalHold) ID() string {
+	return "OperationInputValidation"
+}
+
+func (m *validateOpDeleteLegalHold) HandleInitialize(ctx context.Context, in middleware.InitializeInput, next middleware.InitializeHandler) (
+	out middleware.InitializeOutput, metadata middleware.Metadata, err error,
+) {
+	input, ok := in.Parameters.(*DeleteLegalHoldInput)
+	if !ok {
+		return out, metadata, fmt.Errorf("unknown input parameters type %T", in.Parameters)
+	}
+	if err := validateOpDeleteLegalHoldInput(input); err != nil {
+		return out, metadata, err
+	}
+	return next.HandleInitialize(ctx, in)
+}
+
+
+func validateOpDeleteLegalHoldInput(v *DeleteLegalHoldInput) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "DeleteLegalHoldInput"}
+	if v.Bucket == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket"))
+	}
+
+	if v.Bucket != nil && len(*v.Bucket) < 1{
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket Length must be greater than or equal to 1 characters"))
+	}
+
+	if v.Key == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Key"))
+	}
+
+	if v.RetentionLegalHoldId == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("RetentionLegalHoldId"))
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	} else {
+		return nil
+	}
+
 	if invalidParams.Len() > 0 {
 		return invalidParams
 	} else {

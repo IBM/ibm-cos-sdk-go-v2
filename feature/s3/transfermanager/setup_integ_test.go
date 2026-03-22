@@ -24,7 +24,6 @@ import (
 	"github.com/IBM/ibm-cos-sdk-go-v2/feature/s3/transfermanager/types"
 	"github.com/IBM/ibm-cos-sdk-go-v2/service/s3"
 	s3types "github.com/IBM/ibm-cos-sdk-go-v2/service/s3/types"
-	"github.com/IBM/ibm-cos-sdk-go-v2/service/sts"
 )
 
 var setupMetadata = struct {
@@ -391,7 +390,7 @@ const expressSuffix = "--usw2-az3--x-s3"
 // BucketPrefix is the root prefix of integration test buckets.
 //
 // TODO: duped from service/internal/integrationtest, remove after beta.
-const BucketPrefix = "aws-sdk-go-v2-integration"
+const BucketPrefix = "ibm-cos-sdk-go-v2-integration"
 
 // GenerateBucketName returns a unique bucket name.
 //

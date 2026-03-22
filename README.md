@@ -1,166 +1,169 @@
-# AWS SDK for Go v2
+# IBM Cloud Object Storage - Go SDK v2
 
-[![Go Build status](https://github.com/IBM/ibm-cos-sdk-go-v2/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/IBM/ibm-cos-sdk-go-v2/actions/workflows/go.yml)[![Codegen Build status](https://github.com/IBM/ibm-cos-sdk-go-v2/actions/workflows/codegen.yml/badge.svg?branch=main)](https://github.com/IBM/ibm-cos-sdk-go-v2/actions/workflows/codegen.yml) [![SDK Documentation](https://img.shields.io/badge/SDK-Documentation-blue)](https://aws.github.io/aws-sdk-go-v2/docs/) [![Migration Guide](https://img.shields.io/badge/Migration-Guide-blue)](https://aws.github.io/aws-sdk-go-v2/docs/migrating/) [![API Reference](https://img.shields.io/badge/api-reference-blue.svg)](https://pkg.go.dev/mod/github.com/IBM/ibm-cos-sdk-go-v2) [![Apache V2 License](https://img.shields.io/badge/license-Apache%20V2-blue.svg)](https://github.com/IBM/ibm-cos-sdk-go-v2/blob/main/LICENSE.txt)
+This package allows Go developers to write software that interacts with [IBM
+Cloud Object Storage](https://www.ibm.com/cloud/object-storage).  It is a fork of the [``AWS SDK for Go v2``](https://github.com/aws/aws-sdk-go-v2) library and can stand as a drop-in replacement if the application needs to connect to object storage using an S3-like API and does not make use of other AWS services.
 
-`aws-sdk-go-v2` is the v2 AWS SDK for the Go programming language.
+## Feedback & Issue Reporting
 
-The v2 SDK requires a minimum version of `Go 1.21`.
+We value your feedback! Please help us improve by:
 
-Check out the [release notes](https://github.com/IBM/ibm-cos-sdk-go-v2/blob/main/CHANGELOG.md) for information about the latest bug
-fixes, updates, and features added to the SDK.
+Please report any bugs or issues in the [GitHub Issues](https://github.com/ibm/ibm-cos-sdk-go-v2/issues/new) section. We also welcome suggestions for enhancements or reports of unexpected behavior.
 
-Jump To:
-* [Getting Started](#getting-started)
-* [Getting Help](#getting-help)
-* [Contributing](#feedback-and-contributing)
-* [More Resources](#resources)
+## Notice
 
-## Maintenance and support for SDK major versions
+IBM has added a [Language Support Policy](#language-support-policy). Language versions will be deprecated on the published schedule without additional notice.
 
-For information about maintenance and support for SDK major versions and their underlying dependencies, see the
-following in the AWS SDKs and Tools Shared Configuration and Credentials Reference Guide:
+## Documentation
 
-* [AWS SDKs and Tools Maintenance Policy](https://docs.aws.amazon.com/credref/latest/refdocs/maint-policy.html)
-* [AWS SDKs and Tools Version Support Matrix](https://docs.aws.amazon.com/credref/latest/refdocs/version-support-matrix.html)
+* [Core documentation for IBM COS](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
+* [Go API reference documentation](https://ibm.github.io/ibm-cos-sdk-go-v2/)
+* [REST API reference documentation](https://cloud.ibm.com/docs/services/cloud-object-storage?topic=cloud-object-storage-compatibility-api)
 
-### Go version support policy
+For release notes, see the [CHANGELOG](CHANGELOG.md).
 
-The v2 SDK follows the upstream [release policy](https://go.dev/doc/devel/release#policy)
-with an additional six months of support for the most recently deprecated
-language version.
+* [Getting the SDK](#getting-the-sdk)
+* [Example code](#example-code)
+* [Getting help](#getting-help)
 
-**AWS reserves the right to drop support for unsupported Go versions earlier to
-address critical security issues.**
+## Quick start
 
-## Getting started
-To get started working with the SDK setup your project for Go modules, and retrieve the SDK dependencies with `go get`.
-This example shows how you can use the v2 SDK to make an API request using the SDK's [Amazon DynamoDB] client.
+You'll need:
 
-###### Initialize Project
+* An instance of COS.
+* An API key from [IBM Cloud Identity and Access Management](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui) with at least `Writer` permissions.
+* The ID of the instance of COS that you are working with.
+* Token acquisition endpoint
+* Service endpoint
+
+These values can be found in the IBM Cloud Console by [generating a 'service credential'](https://cloud.ibm.com/docs/services/cloud-object-storage/iam?topic=cloud-object-storage-service-credentials#service-credentials).
+
+## Archive Tier Support
+
+You can automatically archive objects after a specified length of time or after a specified date. Once archived, a temporary copy of an object can be restored for access as needed. Restore time may take up to 15 hours.
+
+An archive policy is set at the bucket level by calling the ``PutBucketLifecycleConfiguration`` method on a client instance. A newly added or modified archive policy applies to new objects uploaded and does not affect existing objects. For more detail, see the [documentation](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-using-go).
+
+## Immutable Object Storage
+
+Users can configure buckets with an Immutable Object Storage policy to prevent objects from being modified or deleted for a defined period of time. The retention period can be specified on a per-object basis, or objects can inherit a default retention period set on the bucket. It is also possible to set open-ended and permanent retention periods. Immutable Object Storage meets the rules set forth by the SEC governing record retention, and IBM Cloud administrators are unable to bypass these restrictions. For more detail, see the [IBM Cloud documentation](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-using-go).
+
+Note: Immutable Object Storage does not support Aspera transfers via the SDK to upload objects or directories at this stage.
+
+## Accelerated Archive
+
+Users can set an archive rule that would allow data restore from an archive in 2 hours or 12 hours.
+
+## Getting the SDK
+
+To begin using the SDK, initialize your project with Go modules and install the required dependencies using go get. The following example demonstrates how to create a bucket in IBM Cloud Object Storage using the v2 SDK and S3-compatible APIs.  The SDK requires a minimum version of Go 1.23 or newer.
+
+### Initialize Project
+
 ```sh
-$ mkdir ~/helloaws
-$ cd ~/helloaws
-$ go mod init helloaws
-```
-###### Add SDK Dependencies
-```sh
-$ go get github.com/IBM/ibm-cos-sdk-go-v2/aws
-$ go get github.com/IBM/ibm-cos-sdk-go-v2/config
-$ go get github.com/IBM/ibm-cos-sdk-go-v2/service/dynamodb
+mkdir ~/ibmcos
+cd ~/ibmcos
+go mod init ibmcos
 ```
 
-###### Write Code
-In your preferred editor add the following content to `main.go`
+### Add SDK Dependencies
+
+```sh
+go get github.com/IBM/ibm-cos-sdk-go-v2/config
+go get github.com/IBM/ibm-cos-sdk-go-v2/service/s3
+go get github.com/IBM/ibm-cos-sdk-go-v2/credentials
+```
+
+### Example code
+
+In your preferred editor, copy the code below into `main.go`, and modify the API key `API_KEY` and instance ID `RESOURCE_INSTANCE_ID` fields with your credentials.
 
 ```go
 package main
 
-import (
-    "context"
-    "fmt"
-    "log"
+import ( "context"
+ "fmt"
+ "log"
+ "strconv"
+ "time"
 
-    "github.com/IBM/ibm-cos-sdk-go-v2/aws"
-    "github.com/IBM/ibm-cos-sdk-go-v2/config"
-    "github.com/IBM/ibm-cos-sdk-go-v2/service/dynamodb"
+ "github.com/IBM/ibm-cos-sdk-go-v2/aws"
+ "github.com/IBM/ibm-cos-sdk-go-v2/config"
+ "github.com/IBM/ibm-cos-sdk-go-v2/credentials/ibmiam"
+ "github.com/IBM/ibm-cos-sdk-go-v2/service/s3"
+)
+
+// -------------------------------------------------------------------
+// IBM COS Example - Create Bucket using API KEY with Go v2 SDK
+// -------------------------------------------------------------------
+
+const (
+ region            = "us-south"
+ apiKey            = "API_KEY"
+ serviceInstanceID = "RESOURCE_INSTANCE_ID"
+ authEndpoint      = "https://iam.cloud.ibm.com/identity/token"
+ endpoint          = "https://s3.us-south.cloud-object-storage.appdomain.cloud"
 )
 
 func main() {
-    // Using the SDK's default configuration, load additional config
-    // and credentials values from the environment variables, shared
-    // credentials, and shared configuration files
-    cfg, err := config.LoadDefaultConfig(context.TODO(), config.WithRegion("us-west-2"))
-    if err != nil {
-        log.Fatalf("unable to load SDK config, %v", err)
-    }
+ 
+ // Load configuration using IAM Auth (API key)
+ cfg, err := config.LoadDefaultConfig(context.TODO(),
+  config.WithCredentialsProvider(ibmiam.NewStaticCredentials(authEndpoint, apiKey, serviceInstanceID)),
+  config.WithEndpoint(endpoint),
+  config.WithRegion(region),
+ )
+ if err != nil {
+  log.Fatalf("Failed to load configuration: %v", err)
+ }
 
-    // Using the Config value, create the DynamoDB client
-    svc := dynamodb.NewFromConfig(cfg)
+ client := s3.NewFromConfig(cfg)
 
-    // Build the request with its input parameters
-    resp, err := svc.ListTables(context.TODO(), &dynamodb.ListTablesInput{
-        Limit: aws.Int32(5),
-    })
-    if err != nil {
-        log.Fatalf("failed to list tables, %v", err)
-    }
+ // Create unique bucket name
+ ms := time.Now().UnixMilli()
+ bucketName := "v2-go-bucket-" + strconv.FormatInt(ms, 10)
 
-    fmt.Println("Tables:")
-    for _, tableName := range resp.TableNames {
-        fmt.Println(tableName)
-    }
+ // Create bucket input
+ createBucketInput := &s3.CreateBucketInput{
+  Bucket: aws.String(bucketName),
+ }
+
+ // Execute bucket creation
+ _, err = client.CreateBucket(context.Background(), createBucketInput)
+ if err != nil {
+  log.Fatalf("Failed to create bucket: %v", err)
+ }
+ fmt.Println("Bucket Created Successfully!")
+ fmt.Printf("Bucket Name: %s\n", bucketName)
 }
 ```
 
-###### Compile and Execute
+***
+
+### Compile and Execute
+
 ```sh
-$ go run .
-Tables:
-tableOne
-tableTwo
+go run main.go
 ```
+
+More examples can be found [here](./examples).
+
+***
 
 ## Getting Help
 
-Please use these community resources for getting help. We use the GitHub issues
-for tracking bugs and feature requests.
+Feel free to use GitHub issues for tracking bugs and feature requests, but for help please use one of the following resources:
 
-* Ask us a [question](https://github.com/IBM/ibm-cos-sdk-go-v2/discussions/new?category=q-a) or open a [discussion](https://github.com/IBM/ibm-cos-sdk-go-v2/discussions/new?category=general).
-* If you think you may have found a bug, please open an [issue](https://github.com/IBM/ibm-cos-sdk-go-v2/issues/new/choose).
-* Open a support ticket with [AWS Support](http://docs.aws.amazon.com/awssupport/latest/user/getting-started.html).
+* Read a quick start guide in [IBM Cloud Docs](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-using-go-v2).
+* Ask a question on [Stack Overflow](https://stackoverflow.com/questions/tagged/object-storage+ibm) and tag it with `ibm` and `object-storage`.
+* Open a support ticket with [IBM Cloud Support](https://cloud.ibm.com/unifiedsupport/supportcenter/)
+* If it turns out that you may have found a bug, please [open an issue](https://github.com/ibm/ibm-cos-sdk-go-v2/issues/new).
 
-This SDK implements AWS service APIs. For general issues regarding the AWS services and their limitations, you may also take a look at the [Amazon Web Services Discussion Forums](https://forums.aws.amazon.com/).
+## Language Support Policy
 
-### Opening Issues
+IBM supports [current public releases](https://golang.org/doc/devel/release.html). IBM will deprecate language versions 90 days after a version reaches end-of-life. All clients will need to upgrade to a supported version before the end of the grace period.
 
-If you encounter a bug with the AWS SDK for Go we would like to hear about it.
-Search the [existing issues][Issues] and see
-if others are also experiencing the same issue before opening a new issue. Please
-include the version of AWS SDK for Go, Go language, and OS you’re using. Please
-also include reproduction case when appropriate.
+## License
 
-The GitHub issues are intended for bug reports and feature requests. For help
-and questions with using AWS SDK for Go please make use of the resources listed
-in the [Getting Help](#getting-help) section.
-Keeping the list of open issues lean will help us respond in a timely manner.
-
-## Feedback and contributing
-
-The v2 SDK will use GitHub [Issues] to track feature requests and issues with the SDK. In addition, we'll use GitHub [Projects] to track large tasks spanning multiple pull requests, such as refactoring the SDK's internal request lifecycle. You can provide feedback to us in several ways.
-
-**GitHub issues**. To provide feedback or report bugs, file GitHub [Issues] on the SDK. This is the preferred mechanism to give feedback so that other users can engage in the conversation, +1 issues, etc. Issues you open will be evaluated, and included in our roadmap for the GA launch.
-
-**Contributing**. You can open pull requests for fixes or additions to the AWS SDK for Go 2.0. All pull requests must be submitted under the Apache 2.0 license and will be reviewed by an SDK team member before being merged in. Accompanying unit tests, where possible, are appreciated.
-
-## Resources
-
-[SDK Developer Guide](https://docs.aws.amazon.com/sdk-for-go/v2/developer-guide/welcome.html) - Use this document to learn how to get started and
-use the AWS SDK for Go V2.
-
-
-[SDK Migration Guide](https://docs.aws.amazon.com/sdk-for-go/v2/developer-guide/migrate-gosdk.html) - Use this document to learn how to migrate to V2 from the AWS SDK for Go.
-
-[SDK API Reference Documentation](https://pkg.go.dev/mod/github.com/IBM/ibm-cos-sdk-go-v2) - Use this
-document to look up all API operation input and output parameters for AWS
-services supported by the SDK. The API reference also includes documentation of
-the SDK, and examples how to using the SDK, service client API operations, and
-API operation require parameters.
-
-[Service Documentation](https://aws.amazon.com/documentation/) - Use this
-documentation to learn how to interface with AWS services. These guides are
-great for getting started with a service, or when looking for more
-information about a service. While this document is not required for coding,
-services may supply helpful samples to look out for.
-
-[Forum](https://forums.aws.amazon.com/forum.jspa?forumID=293) - Ask questions, get help, and give feedback
-
-[Issues] - Report issues, submit pull requests, and get involved
-  (see [Apache 2.0 License][license])
-
-[Dep]: https://github.com/golang/dep
-[Issues]: https://github.com/IBM/ibm-cos-sdk-go-v2/issues
-[Projects]: https://github.com/IBM/ibm-cos-sdk-go-v2/projects
-[CHANGELOG]: https://github.com/IBM/ibm-cos-sdk-go-v2/blob/main/CHANGELOG.md
-[Amazon DynamoDB]: https://aws.amazon.com/dynamodb/
-[design]: https://github.com/IBM/ibm-cos-sdk-go-v2/blob/main/DESIGN.md
-[license]: http://aws.amazon.com/apache2.0/
+This SDK is distributed under the
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0),
+see LICENSE.txt and NOTICE.txt for more information.

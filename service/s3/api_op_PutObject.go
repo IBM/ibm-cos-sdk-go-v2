@@ -644,6 +644,25 @@ type PutObjectInput struct {
 	// Zone storage class in directory buckets.
 	WriteOffsetBytes *int64
 
+	// Date on which it will be legal to delete or modify the object. This field
+	// can only be specified if Retention-Directive is REPLACE. You can only specify
+	// this or the Retention-Period header. If both are specified a 400 error will
+	// be returned. If neither is specified the bucket's DefaultRetention period
+	// will be used.
+	RetentionExpirationDate *time.Time `location:"header" locationName:"Retention-Expiration-Date" type:"timestamp"`
+
+	// A single legal hold to apply to the object. This field can only be specified
+	// if Retention-Directive is REPLACE. A legal hold is a character long string
+	// of max length 64. The object cannot be overwritten or deleted until all legal
+	// holds associated with the object are removed.
+	RetentionLegalHoldId *string `location:"header" locationName:"Retention-Legal-Hold-ID" type:"string"`
+
+	// Retention period to store on the object in seconds. If this field and Retention-Expiration-Date
+	// are specified a 400 error is returned. If neither is specified the bucket's
+	// DefaultRetention period will be used. 0 is a legal value assuming the bucket's
+	// minimum retention period is also 0.
+	RetentionPeriod *int64 `location:"header" locationName:"Retention-Period" type:"integer"`
+
 	noSmithyDocumentSerde
 }
 

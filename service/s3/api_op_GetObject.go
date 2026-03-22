@@ -662,6 +662,28 @@ type GetObjectOutput struct {
 	// Metadata pertaining to the operation's result.
 	ResultMetadata middleware.Metadata
 
+	IBMRestoredCopyStorageClass *string
+
+	// This header is only included if an object has transition metadata. This header
+	// will indicate the transition storage class and time of transition. If this
+	// header and the x-amz-restore header are both included, this header will indicate
+	// the time at which the object was originally archived.
+	IBMTransition *string
+
+	// Date on which it will be legal to delete or modify the object. You can only
+	// specify this or the Retention-Period header. If both are specified a 400
+	// error will be returned. If neither is specified the bucket's DefaultRetention
+	// period will be used.
+	RetentionExpirationDate *time.Time `location:"header" locationName:"Retention-Expiration-Date" type:"timestamp"`
+
+	RetentionLegalHoldCount *int64 `location:"header" locationName:"Retention-Legal-Hold-Count" type:"integer"`
+
+	// Retention period to store on the object in seconds. If this field and Retention-Expiration-Date
+	// are specified a 400 error is returned. If neither is specified the bucket's
+	// DefaultRetention period will be used. 0 is a legal value assuming the bucket's
+	// minimum retention period is also 0.
+	RetentionPeriod *int64 `location:"header" locationName:"Retention-Period" type:"integer"`
+
 	noSmithyDocumentSerde
 }
 

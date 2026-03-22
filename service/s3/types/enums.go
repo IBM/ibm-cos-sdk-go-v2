@@ -1472,3 +1472,19 @@ func (Type) Values() []Type {
 		"Group",
 	}
 }
+
+const (
+	// RetentionDirectiveCopy is a RetentionDirective enum value
+	RetentionDirectiveCopy = "COPY"
+
+	// RetentionDirectiveReplace is a RetentionDirective enum value
+	RetentionDirectiveReplace = "REPLACE"
+)
+
+// RetentionDirective_Values returns all elements of the RetentionDirective enum
+func RetentionDirective_Values() []string {
+	return []string{
+		RetentionDirectiveCopy,
+		RetentionDirectiveReplace,
+	}
+}

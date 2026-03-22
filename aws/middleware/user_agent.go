@@ -171,11 +171,11 @@ type RequestUserAgent struct {
 //
 // User-Agent example:
 //
-//	aws-sdk-go-v2/1.2.3
+//	ibm-cos-sdk-go-v2/1.2.3
 //
 // X-Amz-User-Agent example:
 //
-//	aws-sdk-go-v2/1.2.3 md/GOOS/linux md/GOARCH/amd64 lang/go/1.15
+//	ibm-cos-sdk-go-v2/1.2.3 md/GOOS/linux md/GOARCH/amd64 lang/go/1.15
 func NewRequestUserAgent() *RequestUserAgent {
 	userAgent, sdkAgent := smithyhttp.NewUserAgentBuilder(), smithyhttp.NewUserAgentBuilder()
 	addProductName(userAgent)

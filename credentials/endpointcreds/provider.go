@@ -198,7 +198,7 @@ func (p *Provider) resolveAuthToken() (string, error) {
 
 var _ aws.CredentialProviderSource = (*Provider)(nil)
 
-// ProviderSources returns the credential chain that was used to construct this provider
+// ProviderSources returns the credential chain used to construct this provider
 func (p *Provider) ProviderSources() []aws.CredentialSource {
 	if p.options.CredentialSources == nil {
 		return []aws.CredentialSource{aws.CredentialSourceHTTP}

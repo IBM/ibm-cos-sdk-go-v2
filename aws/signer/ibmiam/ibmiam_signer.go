@@ -49,9 +49,9 @@ func (s *IBMCOSSigner) SignHTTP(
 
 	if serviceInstanceID == "" && credentials.ServiceInstanceID != "" {
 		// Log the Service Instance ID
-		if s.logger != nil {
-			s.logger.Logf(logging.Debug, "Setting Service Instance ID: %s", credentials.ServiceInstanceID)
-		}
+		//if s.logger != nil {
+		//	s.logger.Logf(logging.Debug, "Setting Service Instance ID: %s", credentials.ServiceInstanceID)
+		//}
 		r.Header.Set("ibm-service-instance-id", credentials.ServiceInstanceID)
 	}
 
@@ -71,9 +71,9 @@ func (s *IBMCOSSigner) SignHTTP(
 	r.Header.Set("Authorization", authString)
 
 	// Log the signing operation if logger is available
-	if s.logger != nil {
-		s.logger.Logf(logging.Debug, "IBM COS signing request for service %s in region %s", service, region)
-	}
+	//if s.logger != nil {
+	//	s.logger.Logf(logging.Debug, "IBM COS signing request for service %s in region %s", service, region)
+	//}
 
 	return nil
 }
