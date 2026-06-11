@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/s3.DeleteObjectInput";
@@ -113,9 +113,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The bucket name of the bucket containing the object.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The bucket name of the bucket containing the object.</p></div></span>
   
 </li>
 
@@ -138,9 +136,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation.</p></div></span>
   
 </li>
 
@@ -163,9 +159,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The account ID of the expected bucket owner.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The account ID of the expected bucket owner.</p></div></span>
   
 </li>
 
@@ -188,9 +182,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The If-Match header field makes the request method conditional on ETags.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The If-Match header field makes the request method conditional on ETags.</p></div></span>
   
 </li>
 
@@ -213,9 +205,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>If present, the object is deleted only if its modification times matches the provided Timestamp .</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>If present, the object is deleted only if its modification times matches the provided Timestamp .</p></div></span>
   
 </li>
 
@@ -238,9 +228,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>If present, the object is deleted only if its size matches the provided size in bytes.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>If present, the object is deleted only if its size matches the provided size in bytes.</p></div></span>
   
 </li>
 
@@ -263,9 +251,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Key name of the object to delete.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Key name of the object to delete.</p></div></span>
   
 </li>
 
@@ -288,9 +274,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The concatenation of the authentication device’s serial number, a space, and the value that is displayed on your authentication device.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The concatenation of the authentication device's serial number, a space, and the value that is displayed on your authentication device.</p></div></span>
   
 </li>
 
@@ -313,9 +297,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Confirms that the requester knows that they will be charged for the request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Confirms that the requester knows that they will be charged for the request.</p></div></span>
   
 </li>
 
@@ -338,9 +320,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Version ID used to reference a specific version of the object.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Version ID used to reference a specific version of the object.</p></div></span>
   
 </li>
 
@@ -364,19 +344,33 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The bucket name of the bucket containing the object.</p>
-
-<p>Directory buckets - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format Bucket-name.s3express-zone-id.region-code.amazonaws.com . Path-style requests are not supported. Directory bucket names must be unique in the chosen Zone (Availability Zone or Local Zone). Bucket names must follow the format bucket-base-name–zone-id–x-s3 (for example, amzn-s3-demo-bucket–usw2-az1–x-s3 ). For information about bucket naming restrictions, see bucket naming rules[https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html]in the Amazon S3 User Guide.</p>
-
-<p>Access points - When you use this action with an access point for general purpose buckets, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When you use this action with an access point for directory buckets, you must provide the access point name in place of the bucket name. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form AccessPointName-AccountId.s3-accesspoint.Region.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see access points[https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html]in the Amazon S3 User Guide.</p>
-
+    <p>The bucket name of the bucket containing the object.</p>
+<p>Directory buckets - When you use this operation with a directory bucket, you
+must use virtual-hosted-style requests in the format
+Bucket-name.s3express-zone-id.region-code.amazonaws.com . Path-style requests
+are not supported. Directory bucket names must be unique in the chosen Zone
+(Availability Zone or Local Zone). Bucket names must follow the format
+bucket-base-name--zone-id--x-s3 (for example,
+amzn-s3-demo-bucket--usw2-az1--x-s3 ). For information about bucket naming
+restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a>in the Amazon S3 User Guide.</p>
+<p>Access points - When you use this action with an access point for general
+purpose buckets, you must provide the alias of the access point in place of the
+bucket name or specify the access point ARN. When you use this action with an
+access point for directory buckets, you must provide the access point name in
+place of the bucket name. When using the access point ARN, you must direct
+requests to the access point hostname. The access point hostname takes the form
+AccessPointName-AccountId.s3-accesspoint.Region.amazonaws.com. When using this
+action with an access point through the Amazon Web Services SDKs, you provide
+the access point ARN in place of the bucket name. For more information about
+access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>in the Amazon S3 User Guide.</p>
 <p>Object Lambda access points are not supported by directory buckets.</p>
-
-<p>S3 on Outposts - When you use this action with S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form AccessPointName-AccountId.outpostID.s3-outposts.Region.amazonaws.com . When you use this action with S3 on Outposts, the destination bucket must be the Outposts access point ARN or the access point alias. For more information about S3 on Outposts, see is S3 on Outposts?[https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html]in the Amazon S3 User Guide.</p>
-
+<p>S3 on Outposts - When you use this action with S3 on Outposts, you must direct
+requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the
+form AccessPointName-AccountId.outpostID.s3-outposts.Region.amazonaws.com . When
+you use this action with S3 on Outposts, the destination bucket must be the
+Outposts access point ARN or the access point alias. For more information about
+S3 on Outposts, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a>in the Amazon S3 User Guide.</p>
 <p>This member is required.</p>
-
 
   </div>
 </div>
@@ -393,11 +387,10 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to process this operation. To use this header, you must have the s3:BypassGovernanceRetention permission.</p>
-
+    <p>Indicates whether S3 Object Lock should bypass Governance-mode restrictions to
+process this operation. To use this header, you must have the
+s3:BypassGovernanceRetention permission.</p>
 <p>This functionality is not supported for directory buckets.</p>
-
 
   </div>
 </div>
@@ -414,9 +407,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code 403 Forbidden (access denied).</p>
-
+    <p>The account ID of the expected bucket owner. If the account ID that you provide
+does not match the actual owner of the bucket, the request fails with the HTTP
+status code 403 Forbidden (access denied).</p>
 
   </div>
 </div>
@@ -433,13 +426,12 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The If-Match header field makes the request method conditional on ETags. If the ETag value does not match, the operation returns a 412 Precondition Failed error. If the ETag matches or if the object doesn’t exist, the operation will return a 204 Success (No Content) response .</p>
-
+    <p>The If-Match header field makes the request method conditional on ETags. If the
+ETag value does not match, the operation returns a 412 Precondition Failed
+error. If the ETag matches or if the object doesn't exist, the operation will
+return a 204 Success (No Content) response .</p>
 <p>For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p>
-
 <p>This functionality is only supported for directory buckets.</p>
-
 
   </div>
 </div>
@@ -456,11 +448,11 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>If present, the object is deleted only if its modification times matches the provided Timestamp . If the Timestamp values do not match, the operation returns a 412 Precondition Failed error. If the Timestamp matches or if the object doesn’t exist, the operation returns a 204 Success (No Content) response.</p>
-
+    <p>If present, the object is deleted only if its modification times matches the
+provided Timestamp . If the Timestamp values do not match, the operation
+returns a 412 Precondition Failed error. If the Timestamp matches or if the
+object doesn’t exist, the operation returns a 204 Success (No Content) response.</p>
 <p>This functionality is only supported for directory buckets.</p>
-
 
   </div>
 </div>
@@ -477,13 +469,14 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>If present, the object is deleted only if its size matches the provided size in bytes. If the Size value does not match, the operation returns a 412 Precondition Failed error. If the Size matches or if the object doesn’t exist, the operation returns a 204 Success (No Content) response.</p>
-
+    <p>If present, the object is deleted only if its size matches the provided size in
+bytes. If the Size value does not match, the operation returns a 412
+Precondition Failed error. If the Size matches or if the object doesn’t exist,
+the operation returns a 204 Success (No Content) response.</p>
 <p>This functionality is only supported for directory buckets.</p>
-
-<p>You can use the If-Match , x-amz-if-match-last-modified-time and x-amz-if-match-size conditional headers in conjunction with each-other or individually.</p>
-
+<p>You can use the If-Match , x-amz-if-match-last-modified-time and
+x-amz-if-match-size conditional headers in conjunction with each-other or
+individually.</p>
 
   </div>
 </div>
@@ -500,11 +493,8 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>Key name of the object to delete.</p>
-
+    <p>Key name of the object to delete.</p>
 <p>This member is required.</p>
-
 
   </div>
 </div>
@@ -521,11 +511,11 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The concatenation of the authentication device’s serial number, a space, and the value that is displayed on your authentication device. Required to permanently delete a versioned object if versioning is configured with MFA delete enabled.</p>
-
+    <p>The concatenation of the authentication device's serial number, a space, and
+the value that is displayed on your authentication device. Required to
+permanently delete a versioned object if versioning is configured with MFA
+delete enabled.</p>
 <p>This functionality is not supported for directory buckets.</p>
-
 
   </div>
 </div>
@@ -542,11 +532,13 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. If either the source or destination S3 bucket has Requester Pays enabled, the requester will pay for corresponding charges to copy the object. For information about downloading objects from Requester Pays buckets, see Objects in Requester Pays Buckets[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html]in the Amazon S3 User Guide.</p>
-
+    <p>Confirms that the requester knows that they will be charged for the request.
+Bucket owners need not specify this parameter in their requests. If either the
+source or destination S3 bucket has Requester Pays enabled, the requester will
+pay for corresponding charges to copy the object. For information about
+downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a>in the Amazon S3 User
+Guide.</p>
 <p>This functionality is not supported for directory buckets.</p>
-
 
   </div>
 </div>
@@ -563,11 +555,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>Version ID used to reference a specific version of the object.</p>
-
-<p>For directory buckets in this API operation, only the null value of the version ID is supported.</p>
-
+    <p>Version ID used to reference a specific version of the object.</p>
+<p>For directory buckets in this API operation, only the null value of the version
+ID is supported.</p>
 
   </div>
 </div>
@@ -584,9 +574,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:50 2026 by
+  Generated on Thu Jun 11 07:56:49 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

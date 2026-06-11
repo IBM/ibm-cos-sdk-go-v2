@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws/protocol/eventstream.Headers";
@@ -75,9 +75,8 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Set associates the name with a value. If the header name already exists in the Headers the value will be replaced with the new one.</p>
-
+    <p>Set associates the name with a value. If the header name already exists in
+the Headers the value will be replaced with the new one.</p>
 
   </div>
 </div>
@@ -127,9 +126,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Clone returns a deep copy of the headers.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Clone returns a deep copy of the headers.</p></div></span>
   
 </li>
 
@@ -152,9 +149,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Del deletes the value in the Headers if it exists.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Del deletes the value in the Headers if it exists.</p></div></span>
   
 </li>
 
@@ -177,9 +172,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Get returns the Value associated with the header.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Get returns the Value associated with the header.</p></div></span>
   
 </li>
 
@@ -209,6 +202,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
 
       
     </ul>
+    
   
 
 
@@ -222,7 +216,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
       <div class="method_details first">
   <h3 class="signature first" id="Clone-instance_method">
   
-    func (hs <span class='object_link'><a href="" title="eventstream.Headers (struct)">Headers</a></span>) <strong><span class='object_link'><a href="#Clone-instance_method" title="eventstream.Headers.Clone() (method)">Clone</a></span></strong>() <span class='object_link'><a href="" title="eventstream.Headers (struct)">Headers</a></span> 
+    func (hs Headers) <strong><span class='object_link'><a href="#Clone-instance_method" title="eventstream.Headers.Clone() (method)">Clone</a></span></strong>() Headers 
   
 
   
@@ -230,9 +224,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Clone returns a deep copy of the headers</p>
-
+    <p>Clone returns a deep copy of the headers</p>
 
   </div>
 </div>
@@ -272,7 +264,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
       <div class="method_details ">
   <h3 class="signature " id="Del-instance_method">
   
-    func (hs *<span class='object_link'><a href="" title="eventstream.Headers (struct)">Headers</a></span>) <strong><span class='object_link'><a href="#Del-instance_method" title="eventstream.Headers.Del() (method)">Del</a></span></strong>(name string) 
+    func (hs *Headers) <strong><span class='object_link'><a href="#Del-instance_method" title="eventstream.Headers.Del() (method)">Del</a></span></strong>(name string) 
   
 
   
@@ -280,9 +272,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Del deletes the value in the Headers if it exists.</p>
-
+    <p>Del deletes the value in the Headers if it exists.</p>
 
   </div>
 </div>
@@ -324,7 +314,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
       <div class="method_details ">
   <h3 class="signature " id="Get-instance_method">
   
-    func (hs <span class='object_link'><a href="" title="eventstream.Headers (struct)">Headers</a></span>) <strong><span class='object_link'><a href="#Get-instance_method" title="eventstream.Headers.Get() (method)">Get</a></span></strong>(name string) <span class='object_link'><a href="Value.html" title="eventstream.Value (interface)">Value</a></span> 
+    func (hs Headers) <strong><span class='object_link'><a href="#Get-instance_method" title="eventstream.Headers.Get() (method)">Get</a></span></strong>(name string) <span class='object_link'><a href="Value.html" title="eventstream.Value (interface)">Value</a></span> 
   
 
   
@@ -332,9 +322,8 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Get returns the Value associated with the header. Nil is returned if the value does not exist.</p>
-
+    <p>Get returns the Value associated with the header. Nil is returned if the
+value does not exist.</p>
 
   </div>
 </div>
@@ -376,7 +365,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
       <div class="method_details ">
   <h3 class="signature " id="Set-instance_method">
   
-    func (hs *<span class='object_link'><a href="" title="eventstream.Headers (struct)">Headers</a></span>) <strong><span class='object_link'><a href="#Set-instance_method" title="eventstream.Headers.Set() (method)">Set</a></span></strong>(name string, value <span class='object_link'><a href="Value.html" title="eventstream.Value (interface)">Value</a></span>) 
+    func (hs *Headers) <strong><span class='object_link'><a href="#Set-instance_method" title="eventstream.Headers.Set() (method)">Set</a></span></strong>(name string, value <span class='object_link'><a href="Value.html" title="eventstream.Value (interface)">Value</a></span>) 
   
 
   
@@ -430,9 +419,9 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/eventstream"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:46 2026 by
+  Generated on Thu Jun 11 07:56:47 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

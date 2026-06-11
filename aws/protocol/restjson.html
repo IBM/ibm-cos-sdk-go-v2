@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws/protocol/restjson";
@@ -111,9 +111,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/restjson"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetErrorInfo util looks for code, __type, and message members in the json body.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetErrorInfo util looks for code, __type, and message members in the json body.</p></div></span>
   
 </li>
 
@@ -136,9 +134,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/restjson"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetSmithyGenericAPIError returns smithy generic api error and an error interface.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetSmithyGenericAPIError returns smithy generic api error and an error interface.</p></div></span>
   
 </li>
 
@@ -161,15 +157,14 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/restjson"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SanitizeErrorCode sanitizes the errorCode string .</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SanitizeErrorCode sanitizes the errorCode string .</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -191,9 +186,10 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/restjson"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetErrorInfo util looks for code, __type, and message members in the json body. These members are optionally available, and the function returns the value of member if it is available. This function is useful to identify the error code, msg in a REST JSON error response.</p>
-
+    <p>GetErrorInfo util looks for code, __type, and message members in the
+json body. These members are optionally available, and the function
+returns the value of member if it is available. This function is useful to
+identify the error code, msg in a REST JSON error response.</p>
 
   </div>
 </div>
@@ -295,9 +291,10 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/restjson"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetSmithyGenericAPIError returns smithy generic api error and an error interface. Takes in json decoder, and error Code string as args. The function retrieves error message and error code from the decoder body. If errorCode of length greater than 0 is passed in as an argument, it is used instead.</p>
-
+    <p>GetSmithyGenericAPIError returns smithy generic api error and an error interface.
+Takes in json decoder, and error Code string as args. The function retrieves error message
+and error code from the decoder body. If errorCode of length greater than 0 is passed in as
+an argument, it is used instead.</p>
 
   </div>
 </div>
@@ -361,9 +358,11 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/restjson"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>SanitizeErrorCode sanitizes the errorCode string . The rule for sanitizing is if a <code>:</code> character is present, then take only the contents before the first : character in the value. If a # character is present, then take only the contents after the first # character in the value.</p>
-
+    <p>SanitizeErrorCode sanitizes the errorCode string .
+The rule for sanitizing is if a <code>:</code> character is present, then take only the
+contents before the first : character in the value.
+If a # character is present, then take only the contents after the
+first # character in the value.</p>
 
   </div>
 </div>
@@ -414,9 +413,9 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/restjson"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:35 2026 by
+  Generated on Thu Jun 11 07:56:43 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

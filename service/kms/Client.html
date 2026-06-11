@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/kms.Client";
@@ -75,39 +75,49 @@ import "../ibm-cos-sdk-go-v2/service/kms"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Returns a unique asymmetric data key pair for use outside of KMS. This operation returns a plaintext public key and a copy of the private key that is encrypted under the symmetric encryption KMS key you specify. Unlike GenerateDataKeyPair, this operation does not return a plaintext private key. The bytes in the keys are random; they are not related to the caller or to the KMS key that is used to encrypt the private key.</p>
-
-<p>You can use the public key that GenerateDataKeyPairWithoutPlaintext returns to encrypt data or verify a signature outside of KMS. Then, store the encrypted private key with the data. When you are ready to decrypt data or sign a message, you can use the Decryptoperation to decrypt the encrypted private key.</p>
-
-<p>To generate a data key pair, you must specify a symmetric encryption KMS key to encrypt the private key in a data key pair. You cannot use an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the DescribeKeyoperation.</p>
-
-<p>Use the KeyPairSpec parameter to choose an RSA or Elliptic Curve (ECC) data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption or signing, but not both. However, KMS cannot enforce any restrictions on the use of data key pairs outside of KMS.</p>
-
-<p>GenerateDataKeyPairWithoutPlaintext returns a unique data key pair for each request. The bytes in the key are not related to the caller or KMS key that is used to encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p>
-
-<p>You can use an optional encryption context to add additional security to the encryption operation. If you specify an EncryptionContext , you must specify the same encryption context (a case-sensitive exact match) when decrypting the encrypted data key. Otherwise, the request to decrypt fails with an InvalidCiphertextException . For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a> in the Key Management Service Developer Guide.</p>
-
-<p>The KMS key that you use for this operation must be in a compatible key state. For details, see states of KMS keys[https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html]in the Key Management Service Developer Guide.</p>
-
-<p>Cross-account use: Yes. To perform this operation with a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN in the value of the KeyId parameter.</p>
-
+    <p>Returns a unique asymmetric data key pair for use outside of KMS. This
+operation returns a plaintext public key and a copy of the private key that is
+encrypted under the symmetric encryption KMS key you specify. Unlike GenerateDataKeyPair, this
+operation does not return a plaintext private key. The bytes in the keys are
+random; they are not related to the caller or to the KMS key that is used to
+encrypt the private key.</p>
+<p>You can use the public key that GenerateDataKeyPairWithoutPlaintext returns to
+encrypt data or verify a signature outside of KMS. Then, store the encrypted
+private key with the data. When you are ready to decrypt data or sign a message,
+you can use the Decryptoperation to decrypt the encrypted private key.</p>
+<p>To generate a data key pair, you must specify a symmetric encryption KMS key to
+encrypt the private key in a data key pair. You cannot use an asymmetric KMS key
+or a KMS key in a custom key store. To get the type and origin of your KMS key,
+use the DescribeKeyoperation.</p>
+<p>Use the KeyPairSpec parameter to choose an RSA or Elliptic Curve (ECC) data key
+pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either
+encryption or signing, but not both. However, KMS cannot enforce any
+restrictions on the use of data key pairs outside of KMS.</p>
+<p>GenerateDataKeyPairWithoutPlaintext returns a unique data key pair for each
+request. The bytes in the key are not related to the caller or KMS key that is
+used to encrypt the private key. The public key is a DER-encoded X.509
+SubjectPublicKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p>
+<p>You can use an optional encryption context to add additional security to the
+encryption operation. If you specify an EncryptionContext , you must specify the
+same encryption context (a case-sensitive exact match) when decrypting the
+encrypted data key. Otherwise, the request to decrypt fails with an
+InvalidCiphertextException . For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a> in the Key Management
+Service Developer Guide.</p>
+<p>The KMS key that you use for this operation must be in a compatible key state.
+For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a>in the Key Management Service Developer Guide.</p>
+<p>Cross-account use: Yes. To perform this operation with a KMS key in a different
+Amazon Web Services account, specify the key ARN or alias ARN in the value of
+the KeyId parameter.</p>
 <p>Required permissions: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateDataKeyPairWithoutPlaintext</a> (key policy)</p>
-
 <p>Related operations:</p>
-
-<h1 id="label-Decrypt">Decrypt</h1>
-
-<h1 id="label-Encrypt">Encrypt</h1>
-
-<h1 id="label-GenerateDataKey">GenerateDataKey</h1>
-
-<h1 id="label-GenerateDataKeyPair">GenerateDataKeyPair</h1>
-
-<h1 id="label-GenerateDataKeyWithoutPlaintext">GenerateDataKeyWithoutPlaintext</h1>
-
-<p>Eventual consistency: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
-
+<h1 id="Decrypt">Decrypt</h1>
+<h1 id="Encrypt">Encrypt</h1>
+<h1 id="GenerateDataKey">GenerateDataKey</h1>
+<h1 id="GenerateDataKeyPair">GenerateDataKeyPair</h1>
+<h1 id="GenerateDataKeyWithoutPlaintext">GenerateDataKeyWithoutPlaintext</h1>
+<p>Eventual consistency: The KMS API follows an eventual consistency model. For
+more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual consistency</a>.</p>
 
   </div>
 </div>
@@ -1008,9 +1018,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Options returns a copy of the client configuration.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Options returns a copy of the client configuration.</p></div></span>
   
 </li>
 
@@ -1385,6 +1393,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
 
       
     </ul>
+    
   
 
 
@@ -1398,7 +1407,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details first">
   <h3 class="signature first" id="CancelKeyDeletion-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CancelKeyDeletion-instance_method" title="kms.Client.CancelKeyDeletion() (method)">CancelKeyDeletion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CancelKeyDeletionInput" title="kms (package)">CancelKeyDeletionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CancelKeyDeletionOutput" title="kms (package)">CancelKeyDeletionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CancelKeyDeletion-instance_method" title="kms.Client.CancelKeyDeletion() (method)">CancelKeyDeletion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CancelKeyDeletionInput" title="kms (package)">CancelKeyDeletionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CancelKeyDeletionOutput" title="kms (package)">CancelKeyDeletionOutput</a></span>, error) 
   
 
   
@@ -1451,7 +1460,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ConnectCustomKeyStore-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ConnectCustomKeyStore-instance_method" title="kms.Client.ConnectCustomKeyStore() (method)">ConnectCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ConnectCustomKeyStoreInput" title="kms (package)">ConnectCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ConnectCustomKeyStoreOutput" title="kms (package)">ConnectCustomKeyStoreOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ConnectCustomKeyStore-instance_method" title="kms.Client.ConnectCustomKeyStore() (method)">ConnectCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ConnectCustomKeyStoreInput" title="kms (package)">ConnectCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ConnectCustomKeyStoreOutput" title="kms (package)">ConnectCustomKeyStoreOutput</a></span>, error) 
   
 
   
@@ -1504,7 +1513,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="CreateAlias-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateAlias-instance_method" title="kms.Client.CreateAlias() (method)">CreateAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateAliasInput" title="kms (package)">CreateAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateAliasOutput" title="kms (package)">CreateAliasOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CreateAlias-instance_method" title="kms.Client.CreateAlias() (method)">CreateAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateAliasInput" title="kms (package)">CreateAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateAliasOutput" title="kms (package)">CreateAliasOutput</a></span>, error) 
   
 
   
@@ -1557,7 +1566,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="CreateCustomKeyStore-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateCustomKeyStore-instance_method" title="kms.Client.CreateCustomKeyStore() (method)">CreateCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateCustomKeyStoreInput" title="kms (package)">CreateCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateCustomKeyStoreOutput" title="kms (package)">CreateCustomKeyStoreOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CreateCustomKeyStore-instance_method" title="kms.Client.CreateCustomKeyStore() (method)">CreateCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateCustomKeyStoreInput" title="kms (package)">CreateCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateCustomKeyStoreOutput" title="kms (package)">CreateCustomKeyStoreOutput</a></span>, error) 
   
 
   
@@ -1610,7 +1619,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="CreateGrant-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateGrant-instance_method" title="kms.Client.CreateGrant() (method)">CreateGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateGrantInput" title="kms (package)">CreateGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateGrantOutput" title="kms (package)">CreateGrantOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CreateGrant-instance_method" title="kms.Client.CreateGrant() (method)">CreateGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateGrantInput" title="kms (package)">CreateGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateGrantOutput" title="kms (package)">CreateGrantOutput</a></span>, error) 
   
 
   
@@ -1663,7 +1672,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="CreateKey-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateKey-instance_method" title="kms.Client.CreateKey() (method)">CreateKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateKeyInput" title="kms (package)">CreateKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateKeyOutput" title="kms (package)">CreateKeyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CreateKey-instance_method" title="kms.Client.CreateKey() (method)">CreateKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-CreateKeyInput" title="kms (package)">CreateKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-CreateKeyOutput" title="kms (package)">CreateKeyOutput</a></span>, error) 
   
 
   
@@ -1716,7 +1725,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="Decrypt-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Decrypt-instance_method" title="kms.Client.Decrypt() (method)">Decrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DecryptInput" title="kms (package)">DecryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DecryptOutput" title="kms (package)">DecryptOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#Decrypt-instance_method" title="kms.Client.Decrypt() (method)">Decrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DecryptInput" title="kms (package)">DecryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DecryptOutput" title="kms (package)">DecryptOutput</a></span>, error) 
   
 
   
@@ -1769,7 +1778,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DeleteAlias-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteAlias-instance_method" title="kms.Client.DeleteAlias() (method)">DeleteAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteAliasInput" title="kms (package)">DeleteAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteAliasOutput" title="kms (package)">DeleteAliasOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteAlias-instance_method" title="kms.Client.DeleteAlias() (method)">DeleteAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteAliasInput" title="kms (package)">DeleteAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteAliasOutput" title="kms (package)">DeleteAliasOutput</a></span>, error) 
   
 
   
@@ -1822,7 +1831,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DeleteCustomKeyStore-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteCustomKeyStore-instance_method" title="kms.Client.DeleteCustomKeyStore() (method)">DeleteCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteCustomKeyStoreInput" title="kms (package)">DeleteCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteCustomKeyStoreOutput" title="kms (package)">DeleteCustomKeyStoreOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteCustomKeyStore-instance_method" title="kms.Client.DeleteCustomKeyStore() (method)">DeleteCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteCustomKeyStoreInput" title="kms (package)">DeleteCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteCustomKeyStoreOutput" title="kms (package)">DeleteCustomKeyStoreOutput</a></span>, error) 
   
 
   
@@ -1875,7 +1884,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DeleteImportedKeyMaterial-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteImportedKeyMaterial-instance_method" title="kms.Client.DeleteImportedKeyMaterial() (method)">DeleteImportedKeyMaterial</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteImportedKeyMaterialInput" title="kms (package)">DeleteImportedKeyMaterialInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteImportedKeyMaterialOutput" title="kms (package)">DeleteImportedKeyMaterialOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteImportedKeyMaterial-instance_method" title="kms.Client.DeleteImportedKeyMaterial() (method)">DeleteImportedKeyMaterial</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeleteImportedKeyMaterialInput" title="kms (package)">DeleteImportedKeyMaterialInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeleteImportedKeyMaterialOutput" title="kms (package)">DeleteImportedKeyMaterialOutput</a></span>, error) 
   
 
   
@@ -1928,7 +1937,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DeriveSharedSecret-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeriveSharedSecret-instance_method" title="kms.Client.DeriveSharedSecret() (method)">DeriveSharedSecret</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeriveSharedSecretInput" title="kms (package)">DeriveSharedSecretInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeriveSharedSecretOutput" title="kms (package)">DeriveSharedSecretOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeriveSharedSecret-instance_method" title="kms.Client.DeriveSharedSecret() (method)">DeriveSharedSecret</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DeriveSharedSecretInput" title="kms (package)">DeriveSharedSecretInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DeriveSharedSecretOutput" title="kms (package)">DeriveSharedSecretOutput</a></span>, error) 
   
 
   
@@ -1981,7 +1990,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DescribeCustomKeyStores-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DescribeCustomKeyStores-instance_method" title="kms.Client.DescribeCustomKeyStores() (method)">DescribeCustomKeyStores</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DescribeCustomKeyStoresInput" title="kms (package)">DescribeCustomKeyStoresInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DescribeCustomKeyStoresOutput" title="kms (package)">DescribeCustomKeyStoresOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DescribeCustomKeyStores-instance_method" title="kms.Client.DescribeCustomKeyStores() (method)">DescribeCustomKeyStores</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DescribeCustomKeyStoresInput" title="kms (package)">DescribeCustomKeyStoresInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DescribeCustomKeyStoresOutput" title="kms (package)">DescribeCustomKeyStoresOutput</a></span>, error) 
   
 
   
@@ -2034,7 +2043,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DescribeKey-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DescribeKey-instance_method" title="kms.Client.DescribeKey() (method)">DescribeKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DescribeKeyInput" title="kms (package)">DescribeKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DescribeKeyOutput" title="kms (package)">DescribeKeyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DescribeKey-instance_method" title="kms.Client.DescribeKey() (method)">DescribeKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DescribeKeyInput" title="kms (package)">DescribeKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DescribeKeyOutput" title="kms (package)">DescribeKeyOutput</a></span>, error) 
   
 
   
@@ -2087,7 +2096,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DisableKey-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DisableKey-instance_method" title="kms.Client.DisableKey() (method)">DisableKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisableKeyInput" title="kms (package)">DisableKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisableKeyOutput" title="kms (package)">DisableKeyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DisableKey-instance_method" title="kms.Client.DisableKey() (method)">DisableKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisableKeyInput" title="kms (package)">DisableKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisableKeyOutput" title="kms (package)">DisableKeyOutput</a></span>, error) 
   
 
   
@@ -2140,7 +2149,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DisableKeyRotation-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DisableKeyRotation-instance_method" title="kms.Client.DisableKeyRotation() (method)">DisableKeyRotation</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisableKeyRotationInput" title="kms (package)">DisableKeyRotationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisableKeyRotationOutput" title="kms (package)">DisableKeyRotationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DisableKeyRotation-instance_method" title="kms.Client.DisableKeyRotation() (method)">DisableKeyRotation</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisableKeyRotationInput" title="kms (package)">DisableKeyRotationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisableKeyRotationOutput" title="kms (package)">DisableKeyRotationOutput</a></span>, error) 
   
 
   
@@ -2193,7 +2202,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="DisconnectCustomKeyStore-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DisconnectCustomKeyStore-instance_method" title="kms.Client.DisconnectCustomKeyStore() (method)">DisconnectCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisconnectCustomKeyStoreInput" title="kms (package)">DisconnectCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisconnectCustomKeyStoreOutput" title="kms (package)">DisconnectCustomKeyStoreOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DisconnectCustomKeyStore-instance_method" title="kms.Client.DisconnectCustomKeyStore() (method)">DisconnectCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-DisconnectCustomKeyStoreInput" title="kms (package)">DisconnectCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-DisconnectCustomKeyStoreOutput" title="kms (package)">DisconnectCustomKeyStoreOutput</a></span>, error) 
   
 
   
@@ -2246,7 +2255,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="EnableKey-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#EnableKey-instance_method" title="kms.Client.EnableKey() (method)">EnableKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EnableKeyInput" title="kms (package)">EnableKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EnableKeyOutput" title="kms (package)">EnableKeyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#EnableKey-instance_method" title="kms.Client.EnableKey() (method)">EnableKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EnableKeyInput" title="kms (package)">EnableKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EnableKeyOutput" title="kms (package)">EnableKeyOutput</a></span>, error) 
   
 
   
@@ -2299,7 +2308,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="EnableKeyRotation-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#EnableKeyRotation-instance_method" title="kms.Client.EnableKeyRotation() (method)">EnableKeyRotation</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EnableKeyRotationInput" title="kms (package)">EnableKeyRotationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EnableKeyRotationOutput" title="kms (package)">EnableKeyRotationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#EnableKeyRotation-instance_method" title="kms.Client.EnableKeyRotation() (method)">EnableKeyRotation</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EnableKeyRotationInput" title="kms (package)">EnableKeyRotationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EnableKeyRotationOutput" title="kms (package)">EnableKeyRotationOutput</a></span>, error) 
   
 
   
@@ -2352,7 +2361,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="Encrypt-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Encrypt-instance_method" title="kms.Client.Encrypt() (method)">Encrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EncryptInput" title="kms (package)">EncryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EncryptOutput" title="kms (package)">EncryptOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#Encrypt-instance_method" title="kms.Client.Encrypt() (method)">Encrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-EncryptInput" title="kms (package)">EncryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-EncryptOutput" title="kms (package)">EncryptOutput</a></span>, error) 
   
 
   
@@ -2405,7 +2414,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GenerateDataKey-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateDataKey-instance_method" title="kms.Client.GenerateDataKey() (method)">GenerateDataKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyInput" title="kms (package)">GenerateDataKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyOutput" title="kms (package)">GenerateDataKeyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GenerateDataKey-instance_method" title="kms.Client.GenerateDataKey() (method)">GenerateDataKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyInput" title="kms (package)">GenerateDataKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyOutput" title="kms (package)">GenerateDataKeyOutput</a></span>, error) 
   
 
   
@@ -2458,7 +2467,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GenerateDataKeyPair-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateDataKeyPair-instance_method" title="kms.Client.GenerateDataKeyPair() (method)">GenerateDataKeyPair</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairInput" title="kms (package)">GenerateDataKeyPairInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairOutput" title="kms (package)">GenerateDataKeyPairOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GenerateDataKeyPair-instance_method" title="kms.Client.GenerateDataKeyPair() (method)">GenerateDataKeyPair</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairInput" title="kms (package)">GenerateDataKeyPairInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairOutput" title="kms (package)">GenerateDataKeyPairOutput</a></span>, error) 
   
 
   
@@ -2511,7 +2520,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GenerateDataKeyPairWithoutPlaintext-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateDataKeyPairWithoutPlaintext-instance_method" title="kms.Client.GenerateDataKeyPairWithoutPlaintext() (method)">GenerateDataKeyPairWithoutPlaintext</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairWithoutPlaintextInput" title="kms (package)">GenerateDataKeyPairWithoutPlaintextInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairWithoutPlaintextOutput" title="kms (package)">GenerateDataKeyPairWithoutPlaintextOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GenerateDataKeyPairWithoutPlaintext-instance_method" title="kms.Client.GenerateDataKeyPairWithoutPlaintext() (method)">GenerateDataKeyPairWithoutPlaintext</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairWithoutPlaintextInput" title="kms (package)">GenerateDataKeyPairWithoutPlaintextInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyPairWithoutPlaintextOutput" title="kms (package)">GenerateDataKeyPairWithoutPlaintextOutput</a></span>, error) 
   
 
   
@@ -2564,7 +2573,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GenerateDataKeyWithoutPlaintext-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateDataKeyWithoutPlaintext-instance_method" title="kms.Client.GenerateDataKeyWithoutPlaintext() (method)">GenerateDataKeyWithoutPlaintext</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyWithoutPlaintextInput" title="kms (package)">GenerateDataKeyWithoutPlaintextInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyWithoutPlaintextOutput" title="kms (package)">GenerateDataKeyWithoutPlaintextOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GenerateDataKeyWithoutPlaintext-instance_method" title="kms.Client.GenerateDataKeyWithoutPlaintext() (method)">GenerateDataKeyWithoutPlaintext</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateDataKeyWithoutPlaintextInput" title="kms (package)">GenerateDataKeyWithoutPlaintextInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateDataKeyWithoutPlaintextOutput" title="kms (package)">GenerateDataKeyWithoutPlaintextOutput</a></span>, error) 
   
 
   
@@ -2617,7 +2626,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GenerateMac-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateMac-instance_method" title="kms.Client.GenerateMac() (method)">GenerateMac</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateMacInput" title="kms (package)">GenerateMacInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateMacOutput" title="kms (package)">GenerateMacOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GenerateMac-instance_method" title="kms.Client.GenerateMac() (method)">GenerateMac</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateMacInput" title="kms (package)">GenerateMacInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateMacOutput" title="kms (package)">GenerateMacOutput</a></span>, error) 
   
 
   
@@ -2670,7 +2679,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GenerateRandom-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GenerateRandom-instance_method" title="kms.Client.GenerateRandom() (method)">GenerateRandom</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateRandomInput" title="kms (package)">GenerateRandomInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateRandomOutput" title="kms (package)">GenerateRandomOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GenerateRandom-instance_method" title="kms.Client.GenerateRandom() (method)">GenerateRandom</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GenerateRandomInput" title="kms (package)">GenerateRandomInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GenerateRandomOutput" title="kms (package)">GenerateRandomOutput</a></span>, error) 
   
 
   
@@ -2723,7 +2732,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GetKeyPolicy-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetKeyPolicy-instance_method" title="kms.Client.GetKeyPolicy() (method)">GetKeyPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetKeyPolicyInput" title="kms (package)">GetKeyPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetKeyPolicyOutput" title="kms (package)">GetKeyPolicyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetKeyPolicy-instance_method" title="kms.Client.GetKeyPolicy() (method)">GetKeyPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetKeyPolicyInput" title="kms (package)">GetKeyPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetKeyPolicyOutput" title="kms (package)">GetKeyPolicyOutput</a></span>, error) 
   
 
   
@@ -2776,7 +2785,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GetKeyRotationStatus-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetKeyRotationStatus-instance_method" title="kms.Client.GetKeyRotationStatus() (method)">GetKeyRotationStatus</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetKeyRotationStatusInput" title="kms (package)">GetKeyRotationStatusInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetKeyRotationStatusOutput" title="kms (package)">GetKeyRotationStatusOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetKeyRotationStatus-instance_method" title="kms.Client.GetKeyRotationStatus() (method)">GetKeyRotationStatus</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetKeyRotationStatusInput" title="kms (package)">GetKeyRotationStatusInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetKeyRotationStatusOutput" title="kms (package)">GetKeyRotationStatusOutput</a></span>, error) 
   
 
   
@@ -2829,7 +2838,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GetParametersForImport-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetParametersForImport-instance_method" title="kms.Client.GetParametersForImport() (method)">GetParametersForImport</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetParametersForImportInput" title="kms (package)">GetParametersForImportInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetParametersForImportOutput" title="kms (package)">GetParametersForImportOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetParametersForImport-instance_method" title="kms.Client.GetParametersForImport() (method)">GetParametersForImport</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetParametersForImportInput" title="kms (package)">GetParametersForImportInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetParametersForImportOutput" title="kms (package)">GetParametersForImportOutput</a></span>, error) 
   
 
   
@@ -2882,7 +2891,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="GetPublicKey-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetPublicKey-instance_method" title="kms.Client.GetPublicKey() (method)">GetPublicKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetPublicKeyInput" title="kms (package)">GetPublicKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetPublicKeyOutput" title="kms (package)">GetPublicKeyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetPublicKey-instance_method" title="kms.Client.GetPublicKey() (method)">GetPublicKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-GetPublicKeyInput" title="kms (package)">GetPublicKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-GetPublicKeyOutput" title="kms (package)">GetPublicKeyOutput</a></span>, error) 
   
 
   
@@ -2935,7 +2944,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ImportKeyMaterial-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ImportKeyMaterial-instance_method" title="kms.Client.ImportKeyMaterial() (method)">ImportKeyMaterial</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ImportKeyMaterialInput" title="kms (package)">ImportKeyMaterialInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ImportKeyMaterialOutput" title="kms (package)">ImportKeyMaterialOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ImportKeyMaterial-instance_method" title="kms.Client.ImportKeyMaterial() (method)">ImportKeyMaterial</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ImportKeyMaterialInput" title="kms (package)">ImportKeyMaterialInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ImportKeyMaterialOutput" title="kms (package)">ImportKeyMaterialOutput</a></span>, error) 
   
 
   
@@ -2988,7 +2997,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ListAliases-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListAliases-instance_method" title="kms.Client.ListAliases() (method)">ListAliases</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListAliasesInput" title="kms (package)">ListAliasesInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListAliasesOutput" title="kms (package)">ListAliasesOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListAliases-instance_method" title="kms.Client.ListAliases() (method)">ListAliases</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListAliasesInput" title="kms (package)">ListAliasesInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListAliasesOutput" title="kms (package)">ListAliasesOutput</a></span>, error) 
   
 
   
@@ -3041,7 +3050,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ListGrants-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListGrants-instance_method" title="kms.Client.ListGrants() (method)">ListGrants</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListGrantsInput" title="kms (package)">ListGrantsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListGrantsOutput" title="kms (package)">ListGrantsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListGrants-instance_method" title="kms.Client.ListGrants() (method)">ListGrants</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListGrantsInput" title="kms (package)">ListGrantsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListGrantsOutput" title="kms (package)">ListGrantsOutput</a></span>, error) 
   
 
   
@@ -3094,7 +3103,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ListKeyPolicies-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListKeyPolicies-instance_method" title="kms.Client.ListKeyPolicies() (method)">ListKeyPolicies</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeyPoliciesInput" title="kms (package)">ListKeyPoliciesInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeyPoliciesOutput" title="kms (package)">ListKeyPoliciesOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListKeyPolicies-instance_method" title="kms.Client.ListKeyPolicies() (method)">ListKeyPolicies</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeyPoliciesInput" title="kms (package)">ListKeyPoliciesInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeyPoliciesOutput" title="kms (package)">ListKeyPoliciesOutput</a></span>, error) 
   
 
   
@@ -3147,7 +3156,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ListKeyRotations-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListKeyRotations-instance_method" title="kms.Client.ListKeyRotations() (method)">ListKeyRotations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeyRotationsInput" title="kms (package)">ListKeyRotationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeyRotationsOutput" title="kms (package)">ListKeyRotationsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListKeyRotations-instance_method" title="kms.Client.ListKeyRotations() (method)">ListKeyRotations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeyRotationsInput" title="kms (package)">ListKeyRotationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeyRotationsOutput" title="kms (package)">ListKeyRotationsOutput</a></span>, error) 
   
 
   
@@ -3200,7 +3209,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ListKeys-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListKeys-instance_method" title="kms.Client.ListKeys() (method)">ListKeys</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeysInput" title="kms (package)">ListKeysInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeysOutput" title="kms (package)">ListKeysOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListKeys-instance_method" title="kms.Client.ListKeys() (method)">ListKeys</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListKeysInput" title="kms (package)">ListKeysInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListKeysOutput" title="kms (package)">ListKeysOutput</a></span>, error) 
   
 
   
@@ -3253,7 +3262,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ListResourceTags-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListResourceTags-instance_method" title="kms.Client.ListResourceTags() (method)">ListResourceTags</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListResourceTagsInput" title="kms (package)">ListResourceTagsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListResourceTagsOutput" title="kms (package)">ListResourceTagsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListResourceTags-instance_method" title="kms.Client.ListResourceTags() (method)">ListResourceTags</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListResourceTagsInput" title="kms (package)">ListResourceTagsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListResourceTagsOutput" title="kms (package)">ListResourceTagsOutput</a></span>, error) 
   
 
   
@@ -3306,7 +3315,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ListRetirableGrants-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListRetirableGrants-instance_method" title="kms.Client.ListRetirableGrants() (method)">ListRetirableGrants</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListRetirableGrantsInput" title="kms (package)">ListRetirableGrantsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListRetirableGrantsOutput" title="kms (package)">ListRetirableGrantsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListRetirableGrants-instance_method" title="kms.Client.ListRetirableGrants() (method)">ListRetirableGrants</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ListRetirableGrantsInput" title="kms (package)">ListRetirableGrantsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ListRetirableGrantsOutput" title="kms (package)">ListRetirableGrantsOutput</a></span>, error) 
   
 
   
@@ -3359,7 +3368,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="Options-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span></strong>() <span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span> 
+    func (c *Client) <strong><span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span></strong>() <span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span> 
   
 
   
@@ -3367,11 +3376,10 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Options returns a copy of the client configuration.</p>
-
-<p>Callers SHOULD NOT perform mutations on any inner structures within client config. Config overrides should instead be made on a per-operation basis through functional options.</p>
-
+    <p>Options returns a copy of the client configuration.</p>
+<p>Callers SHOULD NOT perform mutations on any inner structures within client
+config. Config overrides should instead be made on a per-operation basis through
+functional options.</p>
 
   </div>
 </div>
@@ -3403,7 +3411,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="PutKeyPolicy-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutKeyPolicy-instance_method" title="kms.Client.PutKeyPolicy() (method)">PutKeyPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-PutKeyPolicyInput" title="kms (package)">PutKeyPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-PutKeyPolicyOutput" title="kms (package)">PutKeyPolicyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutKeyPolicy-instance_method" title="kms.Client.PutKeyPolicy() (method)">PutKeyPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-PutKeyPolicyInput" title="kms (package)">PutKeyPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-PutKeyPolicyOutput" title="kms (package)">PutKeyPolicyOutput</a></span>, error) 
   
 
   
@@ -3456,7 +3464,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ReEncrypt-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ReEncrypt-instance_method" title="kms.Client.ReEncrypt() (method)">ReEncrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ReEncryptInput" title="kms (package)">ReEncryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ReEncryptOutput" title="kms (package)">ReEncryptOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ReEncrypt-instance_method" title="kms.Client.ReEncrypt() (method)">ReEncrypt</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ReEncryptInput" title="kms (package)">ReEncryptInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ReEncryptOutput" title="kms (package)">ReEncryptOutput</a></span>, error) 
   
 
   
@@ -3509,7 +3517,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ReplicateKey-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ReplicateKey-instance_method" title="kms.Client.ReplicateKey() (method)">ReplicateKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ReplicateKeyInput" title="kms (package)">ReplicateKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ReplicateKeyOutput" title="kms (package)">ReplicateKeyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ReplicateKey-instance_method" title="kms.Client.ReplicateKey() (method)">ReplicateKey</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ReplicateKeyInput" title="kms (package)">ReplicateKeyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ReplicateKeyOutput" title="kms (package)">ReplicateKeyOutput</a></span>, error) 
   
 
   
@@ -3562,7 +3570,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="RetireGrant-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#RetireGrant-instance_method" title="kms.Client.RetireGrant() (method)">RetireGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RetireGrantInput" title="kms (package)">RetireGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RetireGrantOutput" title="kms (package)">RetireGrantOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#RetireGrant-instance_method" title="kms.Client.RetireGrant() (method)">RetireGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RetireGrantInput" title="kms (package)">RetireGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RetireGrantOutput" title="kms (package)">RetireGrantOutput</a></span>, error) 
   
 
   
@@ -3615,7 +3623,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="RevokeGrant-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#RevokeGrant-instance_method" title="kms.Client.RevokeGrant() (method)">RevokeGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RevokeGrantInput" title="kms (package)">RevokeGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RevokeGrantOutput" title="kms (package)">RevokeGrantOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#RevokeGrant-instance_method" title="kms.Client.RevokeGrant() (method)">RevokeGrant</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RevokeGrantInput" title="kms (package)">RevokeGrantInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RevokeGrantOutput" title="kms (package)">RevokeGrantOutput</a></span>, error) 
   
 
   
@@ -3668,7 +3676,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="RotateKeyOnDemand-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#RotateKeyOnDemand-instance_method" title="kms.Client.RotateKeyOnDemand() (method)">RotateKeyOnDemand</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RotateKeyOnDemandInput" title="kms (package)">RotateKeyOnDemandInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RotateKeyOnDemandOutput" title="kms (package)">RotateKeyOnDemandOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#RotateKeyOnDemand-instance_method" title="kms.Client.RotateKeyOnDemand() (method)">RotateKeyOnDemand</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-RotateKeyOnDemandInput" title="kms (package)">RotateKeyOnDemandInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-RotateKeyOnDemandOutput" title="kms (package)">RotateKeyOnDemandOutput</a></span>, error) 
   
 
   
@@ -3721,7 +3729,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="ScheduleKeyDeletion-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ScheduleKeyDeletion-instance_method" title="kms.Client.ScheduleKeyDeletion() (method)">ScheduleKeyDeletion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ScheduleKeyDeletionInput" title="kms (package)">ScheduleKeyDeletionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ScheduleKeyDeletionOutput" title="kms (package)">ScheduleKeyDeletionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ScheduleKeyDeletion-instance_method" title="kms.Client.ScheduleKeyDeletion() (method)">ScheduleKeyDeletion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-ScheduleKeyDeletionInput" title="kms (package)">ScheduleKeyDeletionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-ScheduleKeyDeletionOutput" title="kms (package)">ScheduleKeyDeletionOutput</a></span>, error) 
   
 
   
@@ -3774,7 +3782,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="Sign-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Sign-instance_method" title="kms.Client.Sign() (method)">Sign</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-SignInput" title="kms (package)">SignInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-SignOutput" title="kms (package)">SignOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#Sign-instance_method" title="kms.Client.Sign() (method)">Sign</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-SignInput" title="kms (package)">SignInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-SignOutput" title="kms (package)">SignOutput</a></span>, error) 
   
 
   
@@ -3827,7 +3835,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="TagResource-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#TagResource-instance_method" title="kms.Client.TagResource() (method)">TagResource</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-TagResourceInput" title="kms (package)">TagResourceInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-TagResourceOutput" title="kms (package)">TagResourceOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#TagResource-instance_method" title="kms.Client.TagResource() (method)">TagResource</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-TagResourceInput" title="kms (package)">TagResourceInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-TagResourceOutput" title="kms (package)">TagResourceOutput</a></span>, error) 
   
 
   
@@ -3880,7 +3888,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="UntagResource-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UntagResource-instance_method" title="kms.Client.UntagResource() (method)">UntagResource</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UntagResourceInput" title="kms (package)">UntagResourceInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UntagResourceOutput" title="kms (package)">UntagResourceOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#UntagResource-instance_method" title="kms.Client.UntagResource() (method)">UntagResource</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UntagResourceInput" title="kms (package)">UntagResourceInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UntagResourceOutput" title="kms (package)">UntagResourceOutput</a></span>, error) 
   
 
   
@@ -3933,7 +3941,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="UpdateAlias-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UpdateAlias-instance_method" title="kms.Client.UpdateAlias() (method)">UpdateAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateAliasInput" title="kms (package)">UpdateAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateAliasOutput" title="kms (package)">UpdateAliasOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#UpdateAlias-instance_method" title="kms.Client.UpdateAlias() (method)">UpdateAlias</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateAliasInput" title="kms (package)">UpdateAliasInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateAliasOutput" title="kms (package)">UpdateAliasOutput</a></span>, error) 
   
 
   
@@ -3986,7 +3994,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="UpdateCustomKeyStore-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UpdateCustomKeyStore-instance_method" title="kms.Client.UpdateCustomKeyStore() (method)">UpdateCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateCustomKeyStoreInput" title="kms (package)">UpdateCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateCustomKeyStoreOutput" title="kms (package)">UpdateCustomKeyStoreOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#UpdateCustomKeyStore-instance_method" title="kms.Client.UpdateCustomKeyStore() (method)">UpdateCustomKeyStore</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateCustomKeyStoreInput" title="kms (package)">UpdateCustomKeyStoreInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateCustomKeyStoreOutput" title="kms (package)">UpdateCustomKeyStoreOutput</a></span>, error) 
   
 
   
@@ -4039,7 +4047,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="UpdateKeyDescription-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UpdateKeyDescription-instance_method" title="kms.Client.UpdateKeyDescription() (method)">UpdateKeyDescription</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateKeyDescriptionInput" title="kms (package)">UpdateKeyDescriptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateKeyDescriptionOutput" title="kms (package)">UpdateKeyDescriptionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#UpdateKeyDescription-instance_method" title="kms.Client.UpdateKeyDescription() (method)">UpdateKeyDescription</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdateKeyDescriptionInput" title="kms (package)">UpdateKeyDescriptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdateKeyDescriptionOutput" title="kms (package)">UpdateKeyDescriptionOutput</a></span>, error) 
   
 
   
@@ -4092,7 +4100,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="UpdatePrimaryRegion-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UpdatePrimaryRegion-instance_method" title="kms.Client.UpdatePrimaryRegion() (method)">UpdatePrimaryRegion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdatePrimaryRegionInput" title="kms (package)">UpdatePrimaryRegionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdatePrimaryRegionOutput" title="kms (package)">UpdatePrimaryRegionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#UpdatePrimaryRegion-instance_method" title="kms.Client.UpdatePrimaryRegion() (method)">UpdatePrimaryRegion</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-UpdatePrimaryRegionInput" title="kms (package)">UpdatePrimaryRegionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-UpdatePrimaryRegionOutput" title="kms (package)">UpdatePrimaryRegionOutput</a></span>, error) 
   
 
   
@@ -4145,7 +4153,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="Verify-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Verify-instance_method" title="kms.Client.Verify() (method)">Verify</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-VerifyInput" title="kms (package)">VerifyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-VerifyOutput" title="kms (package)">VerifyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#Verify-instance_method" title="kms.Client.Verify() (method)">Verify</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-VerifyInput" title="kms (package)">VerifyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-VerifyOutput" title="kms (package)">VerifyOutput</a></span>, error) 
   
 
   
@@ -4198,7 +4206,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="VerifyMac-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="kms.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#VerifyMac-instance_method" title="kms.Client.VerifyMac() (method)">VerifyMac</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-VerifyMacInput" title="kms (package)">VerifyMacInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-VerifyMacOutput" title="kms (package)">VerifyMacOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#VerifyMac-instance_method" title="kms.Client.VerifyMac() (method)">VerifyMac</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../kms.html#type-VerifyMacInput" title="kms (package)">VerifyMacInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="kms.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../kms.html#type-VerifyMacOutput" title="kms (package)">VerifyMacOutput</a></span>, error) 
   
 
   
@@ -4254,9 +4262,9 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:47 2026 by
+  Generated on Thu Jun 11 07:56:48 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

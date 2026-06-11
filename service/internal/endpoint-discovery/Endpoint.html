@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/internal/endpoint-discovery.Endpoint";
@@ -75,9 +75,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Endpoint represents an endpoint used in endpoint discovery.</p>
-
+    <p>Endpoint represents an endpoint used in endpoint discovery.</p>
 
   </div>
 </div>
@@ -182,9 +180,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Add will add a given WeightedAddress to the address list of Endpoint.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Add will add a given WeightedAddress to the address list of Endpoint.</p></div></span>
   
 </li>
 
@@ -207,9 +203,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetValidAddress will return a non-expired weight endpoint.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetValidAddress will return a non-expired weight endpoint.</p></div></span>
   
 </li>
 
@@ -232,9 +226,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Len returns the number of valid endpoints where valid means the endpoint has not expired.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Len returns the number of valid endpoints where valid means the endpoint has not expired.</p></div></span>
   
 </li>
 
@@ -257,15 +249,14 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Prune will prune the expired addresses from the endpoint by allocating a new []WeightAddress.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Prune will prune the expired addresses from the endpoint by allocating a new []WeightAddress.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -301,7 +292,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
       <div class="method_details first">
   <h3 class="signature first" id="Add-instance_method">
   
-    func (e *<span class='object_link'><a href="" title="endpoint-discovery.Endpoint (struct)">Endpoint</a></span>) <strong><span class='object_link'><a href="#Add-instance_method" title="endpoint-discovery.Endpoint.Add() (method)">Add</a></span></strong>(addr <span class='object_link'><a href="WeightedAddress.html" title="endpoint-discovery.WeightedAddress (struct)">WeightedAddress</a></span>) 
+    func (e *Endpoint) <strong><span class='object_link'><a href="#Add-instance_method" title="endpoint-discovery.Endpoint.Add() (method)">Add</a></span></strong>(addr <span class='object_link'><a href="WeightedAddress.html" title="endpoint-discovery.WeightedAddress (struct)">WeightedAddress</a></span>) 
   
 
   
@@ -309,9 +300,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Add will add a given WeightedAddress to the address list of Endpoint.</p>
-
+    <p>Add will add a given WeightedAddress to the address list of Endpoint.</p>
 
   </div>
 </div>
@@ -343,7 +332,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
       <div class="method_details ">
   <h3 class="signature " id="GetValidAddress-instance_method">
   
-    func (e *<span class='object_link'><a href="" title="endpoint-discovery.Endpoint (struct)">Endpoint</a></span>) <strong><span class='object_link'><a href="#GetValidAddress-instance_method" title="endpoint-discovery.Endpoint.GetValidAddress() (method)">GetValidAddress</a></span></strong>() (<span class='object_link'><a href="WeightedAddress.html" title="endpoint-discovery.WeightedAddress (struct)">WeightedAddress</a></span>, bool) 
+    func (e *Endpoint) <strong><span class='object_link'><a href="#GetValidAddress-instance_method" title="endpoint-discovery.Endpoint.GetValidAddress() (method)">GetValidAddress</a></span></strong>() (<span class='object_link'><a href="WeightedAddress.html" title="endpoint-discovery.WeightedAddress (struct)">WeightedAddress</a></span>, bool) 
   
 
   
@@ -351,9 +340,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetValidAddress will return a non-expired weight endpoint</p>
-
+    <p>GetValidAddress will return a non-expired weight endpoint</p>
 
   </div>
 </div>
@@ -409,7 +396,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
       <div class="method_details ">
   <h3 class="signature " id="Len-instance_method">
   
-    func (e *<span class='object_link'><a href="" title="endpoint-discovery.Endpoint (struct)">Endpoint</a></span>) <strong><span class='object_link'><a href="#Len-instance_method" title="endpoint-discovery.Endpoint.Len() (method)">Len</a></span></strong>() int 
+    func (e *Endpoint) <strong><span class='object_link'><a href="#Len-instance_method" title="endpoint-discovery.Endpoint.Len() (method)">Len</a></span></strong>() int 
   
 
   
@@ -417,9 +404,8 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Len returns the number of valid endpoints where valid means the endpoint has not expired.</p>
-
+    <p>Len returns the number of valid endpoints where valid means the endpoint
+has not expired.</p>
 
   </div>
 </div>
@@ -467,7 +453,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
       <div class="method_details ">
   <h3 class="signature " id="Prune-instance_method">
   
-    func (e *<span class='object_link'><a href="" title="endpoint-discovery.Endpoint (struct)">Endpoint</a></span>) <strong><span class='object_link'><a href="#Prune-instance_method" title="endpoint-discovery.Endpoint.Prune() (method)">Prune</a></span></strong>() bool 
+    func (e *Endpoint) <strong><span class='object_link'><a href="#Prune-instance_method" title="endpoint-discovery.Endpoint.Prune() (method)">Prune</a></span></strong>() bool 
   
 
   
@@ -475,9 +461,8 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Prune will prune the expired addresses from the endpoint by allocating a new []WeightAddress. This is not concurrent safe, and should be called from a single owning thread.</p>
-
+    <p>Prune will prune the expired addresses from the endpoint by allocating a new []WeightAddress.
+This is not concurrent safe, and should be called from a single owning thread.</p>
 
   </div>
 </div>
@@ -536,9 +521,9 @@ import "../ibm-cos-sdk-go-v2/service/internal/endpoint-discovery"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:55 2026 by
+  Generated on Thu Jun 11 07:56:51 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

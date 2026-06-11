@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/internal/checksum.SetupInputContext";
@@ -75,9 +75,9 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>SetupInputContext is the initial middleware that looks up the input used to configure checksum behavior. This middleware must be executed before input validation step or any other checksum middleware.</p>
-
+    <p>SetupInputContext is the initial middleware that looks up the input
+used to configure checksum behavior. This middleware must be executed before
+input validation step or any other checksum middleware.</p>
 
   </div>
 </div>
@@ -124,9 +124,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>RequestChecksumCalculation is the user config to opt-in/out request checksum calculation.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>RequestChecksumCalculation is the user config to opt-in/out request checksum calculation.</p></div></span>
   
 </li>
 
@@ -149,9 +147,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>RequireChecksum indicates whether operation model forces middleware to compute the input payload’s checksum.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>RequireChecksum indicates whether operation model forces middleware to compute the input payload's checksum.</p></div></span>
   
 </li>
 
@@ -186,15 +182,14 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ID for the middleware.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ID for the middleware.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -211,9 +206,9 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>RequestChecksumCalculation is the user config to opt-in/out request checksum calculation. If RequireChecksum is set to true, checksum will be calculated and this field will be ignored, otherwise RequestChecksumCalculation will be used to indicate if checksum will be calculated</p>
-
+    <p>RequestChecksumCalculation is the user config to opt-in/out request checksum calculation. If RequireChecksum is
+set to true, checksum will be calculated and this field will be ignored, otherwise
+RequestChecksumCalculation will be used to indicate if checksum will be calculated</p>
 
   </div>
 </div>
@@ -230,9 +225,9 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>RequireChecksum indicates whether operation model forces middleware to compute the input payload’s checksum. If RequireChecksum is set to true, checksum will be calculated and RequestChecksumCalculation will be ignored, otherwise RequestChecksumCalculation will be used to indicate if checksum will be calculated</p>
-
+    <p>RequireChecksum indicates whether operation model forces middleware to compute the input payload's checksum.
+If RequireChecksum is set to true, checksum will be calculated and RequestChecksumCalculation will be ignored,
+otherwise RequestChecksumCalculation will be used to indicate if checksum will be calculated</p>
 
   </div>
 </div>
@@ -252,7 +247,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
       <div class="method_details first">
   <h3 class="signature first" id="ID-instance_method">
   
-    func (m *<span class='object_link'><a href="" title="checksum.SetupInputContext (struct)">SetupInputContext</a></span>) <strong><span class='object_link'><a href="#ID-instance_method" title="checksum.SetupInputContext.ID() (method)">ID</a></span></strong>() string 
+    func (m *SetupInputContext) <strong><span class='object_link'><a href="#ID-instance_method" title="checksum.SetupInputContext.ID() (method)">ID</a></span></strong>() string 
   
 
   
@@ -260,9 +255,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ID for the middleware</p>
-
+    <p>ID for the middleware</p>
 
   </div>
 </div>
@@ -297,9 +290,9 @@ import "../ibm-cos-sdk-go-v2/service/internal/checksum"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:55 2026 by
+  Generated on Thu Jun 11 07:56:52 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

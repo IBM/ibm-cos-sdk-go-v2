@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/s3.ObjectExistsWaiter";
@@ -75,9 +75,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>ObjectExistsWaiter defines the waiters for ObjectExists</p>
-
+    <p>ObjectExistsWaiter defines the waiters for ObjectExists</p>
 
   </div>
 </div>
@@ -127,9 +125,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Wait calls the waiter function for ObjectExists waiter.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Wait calls the waiter function for ObjectExists waiter.</p></div></span>
   
 </li>
 
@@ -152,15 +148,14 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>WaitForOutput calls the waiter function for ObjectExists waiter and returns the output of the successful operation.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>WaitForOutput calls the waiter function for ObjectExists waiter and returns the output of the successful operation.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -174,7 +169,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details first">
   <h3 class="signature first" id="Wait-instance_method">
   
-    func (w *<span class='object_link'><a href="" title="s3.ObjectExistsWaiter (struct)">ObjectExistsWaiter</a></span>) <strong><span class='object_link'><a href="#Wait-instance_method" title="s3.ObjectExistsWaiter.Wait() (method)">Wait</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, maxWaitDur time.Duration, optFns ...func(*<span class='object_link'><a href="../s3.html#type-ObjectExistsWaiterOptions" title="s3 (package)">ObjectExistsWaiterOptions</a></span>)) error 
+    func (w *ObjectExistsWaiter) <strong><span class='object_link'><a href="#Wait-instance_method" title="s3.ObjectExistsWaiter.Wait() (method)">Wait</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, maxWaitDur time.Duration, optFns ...func(*<span class='object_link'><a href="../s3.html#type-ObjectExistsWaiterOptions" title="s3 (package)">ObjectExistsWaiterOptions</a></span>)) error 
   
 
   
@@ -182,9 +177,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Wait calls the waiter function for ObjectExists waiter. The maxWaitDur is the maximum wait duration the waiter will wait. The maxWaitDur is required and must be greater than zero.</p>
-
+    <p>Wait calls the waiter function for ObjectExists waiter. The maxWaitDur is the
+maximum wait duration the waiter will wait. The maxWaitDur is required and must
+be greater than zero.</p>
 
   </div>
 </div>
@@ -218,7 +213,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="WaitForOutput-instance_method">
   
-    func (w *<span class='object_link'><a href="" title="s3.ObjectExistsWaiter (struct)">ObjectExistsWaiter</a></span>) <strong><span class='object_link'><a href="#WaitForOutput-instance_method" title="s3.ObjectExistsWaiter.WaitForOutput() (method)">WaitForOutput</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, maxWaitDur time.Duration, optFns ...func(*<span class='object_link'><a href="../s3.html#type-ObjectExistsWaiterOptions" title="s3 (package)">ObjectExistsWaiterOptions</a></span>)) (*<span class='object_link'><a href="../s3.html#type-HeadObjectOutput" title="s3 (package)">HeadObjectOutput</a></span>, error) 
+    func (w *ObjectExistsWaiter) <strong><span class='object_link'><a href="#WaitForOutput-instance_method" title="s3.ObjectExistsWaiter.WaitForOutput() (method)">WaitForOutput</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, maxWaitDur time.Duration, optFns ...func(*<span class='object_link'><a href="../s3.html#type-ObjectExistsWaiterOptions" title="s3 (package)">ObjectExistsWaiterOptions</a></span>)) (*<span class='object_link'><a href="../s3.html#type-HeadObjectOutput" title="s3 (package)">HeadObjectOutput</a></span>, error) 
   
 
   
@@ -226,9 +221,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>WaitForOutput calls the waiter function for ObjectExists waiter and returns the output of the successful operation. The maxWaitDur is the maximum wait duration the waiter will wait. The maxWaitDur is required and must be greater than zero.</p>
-
+    <p>WaitForOutput calls the waiter function for ObjectExists waiter and returns the
+output of the successful operation. The maxWaitDur is the maximum wait duration
+the waiter will wait. The maxWaitDur is required and must be greater than zero.</p>
 
   </div>
 </div>
@@ -415,9 +410,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:50 2026 by
+  Generated on Thu Jun 11 07:56:49 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

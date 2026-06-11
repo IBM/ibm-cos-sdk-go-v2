@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws/protocol/query.Map";
@@ -75,15 +75,15 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/query"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Map represents the encoding of Query maps. A Query map is a representation of a mapping of arbitrary string keys to arbitrary values of a fixed type. A Map differs from an Object in that the set of keys is not fixed, in that the values must all be of the same type, and that map entries are ordered. A serialized map might look like the following:</p>
-
+    <p>Map represents the encoding of Query maps. A Query map is a representation
+of a mapping of arbitrary string keys to arbitrary values of a fixed type.
+A Map differs from an Object in that the set of keys is not fixed, in that
+the values must all be of the same type, and that map entries are ordered.
+A serialized map might look like the following:</p>
 <pre class="code go"><code class="go"><div class="hljs">MapName.entry.1.key=Foo
 &MapName.entry.1.value=spam
 &MapName.entry.2.key=Bar
-&MapName.entry.2.value=eggs
-</div></code></pre>
-
+&MapName.entry.2.value=eggs</div></code></pre>
 
   </div>
 </div>
@@ -133,15 +133,14 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/query"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Key adds the given named key to the Query map.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Key adds the given named key to the Query map.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -155,7 +154,7 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/query"
       <div class="method_details first">
   <h3 class="signature first" id="Key-instance_method">
   
-    func (m *<span class='object_link'><a href="" title="query.Map (struct)">Map</a></span>) <strong><span class='object_link'><a href="#Key-instance_method" title="query.Map.Key() (method)">Key</a></span></strong>(name string) <span class='object_link'><a href="Value.html" title="query.Value (struct)">Value</a></span> 
+    func (m *Map) <strong><span class='object_link'><a href="#Key-instance_method" title="query.Map.Key() (method)">Key</a></span></strong>(name string) <span class='object_link'><a href="Value.html" title="query.Value (struct)">Value</a></span> 
   
 
   
@@ -163,9 +162,8 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/query"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Key adds the given named key to the Query map. Returns a Value encoder that should be used to encode a Query value type.</p>
-
+    <p>Key adds the given named key to the Query map.
+Returns a Value encoder that should be used to encode a Query value type.</p>
 
   </div>
 </div>
@@ -232,9 +230,9 @@ import "../ibm-cos-sdk-go-v2/aws/protocol/query"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:46 2026 by
+  Generated on Thu Jun 11 07:56:47 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

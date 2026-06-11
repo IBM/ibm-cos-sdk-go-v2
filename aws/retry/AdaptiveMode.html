@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws/retry.AdaptiveMode";
@@ -75,11 +75,16 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>AdaptiveMode provides an experimental retry strategy that expands on the Standard retry strategy, adding client attempt rate limits. The attempt rate limit is initially unrestricted, but becomes restricted when the attempt fails with for a throttle error. When restricted AdaptiveMode may need to sleep before an attempt is made, if too many throttles have been received. AdaptiveMode’s sleep can be canceled with context cancel. Set AdaptiveModeOptions FailOnNoAttemptTokens to change the behavior from sleep, to fail fast.</p>
-
-<p>Eventually unrestricted attempt rate limit will be restored once attempts no longer are failing due to throttle errors.</p>
-
+    <p>AdaptiveMode provides an experimental retry strategy that expands on the
+Standard retry strategy, adding client attempt rate limits. The attempt rate
+limit is initially unrestricted, but becomes restricted when the attempt
+fails with for a throttle error. When restricted AdaptiveMode may need to
+sleep before an attempt is made, if too many throttles have been received.
+AdaptiveMode's sleep can be canceled with context cancel. Set
+AdaptiveModeOptions FailOnNoAttemptTokens to change the behavior from sleep,
+to fail fast.</p>
+<p>Eventually unrestricted attempt rate limit will be restored once attempts no
+longer are failing due to throttle errors.</p>
 
   </div>
 </div>
@@ -129,9 +134,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetAttemptToken returns the attempt token that can be used to rate limit attempt calls.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetAttemptToken returns the attempt token that can be used to rate limit attempt calls.</p></div></span>
   
 </li>
 
@@ -154,9 +157,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetInitialToken returns the initial attempt token that can increment the retry token pool if the attempt is successful.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetInitialToken returns the initial attempt token that can increment the retry token pool if the attempt is successful.</p></div></span>
   
 </li>
 
@@ -179,9 +180,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>IsErrorRetryable returns if the failed attempt is retryable.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>IsErrorRetryable returns if the failed attempt is retryable.</p></div></span>
   
 </li>
 
@@ -204,15 +203,14 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>MaxAttempts returns the maximum number of attempts that can be made for an attempt before failing.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>MaxAttempts returns the maximum number of attempts that can be made for an attempt before failing.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -226,7 +224,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
       <div class="method_details first">
   <h3 class="signature first" id="GetAttemptToken-instance_method">
   
-    func (a *<span class='object_link'><a href="" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span>) <strong><span class='object_link'><a href="#GetAttemptToken-instance_method" title="retry.AdaptiveMode.GetAttemptToken() (method)">GetAttemptToken</a></span></strong>(ctx context.Context) (func(error) error, error) 
+    func (a *AdaptiveMode) <strong><span class='object_link'><a href="#GetAttemptToken-instance_method" title="retry.AdaptiveMode.GetAttemptToken() (method)">GetAttemptToken</a></span></strong>(ctx context.Context) (func(error) error, error) 
   
 
   
@@ -234,9 +232,10 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetAttemptToken returns the attempt token that can be used to rate limit attempt calls. Will be used by the SDK’s retry package’s Attempt middleware to get an attempt token prior to calling the temp and releasing the attempt token after the attempt has been made.</p>
-
+    <p>GetAttemptToken returns the attempt token that can be used to rate limit
+attempt calls. Will be used by the SDK's retry package's Attempt
+middleware to get an attempt token prior to calling the temp and releasing
+the attempt token after the attempt has been made.</p>
 
   </div>
 </div>
@@ -298,7 +297,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
       <div class="method_details ">
   <h3 class="signature " id="GetInitialToken-instance_method">
   
-    func (a *<span class='object_link'><a href="" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span>) <strong><span class='object_link'><a href="#GetInitialToken-instance_method" title="retry.AdaptiveMode.GetInitialToken() (method)">GetInitialToken</a></span></strong>() (releaseToken func(error) error) 
+    func (a *AdaptiveMode) <strong><span class='object_link'><a href="#GetInitialToken-instance_method" title="retry.AdaptiveMode.GetInitialToken() (method)">GetInitialToken</a></span></strong>() (releaseToken func(error) error) 
   
 
   
@@ -306,11 +305,11 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetInitialToken returns the initial attempt token that can increment the retry token pool if the attempt is successful.</p>
-
-<p>Deprecated: This method does not provide a way to block using Context, nor can it return an error. Use RetryerV2, and GetAttemptToken instead. Only present to implement Retryer interface.</p>
-
+    <p>GetInitialToken returns the initial attempt token that can increment the
+retry token pool if the attempt is successful.</p>
+<p>Deprecated: This method does not provide a way to block using Context,
+nor can it return an error. Use RetryerV2, and GetAttemptToken instead. Only
+present to implement Retryer interface.</p>
 
   </div>
 </div>
@@ -342,7 +341,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
       <div class="method_details ">
   <h3 class="signature " id="IsErrorRetryable-instance_method">
   
-    func (a *<span class='object_link'><a href="" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span>) <strong><span class='object_link'><a href="#IsErrorRetryable-instance_method" title="retry.AdaptiveMode.IsErrorRetryable() (method)">IsErrorRetryable</a></span></strong>(err error) bool 
+    func (a *AdaptiveMode) <strong><span class='object_link'><a href="#IsErrorRetryable-instance_method" title="retry.AdaptiveMode.IsErrorRetryable() (method)">IsErrorRetryable</a></span></strong>(err error) bool 
   
 
   
@@ -350,9 +349,9 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>IsErrorRetryable returns if the failed attempt is retryable. This check should determine if the error can be retried, or if the error is terminal.</p>
-
+    <p>IsErrorRetryable returns if the failed attempt is retryable. This check
+should determine if the error can be retried, or if the error is
+terminal.</p>
 
   </div>
 </div>
@@ -384,7 +383,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
       <div class="method_details ">
   <h3 class="signature " id="MaxAttempts-instance_method">
   
-    func (a *<span class='object_link'><a href="" title="retry.AdaptiveMode (struct)">AdaptiveMode</a></span>) <strong><span class='object_link'><a href="#MaxAttempts-instance_method" title="retry.AdaptiveMode.MaxAttempts() (method)">MaxAttempts</a></span></strong>() int 
+    func (a *AdaptiveMode) <strong><span class='object_link'><a href="#MaxAttempts-instance_method" title="retry.AdaptiveMode.MaxAttempts() (method)">MaxAttempts</a></span></strong>() int 
   
 
   
@@ -392,9 +391,9 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>MaxAttempts returns the maximum number of attempts that can be made for an attempt before failing. A value of 0 implies that the attempt should be retried until it succeeds if the errors are retryable.</p>
-
+    <p>MaxAttempts returns the maximum number of attempts that can be made for
+an attempt before failing. A value of 0 implies that the attempt should
+be retried until it succeeds if the errors are retryable.</p>
 
   </div>
 </div>
@@ -429,9 +428,9 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:45 2026 by
+  Generated on Thu Jun 11 07:56:47 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

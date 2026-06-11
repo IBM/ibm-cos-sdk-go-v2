@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/s3.PutPublicAccessBlockInput";
@@ -113,9 +113,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The name of the Amazon S3 bucket whose PublicAccessBlock configuration you want to set.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The name of the Amazon S3 bucket whose PublicAccessBlock configuration you want to set.</p></div></span>
   
 </li>
 
@@ -138,9 +136,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Indicates the algorithm used to create the checksum for the object when you use the SDK.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Indicates the algorithm used to create the checksum for the object when you use the SDK.</p></div></span>
   
 </li>
 
@@ -163,9 +159,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The MD5 hash of the PutPublicAccessBlock request body.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The MD5 hash of the PutPublicAccessBlock request body.</p></div></span>
   
 </li>
 
@@ -188,9 +182,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The account ID of the expected bucket owner.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The account ID of the expected bucket owner.</p></div></span>
   
 </li>
 
@@ -213,9 +205,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket.</p></div></span>
   
 </li>
 
@@ -239,11 +229,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The name of the Amazon S3 bucket whose PublicAccessBlock configuration you want to set.</p>
-
+    <p>The name of the Amazon S3 bucket whose PublicAccessBlock configuration you want
+to set.</p>
 <p>This member is required.</p>
-
 
   </div>
 </div>
@@ -260,11 +248,14 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>Indicates the algorithm used to create the checksum for the object when you use the SDK. This header will not provide any additional functionality if you don’t use the SDK. When you send this header, there must be a corresponding x-amz-checksum or x-amz-trailer header sent. Otherwise, Amazon S3 fails the request with the HTTP status code 400 Bad Request . For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the Amazon S3 User Guide.</p>
-
-<p>If you provide an individual checksum, Amazon S3 ignores any provided ChecksumAlgorithm parameter.</p>
-
+    <p>Indicates the algorithm used to create the checksum for the object when you use
+the SDK. This header will not provide any additional functionality if you don't
+use the SDK. When you send this header, there must be a corresponding
+x-amz-checksum or x-amz-trailer header sent. Otherwise, Amazon S3 fails the
+request with the HTTP status code 400 Bad Request . For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a>
+in the Amazon S3 User Guide.</p>
+<p>If you provide an individual checksum, Amazon S3 ignores any provided
+ChecksumAlgorithm parameter.</p>
 
   </div>
 </div>
@@ -281,11 +272,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The MD5 hash of the PutPublicAccessBlock request body.</p>
-
-<p>For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.</p>
-
+    <p>The MD5 hash of the PutPublicAccessBlock request body.</p>
+<p>For requests made using the Amazon Web Services Command Line Interface (CLI) or
+Amazon Web Services SDKs, this field is calculated automatically.</p>
 
   </div>
 </div>
@@ -302,9 +291,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code 403 Forbidden (access denied).</p>
-
+    <p>The account ID of the expected bucket owner. If the account ID that you provide
+does not match the actual owner of the bucket, the request fails with the HTTP
+status code 403 Forbidden (access denied).</p>
 
   </div>
 </div>
@@ -321,11 +310,11 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see Meaning of “Public”[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status]in the Amazon S3 User Guide.</p>
-
+    <p>The PublicAccessBlock configuration that you want to apply to this Amazon S3
+bucket. You can enable the configuration options in any combination. For more
+information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of &quot;Public&quot;</a>in
+the Amazon S3 User Guide.</p>
 <p>This member is required.</p>
-
 
   </div>
 </div>
@@ -342,9 +331,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:53 2026 by
+  Generated on Thu Jun 11 07:56:51 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

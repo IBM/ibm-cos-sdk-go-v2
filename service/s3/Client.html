@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/s3.Client";
@@ -75,25 +75,25 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>This operation is not supported for directory buckets.</p>
-
+    <p>This operation is not supported for directory buckets.</p>
 <p>Deletes the S3 Intelligent-Tiering configuration from the specified bucket.</p>
-
-<p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to the most cost-effective storage access tier, without performance impact or operational overhead. S3 Intelligent-Tiering delivers automatic cost savings in three low latency and high throughput access tiers. To get the lowest storage cost on data that can be accessed in minutes to hours, you can choose to activate additional archiving capabilities.</p>
-
-<p>The S3 Intelligent-Tiering storage class is the ideal storage class for data with unknown, changing, or unpredictable access patterns, independent of object size or retention period. If the size of an object is less than 128 KB, it is not monitored and not eligible for auto-tiering. Smaller objects can be stored, but they are always charged at the Frequent Access tier rates in the S3 Intelligent-Tiering storage class.</p>
-
+<p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs
+by automatically moving data to the most cost-effective storage access tier,
+without performance impact or operational overhead. S3 Intelligent-Tiering
+delivers automatic cost savings in three low latency and high throughput access
+tiers. To get the lowest storage cost on data that can be accessed in minutes to
+hours, you can choose to activate additional archiving capabilities.</p>
+<p>The S3 Intelligent-Tiering storage class is the ideal storage class for data
+with unknown, changing, or unpredictable access patterns, independent of object
+size or retention period. If the size of an object is less than 128 KB, it is
+not monitored and not eligible for auto-tiering. Smaller objects can be stored,
+but they are always charged at the Frequent Access tier rates in the S3
+Intelligent-Tiering storage class.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access">Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
-
 <p>Operations related to DeleteBucketIntelligentTieringConfiguration include:</p>
-
 <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html">GetBucketIntelligentTieringConfiguration</a></p>
-
 <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html">PutBucketIntelligentTieringConfiguration</a></p>
-
 <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html">ListBucketIntelligentTieringConfigurations</a></p>
-
 
   </div>
 </div>
@@ -1845,9 +1845,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Options returns a copy of the client configuration.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Options returns a copy of the client configuration.</p></div></span>
   
 </li>
 
@@ -2567,6 +2565,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 
       
     </ul>
+    
   
 
 
@@ -2580,7 +2579,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details first">
   <h3 class="signature first" id="AbortMultipartUpload-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#AbortMultipartUpload-instance_method" title="s3.Client.AbortMultipartUpload() (method)">AbortMultipartUpload</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="AbortMultipartUploadInput.html" title="s3.AbortMultipartUploadInput (struct)">AbortMultipartUploadInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-AbortMultipartUploadOutput" title="s3 (package)">AbortMultipartUploadOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#AbortMultipartUpload-instance_method" title="s3.Client.AbortMultipartUpload() (method)">AbortMultipartUpload</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="AbortMultipartUploadInput.html" title="s3.AbortMultipartUploadInput (struct)">AbortMultipartUploadInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-AbortMultipartUploadOutput" title="s3 (package)">AbortMultipartUploadOutput</a></span>, error) 
   
 
   
@@ -2633,7 +2632,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="AddLegalHold-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#AddLegalHold-instance_method" title="s3.Client.AddLegalHold() (method)">AddLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="AddLegalHoldInput.html" title="s3.AddLegalHoldInput (struct)">AddLegalHoldInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-AddLegalHoldOutput" title="s3 (package)">AddLegalHoldOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#AddLegalHold-instance_method" title="s3.Client.AddLegalHold() (method)">AddLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="AddLegalHoldInput.html" title="s3.AddLegalHoldInput (struct)">AddLegalHoldInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-AddLegalHoldOutput" title="s3 (package)">AddLegalHoldOutput</a></span>, error) 
   
 
   
@@ -2682,7 +2681,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="CompleteMultipartUpload-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CompleteMultipartUpload-instance_method" title="s3.Client.CompleteMultipartUpload() (method)">CompleteMultipartUpload</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CompleteMultipartUploadInput.html" title="s3.CompleteMultipartUploadInput (struct)">CompleteMultipartUploadInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CompleteMultipartUploadOutput" title="s3 (package)">CompleteMultipartUploadOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CompleteMultipartUpload-instance_method" title="s3.Client.CompleteMultipartUpload() (method)">CompleteMultipartUpload</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CompleteMultipartUploadInput.html" title="s3.CompleteMultipartUploadInput (struct)">CompleteMultipartUploadInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CompleteMultipartUploadOutput" title="s3 (package)">CompleteMultipartUploadOutput</a></span>, error) 
   
 
   
@@ -2735,7 +2734,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="CopyObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CopyObject-instance_method" title="s3.Client.CopyObject() (method)">CopyObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CopyObjectInput.html" title="s3.CopyObjectInput (struct)">CopyObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CopyObjectOutput" title="s3 (package)">CopyObjectOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CopyObject-instance_method" title="s3.Client.CopyObject() (method)">CopyObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CopyObjectInput.html" title="s3.CopyObjectInput (struct)">CopyObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CopyObjectOutput" title="s3 (package)">CopyObjectOutput</a></span>, error) 
   
 
   
@@ -2788,7 +2787,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="CreateBucket-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateBucket-instance_method" title="s3.Client.CreateBucket() (method)">CreateBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CreateBucketInput.html" title="s3.CreateBucketInput (struct)">CreateBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CreateBucketOutput" title="s3 (package)">CreateBucketOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CreateBucket-instance_method" title="s3.Client.CreateBucket() (method)">CreateBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CreateBucketInput.html" title="s3.CreateBucketInput (struct)">CreateBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CreateBucketOutput" title="s3 (package)">CreateBucketOutput</a></span>, error) 
   
 
   
@@ -2841,7 +2840,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="CreateBucketMetadataTableConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateBucketMetadataTableConfiguration-instance_method" title="s3.Client.CreateBucketMetadataTableConfiguration() (method)">CreateBucketMetadataTableConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CreateBucketMetadataTableConfigurationInput.html" title="s3.CreateBucketMetadataTableConfigurationInput (struct)">CreateBucketMetadataTableConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CreateBucketMetadataTableConfigurationOutput" title="s3 (package)">CreateBucketMetadataTableConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CreateBucketMetadataTableConfiguration-instance_method" title="s3.Client.CreateBucketMetadataTableConfiguration() (method)">CreateBucketMetadataTableConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CreateBucketMetadataTableConfigurationInput.html" title="s3.CreateBucketMetadataTableConfigurationInput (struct)">CreateBucketMetadataTableConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CreateBucketMetadataTableConfigurationOutput" title="s3 (package)">CreateBucketMetadataTableConfigurationOutput</a></span>, error) 
   
 
   
@@ -2894,7 +2893,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="CreateMultipartUpload-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateMultipartUpload-instance_method" title="s3.Client.CreateMultipartUpload() (method)">CreateMultipartUpload</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CreateMultipartUploadInput.html" title="s3.CreateMultipartUploadInput (struct)">CreateMultipartUploadInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CreateMultipartUploadOutput" title="s3 (package)">CreateMultipartUploadOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CreateMultipartUpload-instance_method" title="s3.Client.CreateMultipartUpload() (method)">CreateMultipartUpload</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CreateMultipartUploadInput.html" title="s3.CreateMultipartUploadInput (struct)">CreateMultipartUploadInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CreateMultipartUploadOutput" title="s3 (package)">CreateMultipartUploadOutput</a></span>, error) 
   
 
   
@@ -2947,7 +2946,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="CreateSession-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#CreateSession-instance_method" title="s3.Client.CreateSession() (method)">CreateSession</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CreateSessionInput.html" title="s3.CreateSessionInput (struct)">CreateSessionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CreateSessionOutput" title="s3 (package)">CreateSessionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#CreateSession-instance_method" title="s3.Client.CreateSession() (method)">CreateSession</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="CreateSessionInput.html" title="s3.CreateSessionInput (struct)">CreateSessionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-CreateSessionOutput" title="s3 (package)">CreateSessionOutput</a></span>, error) 
   
 
   
@@ -3000,7 +2999,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucket-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucket-instance_method" title="s3.Client.DeleteBucket() (method)">DeleteBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketInput.html" title="s3.DeleteBucketInput (struct)">DeleteBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketOutput" title="s3 (package)">DeleteBucketOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucket-instance_method" title="s3.Client.DeleteBucket() (method)">DeleteBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketInput.html" title="s3.DeleteBucketInput (struct)">DeleteBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketOutput" title="s3 (package)">DeleteBucketOutput</a></span>, error) 
   
 
   
@@ -3053,7 +3052,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketAnalyticsConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketAnalyticsConfiguration-instance_method" title="s3.Client.DeleteBucketAnalyticsConfiguration() (method)">DeleteBucketAnalyticsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketAnalyticsConfigurationInput.html" title="s3.DeleteBucketAnalyticsConfigurationInput (struct)">DeleteBucketAnalyticsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketAnalyticsConfigurationOutput" title="s3 (package)">DeleteBucketAnalyticsConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketAnalyticsConfiguration-instance_method" title="s3.Client.DeleteBucketAnalyticsConfiguration() (method)">DeleteBucketAnalyticsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketAnalyticsConfigurationInput.html" title="s3.DeleteBucketAnalyticsConfigurationInput (struct)">DeleteBucketAnalyticsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketAnalyticsConfigurationOutput" title="s3 (package)">DeleteBucketAnalyticsConfigurationOutput</a></span>, error) 
   
 
   
@@ -3106,7 +3105,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketCors-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketCors-instance_method" title="s3.Client.DeleteBucketCors() (method)">DeleteBucketCors</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketCorsInput.html" title="s3.DeleteBucketCorsInput (struct)">DeleteBucketCorsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketCorsOutput" title="s3 (package)">DeleteBucketCorsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketCors-instance_method" title="s3.Client.DeleteBucketCors() (method)">DeleteBucketCors</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketCorsInput.html" title="s3.DeleteBucketCorsInput (struct)">DeleteBucketCorsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketCorsOutput" title="s3 (package)">DeleteBucketCorsOutput</a></span>, error) 
   
 
   
@@ -3159,7 +3158,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketEncryption-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketEncryption-instance_method" title="s3.Client.DeleteBucketEncryption() (method)">DeleteBucketEncryption</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketEncryptionInput.html" title="s3.DeleteBucketEncryptionInput (struct)">DeleteBucketEncryptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketEncryptionOutput" title="s3 (package)">DeleteBucketEncryptionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketEncryption-instance_method" title="s3.Client.DeleteBucketEncryption() (method)">DeleteBucketEncryption</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketEncryptionInput.html" title="s3.DeleteBucketEncryptionInput (struct)">DeleteBucketEncryptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketEncryptionOutput" title="s3 (package)">DeleteBucketEncryptionOutput</a></span>, error) 
   
 
   
@@ -3212,7 +3211,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketIntelligentTieringConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketIntelligentTieringConfiguration-instance_method" title="s3.Client.DeleteBucketIntelligentTieringConfiguration() (method)">DeleteBucketIntelligentTieringConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketIntelligentTieringConfigurationInput.html" title="s3.DeleteBucketIntelligentTieringConfigurationInput (struct)">DeleteBucketIntelligentTieringConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketIntelligentTieringConfigurationOutput" title="s3 (package)">DeleteBucketIntelligentTieringConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketIntelligentTieringConfiguration-instance_method" title="s3.Client.DeleteBucketIntelligentTieringConfiguration() (method)">DeleteBucketIntelligentTieringConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketIntelligentTieringConfigurationInput.html" title="s3.DeleteBucketIntelligentTieringConfigurationInput (struct)">DeleteBucketIntelligentTieringConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketIntelligentTieringConfigurationOutput" title="s3 (package)">DeleteBucketIntelligentTieringConfigurationOutput</a></span>, error) 
   
 
   
@@ -3265,7 +3264,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketInventoryConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketInventoryConfiguration-instance_method" title="s3.Client.DeleteBucketInventoryConfiguration() (method)">DeleteBucketInventoryConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketInventoryConfigurationInput.html" title="s3.DeleteBucketInventoryConfigurationInput (struct)">DeleteBucketInventoryConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketInventoryConfigurationOutput" title="s3 (package)">DeleteBucketInventoryConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketInventoryConfiguration-instance_method" title="s3.Client.DeleteBucketInventoryConfiguration() (method)">DeleteBucketInventoryConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketInventoryConfigurationInput.html" title="s3.DeleteBucketInventoryConfigurationInput (struct)">DeleteBucketInventoryConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketInventoryConfigurationOutput" title="s3 (package)">DeleteBucketInventoryConfigurationOutput</a></span>, error) 
   
 
   
@@ -3318,7 +3317,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketLifecycle-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketLifecycle-instance_method" title="s3.Client.DeleteBucketLifecycle() (method)">DeleteBucketLifecycle</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketLifecycleInput.html" title="s3.DeleteBucketLifecycleInput (struct)">DeleteBucketLifecycleInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketLifecycleOutput" title="s3 (package)">DeleteBucketLifecycleOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketLifecycle-instance_method" title="s3.Client.DeleteBucketLifecycle() (method)">DeleteBucketLifecycle</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketLifecycleInput.html" title="s3.DeleteBucketLifecycleInput (struct)">DeleteBucketLifecycleInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketLifecycleOutput" title="s3 (package)">DeleteBucketLifecycleOutput</a></span>, error) 
   
 
   
@@ -3371,7 +3370,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketMetadataTableConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketMetadataTableConfiguration-instance_method" title="s3.Client.DeleteBucketMetadataTableConfiguration() (method)">DeleteBucketMetadataTableConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketMetadataTableConfigurationInput.html" title="s3.DeleteBucketMetadataTableConfigurationInput (struct)">DeleteBucketMetadataTableConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketMetadataTableConfigurationOutput" title="s3 (package)">DeleteBucketMetadataTableConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketMetadataTableConfiguration-instance_method" title="s3.Client.DeleteBucketMetadataTableConfiguration() (method)">DeleteBucketMetadataTableConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketMetadataTableConfigurationInput.html" title="s3.DeleteBucketMetadataTableConfigurationInput (struct)">DeleteBucketMetadataTableConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketMetadataTableConfigurationOutput" title="s3 (package)">DeleteBucketMetadataTableConfigurationOutput</a></span>, error) 
   
 
   
@@ -3424,7 +3423,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketMetricsConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketMetricsConfiguration-instance_method" title="s3.Client.DeleteBucketMetricsConfiguration() (method)">DeleteBucketMetricsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketMetricsConfigurationInput.html" title="s3.DeleteBucketMetricsConfigurationInput (struct)">DeleteBucketMetricsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketMetricsConfigurationOutput" title="s3 (package)">DeleteBucketMetricsConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketMetricsConfiguration-instance_method" title="s3.Client.DeleteBucketMetricsConfiguration() (method)">DeleteBucketMetricsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketMetricsConfigurationInput.html" title="s3.DeleteBucketMetricsConfigurationInput (struct)">DeleteBucketMetricsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketMetricsConfigurationOutput" title="s3 (package)">DeleteBucketMetricsConfigurationOutput</a></span>, error) 
   
 
   
@@ -3477,7 +3476,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketOwnershipControls-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketOwnershipControls-instance_method" title="s3.Client.DeleteBucketOwnershipControls() (method)">DeleteBucketOwnershipControls</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketOwnershipControlsInput.html" title="s3.DeleteBucketOwnershipControlsInput (struct)">DeleteBucketOwnershipControlsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketOwnershipControlsOutput" title="s3 (package)">DeleteBucketOwnershipControlsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketOwnershipControls-instance_method" title="s3.Client.DeleteBucketOwnershipControls() (method)">DeleteBucketOwnershipControls</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketOwnershipControlsInput.html" title="s3.DeleteBucketOwnershipControlsInput (struct)">DeleteBucketOwnershipControlsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketOwnershipControlsOutput" title="s3 (package)">DeleteBucketOwnershipControlsOutput</a></span>, error) 
   
 
   
@@ -3530,7 +3529,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketPolicy-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketPolicy-instance_method" title="s3.Client.DeleteBucketPolicy() (method)">DeleteBucketPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketPolicyInput.html" title="s3.DeleteBucketPolicyInput (struct)">DeleteBucketPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketPolicyOutput" title="s3 (package)">DeleteBucketPolicyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketPolicy-instance_method" title="s3.Client.DeleteBucketPolicy() (method)">DeleteBucketPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketPolicyInput.html" title="s3.DeleteBucketPolicyInput (struct)">DeleteBucketPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketPolicyOutput" title="s3 (package)">DeleteBucketPolicyOutput</a></span>, error) 
   
 
   
@@ -3583,7 +3582,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketReplication-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketReplication-instance_method" title="s3.Client.DeleteBucketReplication() (method)">DeleteBucketReplication</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketReplicationInput.html" title="s3.DeleteBucketReplicationInput (struct)">DeleteBucketReplicationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketReplicationOutput" title="s3 (package)">DeleteBucketReplicationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketReplication-instance_method" title="s3.Client.DeleteBucketReplication() (method)">DeleteBucketReplication</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketReplicationInput.html" title="s3.DeleteBucketReplicationInput (struct)">DeleteBucketReplicationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketReplicationOutput" title="s3 (package)">DeleteBucketReplicationOutput</a></span>, error) 
   
 
   
@@ -3636,7 +3635,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketTagging-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketTagging-instance_method" title="s3.Client.DeleteBucketTagging() (method)">DeleteBucketTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketTaggingInput.html" title="s3.DeleteBucketTaggingInput (struct)">DeleteBucketTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketTaggingOutput" title="s3 (package)">DeleteBucketTaggingOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketTagging-instance_method" title="s3.Client.DeleteBucketTagging() (method)">DeleteBucketTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketTaggingInput.html" title="s3.DeleteBucketTaggingInput (struct)">DeleteBucketTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketTaggingOutput" title="s3 (package)">DeleteBucketTaggingOutput</a></span>, error) 
   
 
   
@@ -3689,7 +3688,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteBucketWebsite-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteBucketWebsite-instance_method" title="s3.Client.DeleteBucketWebsite() (method)">DeleteBucketWebsite</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketWebsiteInput.html" title="s3.DeleteBucketWebsiteInput (struct)">DeleteBucketWebsiteInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketWebsiteOutput" title="s3 (package)">DeleteBucketWebsiteOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteBucketWebsite-instance_method" title="s3.Client.DeleteBucketWebsite() (method)">DeleteBucketWebsite</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketWebsiteInput.html" title="s3.DeleteBucketWebsiteInput (struct)">DeleteBucketWebsiteInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteBucketWebsiteOutput" title="s3 (package)">DeleteBucketWebsiteOutput</a></span>, error) 
   
 
   
@@ -3742,7 +3741,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteLegalHold-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteLegalHold-instance_method" title="s3.Client.DeleteLegalHold() (method)">DeleteLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteLegalHoldInput.html" title="s3.DeleteLegalHoldInput (struct)">DeleteLegalHoldInput</a></span>, optFns ...func(options *<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteLegalHoldOutput" title="s3 (package)">DeleteLegalHoldOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteLegalHold-instance_method" title="s3.Client.DeleteLegalHold() (method)">DeleteLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteLegalHoldInput.html" title="s3.DeleteLegalHoldInput (struct)">DeleteLegalHoldInput</a></span>, optFns ...func(options *<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteLegalHoldOutput" title="s3 (package)">DeleteLegalHoldOutput</a></span>, error) 
   
 
   
@@ -3793,7 +3792,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteObject-instance_method" title="s3.Client.DeleteObject() (method)">DeleteObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteObjectInput.html" title="s3.DeleteObjectInput (struct)">DeleteObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteObjectOutput" title="s3 (package)">DeleteObjectOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteObject-instance_method" title="s3.Client.DeleteObject() (method)">DeleteObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteObjectInput.html" title="s3.DeleteObjectInput (struct)">DeleteObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteObjectOutput" title="s3 (package)">DeleteObjectOutput</a></span>, error) 
   
 
   
@@ -3846,7 +3845,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteObjects-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteObjects-instance_method" title="s3.Client.DeleteObjects() (method)">DeleteObjects</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteObjectsInput.html" title="s3.DeleteObjectsInput (struct)">DeleteObjectsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteObjectsOutput" title="s3 (package)">DeleteObjectsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteObjects-instance_method" title="s3.Client.DeleteObjects() (method)">DeleteObjects</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteObjectsInput.html" title="s3.DeleteObjectsInput (struct)">DeleteObjectsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteObjectsOutput" title="s3 (package)">DeleteObjectsOutput</a></span>, error) 
   
 
   
@@ -3899,7 +3898,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeleteObjectTagging-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeleteObjectTagging-instance_method" title="s3.Client.DeleteObjectTagging() (method)">DeleteObjectTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteObjectTaggingInput.html" title="s3.DeleteObjectTaggingInput (struct)">DeleteObjectTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteObjectTaggingOutput" title="s3 (package)">DeleteObjectTaggingOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeleteObjectTagging-instance_method" title="s3.Client.DeleteObjectTagging() (method)">DeleteObjectTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteObjectTaggingInput.html" title="s3.DeleteObjectTaggingInput (struct)">DeleteObjectTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeleteObjectTaggingOutput" title="s3 (package)">DeleteObjectTaggingOutput</a></span>, error) 
   
 
   
@@ -3952,7 +3951,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="DeletePublicAccessBlock-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#DeletePublicAccessBlock-instance_method" title="s3.Client.DeletePublicAccessBlock() (method)">DeletePublicAccessBlock</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeletePublicAccessBlockInput.html" title="s3.DeletePublicAccessBlockInput (struct)">DeletePublicAccessBlockInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeletePublicAccessBlockOutput" title="s3 (package)">DeletePublicAccessBlockOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#DeletePublicAccessBlock-instance_method" title="s3.Client.DeletePublicAccessBlock() (method)">DeletePublicAccessBlock</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeletePublicAccessBlockInput.html" title="s3.DeletePublicAccessBlockInput (struct)">DeletePublicAccessBlockInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-DeletePublicAccessBlockOutput" title="s3 (package)">DeletePublicAccessBlockOutput</a></span>, error) 
   
 
   
@@ -4005,7 +4004,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ExtendObjectRetention-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ExtendObjectRetention-instance_method" title="s3.Client.ExtendObjectRetention() (method)">ExtendObjectRetention</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ExtendObjectRetentionInput.html" title="s3.ExtendObjectRetentionInput (struct)">ExtendObjectRetentionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ExtendObjectRetentionOutput" title="s3 (package)">ExtendObjectRetentionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ExtendObjectRetention-instance_method" title="s3.Client.ExtendObjectRetention() (method)">ExtendObjectRetention</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ExtendObjectRetentionInput.html" title="s3.ExtendObjectRetentionInput (struct)">ExtendObjectRetentionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ExtendObjectRetentionOutput" title="s3 (package)">ExtendObjectRetentionOutput</a></span>, error) 
   
 
   
@@ -4058,7 +4057,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketAccelerateConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketAccelerateConfiguration-instance_method" title="s3.Client.GetBucketAccelerateConfiguration() (method)">GetBucketAccelerateConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketAccelerateConfigurationInput.html" title="s3.GetBucketAccelerateConfigurationInput (struct)">GetBucketAccelerateConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketAccelerateConfigurationOutput" title="s3 (package)">GetBucketAccelerateConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketAccelerateConfiguration-instance_method" title="s3.Client.GetBucketAccelerateConfiguration() (method)">GetBucketAccelerateConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketAccelerateConfigurationInput.html" title="s3.GetBucketAccelerateConfigurationInput (struct)">GetBucketAccelerateConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketAccelerateConfigurationOutput" title="s3 (package)">GetBucketAccelerateConfigurationOutput</a></span>, error) 
   
 
   
@@ -4111,7 +4110,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketAcl-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketAcl-instance_method" title="s3.Client.GetBucketAcl() (method)">GetBucketAcl</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketAclInput.html" title="s3.GetBucketAclInput (struct)">GetBucketAclInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketAclOutput" title="s3 (package)">GetBucketAclOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketAcl-instance_method" title="s3.Client.GetBucketAcl() (method)">GetBucketAcl</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketAclInput.html" title="s3.GetBucketAclInput (struct)">GetBucketAclInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketAclOutput" title="s3 (package)">GetBucketAclOutput</a></span>, error) 
   
 
   
@@ -4164,7 +4163,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketAnalyticsConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketAnalyticsConfiguration-instance_method" title="s3.Client.GetBucketAnalyticsConfiguration() (method)">GetBucketAnalyticsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketAnalyticsConfigurationInput.html" title="s3.GetBucketAnalyticsConfigurationInput (struct)">GetBucketAnalyticsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketAnalyticsConfigurationOutput" title="s3 (package)">GetBucketAnalyticsConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketAnalyticsConfiguration-instance_method" title="s3.Client.GetBucketAnalyticsConfiguration() (method)">GetBucketAnalyticsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketAnalyticsConfigurationInput.html" title="s3.GetBucketAnalyticsConfigurationInput (struct)">GetBucketAnalyticsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketAnalyticsConfigurationOutput" title="s3 (package)">GetBucketAnalyticsConfigurationOutput</a></span>, error) 
   
 
   
@@ -4217,7 +4216,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketCors-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketCors-instance_method" title="s3.Client.GetBucketCors() (method)">GetBucketCors</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketCorsInput.html" title="s3.GetBucketCorsInput (struct)">GetBucketCorsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketCorsOutput" title="s3 (package)">GetBucketCorsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketCors-instance_method" title="s3.Client.GetBucketCors() (method)">GetBucketCors</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketCorsInput.html" title="s3.GetBucketCorsInput (struct)">GetBucketCorsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketCorsOutput" title="s3 (package)">GetBucketCorsOutput</a></span>, error) 
   
 
   
@@ -4270,7 +4269,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketEncryption-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketEncryption-instance_method" title="s3.Client.GetBucketEncryption() (method)">GetBucketEncryption</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketEncryptionInput.html" title="s3.GetBucketEncryptionInput (struct)">GetBucketEncryptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketEncryptionOutput" title="s3 (package)">GetBucketEncryptionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketEncryption-instance_method" title="s3.Client.GetBucketEncryption() (method)">GetBucketEncryption</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketEncryptionInput.html" title="s3.GetBucketEncryptionInput (struct)">GetBucketEncryptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketEncryptionOutput" title="s3 (package)">GetBucketEncryptionOutput</a></span>, error) 
   
 
   
@@ -4323,7 +4322,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketIntelligentTieringConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketIntelligentTieringConfiguration-instance_method" title="s3.Client.GetBucketIntelligentTieringConfiguration() (method)">GetBucketIntelligentTieringConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketIntelligentTieringConfigurationInput.html" title="s3.GetBucketIntelligentTieringConfigurationInput (struct)">GetBucketIntelligentTieringConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketIntelligentTieringConfigurationOutput" title="s3 (package)">GetBucketIntelligentTieringConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketIntelligentTieringConfiguration-instance_method" title="s3.Client.GetBucketIntelligentTieringConfiguration() (method)">GetBucketIntelligentTieringConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketIntelligentTieringConfigurationInput.html" title="s3.GetBucketIntelligentTieringConfigurationInput (struct)">GetBucketIntelligentTieringConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketIntelligentTieringConfigurationOutput" title="s3 (package)">GetBucketIntelligentTieringConfigurationOutput</a></span>, error) 
   
 
   
@@ -4376,7 +4375,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketInventoryConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketInventoryConfiguration-instance_method" title="s3.Client.GetBucketInventoryConfiguration() (method)">GetBucketInventoryConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketInventoryConfigurationInput.html" title="s3.GetBucketInventoryConfigurationInput (struct)">GetBucketInventoryConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketInventoryConfigurationOutput" title="s3 (package)">GetBucketInventoryConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketInventoryConfiguration-instance_method" title="s3.Client.GetBucketInventoryConfiguration() (method)">GetBucketInventoryConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketInventoryConfigurationInput.html" title="s3.GetBucketInventoryConfigurationInput (struct)">GetBucketInventoryConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketInventoryConfigurationOutput" title="s3 (package)">GetBucketInventoryConfigurationOutput</a></span>, error) 
   
 
   
@@ -4429,7 +4428,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketLifecycleConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketLifecycleConfiguration-instance_method" title="s3.Client.GetBucketLifecycleConfiguration() (method)">GetBucketLifecycleConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketLifecycleConfigurationInput.html" title="s3.GetBucketLifecycleConfigurationInput (struct)">GetBucketLifecycleConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketLifecycleConfigurationOutput" title="s3 (package)">GetBucketLifecycleConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketLifecycleConfiguration-instance_method" title="s3.Client.GetBucketLifecycleConfiguration() (method)">GetBucketLifecycleConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketLifecycleConfigurationInput.html" title="s3.GetBucketLifecycleConfigurationInput (struct)">GetBucketLifecycleConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketLifecycleConfigurationOutput" title="s3 (package)">GetBucketLifecycleConfigurationOutput</a></span>, error) 
   
 
   
@@ -4482,7 +4481,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketLocation-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketLocation-instance_method" title="s3.Client.GetBucketLocation() (method)">GetBucketLocation</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketLocationInput.html" title="s3.GetBucketLocationInput (struct)">GetBucketLocationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketLocationOutput" title="s3 (package)">GetBucketLocationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketLocation-instance_method" title="s3.Client.GetBucketLocation() (method)">GetBucketLocation</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketLocationInput.html" title="s3.GetBucketLocationInput (struct)">GetBucketLocationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketLocationOutput" title="s3 (package)">GetBucketLocationOutput</a></span>, error) 
   
 
   
@@ -4535,7 +4534,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketLogging-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketLogging-instance_method" title="s3.Client.GetBucketLogging() (method)">GetBucketLogging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketLoggingInput.html" title="s3.GetBucketLoggingInput (struct)">GetBucketLoggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketLoggingOutput" title="s3 (package)">GetBucketLoggingOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketLogging-instance_method" title="s3.Client.GetBucketLogging() (method)">GetBucketLogging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketLoggingInput.html" title="s3.GetBucketLoggingInput (struct)">GetBucketLoggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketLoggingOutput" title="s3 (package)">GetBucketLoggingOutput</a></span>, error) 
   
 
   
@@ -4588,7 +4587,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketMetadataTableConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketMetadataTableConfiguration-instance_method" title="s3.Client.GetBucketMetadataTableConfiguration() (method)">GetBucketMetadataTableConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketMetadataTableConfigurationInput.html" title="s3.GetBucketMetadataTableConfigurationInput (struct)">GetBucketMetadataTableConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketMetadataTableConfigurationOutput" title="s3 (package)">GetBucketMetadataTableConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketMetadataTableConfiguration-instance_method" title="s3.Client.GetBucketMetadataTableConfiguration() (method)">GetBucketMetadataTableConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketMetadataTableConfigurationInput.html" title="s3.GetBucketMetadataTableConfigurationInput (struct)">GetBucketMetadataTableConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketMetadataTableConfigurationOutput" title="s3 (package)">GetBucketMetadataTableConfigurationOutput</a></span>, error) 
   
 
   
@@ -4641,7 +4640,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketMetricsConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketMetricsConfiguration-instance_method" title="s3.Client.GetBucketMetricsConfiguration() (method)">GetBucketMetricsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketMetricsConfigurationInput.html" title="s3.GetBucketMetricsConfigurationInput (struct)">GetBucketMetricsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketMetricsConfigurationOutput" title="s3 (package)">GetBucketMetricsConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketMetricsConfiguration-instance_method" title="s3.Client.GetBucketMetricsConfiguration() (method)">GetBucketMetricsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketMetricsConfigurationInput.html" title="s3.GetBucketMetricsConfigurationInput (struct)">GetBucketMetricsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketMetricsConfigurationOutput" title="s3 (package)">GetBucketMetricsConfigurationOutput</a></span>, error) 
   
 
   
@@ -4694,7 +4693,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketNotificationConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketNotificationConfiguration-instance_method" title="s3.Client.GetBucketNotificationConfiguration() (method)">GetBucketNotificationConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketNotificationConfigurationInput.html" title="s3.GetBucketNotificationConfigurationInput (struct)">GetBucketNotificationConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketNotificationConfigurationOutput" title="s3 (package)">GetBucketNotificationConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketNotificationConfiguration-instance_method" title="s3.Client.GetBucketNotificationConfiguration() (method)">GetBucketNotificationConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketNotificationConfigurationInput.html" title="s3.GetBucketNotificationConfigurationInput (struct)">GetBucketNotificationConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketNotificationConfigurationOutput" title="s3 (package)">GetBucketNotificationConfigurationOutput</a></span>, error) 
   
 
   
@@ -4747,7 +4746,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketOwnershipControls-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketOwnershipControls-instance_method" title="s3.Client.GetBucketOwnershipControls() (method)">GetBucketOwnershipControls</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketOwnershipControlsInput.html" title="s3.GetBucketOwnershipControlsInput (struct)">GetBucketOwnershipControlsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketOwnershipControlsOutput" title="s3 (package)">GetBucketOwnershipControlsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketOwnershipControls-instance_method" title="s3.Client.GetBucketOwnershipControls() (method)">GetBucketOwnershipControls</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketOwnershipControlsInput.html" title="s3.GetBucketOwnershipControlsInput (struct)">GetBucketOwnershipControlsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketOwnershipControlsOutput" title="s3 (package)">GetBucketOwnershipControlsOutput</a></span>, error) 
   
 
   
@@ -4800,7 +4799,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketPolicy-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketPolicy-instance_method" title="s3.Client.GetBucketPolicy() (method)">GetBucketPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketPolicyInput.html" title="s3.GetBucketPolicyInput (struct)">GetBucketPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketPolicyOutput" title="s3 (package)">GetBucketPolicyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketPolicy-instance_method" title="s3.Client.GetBucketPolicy() (method)">GetBucketPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketPolicyInput.html" title="s3.GetBucketPolicyInput (struct)">GetBucketPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketPolicyOutput" title="s3 (package)">GetBucketPolicyOutput</a></span>, error) 
   
 
   
@@ -4853,7 +4852,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketPolicyStatus-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketPolicyStatus-instance_method" title="s3.Client.GetBucketPolicyStatus() (method)">GetBucketPolicyStatus</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketPolicyStatusInput.html" title="s3.GetBucketPolicyStatusInput (struct)">GetBucketPolicyStatusInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketPolicyStatusOutput" title="s3 (package)">GetBucketPolicyStatusOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketPolicyStatus-instance_method" title="s3.Client.GetBucketPolicyStatus() (method)">GetBucketPolicyStatus</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketPolicyStatusInput.html" title="s3.GetBucketPolicyStatusInput (struct)">GetBucketPolicyStatusInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketPolicyStatusOutput" title="s3 (package)">GetBucketPolicyStatusOutput</a></span>, error) 
   
 
   
@@ -4906,7 +4905,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketProtectionConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketProtectionConfiguration-instance_method" title="s3.Client.GetBucketProtectionConfiguration() (method)">GetBucketProtectionConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketProtectionConfigurationInput.html" title="s3.GetBucketProtectionConfigurationInput (struct)">GetBucketProtectionConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketProtectionConfigurationOutput" title="s3 (package)">GetBucketProtectionConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketProtectionConfiguration-instance_method" title="s3.Client.GetBucketProtectionConfiguration() (method)">GetBucketProtectionConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketProtectionConfigurationInput.html" title="s3.GetBucketProtectionConfigurationInput (struct)">GetBucketProtectionConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketProtectionConfigurationOutput" title="s3 (package)">GetBucketProtectionConfigurationOutput</a></span>, error) 
   
 
   
@@ -4959,7 +4958,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketReplication-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketReplication-instance_method" title="s3.Client.GetBucketReplication() (method)">GetBucketReplication</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketReplicationInput.html" title="s3.GetBucketReplicationInput (struct)">GetBucketReplicationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketReplicationOutput" title="s3 (package)">GetBucketReplicationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketReplication-instance_method" title="s3.Client.GetBucketReplication() (method)">GetBucketReplication</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketReplicationInput.html" title="s3.GetBucketReplicationInput (struct)">GetBucketReplicationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketReplicationOutput" title="s3 (package)">GetBucketReplicationOutput</a></span>, error) 
   
 
   
@@ -5012,7 +5011,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketRequestPayment-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketRequestPayment-instance_method" title="s3.Client.GetBucketRequestPayment() (method)">GetBucketRequestPayment</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketRequestPaymentInput.html" title="s3.GetBucketRequestPaymentInput (struct)">GetBucketRequestPaymentInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketRequestPaymentOutput" title="s3 (package)">GetBucketRequestPaymentOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketRequestPayment-instance_method" title="s3.Client.GetBucketRequestPayment() (method)">GetBucketRequestPayment</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketRequestPaymentInput.html" title="s3.GetBucketRequestPaymentInput (struct)">GetBucketRequestPaymentInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketRequestPaymentOutput" title="s3 (package)">GetBucketRequestPaymentOutput</a></span>, error) 
   
 
   
@@ -5065,7 +5064,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketTagging-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketTagging-instance_method" title="s3.Client.GetBucketTagging() (method)">GetBucketTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketTaggingInput.html" title="s3.GetBucketTaggingInput (struct)">GetBucketTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketTaggingOutput" title="s3 (package)">GetBucketTaggingOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketTagging-instance_method" title="s3.Client.GetBucketTagging() (method)">GetBucketTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketTaggingInput.html" title="s3.GetBucketTaggingInput (struct)">GetBucketTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketTaggingOutput" title="s3 (package)">GetBucketTaggingOutput</a></span>, error) 
   
 
   
@@ -5118,7 +5117,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketVersioning-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketVersioning-instance_method" title="s3.Client.GetBucketVersioning() (method)">GetBucketVersioning</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketVersioningInput.html" title="s3.GetBucketVersioningInput (struct)">GetBucketVersioningInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketVersioningOutput" title="s3 (package)">GetBucketVersioningOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketVersioning-instance_method" title="s3.Client.GetBucketVersioning() (method)">GetBucketVersioning</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketVersioningInput.html" title="s3.GetBucketVersioningInput (struct)">GetBucketVersioningInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketVersioningOutput" title="s3 (package)">GetBucketVersioningOutput</a></span>, error) 
   
 
   
@@ -5171,7 +5170,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetBucketWebsite-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetBucketWebsite-instance_method" title="s3.Client.GetBucketWebsite() (method)">GetBucketWebsite</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketWebsiteInput.html" title="s3.GetBucketWebsiteInput (struct)">GetBucketWebsiteInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketWebsiteOutput" title="s3 (package)">GetBucketWebsiteOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetBucketWebsite-instance_method" title="s3.Client.GetBucketWebsite() (method)">GetBucketWebsite</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetBucketWebsiteInput.html" title="s3.GetBucketWebsiteInput (struct)">GetBucketWebsiteInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetBucketWebsiteOutput" title="s3 (package)">GetBucketWebsiteOutput</a></span>, error) 
   
 
   
@@ -5224,7 +5223,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetObject-instance_method" title="s3.Client.GetObject() (method)">GetObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectInput.html" title="s3.GetObjectInput (struct)">GetObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectOutput" title="s3 (package)">GetObjectOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetObject-instance_method" title="s3.Client.GetObject() (method)">GetObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectInput.html" title="s3.GetObjectInput (struct)">GetObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectOutput" title="s3 (package)">GetObjectOutput</a></span>, error) 
   
 
   
@@ -5277,7 +5276,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetObjectAcl-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetObjectAcl-instance_method" title="s3.Client.GetObjectAcl() (method)">GetObjectAcl</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectAclInput.html" title="s3.GetObjectAclInput (struct)">GetObjectAclInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectAclOutput" title="s3 (package)">GetObjectAclOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetObjectAcl-instance_method" title="s3.Client.GetObjectAcl() (method)">GetObjectAcl</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectAclInput.html" title="s3.GetObjectAclInput (struct)">GetObjectAclInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectAclOutput" title="s3 (package)">GetObjectAclOutput</a></span>, error) 
   
 
   
@@ -5330,7 +5329,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetObjectAttributes-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetObjectAttributes-instance_method" title="s3.Client.GetObjectAttributes() (method)">GetObjectAttributes</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectAttributesInput.html" title="s3.GetObjectAttributesInput (struct)">GetObjectAttributesInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectAttributesOutput" title="s3 (package)">GetObjectAttributesOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetObjectAttributes-instance_method" title="s3.Client.GetObjectAttributes() (method)">GetObjectAttributes</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectAttributesInput.html" title="s3.GetObjectAttributesInput (struct)">GetObjectAttributesInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectAttributesOutput" title="s3 (package)">GetObjectAttributesOutput</a></span>, error) 
   
 
   
@@ -5383,7 +5382,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetObjectLegalHold-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetObjectLegalHold-instance_method" title="s3.Client.GetObjectLegalHold() (method)">GetObjectLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectLegalHoldInput.html" title="s3.GetObjectLegalHoldInput (struct)">GetObjectLegalHoldInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectLegalHoldOutput" title="s3 (package)">GetObjectLegalHoldOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetObjectLegalHold-instance_method" title="s3.Client.GetObjectLegalHold() (method)">GetObjectLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectLegalHoldInput.html" title="s3.GetObjectLegalHoldInput (struct)">GetObjectLegalHoldInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectLegalHoldOutput" title="s3 (package)">GetObjectLegalHoldOutput</a></span>, error) 
   
 
   
@@ -5436,7 +5435,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetObjectLockConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetObjectLockConfiguration-instance_method" title="s3.Client.GetObjectLockConfiguration() (method)">GetObjectLockConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectLockConfigurationInput.html" title="s3.GetObjectLockConfigurationInput (struct)">GetObjectLockConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectLockConfigurationOutput" title="s3 (package)">GetObjectLockConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetObjectLockConfiguration-instance_method" title="s3.Client.GetObjectLockConfiguration() (method)">GetObjectLockConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectLockConfigurationInput.html" title="s3.GetObjectLockConfigurationInput (struct)">GetObjectLockConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectLockConfigurationOutput" title="s3 (package)">GetObjectLockConfigurationOutput</a></span>, error) 
   
 
   
@@ -5489,7 +5488,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetObjectRetention-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetObjectRetention-instance_method" title="s3.Client.GetObjectRetention() (method)">GetObjectRetention</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectRetentionInput.html" title="s3.GetObjectRetentionInput (struct)">GetObjectRetentionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectRetentionOutput" title="s3 (package)">GetObjectRetentionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetObjectRetention-instance_method" title="s3.Client.GetObjectRetention() (method)">GetObjectRetention</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectRetentionInput.html" title="s3.GetObjectRetentionInput (struct)">GetObjectRetentionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectRetentionOutput" title="s3 (package)">GetObjectRetentionOutput</a></span>, error) 
   
 
   
@@ -5542,7 +5541,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetObjectTagging-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetObjectTagging-instance_method" title="s3.Client.GetObjectTagging() (method)">GetObjectTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectTaggingInput.html" title="s3.GetObjectTaggingInput (struct)">GetObjectTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectTaggingOutput" title="s3 (package)">GetObjectTaggingOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetObjectTagging-instance_method" title="s3.Client.GetObjectTagging() (method)">GetObjectTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectTaggingInput.html" title="s3.GetObjectTaggingInput (struct)">GetObjectTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectTaggingOutput" title="s3 (package)">GetObjectTaggingOutput</a></span>, error) 
   
 
   
@@ -5595,7 +5594,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetObjectTorrent-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetObjectTorrent-instance_method" title="s3.Client.GetObjectTorrent() (method)">GetObjectTorrent</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectTorrentInput.html" title="s3.GetObjectTorrentInput (struct)">GetObjectTorrentInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectTorrentOutput" title="s3 (package)">GetObjectTorrentOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetObjectTorrent-instance_method" title="s3.Client.GetObjectTorrent() (method)">GetObjectTorrent</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectTorrentInput.html" title="s3.GetObjectTorrentInput (struct)">GetObjectTorrentInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetObjectTorrentOutput" title="s3 (package)">GetObjectTorrentOutput</a></span>, error) 
   
 
   
@@ -5648,7 +5647,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="GetPublicAccessBlock-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#GetPublicAccessBlock-instance_method" title="s3.Client.GetPublicAccessBlock() (method)">GetPublicAccessBlock</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetPublicAccessBlockInput.html" title="s3.GetPublicAccessBlockInput (struct)">GetPublicAccessBlockInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetPublicAccessBlockOutput" title="s3 (package)">GetPublicAccessBlockOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#GetPublicAccessBlock-instance_method" title="s3.Client.GetPublicAccessBlock() (method)">GetPublicAccessBlock</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetPublicAccessBlockInput.html" title="s3.GetPublicAccessBlockInput (struct)">GetPublicAccessBlockInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-GetPublicAccessBlockOutput" title="s3 (package)">GetPublicAccessBlockOutput</a></span>, error) 
   
 
   
@@ -5701,7 +5700,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="HeadBucket-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#HeadBucket-instance_method" title="s3.Client.HeadBucket() (method)">HeadBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadBucketInput.html" title="s3.HeadBucketInput (struct)">HeadBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-HeadBucketOutput" title="s3 (package)">HeadBucketOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#HeadBucket-instance_method" title="s3.Client.HeadBucket() (method)">HeadBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadBucketInput.html" title="s3.HeadBucketInput (struct)">HeadBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-HeadBucketOutput" title="s3 (package)">HeadBucketOutput</a></span>, error) 
   
 
   
@@ -5754,7 +5753,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="HeadObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#HeadObject-instance_method" title="s3.Client.HeadObject() (method)">HeadObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-HeadObjectOutput" title="s3 (package)">HeadObjectOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#HeadObject-instance_method" title="s3.Client.HeadObject() (method)">HeadObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-HeadObjectOutput" title="s3 (package)">HeadObjectOutput</a></span>, error) 
   
 
   
@@ -5807,7 +5806,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListBucketAnalyticsConfigurations-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListBucketAnalyticsConfigurations-instance_method" title="s3.Client.ListBucketAnalyticsConfigurations() (method)">ListBucketAnalyticsConfigurations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListBucketAnalyticsConfigurationsInput.html" title="s3.ListBucketAnalyticsConfigurationsInput (struct)">ListBucketAnalyticsConfigurationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketAnalyticsConfigurationsOutput" title="s3 (package)">ListBucketAnalyticsConfigurationsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListBucketAnalyticsConfigurations-instance_method" title="s3.Client.ListBucketAnalyticsConfigurations() (method)">ListBucketAnalyticsConfigurations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListBucketAnalyticsConfigurationsInput.html" title="s3.ListBucketAnalyticsConfigurationsInput (struct)">ListBucketAnalyticsConfigurationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketAnalyticsConfigurationsOutput" title="s3 (package)">ListBucketAnalyticsConfigurationsOutput</a></span>, error) 
   
 
   
@@ -5860,7 +5859,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListBucketIntelligentTieringConfigurations-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListBucketIntelligentTieringConfigurations-instance_method" title="s3.Client.ListBucketIntelligentTieringConfigurations() (method)">ListBucketIntelligentTieringConfigurations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListBucketIntelligentTieringConfigurationsInput.html" title="s3.ListBucketIntelligentTieringConfigurationsInput (struct)">ListBucketIntelligentTieringConfigurationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketIntelligentTieringConfigurationsOutput" title="s3 (package)">ListBucketIntelligentTieringConfigurationsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListBucketIntelligentTieringConfigurations-instance_method" title="s3.Client.ListBucketIntelligentTieringConfigurations() (method)">ListBucketIntelligentTieringConfigurations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListBucketIntelligentTieringConfigurationsInput.html" title="s3.ListBucketIntelligentTieringConfigurationsInput (struct)">ListBucketIntelligentTieringConfigurationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketIntelligentTieringConfigurationsOutput" title="s3 (package)">ListBucketIntelligentTieringConfigurationsOutput</a></span>, error) 
   
 
   
@@ -5913,7 +5912,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListBucketInventoryConfigurations-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListBucketInventoryConfigurations-instance_method" title="s3.Client.ListBucketInventoryConfigurations() (method)">ListBucketInventoryConfigurations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListBucketInventoryConfigurationsInput.html" title="s3.ListBucketInventoryConfigurationsInput (struct)">ListBucketInventoryConfigurationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketInventoryConfigurationsOutput" title="s3 (package)">ListBucketInventoryConfigurationsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListBucketInventoryConfigurations-instance_method" title="s3.Client.ListBucketInventoryConfigurations() (method)">ListBucketInventoryConfigurations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListBucketInventoryConfigurationsInput.html" title="s3.ListBucketInventoryConfigurationsInput (struct)">ListBucketInventoryConfigurationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketInventoryConfigurationsOutput" title="s3 (package)">ListBucketInventoryConfigurationsOutput</a></span>, error) 
   
 
   
@@ -5966,7 +5965,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListBucketMetricsConfigurations-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListBucketMetricsConfigurations-instance_method" title="s3.Client.ListBucketMetricsConfigurations() (method)">ListBucketMetricsConfigurations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListBucketMetricsConfigurationsInput.html" title="s3.ListBucketMetricsConfigurationsInput (struct)">ListBucketMetricsConfigurationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketMetricsConfigurationsOutput" title="s3 (package)">ListBucketMetricsConfigurationsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListBucketMetricsConfigurations-instance_method" title="s3.Client.ListBucketMetricsConfigurations() (method)">ListBucketMetricsConfigurations</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListBucketMetricsConfigurationsInput.html" title="s3.ListBucketMetricsConfigurationsInput (struct)">ListBucketMetricsConfigurationsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketMetricsConfigurationsOutput" title="s3 (package)">ListBucketMetricsConfigurationsOutput</a></span>, error) 
   
 
   
@@ -6019,7 +6018,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListBuckets-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListBuckets-instance_method" title="s3.Client.ListBuckets() (method)">ListBuckets</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../s3.html#type-ListBucketsInput" title="s3 (package)">ListBucketsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketsOutput" title="s3 (package)">ListBucketsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListBuckets-instance_method" title="s3.Client.ListBuckets() (method)">ListBuckets</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../s3.html#type-ListBucketsInput" title="s3 (package)">ListBucketsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketsOutput" title="s3 (package)">ListBucketsOutput</a></span>, error) 
   
 
   
@@ -6072,7 +6071,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListBucketsExtended-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListBucketsExtended-instance_method" title="s3.Client.ListBucketsExtended() (method)">ListBucketsExtended</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../s3.html#type-ListBucketsExtendedInput" title="s3 (package)">ListBucketsExtendedInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketsExtendedOutput" title="s3 (package)">ListBucketsExtendedOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListBucketsExtended-instance_method" title="s3.Client.ListBucketsExtended() (method)">ListBucketsExtended</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="../s3.html#type-ListBucketsExtendedInput" title="s3 (package)">ListBucketsExtendedInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListBucketsExtendedOutput" title="s3 (package)">ListBucketsExtendedOutput</a></span>, error) 
   
 
   
@@ -6125,7 +6124,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListDirectoryBuckets-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListDirectoryBuckets-instance_method" title="s3.Client.ListDirectoryBuckets() (method)">ListDirectoryBuckets</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListDirectoryBucketsInput.html" title="s3.ListDirectoryBucketsInput (struct)">ListDirectoryBucketsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListDirectoryBucketsOutput" title="s3 (package)">ListDirectoryBucketsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListDirectoryBuckets-instance_method" title="s3.Client.ListDirectoryBuckets() (method)">ListDirectoryBuckets</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListDirectoryBucketsInput.html" title="s3.ListDirectoryBucketsInput (struct)">ListDirectoryBucketsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListDirectoryBucketsOutput" title="s3 (package)">ListDirectoryBucketsOutput</a></span>, error) 
   
 
   
@@ -6178,7 +6177,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListLegalHolds-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListLegalHolds-instance_method" title="s3.Client.ListLegalHolds() (method)">ListLegalHolds</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListLegalHoldsInput.html" title="s3.ListLegalHoldsInput (struct)">ListLegalHoldsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListLegalHoldsOutput" title="s3 (package)">ListLegalHoldsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListLegalHolds-instance_method" title="s3.Client.ListLegalHolds() (method)">ListLegalHolds</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListLegalHoldsInput.html" title="s3.ListLegalHoldsInput (struct)">ListLegalHoldsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListLegalHoldsOutput" title="s3 (package)">ListLegalHoldsOutput</a></span>, error) 
   
 
   
@@ -6231,7 +6230,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListMultipartUploads-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListMultipartUploads-instance_method" title="s3.Client.ListMultipartUploads() (method)">ListMultipartUploads</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListMultipartUploadsInput.html" title="s3.ListMultipartUploadsInput (struct)">ListMultipartUploadsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListMultipartUploadsOutput" title="s3 (package)">ListMultipartUploadsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListMultipartUploads-instance_method" title="s3.Client.ListMultipartUploads() (method)">ListMultipartUploads</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListMultipartUploadsInput.html" title="s3.ListMultipartUploadsInput (struct)">ListMultipartUploadsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListMultipartUploadsOutput" title="s3 (package)">ListMultipartUploadsOutput</a></span>, error) 
   
 
   
@@ -6284,7 +6283,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListObjects-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListObjects-instance_method" title="s3.Client.ListObjects() (method)">ListObjects</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListObjectsInput.html" title="s3.ListObjectsInput (struct)">ListObjectsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListObjectsOutput" title="s3 (package)">ListObjectsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListObjects-instance_method" title="s3.Client.ListObjects() (method)">ListObjects</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListObjectsInput.html" title="s3.ListObjectsInput (struct)">ListObjectsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListObjectsOutput" title="s3 (package)">ListObjectsOutput</a></span>, error) 
   
 
   
@@ -6337,7 +6336,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListObjectsV2-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListObjectsV2-instance_method" title="s3.Client.ListObjectsV2() (method)">ListObjectsV2</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListObjectsV2Input.html" title="s3.ListObjectsV2Input (struct)">ListObjectsV2Input</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListObjectsV2Output" title="s3 (package)">ListObjectsV2Output</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListObjectsV2-instance_method" title="s3.Client.ListObjectsV2() (method)">ListObjectsV2</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListObjectsV2Input.html" title="s3.ListObjectsV2Input (struct)">ListObjectsV2Input</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListObjectsV2Output" title="s3 (package)">ListObjectsV2Output</a></span>, error) 
   
 
   
@@ -6390,7 +6389,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListObjectVersions-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListObjectVersions-instance_method" title="s3.Client.ListObjectVersions() (method)">ListObjectVersions</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListObjectVersionsInput.html" title="s3.ListObjectVersionsInput (struct)">ListObjectVersionsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListObjectVersionsOutput" title="s3 (package)">ListObjectVersionsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListObjectVersions-instance_method" title="s3.Client.ListObjectVersions() (method)">ListObjectVersions</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListObjectVersionsInput.html" title="s3.ListObjectVersionsInput (struct)">ListObjectVersionsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListObjectVersionsOutput" title="s3 (package)">ListObjectVersionsOutput</a></span>, error) 
   
 
   
@@ -6443,7 +6442,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="ListParts-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#ListParts-instance_method" title="s3.Client.ListParts() (method)">ListParts</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListPartsInput.html" title="s3.ListPartsInput (struct)">ListPartsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListPartsOutput" title="s3 (package)">ListPartsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#ListParts-instance_method" title="s3.Client.ListParts() (method)">ListParts</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="ListPartsInput.html" title="s3.ListPartsInput (struct)">ListPartsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-ListPartsOutput" title="s3 (package)">ListPartsOutput</a></span>, error) 
   
 
   
@@ -6496,7 +6495,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="Options-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span></strong>() <span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span> 
+    func (c *Client) <strong><span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span></strong>() <span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span> 
   
 
   
@@ -6504,11 +6503,10 @@ import "../ibm-cos-sdk-go-v2/service/s3"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Options returns a copy of the client configuration.</p>
-
-<p>Callers SHOULD NOT perform mutations on any inner structures within client config. Config overrides should instead be made on a per-operation basis through functional options.</p>
-
+    <p>Options returns a copy of the client configuration.</p>
+<p>Callers SHOULD NOT perform mutations on any inner structures within client
+config. Config overrides should instead be made on a per-operation basis through
+functional options.</p>
 
   </div>
 </div>
@@ -6540,7 +6538,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketAccelerateConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketAccelerateConfiguration-instance_method" title="s3.Client.PutBucketAccelerateConfiguration() (method)">PutBucketAccelerateConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketAccelerateConfigurationInput.html" title="s3.PutBucketAccelerateConfigurationInput (struct)">PutBucketAccelerateConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketAccelerateConfigurationOutput" title="s3 (package)">PutBucketAccelerateConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketAccelerateConfiguration-instance_method" title="s3.Client.PutBucketAccelerateConfiguration() (method)">PutBucketAccelerateConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketAccelerateConfigurationInput.html" title="s3.PutBucketAccelerateConfigurationInput (struct)">PutBucketAccelerateConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketAccelerateConfigurationOutput" title="s3 (package)">PutBucketAccelerateConfigurationOutput</a></span>, error) 
   
 
   
@@ -6593,7 +6591,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketAcl-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketAcl-instance_method" title="s3.Client.PutBucketAcl() (method)">PutBucketAcl</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketAclInput.html" title="s3.PutBucketAclInput (struct)">PutBucketAclInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketAclOutput" title="s3 (package)">PutBucketAclOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketAcl-instance_method" title="s3.Client.PutBucketAcl() (method)">PutBucketAcl</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketAclInput.html" title="s3.PutBucketAclInput (struct)">PutBucketAclInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketAclOutput" title="s3 (package)">PutBucketAclOutput</a></span>, error) 
   
 
   
@@ -6646,7 +6644,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketAnalyticsConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketAnalyticsConfiguration-instance_method" title="s3.Client.PutBucketAnalyticsConfiguration() (method)">PutBucketAnalyticsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketAnalyticsConfigurationInput.html" title="s3.PutBucketAnalyticsConfigurationInput (struct)">PutBucketAnalyticsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketAnalyticsConfigurationOutput" title="s3 (package)">PutBucketAnalyticsConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketAnalyticsConfiguration-instance_method" title="s3.Client.PutBucketAnalyticsConfiguration() (method)">PutBucketAnalyticsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketAnalyticsConfigurationInput.html" title="s3.PutBucketAnalyticsConfigurationInput (struct)">PutBucketAnalyticsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketAnalyticsConfigurationOutput" title="s3 (package)">PutBucketAnalyticsConfigurationOutput</a></span>, error) 
   
 
   
@@ -6699,7 +6697,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketCors-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketCors-instance_method" title="s3.Client.PutBucketCors() (method)">PutBucketCors</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketCorsInput.html" title="s3.PutBucketCorsInput (struct)">PutBucketCorsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketCorsOutput" title="s3 (package)">PutBucketCorsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketCors-instance_method" title="s3.Client.PutBucketCors() (method)">PutBucketCors</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketCorsInput.html" title="s3.PutBucketCorsInput (struct)">PutBucketCorsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketCorsOutput" title="s3 (package)">PutBucketCorsOutput</a></span>, error) 
   
 
   
@@ -6752,7 +6750,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketEncryption-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketEncryption-instance_method" title="s3.Client.PutBucketEncryption() (method)">PutBucketEncryption</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketEncryptionInput.html" title="s3.PutBucketEncryptionInput (struct)">PutBucketEncryptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketEncryptionOutput" title="s3 (package)">PutBucketEncryptionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketEncryption-instance_method" title="s3.Client.PutBucketEncryption() (method)">PutBucketEncryption</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketEncryptionInput.html" title="s3.PutBucketEncryptionInput (struct)">PutBucketEncryptionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketEncryptionOutput" title="s3 (package)">PutBucketEncryptionOutput</a></span>, error) 
   
 
   
@@ -6805,7 +6803,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketIntelligentTieringConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketIntelligentTieringConfiguration-instance_method" title="s3.Client.PutBucketIntelligentTieringConfiguration() (method)">PutBucketIntelligentTieringConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketIntelligentTieringConfigurationInput.html" title="s3.PutBucketIntelligentTieringConfigurationInput (struct)">PutBucketIntelligentTieringConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketIntelligentTieringConfigurationOutput" title="s3 (package)">PutBucketIntelligentTieringConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketIntelligentTieringConfiguration-instance_method" title="s3.Client.PutBucketIntelligentTieringConfiguration() (method)">PutBucketIntelligentTieringConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketIntelligentTieringConfigurationInput.html" title="s3.PutBucketIntelligentTieringConfigurationInput (struct)">PutBucketIntelligentTieringConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketIntelligentTieringConfigurationOutput" title="s3 (package)">PutBucketIntelligentTieringConfigurationOutput</a></span>, error) 
   
 
   
@@ -6858,7 +6856,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketInventoryConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketInventoryConfiguration-instance_method" title="s3.Client.PutBucketInventoryConfiguration() (method)">PutBucketInventoryConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketInventoryConfigurationInput.html" title="s3.PutBucketInventoryConfigurationInput (struct)">PutBucketInventoryConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketInventoryConfigurationOutput" title="s3 (package)">PutBucketInventoryConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketInventoryConfiguration-instance_method" title="s3.Client.PutBucketInventoryConfiguration() (method)">PutBucketInventoryConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketInventoryConfigurationInput.html" title="s3.PutBucketInventoryConfigurationInput (struct)">PutBucketInventoryConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketInventoryConfigurationOutput" title="s3 (package)">PutBucketInventoryConfigurationOutput</a></span>, error) 
   
 
   
@@ -6911,7 +6909,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketLifecycleConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketLifecycleConfiguration-instance_method" title="s3.Client.PutBucketLifecycleConfiguration() (method)">PutBucketLifecycleConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketLifecycleConfigurationInput.html" title="s3.PutBucketLifecycleConfigurationInput (struct)">PutBucketLifecycleConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketLifecycleConfigurationOutput" title="s3 (package)">PutBucketLifecycleConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketLifecycleConfiguration-instance_method" title="s3.Client.PutBucketLifecycleConfiguration() (method)">PutBucketLifecycleConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketLifecycleConfigurationInput.html" title="s3.PutBucketLifecycleConfigurationInput (struct)">PutBucketLifecycleConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketLifecycleConfigurationOutput" title="s3 (package)">PutBucketLifecycleConfigurationOutput</a></span>, error) 
   
 
   
@@ -6964,7 +6962,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketLogging-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketLogging-instance_method" title="s3.Client.PutBucketLogging() (method)">PutBucketLogging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketLoggingInput.html" title="s3.PutBucketLoggingInput (struct)">PutBucketLoggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketLoggingOutput" title="s3 (package)">PutBucketLoggingOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketLogging-instance_method" title="s3.Client.PutBucketLogging() (method)">PutBucketLogging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketLoggingInput.html" title="s3.PutBucketLoggingInput (struct)">PutBucketLoggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketLoggingOutput" title="s3 (package)">PutBucketLoggingOutput</a></span>, error) 
   
 
   
@@ -7017,7 +7015,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketMetricsConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketMetricsConfiguration-instance_method" title="s3.Client.PutBucketMetricsConfiguration() (method)">PutBucketMetricsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketMetricsConfigurationInput.html" title="s3.PutBucketMetricsConfigurationInput (struct)">PutBucketMetricsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketMetricsConfigurationOutput" title="s3 (package)">PutBucketMetricsConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketMetricsConfiguration-instance_method" title="s3.Client.PutBucketMetricsConfiguration() (method)">PutBucketMetricsConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketMetricsConfigurationInput.html" title="s3.PutBucketMetricsConfigurationInput (struct)">PutBucketMetricsConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketMetricsConfigurationOutput" title="s3 (package)">PutBucketMetricsConfigurationOutput</a></span>, error) 
   
 
   
@@ -7070,7 +7068,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketNotificationConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketNotificationConfiguration-instance_method" title="s3.Client.PutBucketNotificationConfiguration() (method)">PutBucketNotificationConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketNotificationConfigurationInput.html" title="s3.PutBucketNotificationConfigurationInput (struct)">PutBucketNotificationConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketNotificationConfigurationOutput" title="s3 (package)">PutBucketNotificationConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketNotificationConfiguration-instance_method" title="s3.Client.PutBucketNotificationConfiguration() (method)">PutBucketNotificationConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketNotificationConfigurationInput.html" title="s3.PutBucketNotificationConfigurationInput (struct)">PutBucketNotificationConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketNotificationConfigurationOutput" title="s3 (package)">PutBucketNotificationConfigurationOutput</a></span>, error) 
   
 
   
@@ -7123,7 +7121,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketOwnershipControls-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketOwnershipControls-instance_method" title="s3.Client.PutBucketOwnershipControls() (method)">PutBucketOwnershipControls</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketOwnershipControlsInput.html" title="s3.PutBucketOwnershipControlsInput (struct)">PutBucketOwnershipControlsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketOwnershipControlsOutput" title="s3 (package)">PutBucketOwnershipControlsOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketOwnershipControls-instance_method" title="s3.Client.PutBucketOwnershipControls() (method)">PutBucketOwnershipControls</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketOwnershipControlsInput.html" title="s3.PutBucketOwnershipControlsInput (struct)">PutBucketOwnershipControlsInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketOwnershipControlsOutput" title="s3 (package)">PutBucketOwnershipControlsOutput</a></span>, error) 
   
 
   
@@ -7176,7 +7174,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketPolicy-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketPolicy-instance_method" title="s3.Client.PutBucketPolicy() (method)">PutBucketPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketPolicyInput.html" title="s3.PutBucketPolicyInput (struct)">PutBucketPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketPolicyOutput" title="s3 (package)">PutBucketPolicyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketPolicy-instance_method" title="s3.Client.PutBucketPolicy() (method)">PutBucketPolicy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketPolicyInput.html" title="s3.PutBucketPolicyInput (struct)">PutBucketPolicyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketPolicyOutput" title="s3 (package)">PutBucketPolicyOutput</a></span>, error) 
   
 
   
@@ -7229,7 +7227,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketProtectionConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketProtectionConfiguration-instance_method" title="s3.Client.PutBucketProtectionConfiguration() (method)">PutBucketProtectionConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketProtectionConfigurationInput.html" title="s3.PutBucketProtectionConfigurationInput (struct)">PutBucketProtectionConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketProtectionConfigurationOutput" title="s3 (package)">PutBucketProtectionConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketProtectionConfiguration-instance_method" title="s3.Client.PutBucketProtectionConfiguration() (method)">PutBucketProtectionConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketProtectionConfigurationInput.html" title="s3.PutBucketProtectionConfigurationInput (struct)">PutBucketProtectionConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketProtectionConfigurationOutput" title="s3 (package)">PutBucketProtectionConfigurationOutput</a></span>, error) 
   
 
   
@@ -7278,7 +7276,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketReplication-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketReplication-instance_method" title="s3.Client.PutBucketReplication() (method)">PutBucketReplication</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketReplicationInput.html" title="s3.PutBucketReplicationInput (struct)">PutBucketReplicationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketReplicationOutput" title="s3 (package)">PutBucketReplicationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketReplication-instance_method" title="s3.Client.PutBucketReplication() (method)">PutBucketReplication</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketReplicationInput.html" title="s3.PutBucketReplicationInput (struct)">PutBucketReplicationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketReplicationOutput" title="s3 (package)">PutBucketReplicationOutput</a></span>, error) 
   
 
   
@@ -7331,7 +7329,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketRequestPayment-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketRequestPayment-instance_method" title="s3.Client.PutBucketRequestPayment() (method)">PutBucketRequestPayment</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketRequestPaymentInput.html" title="s3.PutBucketRequestPaymentInput (struct)">PutBucketRequestPaymentInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketRequestPaymentOutput" title="s3 (package)">PutBucketRequestPaymentOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketRequestPayment-instance_method" title="s3.Client.PutBucketRequestPayment() (method)">PutBucketRequestPayment</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketRequestPaymentInput.html" title="s3.PutBucketRequestPaymentInput (struct)">PutBucketRequestPaymentInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketRequestPaymentOutput" title="s3 (package)">PutBucketRequestPaymentOutput</a></span>, error) 
   
 
   
@@ -7384,7 +7382,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketTagging-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketTagging-instance_method" title="s3.Client.PutBucketTagging() (method)">PutBucketTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketTaggingInput.html" title="s3.PutBucketTaggingInput (struct)">PutBucketTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketTaggingOutput" title="s3 (package)">PutBucketTaggingOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketTagging-instance_method" title="s3.Client.PutBucketTagging() (method)">PutBucketTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketTaggingInput.html" title="s3.PutBucketTaggingInput (struct)">PutBucketTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketTaggingOutput" title="s3 (package)">PutBucketTaggingOutput</a></span>, error) 
   
 
   
@@ -7437,7 +7435,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketVersioning-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketVersioning-instance_method" title="s3.Client.PutBucketVersioning() (method)">PutBucketVersioning</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketVersioningInput.html" title="s3.PutBucketVersioningInput (struct)">PutBucketVersioningInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketVersioningOutput" title="s3 (package)">PutBucketVersioningOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketVersioning-instance_method" title="s3.Client.PutBucketVersioning() (method)">PutBucketVersioning</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketVersioningInput.html" title="s3.PutBucketVersioningInput (struct)">PutBucketVersioningInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketVersioningOutput" title="s3 (package)">PutBucketVersioningOutput</a></span>, error) 
   
 
   
@@ -7490,7 +7488,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutBucketWebsite-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutBucketWebsite-instance_method" title="s3.Client.PutBucketWebsite() (method)">PutBucketWebsite</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketWebsiteInput.html" title="s3.PutBucketWebsiteInput (struct)">PutBucketWebsiteInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketWebsiteOutput" title="s3 (package)">PutBucketWebsiteOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutBucketWebsite-instance_method" title="s3.Client.PutBucketWebsite() (method)">PutBucketWebsite</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutBucketWebsiteInput.html" title="s3.PutBucketWebsiteInput (struct)">PutBucketWebsiteInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutBucketWebsiteOutput" title="s3 (package)">PutBucketWebsiteOutput</a></span>, error) 
   
 
   
@@ -7543,7 +7541,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutObject-instance_method" title="s3.Client.PutObject() (method)">PutObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectInput.html" title="s3.PutObjectInput (struct)">PutObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectOutput" title="s3 (package)">PutObjectOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutObject-instance_method" title="s3.Client.PutObject() (method)">PutObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectInput.html" title="s3.PutObjectInput (struct)">PutObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectOutput" title="s3 (package)">PutObjectOutput</a></span>, error) 
   
 
   
@@ -7596,7 +7594,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutObjectAcl-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutObjectAcl-instance_method" title="s3.Client.PutObjectAcl() (method)">PutObjectAcl</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectAclInput.html" title="s3.PutObjectAclInput (struct)">PutObjectAclInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectAclOutput" title="s3 (package)">PutObjectAclOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutObjectAcl-instance_method" title="s3.Client.PutObjectAcl() (method)">PutObjectAcl</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectAclInput.html" title="s3.PutObjectAclInput (struct)">PutObjectAclInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectAclOutput" title="s3 (package)">PutObjectAclOutput</a></span>, error) 
   
 
   
@@ -7649,7 +7647,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutObjectLegalHold-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutObjectLegalHold-instance_method" title="s3.Client.PutObjectLegalHold() (method)">PutObjectLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectLegalHoldInput.html" title="s3.PutObjectLegalHoldInput (struct)">PutObjectLegalHoldInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectLegalHoldOutput" title="s3 (package)">PutObjectLegalHoldOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutObjectLegalHold-instance_method" title="s3.Client.PutObjectLegalHold() (method)">PutObjectLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectLegalHoldInput.html" title="s3.PutObjectLegalHoldInput (struct)">PutObjectLegalHoldInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectLegalHoldOutput" title="s3 (package)">PutObjectLegalHoldOutput</a></span>, error) 
   
 
   
@@ -7702,7 +7700,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutObjectLockConfiguration-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutObjectLockConfiguration-instance_method" title="s3.Client.PutObjectLockConfiguration() (method)">PutObjectLockConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectLockConfigurationInput.html" title="s3.PutObjectLockConfigurationInput (struct)">PutObjectLockConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectLockConfigurationOutput" title="s3 (package)">PutObjectLockConfigurationOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutObjectLockConfiguration-instance_method" title="s3.Client.PutObjectLockConfiguration() (method)">PutObjectLockConfiguration</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectLockConfigurationInput.html" title="s3.PutObjectLockConfigurationInput (struct)">PutObjectLockConfigurationInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectLockConfigurationOutput" title="s3 (package)">PutObjectLockConfigurationOutput</a></span>, error) 
   
 
   
@@ -7755,7 +7753,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutObjectRetention-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutObjectRetention-instance_method" title="s3.Client.PutObjectRetention() (method)">PutObjectRetention</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectRetentionInput.html" title="s3.PutObjectRetentionInput (struct)">PutObjectRetentionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectRetentionOutput" title="s3 (package)">PutObjectRetentionOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutObjectRetention-instance_method" title="s3.Client.PutObjectRetention() (method)">PutObjectRetention</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectRetentionInput.html" title="s3.PutObjectRetentionInput (struct)">PutObjectRetentionInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectRetentionOutput" title="s3 (package)">PutObjectRetentionOutput</a></span>, error) 
   
 
   
@@ -7808,7 +7806,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutObjectTagging-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutObjectTagging-instance_method" title="s3.Client.PutObjectTagging() (method)">PutObjectTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectTaggingInput.html" title="s3.PutObjectTaggingInput (struct)">PutObjectTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectTaggingOutput" title="s3 (package)">PutObjectTaggingOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutObjectTagging-instance_method" title="s3.Client.PutObjectTagging() (method)">PutObjectTagging</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectTaggingInput.html" title="s3.PutObjectTaggingInput (struct)">PutObjectTaggingInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutObjectTaggingOutput" title="s3 (package)">PutObjectTaggingOutput</a></span>, error) 
   
 
   
@@ -7861,7 +7859,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PutPublicAccessBlock-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#PutPublicAccessBlock-instance_method" title="s3.Client.PutPublicAccessBlock() (method)">PutPublicAccessBlock</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutPublicAccessBlockInput.html" title="s3.PutPublicAccessBlockInput (struct)">PutPublicAccessBlockInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutPublicAccessBlockOutput" title="s3 (package)">PutPublicAccessBlockOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#PutPublicAccessBlock-instance_method" title="s3.Client.PutPublicAccessBlock() (method)">PutPublicAccessBlock</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutPublicAccessBlockInput.html" title="s3.PutPublicAccessBlockInput (struct)">PutPublicAccessBlockInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PutPublicAccessBlockOutput" title="s3 (package)">PutPublicAccessBlockOutput</a></span>, error) 
   
 
   
@@ -7914,7 +7912,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="RestoreObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#RestoreObject-instance_method" title="s3.Client.RestoreObject() (method)">RestoreObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="RestoreObjectInput.html" title="s3.RestoreObjectInput (struct)">RestoreObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-RestoreObjectOutput" title="s3 (package)">RestoreObjectOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#RestoreObject-instance_method" title="s3.Client.RestoreObject() (method)">RestoreObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="RestoreObjectInput.html" title="s3.RestoreObjectInput (struct)">RestoreObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-RestoreObjectOutput" title="s3 (package)">RestoreObjectOutput</a></span>, error) 
   
 
   
@@ -7967,7 +7965,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="SelectObjectContent-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#SelectObjectContent-instance_method" title="s3.Client.SelectObjectContent() (method)">SelectObjectContent</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="SelectObjectContentInput.html" title="s3.SelectObjectContentInput (struct)">SelectObjectContentInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="SelectObjectContentOutput.html" title="s3.SelectObjectContentOutput (struct)">SelectObjectContentOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#SelectObjectContent-instance_method" title="s3.Client.SelectObjectContent() (method)">SelectObjectContent</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="SelectObjectContentInput.html" title="s3.SelectObjectContentInput (struct)">SelectObjectContentInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="SelectObjectContentOutput.html" title="s3.SelectObjectContentOutput (struct)">SelectObjectContentOutput</a></span>, error) 
   
 
   
@@ -8020,7 +8018,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="UploadPart-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UploadPart-instance_method" title="s3.Client.UploadPart() (method)">UploadPart</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="UploadPartInput.html" title="s3.UploadPartInput (struct)">UploadPartInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-UploadPartOutput" title="s3 (package)">UploadPartOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#UploadPart-instance_method" title="s3.Client.UploadPart() (method)">UploadPart</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="UploadPartInput.html" title="s3.UploadPartInput (struct)">UploadPartInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-UploadPartOutput" title="s3 (package)">UploadPartOutput</a></span>, error) 
   
 
   
@@ -8073,7 +8071,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="UploadPartCopy-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#UploadPartCopy-instance_method" title="s3.Client.UploadPartCopy() (method)">UploadPartCopy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="UploadPartCopyInput.html" title="s3.UploadPartCopyInput (struct)">UploadPartCopyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-UploadPartCopyOutput" title="s3 (package)">UploadPartCopyOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#UploadPartCopy-instance_method" title="s3.Client.UploadPartCopy() (method)">UploadPartCopy</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="UploadPartCopyInput.html" title="s3.UploadPartCopyInput (struct)">UploadPartCopyInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-UploadPartCopyOutput" title="s3 (package)">UploadPartCopyOutput</a></span>, error) 
   
 
   
@@ -8126,7 +8124,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="WriteGetObjectResponse-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.Client (struct)">Client</a></span>) <strong><span class='object_link'><a href="#WriteGetObjectResponse-instance_method" title="s3.Client.WriteGetObjectResponse() (method)">WriteGetObjectResponse</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="WriteGetObjectResponseInput.html" title="s3.WriteGetObjectResponseInput (struct)">WriteGetObjectResponseInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-WriteGetObjectResponseOutput" title="s3 (package)">WriteGetObjectResponseOutput</a></span>, error) 
+    func (c *Client) <strong><span class='object_link'><a href="#WriteGetObjectResponse-instance_method" title="s3.Client.WriteGetObjectResponse() (method)">WriteGetObjectResponse</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="WriteGetObjectResponseInput.html" title="s3.WriteGetObjectResponseInput (struct)">WriteGetObjectResponseInput</a></span>, optFns ...func(*<span class='object_link'><a href="#Options-instance_method" title="s3.Client.Options() (method)">Options</a></span>)) (*<span class='object_link'><a href="../s3.html#type-WriteGetObjectResponseOutput" title="s3 (package)">WriteGetObjectResponseOutput</a></span>, error) 
   
 
   
@@ -8182,9 +8180,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:47 2026 by
+  Generated on Thu Jun 11 07:56:48 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

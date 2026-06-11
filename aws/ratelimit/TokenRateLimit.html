@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws/ratelimit.TokenRateLimit";
@@ -75,9 +75,9 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>TokenRateLimit provides a Token Bucket RateLimiter implementation that limits the overall number of retry attempts that can be made across operation invocations.</p>
-
+    <p>TokenRateLimit provides a Token Bucket RateLimiter implementation
+that limits the overall number of retry attempts that can be made across
+operation invocations.</p>
 
   </div>
 </div>
@@ -127,15 +127,14 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>NewTokenRateLimit returns an TokenRateLimit with default values.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>NewTokenRateLimit returns an TokenRateLimit with default values.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
     <h2>
       Method  Summary
@@ -161,9 +160,7 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddTokens increments the token bucket by a fixed amount.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddTokens increments the token bucket by a fixed amount.</p></div></span>
   
 </li>
 
@@ -186,9 +183,7 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetToken may cause a available pool of retry quota to be decremented.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetToken may cause a available pool of retry quota to be decremented.</p></div></span>
   
 </li>
 
@@ -211,15 +206,14 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Remaining returns the number of remaining tokens in the bucket.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Remaining returns the number of remaining tokens in the bucket.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -233,7 +227,7 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
       <div class="method_details first">
   <h3 class="signature first" id="NewTokenRateLimit-class_method">
   
-    func <strong><span class='object_link'><a href="#NewTokenRateLimit-class_method" title="ratelimit.TokenRateLimit.NewTokenRateLimit() (method)">NewTokenRateLimit</a></span></strong>(tokens uint) *<span class='object_link'><a href="" title="ratelimit.TokenRateLimit (struct)">TokenRateLimit</a></span> 
+    func <strong><span class='object_link'><a href="#NewTokenRateLimit-class_method" title="ratelimit.TokenRateLimit.NewTokenRateLimit() (method)">NewTokenRateLimit</a></span></strong>(tokens uint) *TokenRateLimit 
   
 
   
@@ -241,9 +235,8 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>NewTokenRateLimit returns an TokenRateLimit with default values. Functional options can configure the retry rate limiter.</p>
-
+    <p>NewTokenRateLimit returns an TokenRateLimit with default values.
+Functional options can configure the retry rate limiter.</p>
 
   </div>
 </div>
@@ -285,7 +278,7 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
       <div class="method_details first">
   <h3 class="signature first" id="AddTokens-instance_method">
   
-    func (l *<span class='object_link'><a href="" title="ratelimit.TokenRateLimit (struct)">TokenRateLimit</a></span>) <strong><span class='object_link'><a href="#AddTokens-instance_method" title="ratelimit.TokenRateLimit.AddTokens() (method)">AddTokens</a></span></strong>(v uint) error 
+    func (l *TokenRateLimit) <strong><span class='object_link'><a href="#AddTokens-instance_method" title="ratelimit.TokenRateLimit.AddTokens() (method)">AddTokens</a></span></strong>(v uint) error 
   
 
   
@@ -293,9 +286,7 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddTokens increments the token bucket by a fixed amount.</p>
-
+    <p>AddTokens increments the token bucket by a fixed amount.</p>
 
   </div>
 </div>
@@ -329,7 +320,7 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
       <div class="method_details ">
   <h3 class="signature " id="GetToken-instance_method">
   
-    func (l *<span class='object_link'><a href="" title="ratelimit.TokenRateLimit (struct)">TokenRateLimit</a></span>) <strong><span class='object_link'><a href="#GetToken-instance_method" title="ratelimit.TokenRateLimit.GetToken() (method)">GetToken</a></span></strong>(ctx context.Context, cost uint) (func() error, error) 
+    func (l *TokenRateLimit) <strong><span class='object_link'><a href="#GetToken-instance_method" title="ratelimit.TokenRateLimit.GetToken() (method)">GetToken</a></span></strong>(ctx context.Context, cost uint) (func() error, error) 
   
 
   
@@ -337,9 +328,9 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetToken may cause a available pool of retry quota to be decremented. Will return an error if the decremented value can not be reduced from the retry quota.</p>
-
+    <p>GetToken may cause a available pool of retry quota to be
+decremented. Will return an error if the decremented value can not be
+reduced from the retry quota.</p>
 
   </div>
 </div>
@@ -395,7 +386,7 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
       <div class="method_details ">
   <h3 class="signature " id="Remaining-instance_method">
   
-    func (l *<span class='object_link'><a href="" title="ratelimit.TokenRateLimit (struct)">TokenRateLimit</a></span>) <strong><span class='object_link'><a href="#Remaining-instance_method" title="ratelimit.TokenRateLimit.Remaining() (method)">Remaining</a></span></strong>() uint 
+    func (l *TokenRateLimit) <strong><span class='object_link'><a href="#Remaining-instance_method" title="ratelimit.TokenRateLimit.Remaining() (method)">Remaining</a></span></strong>() uint 
   
 
   
@@ -403,9 +394,7 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Remaining returns the number of remaining tokens in the bucket.</p>
-
+    <p>Remaining returns the number of remaining tokens in the bucket.</p>
 
   </div>
 </div>
@@ -440,9 +429,9 @@ import "../ibm-cos-sdk-go-v2/aws/ratelimit"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:46 2026 by
+  Generated on Thu Jun 11 07:56:47 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

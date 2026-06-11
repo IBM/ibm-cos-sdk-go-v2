@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws/signer/v4";
@@ -75,33 +75,33 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Package v4 implements the AWS signature version 4 algorithm (commonly known as SigV4).</p>
-
-<p>For more information about SigV4, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing AWS API requests</a> in the IAM user guide.</p>
-
-<p>While this implementation CAN work in an external context, it is developed primarily for SDK use and you may encounter fringe behaviors around header canonicalization.</p>
-
-<h1 id="label-Pre-escaping+a+request+URI">Pre-escaping a request URI</h1>
-
-<p>AWS v4 signature validation requires that the canonical string’s URI path component must be the escaped form of the HTTP request’s path.</p>
-
-<p>The Go HTTP client will perform escaping automatically on the HTTP request. This may cause signature validation errors because the request differs from the URI path or query from which the signature was generated.</p>
-
-<p>Because of this, we recommend that you explicitly escape the request when using this signer outside of the SDK to prevent possible signature mismatch. This can be done by setting URL.Opaque on the request. The signer will prefer that value, falling back to the return of URL.EscapedPath if unset.</p>
-
+    <p>Package v4 implements the AWS signature version 4 algorithm (commonly known
+as SigV4).</p>
+<p>For more information about SigV4, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing AWS API requests</a> in the IAM
+user guide.</p>
+<p>While this implementation CAN work in an external context, it is developed
+primarily for SDK use and you may encounter fringe behaviors around header
+canonicalization.</p>
+<h1 id="Pre_escaping_a_request_URI">Pre-escaping a request URI</h1>
+<p>AWS v4 signature validation requires that the canonical string's URI path
+component must be the escaped form of the HTTP request's path.</p>
+<p>The Go HTTP client will perform escaping automatically on the HTTP request.
+This may cause signature validation errors because the request differs from
+the URI path or query from which the signature was generated.</p>
+<p>Because of this, we recommend that you explicitly escape the request when
+using this signer outside of the SDK to prevent possible signature mismatch.
+This can be done by setting URL.Opaque on the request. The signer will
+prefer that value, falling back to the return of URL.EscapedPath if unset.</p>
 <p>When setting URL.Opaque you must do so in the form of:</p>
-
 <pre class="code go"><code class="go"><div class="hljs"><span class="hljs-string">"//<hostname>/<path>"</span>
 
 <span class="hljs-comment">// e.g.</span>
 <span class="hljs-string">"//example.com/some/path"</span>
 </div></code></pre>
-
-<p>The leading “//” and hostname are required or the escaping will not work correctly.</p>
-
-<p>The TestStandaloneSign unit test provides a complete example of using the signer outside of the SDK and pre-escaping the URI path.</p>
-
+<p>The leading &quot;//&quot; and hostname are required or the escaping will not work
+correctly.</p>
+<p>The TestStandaloneSign unit test provides a complete example of using the
+signer outside of the SDK and pre-escaping the URI path.</p>
 
   </div>
 </div>
@@ -121,9 +121,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>Version of signing v4</p>
-
+    <p>Version of signing v4</p>
 
   </div>
 </div>
@@ -173,9 +171,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ID is the middleware name.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ID is the middleware name.</p></div></span>
   
 </li>
 
@@ -198,9 +194,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ID returns the ContentSHA256HeaderMiddleware identifier.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ID returns the ContentSHA256HeaderMiddleware identifier.</p></div></span>
   
 </li>
 
@@ -223,9 +217,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>HashComputationError indicates an error occurred while computing the signing hash.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>HashComputationError indicates an error occurred while computing the signing hash.</p></div></span>
   
 </li>
 
@@ -248,9 +240,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>PresignHTTPRequestMiddleware provides the Finalize middleware for creating a presigned URL for an HTTP request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>PresignHTTPRequestMiddleware provides the Finalize middleware for creating a presigned URL for an HTTP request.</p></div></span>
   
 </li>
 
@@ -273,9 +263,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>PresignHTTPRequestMiddlewareOptions is the options for the PresignHTTPRequestMiddleware middleware.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>PresignHTTPRequestMiddlewareOptions is the options for the PresignHTTPRequestMiddleware middleware.</p></div></span>
   
 </li>
 
@@ -298,9 +286,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>PresignedHTTPRequest provides the URL and signed headers that are included in the presigned URL.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>PresignedHTTPRequest provides the URL and signed headers that are included in the presigned URL.</p></div></span>
   
 </li>
 
@@ -323,9 +309,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SignHTTPRequestMiddleware is a <code>FinalizeMiddleware</code> implementation for SigV4 HTTP Signing.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SignHTTPRequestMiddleware is a <code>FinalizeMiddleware</code> implementation for SigV4 HTTP Signing.</p></div></span>
   
 </li>
 
@@ -348,9 +332,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SignHTTPRequestMiddlewareOptions is the configuration options for [SignHTTPRequestMiddleware].</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SignHTTPRequestMiddlewareOptions is the configuration options for [SignHTTPRequestMiddleware].</p></div></span>
   
 </li>
 
@@ -373,9 +355,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Signer applies AWS v4 signing to given request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Signer applies AWS v4 signing to given request.</p></div></span>
   
 </li>
 
@@ -398,9 +378,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SignerOptions is the SigV4 Signer options.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SignerOptions is the SigV4 Signer options.</p></div></span>
   
 </li>
 
@@ -423,9 +401,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SigningError indicates an error condition occurred while performing SigV4 signing.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SigningError indicates an error condition occurred while performing SigV4 signing.</p></div></span>
   
 </li>
 
@@ -448,9 +424,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>StreamSigner implements Signature Version 4 (SigV4) signing of event stream encoded payloads.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>StreamSigner implements Signature Version 4 (SigV4) signing of event stream encoded payloads.</p></div></span>
   
 </li>
 
@@ -473,9 +447,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ID identifies the middleware.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ID identifies the middleware.</p></div></span>
   
 </li>
 
@@ -498,9 +470,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ID returns the unsignedPayload identifier.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ID returns the unsignedPayload identifier.</p></div></span>
   
 </li>
 
@@ -533,9 +503,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>EventStreamSigner is an AWS EventStream protocol signer.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>EventStreamSigner is an AWS EventStream protocol signer.</p></div></span>
   
 </li>
 
@@ -558,9 +526,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>HTTPPresigner is an interface to a SigV4 signer that can sign create a presigned URL for a HTTP requests.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>HTTPPresigner is an interface to a SigV4 signer that can sign create a presigned URL for a HTTP requests.</p></div></span>
   
 </li>
 
@@ -583,9 +549,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>HTTPSigner is an interface to a SigV4 signer that can sign HTTP requests.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>HTTPSigner is an interface to a SigV4 signer that can sign HTTP requests.</p></div></span>
   
 </li>
 
@@ -619,9 +583,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddComputePayloadSHA256Middleware adds computePayloadSHA256 to the operation middleware stack.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddComputePayloadSHA256Middleware adds computePayloadSHA256 to the operation middleware stack.</p></div></span>
   
 </li>
 
@@ -644,9 +606,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddContentSHA256HeaderMiddleware adds ContentSHA256Header to the operation middleware stack.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddContentSHA256HeaderMiddleware adds ContentSHA256Header to the operation middleware stack.</p></div></span>
   
 </li>
 
@@ -669,9 +629,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddStreamingEventsPayload adds the streamingEventsPayload middleware to the stack.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddStreamingEventsPayload adds the streamingEventsPayload middleware to the stack.</p></div></span>
   
 </li>
 
@@ -694,9 +652,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddUnsignedPayloadMiddleware adds unsignedPayload to the operation middleware stack.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddUnsignedPayloadMiddleware adds unsignedPayload to the operation middleware stack.</p></div></span>
   
 </li>
 
@@ -719,9 +675,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetPayloadHash retrieves the payload hash to use for signing.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetPayloadHash retrieves the payload hash to use for signing.</p></div></span>
   
 </li>
 
@@ -744,9 +698,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetSignedRequestSignature attempts to extract the signature of the request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetSignedRequestSignature attempts to extract the signature of the request.</p></div></span>
   
 </li>
 
@@ -769,9 +721,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>NewSigner returns a new SigV4 Signer.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>NewSigner returns a new SigV4 Signer.</p></div></span>
   
 </li>
 
@@ -794,9 +744,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>NewStreamSigner returns a new AWS EventStream protocol signer.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>NewStreamSigner returns a new AWS EventStream protocol signer.</p></div></span>
   
 </li>
 
@@ -819,9 +767,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>RemoveComputePayloadSHA256Middleware removes computePayloadSHA256 from the operation middleware stack.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>RemoveComputePayloadSHA256Middleware removes computePayloadSHA256 from the operation middleware stack.</p></div></span>
   
 </li>
 
@@ -844,9 +790,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>RemoveContentSHA256HeaderMiddleware removes contentSHA256Header middleware from the operation middleware stack.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>RemoveContentSHA256HeaderMiddleware removes contentSHA256Header middleware from the operation middleware stack.</p></div></span>
   
 </li>
 
@@ -869,9 +813,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SetPayloadHash sets the payload hash to be used for signing the request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SetPayloadHash sets the payload hash to be used for signing the request.</p></div></span>
   
 </li>
 
@@ -894,9 +836,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SwapComputePayloadSHA256ForUnsignedPayloadMiddleware replaces the ComputePayloadSHA256 middleware with the UnsignedPayload middleware.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SwapComputePayloadSHA256ForUnsignedPayloadMiddleware replaces the ComputePayloadSHA256 middleware with the UnsignedPayload middleware.</p></div></span>
   
 </li>
 
@@ -919,15 +859,14 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>UseDynamicPayloadSigningMiddleware swaps the compute payload sha256 middleware with a resolver middleware that switches between unsigned and signed payload based on TLS state for request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>UseDynamicPayloadSigningMiddleware swaps the compute payload sha256 middleware with a resolver middleware that switches between unsigned and signed payload based on TLS state for request.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -947,9 +886,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>PresignHTTPRequestMiddlewareOptions is the options for the PresignHTTPRequestMiddleware middleware.</p>
-
+    <p>PresignHTTPRequestMiddlewareOptions is the options for the PresignHTTPRequestMiddleware middleware.</p>
 
   </div>
 </div>
@@ -1007,9 +944,8 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>PresignedHTTPRequest provides the URL and signed headers that are included in the presigned URL.</p>
-
+    <p>PresignedHTTPRequest provides the URL and signed headers that are included
+in the presigned URL.</p>
 
   </div>
 </div>
@@ -1067,11 +1003,9 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>SignHTTPRequestMiddlewareOptions is the configuration options for [SignHTTPRequestMiddleware].</p>
-
+    <p>SignHTTPRequestMiddlewareOptions is the configuration options for
+[SignHTTPRequestMiddleware].</p>
 <p>Deprecated: [SignHTTPRequestMiddleware] is deprecated.</p>
-
 
   </div>
 </div>
@@ -1129,9 +1063,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>SignerOptions is the SigV4 Signer options.</p>
-
+    <p>SignerOptions is the SigV4 Signer options.</p>
 
   </div>
 </div>
@@ -1148,9 +1080,10 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
     
   </code></dt>
   <dd>
-    
-<p>Disables the Signer’s moving HTTP header key/value pairs from the HTTP request header to the request’s query string. This is most commonly used with pre-signed requests preventing headers from being added to the request’s query string.</p>
-
+    <p>Disables the Signer's moving HTTP header key/value pairs from the HTTP
+request header to the request's query string. This is most commonly used
+with pre-signed requests preventing headers from being added to the
+request's query string.</p>
     
   </dd>
 
@@ -1160,13 +1093,11 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
     
   </code></dt>
   <dd>
-    
-<p>Disables the automatic escaping of the URI path of the request for the siganture’s canonical string’s path. For services that do not need additional escaping then use this to disable the signer escaping the path.</p>
-
+    <p>Disables the automatic escaping of the URI path of the request for the
+siganture's canonical string's path. For services that do not need additional
+escaping then use this to disable the signer escaping the path.</p>
 <p>S3 is an example of a service that does not need additional escaping.</p>
-
-<p><a href="http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html">docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html</a></p>
-
+<p><a href="http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html">http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html</a></p>
     
   </dd>
 
@@ -1176,9 +1107,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
     
   </code></dt>
   <dd>
-    
-<p>The logger to send log messages to.</p>
-
+    <p>The logger to send log messages to.</p>
     
   </dd>
 
@@ -1188,9 +1117,9 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
     
   </code></dt>
   <dd>
-    
-<p>Enable logging of signed requests. This will enable logging of the canonical request, the string to sign, and for presigning the subsequent presigned URL.</p>
-
+    <p>Enable logging of signed requests.
+This will enable logging of the canonical request, the string to sign, and for presigning the subsequent
+presigned URL.</p>
     
   </dd>
 
@@ -1200,9 +1129,9 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
     
   </code></dt>
   <dd>
-    
-<p>Disables setting the session token on the request as part of signing through X-Amz-Security-Token. This is needed for variations of v4 that present the token elsewhere.</p>
-
+    <p>Disables setting the session token on the request as part of signing
+through X-Amz-Security-Token. This is needed for variations of v4 that
+present the token elsewhere.</p>
     
   </dd>
 
@@ -1231,9 +1160,8 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddComputePayloadSHA256Middleware adds computePayloadSHA256 to the operation middleware stack</p>
-
+    <p>AddComputePayloadSHA256Middleware adds computePayloadSHA256 to the
+operation middleware stack</p>
 
   </div>
 </div>
@@ -1273,9 +1201,8 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddContentSHA256HeaderMiddleware adds ContentSHA256Header to the operation middleware stack</p>
-
+    <p>AddContentSHA256HeaderMiddleware adds ContentSHA256Header to the
+operation middleware stack</p>
 
   </div>
 </div>
@@ -1315,9 +1242,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddStreamingEventsPayload adds the streamingEventsPayload middleware to the stack.</p>
-
+    <p>AddStreamingEventsPayload adds the streamingEventsPayload middleware to the stack.</p>
 
   </div>
 </div>
@@ -1357,9 +1282,8 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddUnsignedPayloadMiddleware adds unsignedPayload to the operation middleware stack</p>
-
+    <p>AddUnsignedPayloadMiddleware adds unsignedPayload to the operation
+middleware stack</p>
 
   </div>
 </div>
@@ -1399,11 +1323,9 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetPayloadHash retrieves the payload hash to use for signing</p>
-
-<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
-
+    <p>GetPayloadHash retrieves the payload hash to use for signing</p>
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues
+to clear all stack values.</p>
 
   </div>
 </div>
@@ -1445,9 +1367,9 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetSignedRequestSignature attempts to extract the signature of the request. Returning an error if the request is unsigned, or unable to extract the signature.</p>
-
+    <p>GetSignedRequestSignature attempts to extract the signature of the request.
+Returning an error if the request is unsigned, or unable to extract the
+signature.</p>
 
   </div>
 </div>
@@ -1527,9 +1449,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>NewSigner returns a new SigV4 Signer</p>
-
+    <p>NewSigner returns a new SigV4 Signer</p>
 
   </div>
 </div>
@@ -1581,9 +1501,7 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>NewStreamSigner returns a new AWS EventStream protocol signer.</p>
-
+    <p>NewStreamSigner returns a new AWS EventStream protocol signer.</p>
 
   </div>
 </div>
@@ -1649,9 +1567,8 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>RemoveComputePayloadSHA256Middleware removes computePayloadSHA256 from the operation middleware stack</p>
-
+    <p>RemoveComputePayloadSHA256Middleware removes computePayloadSHA256 from the
+operation middleware stack</p>
 
   </div>
 </div>
@@ -1693,9 +1610,8 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>RemoveContentSHA256HeaderMiddleware removes contentSHA256Header middleware from the operation middleware stack</p>
-
+    <p>RemoveContentSHA256HeaderMiddleware removes contentSHA256Header middleware
+from the operation middleware stack</p>
 
   </div>
 </div>
@@ -1737,11 +1653,9 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>SetPayloadHash sets the payload hash to be used for signing the request</p>
-
-<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues to clear all stack values.</p>
-
+    <p>SetPayloadHash sets the payload hash to be used for signing the request</p>
+<p>Scoped to stack values. Use github.com/aws/smithy-go/middleware#ClearStackValues
+to clear all stack values.</p>
 
   </div>
 </div>
@@ -1781,11 +1695,10 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>SwapComputePayloadSHA256ForUnsignedPayloadMiddleware replaces the ComputePayloadSHA256 middleware with the UnsignedPayload middleware.</p>
-
-<p>Use this to disable computing the Payload SHA256 checksum and instead use UNSIGNED-PAYLOAD for the SHA256 value.</p>
-
+    <p>SwapComputePayloadSHA256ForUnsignedPayloadMiddleware replaces the
+ComputePayloadSHA256 middleware with the UnsignedPayload middleware.</p>
+<p>Use this to disable computing the Payload SHA256 checksum and instead use
+UNSIGNED-PAYLOAD for the SHA256 value.</p>
 
   </div>
 </div>
@@ -1827,11 +1740,13 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>UseDynamicPayloadSigningMiddleware swaps the compute payload sha256 middleware with a resolver middleware that switches between unsigned and signed payload based on TLS state for request. This middleware should not be used for AWS APIs that do not support unsigned payload signing auth. By default, SDK uses this middleware for known AWS APIs that support such TLS based auth selection .</p>
-
-<p>Usage example - S3 PutObject API allows unsigned payload signing auth usage when TLS is enabled, and uses this middleware to dynamically switch between unsigned and signed payload based on TLS state for request.</p>
-
+    <p>UseDynamicPayloadSigningMiddleware swaps the compute payload sha256 middleware with a resolver middleware that
+switches between unsigned and signed payload based on TLS state for request.
+This middleware should not be used for AWS APIs that do not support unsigned payload signing auth.
+By default, SDK uses this middleware for known AWS APIs that support such TLS based auth selection .</p>
+<p>Usage example -
+S3 PutObject API allows unsigned payload signing auth usage when TLS is enabled, and uses this middleware to
+dynamically switch between unsigned and signed payload based on TLS state for request.</p>
 
   </div>
 </div>
@@ -1868,9 +1783,9 @@ import "../ibm-cos-sdk-go-v2/aws/signer/v4"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:35 2026 by
+  Generated on Thu Jun 11 07:56:43 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

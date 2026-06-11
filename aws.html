@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws";
@@ -75,9 +75,7 @@ import "../ibm-cos-sdk-go-v2/aws"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Package aws provides core functionality for making requests to AWS services.</p>
-
+    <p>Package aws provides core functionality for making requests to AWS services.</p>
 
   </div>
 </div>
@@ -113,9 +111,9 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>EndpointDiscoveryUnset represents EndpointDiscoveryEnableState is unset. Users do not need to use this value explicitly. The behavior for unset is the same as for EndpointDiscoveryAuto.</p>
-
+    <p>EndpointDiscoveryUnset represents EndpointDiscoveryEnableState is unset.
+Users do not need to use this value explicitly. The behavior for unset
+is the same as for EndpointDiscoveryAuto.</p>
 
   </div>
 </div>
@@ -148,9 +146,8 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>RetryModeStandard model provides rate limited retry attempts with exponential backoff delay.</p>
-
+    <p>RetryModeStandard model provides rate limited retry attempts with
+exponential backoff delay.</p>
 
   </div>
 </div>
@@ -171,11 +168,10 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>RetryModeAdaptive model provides attempt send rate limiting on throttle responses in addition to standard mode’s retry rate limiting.</p>
-
-<p>Adaptive retry mode is experimental and is subject to change in the future.</p>
-
+    <p>RetryModeAdaptive model provides attempt send rate limiting on throttle
+responses in addition to standard mode's retry rate limiting.</p>
+<p>Adaptive retry mode is experimental and is subject to change in the
+future.</p>
 
   </div>
 </div>
@@ -196,9 +192,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>SDKName is the name of this AWS SDK</p>
-
+    <p>SDKName is the name of this AWS SDK</p>
 
   </div>
 </div>
@@ -219,9 +213,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>SDKVersion is the version of this SDK</p>
-
+    <p>SDKVersion is the version of this SDK</p>
 
   </div>
 </div>
@@ -242,9 +234,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>RequestChecksumCalculationUnset is the unset value for RequestChecksumCalculation</p>
-
+    <p>RequestChecksumCalculationUnset is the unset value for RequestChecksumCalculation</p>
 
   </div>
 </div>
@@ -265,9 +255,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>ResponseChecksumValidationUnset is the unset value for ResponseChecksumValidation</p>
-
+    <p>ResponseChecksumValidationUnset is the unset value for ResponseChecksumValidation</p>
 
   </div>
 </div>
@@ -288,9 +276,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>DualStackEndpointStateUnset is the default value behavior for dual-stack endpoint resolution.</p>
-
+    <p>DualStackEndpointStateUnset is the default value behavior for dual-stack endpoint resolution.</p>
 
   </div>
 </div>
@@ -311,9 +297,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>FIPSEndpointStateUnset is the default value behavior for FIPS endpoint resolution.</p>
-
+    <p>FIPSEndpointStateUnset is the default value behavior for FIPS endpoint resolution.</p>
 
   </div>
 </div>
@@ -334,9 +318,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>EndpointSourceServiceMetadata denotes service modeled endpoint metadata is used as Endpoint Source.</p>
-
+    <p>EndpointSourceServiceMetadata denotes service modeled endpoint metadata is used as Endpoint Source.</p>
 
   </div>
 </div>
@@ -357,9 +339,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>CredentialSourceUndefined is the sentinel zero value</p>
-
+    <p>CredentialSourceUndefined is the sentinel zero value</p>
 
   </div>
 </div>
@@ -380,11 +360,15 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>DefaultsModeAuto is an experimental mode that builds on the standard mode. The SDK will attempt to discover the execution environment to determine the appropriate settings automatically.</p>
-
-<p>Note that the auto detection is heuristics-based and does not guarantee 100% accuracy. STANDARD mode will be used if the execution environment cannot be determined. The auto detection might query EC2 Instance Metadata service (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html</a>), which might introduce latency. Therefore we recommend choosing an explicit defaults_mode instead if startup latency is critical to your application</p>
-
+    <p>DefaultsModeAuto is an experimental mode that builds on the standard mode.
+The SDK will attempt to discover the execution environment to determine the
+appropriate settings automatically.</p>
+<p>Note that the auto detection is heuristics-based and does not guarantee 100%
+accuracy. STANDARD mode will be used if the execution environment cannot
+be determined. The auto detection might query EC2 Instance Metadata service
+(<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html</a>),
+which might introduce latency. Therefore we recommend choosing an explicit
+defaults_mode instead if startup latency is critical to your application</p>
 
   </div>
 </div>
@@ -405,11 +389,11 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>DefaultsModeCrossRegion builds on the standard mode and includes optimization tailored for applications which call AWS services in a different region</p>
-
-<p>Note that the default values vended from this mode might change as best practices may evolve. As a result, it is encouraged to perform tests when upgrading the SDK</p>
-
+    <p>DefaultsModeCrossRegion builds on the standard mode and includes optimization
+tailored for applications which call AWS services in a different region</p>
+<p>Note that the default values vended from this mode might change as best practices
+may evolve. As a result, it is encouraged to perform tests when upgrading
+the SDK</p>
 
   </div>
 </div>
@@ -430,11 +414,12 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>DefaultsModeInRegion builds on the standard mode and includes optimization tailored for applications which call AWS services from within the same AWS region</p>
-
-<p>Note that the default values vended from this mode might change as best practices may evolve. As a result, it is encouraged to perform tests when upgrading the SDK</p>
-
+    <p>DefaultsModeInRegion builds on the standard mode and includes optimization
+tailored for applications which call AWS services from within the same AWS
+region</p>
+<p>Note that the default values vended from this mode might change as best practices
+may evolve. As a result, it is encouraged to perform tests when upgrading
+the SDK</p>
 
   </div>
 </div>
@@ -455,9 +440,8 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>DefaultsModeLegacy provides default settings that vary per SDK and were used prior to establishment of defaults_mode</p>
-
+    <p>DefaultsModeLegacy provides default settings that vary per SDK and were used
+prior to establishment of defaults_mode</p>
 
   </div>
 </div>
@@ -478,11 +462,11 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>DefaultsModeMobile builds on the standard mode and includes optimization tailored for mobile applications</p>
-
-<p>Note that the default values vended from this mode might change as best practices may evolve. As a result, it is encouraged to perform tests when upgrading the SDK</p>
-
+    <p>DefaultsModeMobile builds on the standard mode and includes optimization
+tailored for mobile applications</p>
+<p>Note that the default values vended from this mode might change as best practices
+may evolve. As a result, it is encouraged to perform tests when upgrading
+the SDK</p>
 
   </div>
 </div>
@@ -503,11 +487,11 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>DefaultsModeStandard provides the latest recommended default values that should be safe to run in most scenarios</p>
-
-<p>Note that the default values vended from this mode might change as best practices may evolve. As a result, it is encouraged to perform tests when upgrading the SDK</p>
-
+    <p>DefaultsModeStandard provides the latest recommended default values that
+should be safe to run in most scenarios</p>
+<p>Note that the default values vended from this mode might change as best practices
+may evolve. As a result, it is encouraged to perform tests when upgrading
+the SDK</p>
 
   </div>
 </div>
@@ -542,9 +526,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>AccountIDEndpointModeUnset indicates the AWS account ID will not be used for endpoint routing</p>
-
+    <p>AccountIDEndpointModeUnset indicates the AWS account ID will not be used for endpoint routing</p>
 
   </div>
 </div>
@@ -565,9 +547,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>AccountIDEndpointModePreferred indicates the AWS account ID will be used for endpoint routing if present</p>
-
+    <p>AccountIDEndpointModePreferred indicates the AWS account ID will be used for endpoint routing if present</p>
 
   </div>
 </div>
@@ -588,9 +568,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>AccountIDEndpointModeRequired indicates an error will be returned if the AWS account ID is not resolved from identity</p>
-
+    <p>AccountIDEndpointModeRequired indicates an error will be returned if the AWS account ID is not resolved from identity</p>
 
   </div>
 </div>
@@ -611,9 +589,7 @@ import "../ibm-cos-sdk-go-v2/aws"
           </div>
             <div class="docstring">
   <div class="discussion">
-    
-<p>AccountIDEndpointModeDisabled indicates the AWS account ID will be ignored during endpoint routing</p>
-
+    <p>AccountIDEndpointModeDisabled indicates the AWS account ID will be ignored during endpoint routing</p>
 
   </div>
 </div>
@@ -663,9 +639,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>IsSigning returns whether the Signing logging mode bit is set.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>IsSigning returns whether the Signing logging mode bit is set.</p></div></span>
   
 </li>
 
@@ -688,9 +662,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>A Config provides service configuration for service clients.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>A Config provides service configuration for service clients.</p></div></span>
   
 </li>
 
@@ -713,9 +685,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>A Credentials is the AWS credentials value for individual credential fields.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>A Credentials is the AWS credentials value for individual credential fields.</p></div></span>
   
 </li>
 
@@ -738,9 +708,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>CredentialsCache provides caching and concurrency safe credentials retrieval via the provider’s retrieve method.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CredentialsCache provides caching and concurrency safe credentials retrieval via the provider's retrieve method.</p></div></span>
   
 </li>
 
@@ -763,9 +731,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>CredentialsCacheOptions are the options.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CredentialsCacheOptions are the options.</p></div></span>
   
 </li>
 
@@ -788,9 +754,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Retrieve delegates to the function value the CredentialsProviderFunc wraps.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Retrieve delegates to the function value the CredentialsProviderFunc wraps.</p></div></span>
   
 </li>
 
@@ -813,9 +777,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SetFromString sets the DefaultsMode value to one of the pre-defined constants that matches the provided string when compared using EqualFold.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SetFromString sets the DefaultsMode value to one of the pre-defined constants that matches the provided string when compared using EqualFold.</p></div></span>
   
 </li>
 
@@ -838,9 +800,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Endpoint represents the endpoint a service client should make API operation calls to.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Endpoint represents the endpoint a service client should make API operation calls to.</p></div></span>
   
 </li>
 
@@ -863,9 +823,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>EndpointNotFoundError is a sentinel error to indicate that the EndpointResolver implementation was unable to resolve an endpoint for the given service and region.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>EndpointNotFoundError is a sentinel error to indicate that the EndpointResolver implementation was unable to resolve an endpoint for the given service and region.</p></div></span>
   
 </li>
 
@@ -888,9 +846,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ResolveEndpoint calls the wrapped function and returns the results.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ResolveEndpoint calls the wrapped function and returns the results.</p></div></span>
   
 </li>
 
@@ -913,9 +869,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ResolveEndpoint calls the wrapped function and returns the results.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ResolveEndpoint calls the wrapped function and returns the results.</p></div></span>
   
 </li>
 
@@ -938,9 +892,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>RequestCanceledError is the error that will be returned by an API request that was canceled.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>RequestCanceledError is the error that will be returned by an API request that was canceled.</p></div></span>
   
 </li>
 
@@ -986,9 +938,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>RuntimeEnvironment is a collection of values that are determined at runtime based on the environment that the SDK is executing in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>RuntimeEnvironment is a collection of values that are determined at runtime based on the environment that the SDK is executing in.</p></div></span>
   
 </li>
 
@@ -1044,9 +994,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AdjustExpiresByCredentialsCacheStrategy is an interface for CredentialCache to allow CredentialsProvider to intercept adjustments to Credentials expiry based on expectations and use cases of CredentialsProvider.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AdjustExpiresByCredentialsCacheStrategy is an interface for CredentialCache to allow CredentialsProvider to intercept adjustments to Credentials expiry based on expectations and use cases of CredentialsProvider.</p></div></span>
   
 </li>
 
@@ -1069,9 +1017,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>CredentialProviderSource allows any credential provider to track all providers where a credential provider were sourced.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CredentialProviderSource allows any credential provider to track all providers where a credential provider were sourced.</p></div></span>
   
 </li>
 
@@ -1094,9 +1040,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>A CredentialsProvider is the interface for any component which will provide credentials Credentials.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>A CredentialsProvider is the interface for any component which will provide credentials Credentials.</p></div></span>
   
 </li>
 
@@ -1119,9 +1063,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>EndpointResolver is an endpoint resolver that can be used to provide or override an endpoint for the given service and region.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>EndpointResolver is an endpoint resolver that can be used to provide or override an endpoint for the given service and region.</p></div></span>
   
 </li>
 
@@ -1144,9 +1086,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>EndpointResolverWithOptions is an endpoint resolver that can be used to provide or override an endpoint for the given service, region, and the service client’s EndpointOptions.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>EndpointResolverWithOptions is an endpoint resolver that can be used to provide or override an endpoint for the given service, region, and the service client's EndpointOptions.</p></div></span>
   
 </li>
 
@@ -1169,9 +1109,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>HTTPClient provides the interface to provide custom HTTPClients.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>HTTPClient provides the interface to provide custom HTTPClients.</p></div></span>
   
 </li>
 
@@ -1194,9 +1132,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>HandleFailRefreshCredentialsCacheStrategy is an interface for CredentialsCache to allow CredentialsProvider how failed to refresh credentials is handled.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>HandleFailRefreshCredentialsCacheStrategy is an interface for CredentialsCache to allow CredentialsProvider  how failed to refresh credentials is handled.</p></div></span>
   
 </li>
 
@@ -1219,9 +1155,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>RetryerV2 is an interface to determine if a given error from an attempt should be retried, and if so what backoff delay to apply.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>RetryerV2 is an interface to determine if a given error from an attempt should be retried, and if so what backoff delay to apply.</p></div></span>
   
 </li>
 
@@ -1255,9 +1189,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Bool returns a pointer value for the bool value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Bool returns a pointer value for the bool value passed in.</p></div></span>
   
 </li>
 
@@ -1280,9 +1212,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>BoolMap returns a map of bool pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>BoolMap returns a map of bool pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1305,9 +1235,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>BoolSlice returns a slice of bool pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>BoolSlice returns a slice of bool pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1330,9 +1258,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>BoolTernary returns a true or false Ternary value for the bool provided.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>BoolTernary returns a true or false Ternary value for the bool provided.</p></div></span>
   
 </li>
 
@@ -1355,9 +1281,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Byte returns a pointer value for the byte value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Byte returns a pointer value for the byte value passed in.</p></div></span>
   
 </li>
 
@@ -1380,9 +1304,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ByteMap returns a map of byte pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ByteMap returns a map of byte pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1405,9 +1327,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ByteSlice returns a slice of byte pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ByteSlice returns a slice of byte pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1430,9 +1350,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Duration returns a pointer value for the time.Duration value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Duration returns a pointer value for the time.Duration value passed in.</p></div></span>
   
 </li>
 
@@ -1455,9 +1373,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>DurationMap returns a map of time.Duration pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>DurationMap returns a map of time.Duration pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1480,9 +1396,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>DurationSlice returns a slice of time.Duration pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>DurationSlice returns a slice of time.Duration pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1505,9 +1419,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Float32 returns a pointer value for the float32 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Float32 returns a pointer value for the float32 value passed in.</p></div></span>
   
 </li>
 
@@ -1530,9 +1442,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Float32Map returns a map of float32 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Float32Map returns a map of float32 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1555,9 +1465,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Float32Slice returns a slice of float32 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Float32Slice returns a slice of float32 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1580,9 +1488,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Float64 returns a pointer value for the float64 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Float64 returns a pointer value for the float64 value passed in.</p></div></span>
   
 </li>
 
@@ -1605,9 +1511,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Float64Map returns a map of float64 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Float64Map returns a map of float64 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1630,9 +1534,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Float64Slice returns a slice of float64 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Float64Slice returns a slice of float64 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1655,9 +1557,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetDisableHTTPS takes a service’s EndpointResolverOptions and returns the DisableHTTPS value.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetDisableHTTPS takes a service's EndpointResolverOptions and returns the DisableHTTPS value.</p></div></span>
   
 </li>
 
@@ -1680,9 +1580,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetResolvedRegion takes a service’s EndpointResolverOptions and returns the ResolvedRegion value.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetResolvedRegion takes a service's EndpointResolverOptions and returns the ResolvedRegion value.</p></div></span>
   
 </li>
 
@@ -1705,9 +1603,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetUseDualStackEndpoint takes a service’s EndpointResolverOptions and returns the UseDualStackEndpoint value.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetUseDualStackEndpoint takes a service's EndpointResolverOptions and returns the UseDualStackEndpoint value.</p></div></span>
   
 </li>
 
@@ -1730,9 +1626,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>GetUseFIPSEndpoint takes a service’s EndpointResolverOptions and returns the UseDualStackEndpoint value.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>GetUseFIPSEndpoint takes a service's EndpointResolverOptions and returns the UseDualStackEndpoint value.</p></div></span>
   
 </li>
 
@@ -1755,9 +1649,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int returns a pointer value for the int value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int returns a pointer value for the int value passed in.</p></div></span>
   
 </li>
 
@@ -1780,9 +1672,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int16 returns a pointer value for the int16 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int16 returns a pointer value for the int16 value passed in.</p></div></span>
   
 </li>
 
@@ -1805,9 +1695,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int16Map returns a map of int16 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int16Map returns a map of int16 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1830,9 +1718,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int16Slice returns a slice of int16 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int16Slice returns a slice of int16 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1855,9 +1741,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int32 returns a pointer value for the int32 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int32 returns a pointer value for the int32 value passed in.</p></div></span>
   
 </li>
 
@@ -1880,9 +1764,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int32Map returns a map of int32 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int32Map returns a map of int32 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1905,9 +1787,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int32Slice returns a slice of int32 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int32Slice returns a slice of int32 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1930,9 +1810,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int64 returns a pointer value for the int64 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int64 returns a pointer value for the int64 value passed in.</p></div></span>
   
 </li>
 
@@ -1955,9 +1833,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int64Map returns a map of int64 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int64Map returns a map of int64 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -1980,9 +1856,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int64Slice returns a slice of int64 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int64Slice returns a slice of int64 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2005,9 +1879,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int8 returns a pointer value for the int8 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int8 returns a pointer value for the int8 value passed in.</p></div></span>
   
 </li>
 
@@ -2030,9 +1902,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int8Map returns a map of int8 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int8Map returns a map of int8 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2055,9 +1925,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Int8Slice returns a slice of int8 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Int8Slice returns a slice of int8 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2080,9 +1948,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>IntMap returns a map of int pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>IntMap returns a map of int pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2105,9 +1971,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>IntSlice returns a slice of int pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>IntSlice returns a slice of int pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2130,9 +1994,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>IsCredentialsProvider returns whether the target CredentialProvider is the same type as provider when comparing the implementation type.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>IsCredentialsProvider returns whether the target CredentialProvider is the same type as provider when comparing the implementation type.</p></div></span>
   
 </li>
 
@@ -2155,9 +2017,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>NewCredentialsCache returns a CredentialsCache that wraps provider.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>NewCredentialsCache returns a CredentialsCache that wraps provider.</p></div></span>
   
 </li>
 
@@ -2180,9 +2040,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ParseRetryMode attempts to parse a RetryMode from the given string.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ParseRetryMode attempts to parse a RetryMode from the given string.</p></div></span>
   
 </li>
 
@@ -2205,9 +2063,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>String returns a pointer value for the string value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>String returns a pointer value for the string value passed in.</p></div></span>
   
 </li>
 
@@ -2230,9 +2086,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>StringMap returns a map of string pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>StringMap returns a map of string pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2255,9 +2109,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>StringSlice returns a slice of string pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>StringSlice returns a slice of string pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2280,9 +2132,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Time returns a pointer value for the time.Time value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Time returns a pointer value for the time.Time value passed in.</p></div></span>
   
 </li>
 
@@ -2305,9 +2155,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>TimeMap returns a map of time.Time pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>TimeMap returns a map of time.Time pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2330,9 +2178,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>TimeSlice returns a slice of time.Time pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>TimeSlice returns a slice of time.Time pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -2355,9 +2201,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToBool returns bool value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToBool returns bool value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2380,9 +2224,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToBoolMap returns a map of bool values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToBoolMap returns a map of bool values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2405,9 +2247,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToBoolSlice returns a slice of bool values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToBoolSlice returns a slice of bool values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2430,9 +2270,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToByte returns byte value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToByte returns byte value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2455,9 +2293,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToByteMap returns a map of byte values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToByteMap returns a map of byte values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2480,9 +2316,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToByteSlice returns a slice of byte values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToByteSlice returns a slice of byte values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2505,9 +2339,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToDuration returns time.Duration value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToDuration returns time.Duration value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2530,9 +2362,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToDurationMap returns a map of time.Duration values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToDurationMap returns a map of time.Duration values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2555,9 +2385,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToDurationSlice returns a slice of time.Duration values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToDurationSlice returns a slice of time.Duration values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2580,9 +2408,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToFloat32 returns float32 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToFloat32 returns float32 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2605,9 +2431,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToFloat32Map returns a map of float32 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToFloat32Map returns a map of float32 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2630,9 +2454,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToFloat32Slice returns a slice of float32 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToFloat32Slice returns a slice of float32 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2655,9 +2477,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToFloat64 returns float64 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToFloat64 returns float64 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2680,9 +2500,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToFloat64Map returns a map of float64 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToFloat64Map returns a map of float64 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2705,9 +2523,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToFloat64Slice returns a slice of float64 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToFloat64Slice returns a slice of float64 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2730,9 +2546,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt returns int value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt returns int value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2755,9 +2569,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt16 returns int16 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt16 returns int16 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2780,9 +2592,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt16Map returns a map of int16 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt16Map returns a map of int16 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2805,9 +2615,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt16Slice returns a slice of int16 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt16Slice returns a slice of int16 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2830,9 +2638,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt32 returns int32 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt32 returns int32 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2855,9 +2661,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt32Map returns a map of int32 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt32Map returns a map of int32 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2880,9 +2684,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt32Slice returns a slice of int32 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt32Slice returns a slice of int32 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2905,9 +2707,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt64 returns int64 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt64 returns int64 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2930,9 +2730,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt64Map returns a map of int64 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt64Map returns a map of int64 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2955,9 +2753,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt64Slice returns a slice of int64 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt64Slice returns a slice of int64 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -2980,9 +2776,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt8 returns int8 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt8 returns int8 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3005,9 +2799,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt8Map returns a map of int8 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt8Map returns a map of int8 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3030,9 +2822,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToInt8Slice returns a slice of int8 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToInt8Slice returns a slice of int8 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3055,9 +2845,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToIntMap returns a map of int values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToIntMap returns a map of int values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3080,9 +2868,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToIntSlice returns a slice of int values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToIntSlice returns a slice of int values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3105,9 +2891,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToString returns string value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToString returns string value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3130,9 +2914,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToStringMap returns a map of string values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToStringMap returns a map of string values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3155,9 +2937,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToStringSlice returns a slice of string values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToStringSlice returns a slice of string values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3180,9 +2960,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToTime returns time.Time value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToTime returns time.Time value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3205,9 +2983,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToTimeMap returns a map of time.Time values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToTimeMap returns a map of time.Time values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3230,9 +3006,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToTimeSlice returns a slice of time.Time values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToTimeSlice returns a slice of time.Time values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3255,9 +3029,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint returns uint value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint returns uint value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3280,9 +3052,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint16 returns uint16 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint16 returns uint16 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3305,9 +3075,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint16Map returns a map of uint16 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint16Map returns a map of uint16 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3330,9 +3098,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint16Slice returns a slice of uint16 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint16Slice returns a slice of uint16 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3355,9 +3121,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint32 returns uint32 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint32 returns uint32 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3380,9 +3144,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint32Map returns a map of uint32 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint32Map returns a map of uint32 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3405,9 +3167,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint32Slice returns a slice of uint32 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint32Slice returns a slice of uint32 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3430,9 +3190,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint64 returns uint64 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint64 returns uint64 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3455,9 +3213,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint64Map returns a map of uint64 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint64Map returns a map of uint64 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3480,9 +3236,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint64Slice returns a slice of uint64 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint64Slice returns a slice of uint64 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3505,9 +3259,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint8 returns uint8 value dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint8 returns uint8 value dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3530,9 +3282,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint8Map returns a map of uint8 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint8Map returns a map of uint8 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3555,9 +3305,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUint8Slice returns a slice of uint8 values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUint8Slice returns a slice of uint8 values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3580,9 +3328,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUintMap returns a map of uint values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUintMap returns a map of uint values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3605,9 +3351,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ToUintSlice returns a slice of uint values, that are dereferenced if the passed in pointer was not nil.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ToUintSlice returns a slice of uint values, that are dereferenced if the passed in pointer was not nil.</p></div></span>
   
 </li>
 
@@ -3630,9 +3374,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint returns a pointer value for the uint value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint returns a pointer value for the uint value passed in.</p></div></span>
   
 </li>
 
@@ -3655,9 +3397,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint16 returns a pointer value for the uint16 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint16 returns a pointer value for the uint16 value passed in.</p></div></span>
   
 </li>
 
@@ -3680,9 +3420,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint16Map returns a map of uint16 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint16Map returns a map of uint16 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3705,9 +3443,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint16Slice returns a slice of uint16 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint16Slice returns a slice of uint16 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3730,9 +3466,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint32 returns a pointer value for the uint32 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint32 returns a pointer value for the uint32 value passed in.</p></div></span>
   
 </li>
 
@@ -3755,9 +3489,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint32Map returns a map of uint32 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint32Map returns a map of uint32 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3780,9 +3512,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint32Slice returns a slice of uint32 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint32Slice returns a slice of uint32 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3805,9 +3535,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint64 returns a pointer value for the uint64 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint64 returns a pointer value for the uint64 value passed in.</p></div></span>
   
 </li>
 
@@ -3830,9 +3558,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint64Map returns a map of uint64 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint64Map returns a map of uint64 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3855,9 +3581,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint64Slice returns a slice of uint64 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint64Slice returns a slice of uint64 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3880,9 +3604,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint8 returns a pointer value for the uint8 value passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint8 returns a pointer value for the uint8 value passed in.</p></div></span>
   
 </li>
 
@@ -3905,9 +3627,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint8Map returns a map of uint8 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint8Map returns a map of uint8 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3930,9 +3650,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Uint8Slice returns a slice of uint8 pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Uint8Slice returns a slice of uint8 pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3955,9 +3673,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>UintMap returns a map of uint pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>UintMap returns a map of uint pointers from the values passed in.</p></div></span>
   
 </li>
 
@@ -3980,15 +3696,14 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>UintSlice returns a slice of uint pointers from the values passed in.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>UintSlice returns a slice of uint pointers from the values passed in.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -4008,9 +3723,7 @@ import "../ibm-cos-sdk-go-v2/aws"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>CredentialsCacheOptions are the options</p>
-
+    <p>CredentialsCacheOptions are the options</p>
 
   </div>
 </div>
@@ -4027,13 +3740,14 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>ExpiryWindow will allow the credentials to trigger refreshing prior to the credentials actually expiring. This is beneficial so race conditions with expiring credentials do not cause request to fail unexpectedly due to ExpiredTokenException exceptions.</p>
-
-<p>An ExpiryWindow of 10s would cause calls to IsExpired() to return true 10 seconds before the credentials are actually expired. This can cause an increased number of requests to refresh the credentials to occur.</p>
-
+    <p>ExpiryWindow will allow the credentials to trigger refreshing prior to
+the credentials actually expiring. This is beneficial so race conditions
+with expiring credentials do not cause request to fail unexpectedly
+due to ExpiredTokenException exceptions.</p>
+<p>An ExpiryWindow of 10s would cause calls to IsExpired() to return true
+10 seconds before the credentials are actually expired. This can cause an
+increased number of requests to refresh the credentials to occur.</p>
 <p>If ExpiryWindow is 0 or less it will be ignored.</p>
-
     
   </dd>
 
@@ -4043,13 +3757,16 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>ExpiryWindowJitterFrac provides a mechanism for randomizing the expiration of credentials within the configured ExpiryWindow by a random percentage. Valid values are between 0.0 and 1.0.</p>
-
-<p>As an example if ExpiryWindow is 60 seconds and ExpiryWindowJitterFrac is 0.5 then credentials will be set to expire between 30 to 60 seconds prior to their actual expiration time.</p>
-
-<p>If ExpiryWindow is 0 or less then ExpiryWindowJitterFrac is ignored. If ExpiryWindowJitterFrac is 0 then no randomization will be applied to the window. If ExpiryWindowJitterFrac &lt; 0 the value will be treated as 0. If ExpiryWindowJitterFrac &gt; 1 the value will be treated as 1.</p>
-
+    <p>ExpiryWindowJitterFrac provides a mechanism for randomizing the
+expiration of credentials within the configured ExpiryWindow by a random
+percentage. Valid values are between 0.0 and 1.0.</p>
+<p>As an example if ExpiryWindow is 60 seconds and ExpiryWindowJitterFrac
+is 0.5 then credentials will be set to expire between 30 to 60 seconds
+prior to their actual expiration time.</p>
+<p>If ExpiryWindow is 0 or less then ExpiryWindowJitterFrac is ignored.
+If ExpiryWindowJitterFrac is 0 then no randomization will be applied to the window.
+If ExpiryWindowJitterFrac &lt; 0 the value will be treated as 0.
+If ExpiryWindowJitterFrac &gt; 1 the value will be treated as 1.</p>
     
   </dd>
 
@@ -4070,13 +3787,14 @@ import "../ibm-cos-sdk-go-v2/aws"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>Endpoint represents the endpoint a service client should make API operation calls to.</p>
-
-<p>The SDK will automatically resolve these endpoints per API client using an internal endpoint resolvers. If you’d like to provide custom endpoint resolving behavior you can implement the EndpointResolver interface.</p>
-
-<p>Deprecated: This structure was used with the global [EndpointResolver] interface, which has been deprecated in favor of service-specific endpoint resolution. See the deprecation docs on that interface for more information.</p>
-
+    <p>Endpoint represents the endpoint a service client should make API operation
+calls to.</p>
+<p>The SDK will automatically resolve these endpoints per API client using an
+internal endpoint resolvers. If you'd like to provide custom endpoint
+resolving behavior you can implement the EndpointResolver interface.</p>
+<p>Deprecated: This structure was used with the global [EndpointResolver]
+interface, which has been deprecated in favor of service-specific endpoint
+resolution. See the deprecation docs on that interface for more information.</p>
 
   </div>
 </div>
@@ -4093,9 +3811,8 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>The base URL endpoint the SDK API clients will use to make API calls to. The SDK will suffix URI path and query elements to this endpoint.</p>
-
+    <p>The base URL endpoint the SDK API clients will use to make API calls to.
+The SDK will suffix URI path and query elements to this endpoint.</p>
     
   </dd>
 
@@ -4105,17 +3822,26 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>Specifies if the endpoint’s hostname can be modified by the SDK’s API client.</p>
-
-<p>If the hostname is mutable the SDK API clients may modify any part of the hostname based on the requirements of the API, (e.g. adding, or removing content in the hostname). Such as, Amazon S3 API client prefixing “bucketname” to the hostname, or changing the hostname service name component from “s3.” to “s3-accesspoint.dualstack.” for the dualstack endpoint of an S3 Accesspoint resource.</p>
-
-<p>Care should be taken when providing a custom endpoint for an API. If the endpoint hostname is mutable, and the client cannot modify the endpoint correctly, the operation call will most likely fail, or have undefined behavior.</p>
-
-<p>If hostname is immutable, the SDK API clients will not modify the hostname of the URL. This may cause the API client not to function correctly if the API requires the operation specific hostname values to be used by the client.</p>
-
-<p>This flag does not modify the API client’s behavior if this endpoint will be used instead of Endpoint Discovery, or if the endpoint will be used to perform Endpoint Discovery. That behavior is configured via the API Client’s Options.</p>
-
+    <p>Specifies if the endpoint's hostname can be modified by the SDK's API
+client.</p>
+<p>If the hostname is mutable the SDK API clients may modify any part of
+the hostname based on the requirements of the API, (e.g. adding, or
+removing content in the hostname). Such as, Amazon S3 API client
+prefixing &quot;bucketname&quot; to the hostname, or changing the
+hostname service name component from &quot;s3.&quot; to &quot;s3-accesspoint.dualstack.&quot;
+for the dualstack endpoint of an S3 Accesspoint resource.</p>
+<p>Care should be taken when providing a custom endpoint for an API. If the
+endpoint hostname is mutable, and the client cannot modify the endpoint
+correctly, the operation call will most likely fail, or have undefined
+behavior.</p>
+<p>If hostname is immutable, the SDK API clients will not modify the
+hostname of the URL. This may cause the API client not to function
+correctly if the API requires the operation specific hostname values
+to be used by the client.</p>
+<p>This flag does not modify the API client's behavior if this endpoint
+will be used instead of Endpoint Discovery, or if the endpoint will be
+used to perform Endpoint Discovery. That behavior is configured via the
+API Client's Options.</p>
     
   </dd>
 
@@ -4125,9 +3851,7 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>The AWS partition the endpoint belongs to.</p>
-
+    <p>The AWS partition the endpoint belongs to.</p>
     
   </dd>
 
@@ -4137,9 +3861,8 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>The service name that should be used for signing the requests to the endpoint.</p>
-
+    <p>The service name that should be used for signing the requests to the
+endpoint.</p>
     
   </dd>
 
@@ -4149,9 +3872,7 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>The region that should be used for signing the request to the endpoint.</p>
-
+    <p>The region that should be used for signing the request to the endpoint.</p>
     
   </dd>
 
@@ -4161,9 +3882,8 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>The signing method that should be used for signing the requests to the endpoint.</p>
-
+    <p>The signing method that should be used for signing the requests to the
+endpoint.</p>
     
   </dd>
 
@@ -4173,9 +3893,11 @@ import "../ibm-cos-sdk-go-v2/aws"
     
   </code></dt>
   <dd>
-    
-<p>The source of the Endpoint. By default, this will be EndpointSourceServiceMetadata. When providing a custom endpoint, you should set the source as EndpointSourceCustom. If source is not provided when providing a custom endpoint, the SDK may not perform required host mutations correctly. Source should be used along with HostnameImmutable property as per the usage requirement.</p>
-
+    <p>The source of the Endpoint. By default, this will be EndpointSourceServiceMetadata.
+When providing a custom endpoint, you should set the source as EndpointSourceCustom.
+If source is not provided when providing a custom endpoint, the SDK may not
+perform required host mutations correctly. Source should be used along with
+HostnameImmutable property as per the usage requirement.</p>
     
   </dd>
 
@@ -4217,9 +3939,10 @@ import "../ibm-cos-sdk-go-v2/aws"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>RuntimeEnvironment is a collection of values that are determined at runtime based on the environment that the SDK is executing in. Some of these values may or may not be present based on the executing environment and certain SDK configuration properties that drive whether these values are populated..</p>
-
+    <p>RuntimeEnvironment is a collection of values that are determined at runtime
+based on the environment that the SDK is executing in. Some of these values
+may or may not be present based on the executing environment and certain SDK
+configuration properties that drive whether these values are populated..</p>
 
   </div>
 </div>
@@ -4285,9 +4008,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Bool returns a pointer value for the bool value passed in.</p>
-
+    <p>Bool returns a pointer value for the bool value passed in.</p>
 
   </div>
 </div>
@@ -4327,9 +4048,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>BoolMap returns a map of bool pointers from the values passed in.</p>
-
+    <p>BoolMap returns a map of bool pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4369,9 +4089,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>BoolSlice returns a slice of bool pointers from the values passed in.</p>
-
+    <p>BoolSlice returns a slice of bool pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4411,9 +4130,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>BoolTernary returns a true or false Ternary value for the bool provided.</p>
-
+    <p>BoolTernary returns a true or false Ternary value for the bool provided.</p>
 
   </div>
 </div>
@@ -4459,9 +4176,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Byte returns a pointer value for the byte value passed in.</p>
-
+    <p>Byte returns a pointer value for the byte value passed in.</p>
 
   </div>
 </div>
@@ -4501,9 +4216,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ByteMap returns a map of byte pointers from the values passed in.</p>
-
+    <p>ByteMap returns a map of byte pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4543,9 +4257,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ByteSlice returns a slice of byte pointers from the values passed in.</p>
-
+    <p>ByteSlice returns a slice of byte pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4585,9 +4298,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Duration returns a pointer value for the time.Duration value passed in.</p>
-
+    <p>Duration returns a pointer value for the time.Duration value passed in.</p>
 
   </div>
 </div>
@@ -4627,9 +4338,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>DurationMap returns a map of time.Duration pointers from the values passed in.</p>
-
+    <p>DurationMap returns a map of time.Duration pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4669,9 +4379,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>DurationSlice returns a slice of time.Duration pointers from the values passed in.</p>
-
+    <p>DurationSlice returns a slice of time.Duration pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4711,9 +4420,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Float32 returns a pointer value for the float32 value passed in.</p>
-
+    <p>Float32 returns a pointer value for the float32 value passed in.</p>
 
   </div>
 </div>
@@ -4753,9 +4460,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Float32Map returns a map of float32 pointers from the values passed in.</p>
-
+    <p>Float32Map returns a map of float32 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4795,9 +4501,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Float32Slice returns a slice of float32 pointers from the values passed in.</p>
-
+    <p>Float32Slice returns a slice of float32 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4837,9 +4542,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Float64 returns a pointer value for the float64 value passed in.</p>
-
+    <p>Float64 returns a pointer value for the float64 value passed in.</p>
 
   </div>
 </div>
@@ -4879,9 +4582,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Float64Map returns a map of float64 pointers from the values passed in.</p>
-
+    <p>Float64Map returns a map of float64 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4921,9 +4623,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Float64Slice returns a slice of float64 pointers from the values passed in.</p>
-
+    <p>Float64Slice returns a slice of float64 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -4963,9 +4664,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetDisableHTTPS takes a service’s EndpointResolverOptions and returns the DisableHTTPS value. Returns boolean false if the provided options does not have a method to retrieve the DisableHTTPS.</p>
-
+    <p>GetDisableHTTPS takes a service's EndpointResolverOptions and returns the DisableHTTPS value.
+Returns boolean false if the provided options does not have a method to retrieve the DisableHTTPS.</p>
 
   </div>
 </div>
@@ -5025,9 +4725,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetResolvedRegion takes a service’s EndpointResolverOptions and returns the ResolvedRegion value. Returns boolean false if the provided options does not have a method to retrieve the ResolvedRegion.</p>
-
+    <p>GetResolvedRegion takes a service's EndpointResolverOptions and returns the ResolvedRegion value.
+Returns boolean false if the provided options does not have a method to retrieve the ResolvedRegion.</p>
 
   </div>
 </div>
@@ -5087,9 +4786,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetUseDualStackEndpoint takes a service’s EndpointResolverOptions and returns the UseDualStackEndpoint value. Returns boolean false if the provided options does not have a method to retrieve the DualStackEndpointState.</p>
-
+    <p>GetUseDualStackEndpoint takes a service's EndpointResolverOptions and returns the UseDualStackEndpoint value.
+Returns boolean false if the provided options does not have a method to retrieve the DualStackEndpointState.</p>
 
   </div>
 </div>
@@ -5149,9 +4847,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>GetUseFIPSEndpoint takes a service’s EndpointResolverOptions and returns the UseDualStackEndpoint value. Returns boolean false if the provided options does not have a method to retrieve the DualStackEndpointState.</p>
-
+    <p>GetUseFIPSEndpoint takes a service's EndpointResolverOptions and returns the UseDualStackEndpoint value.
+Returns boolean false if the provided options does not have a method to retrieve the DualStackEndpointState.</p>
 
   </div>
 </div>
@@ -5211,9 +4908,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int returns a pointer value for the int value passed in.</p>
-
+    <p>Int returns a pointer value for the int value passed in.</p>
 
   </div>
 </div>
@@ -5253,9 +4948,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int16 returns a pointer value for the int16 value passed in.</p>
-
+    <p>Int16 returns a pointer value for the int16 value passed in.</p>
 
   </div>
 </div>
@@ -5295,9 +4988,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int16Map returns a map of int16 pointers from the values passed in.</p>
-
+    <p>Int16Map returns a map of int16 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5337,9 +5029,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int16Slice returns a slice of int16 pointers from the values passed in.</p>
-
+    <p>Int16Slice returns a slice of int16 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5379,9 +5070,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int32 returns a pointer value for the int32 value passed in.</p>
-
+    <p>Int32 returns a pointer value for the int32 value passed in.</p>
 
   </div>
 </div>
@@ -5421,9 +5110,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int32Map returns a map of int32 pointers from the values passed in.</p>
-
+    <p>Int32Map returns a map of int32 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5463,9 +5151,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int32Slice returns a slice of int32 pointers from the values passed in.</p>
-
+    <p>Int32Slice returns a slice of int32 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5505,9 +5192,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int64 returns a pointer value for the int64 value passed in.</p>
-
+    <p>Int64 returns a pointer value for the int64 value passed in.</p>
 
   </div>
 </div>
@@ -5547,9 +5232,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int64Map returns a map of int64 pointers from the values passed in.</p>
-
+    <p>Int64Map returns a map of int64 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5589,9 +5273,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int64Slice returns a slice of int64 pointers from the values passed in.</p>
-
+    <p>Int64Slice returns a slice of int64 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5631,9 +5314,7 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int8 returns a pointer value for the int8 value passed in.</p>
-
+    <p>Int8 returns a pointer value for the int8 value passed in.</p>
 
   </div>
 </div>
@@ -5673,9 +5354,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int8Map returns a map of int8 pointers from the values passed in.</p>
-
+    <p>Int8Map returns a map of int8 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5715,9 +5395,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Int8Slice returns a slice of int8 pointers from the values passed in.</p>
-
+    <p>Int8Slice returns a slice of int8 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5757,9 +5436,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>IntMap returns a map of int pointers from the values passed in.</p>
-
+    <p>IntMap returns a map of int pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5799,9 +5477,8 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>IntSlice returns a slice of int pointers from the values passed in.</p>
-
+    <p>IntSlice returns a slice of int pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -5841,19 +5518,15 @@ import "../ibm-cos-sdk-go-v2/aws"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>IsCredentialsProvider returns whether the target CredentialProvider is the same type as provider when comparing the implementation type.</p>
-
-<p>If provider has a method IsCredentialsProvider(CredentialsProvider) bool it will be responsible for validating whether target matches the credential provider type.</p>
-
+    <p>IsCredentialsProvider returns whether the target CredentialProvider is the same type as provider when comparing the
+implementation type.</p>
+<p>If provider has a method IsCredentialsProvider(CredentialsProvider) bool it will be responsible for validating
+whether target matches the credential provider type.</p>
 <p>When comparing the CredentialProvider implementations provider and target for equality, the following rules are used:</p>
-
 <pre class="code go"><code class="go"><div class="hljs">If provider is of <span class="hljs-keyword">type</span> T and target is of <span class="hljs-keyword">type</span> V, <span class="hljs-constant">true</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">type</span> *T is the same as <span class="hljs-keyword">type</span> *V, otherwise <span class="hljs-constant">false</span>
 If provider is of <span class="hljs-keyword">type</span> *T and target is of <span class="hljs-keyword">type</span> V, <span class="hljs-constant">true</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">type</span> *T is the same as <span class="hljs-keyword">type</span> *V, otherwise <span class="hljs-constant">false</span>
 If provider is of <span class="hljs-keyword">type</span> T and target is of <span class="hljs-keyword">type</span> *V, <span class="hljs-constant">true</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">type</span> *T is the same as <span class="hljs-keyword">type</span> *V, otherwise <span class="hljs-constant">false</span>
-If provider is of <span class="hljs-keyword">type</span> *T and target is of <span class="hljs-keyword">type</span> *V,<span class="hljs-constant">true</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">type</span> *T is the same as <span class="hljs-keyword">type</span> *V, otherwise <span class="hljs-constant">false</span>
-</div></code></pre>
-
+If provider is of <span class="hljs-keyword">type</span> *T and target is of <span class="hljs-keyword">type</span> *V,<span class="hljs-constant">true</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">type</span> *T is the same as <span class="hljs-keyword">type</span> *V, otherwise <span class="hljs-constant">false</span></div></code></pre>
 
   </div>
 </div>
@@ -5929,9 +5602,10 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>NewCredentialsCache returns a CredentialsCache that wraps provider. Provider is expected to not be nil. A variadic list of one or more functions can be provided to modify the CredentialsCache configuration. This allows for configuration of credential expiry window and jitter.</p>
-
+    <p>NewCredentialsCache returns a CredentialsCache that wraps provider. Provider
+is expected to not be nil. A variadic list of one or more functions can be
+provided to modify the CredentialsCache configuration. This allows for
+configuration of credential expiry window and jitter.</p>
 
   </div>
 </div>
@@ -6009,9 +5683,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ParseRetryMode attempts to parse a RetryMode from the given string. Returning error if the value is not a known RetryMode.</p>
-
+    <p>ParseRetryMode attempts to parse a RetryMode from the given string.
+Returning error if the value is not a known RetryMode.</p>
 
   </div>
 </div>
@@ -6065,9 +5738,7 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>String returns a pointer value for the string value passed in.</p>
-
+    <p>String returns a pointer value for the string value passed in.</p>
 
   </div>
 </div>
@@ -6107,9 +5778,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>StringMap returns a map of string pointers from the values passed in.</p>
-
+    <p>StringMap returns a map of string pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -6149,9 +5819,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>StringSlice returns a slice of string pointers from the values passed in.</p>
-
+    <p>StringSlice returns a slice of string pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -6191,9 +5860,7 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Time returns a pointer value for the time.Time value passed in.</p>
-
+    <p>Time returns a pointer value for the time.Time value passed in.</p>
 
   </div>
 </div>
@@ -6233,9 +5900,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>TimeMap returns a map of time.Time pointers from the values passed in.</p>
-
+    <p>TimeMap returns a map of time.Time pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -6275,9 +5941,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>TimeSlice returns a slice of time.Time pointers from the values passed in.</p>
-
+    <p>TimeSlice returns a slice of time.Time pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -6317,9 +5982,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToBool returns bool value dereferenced if the passed in pointer was not nil. Returns a bool zero value if the pointer was nil.</p>
-
+    <p>ToBool returns bool value dereferenced if the passed
+in pointer was not nil. Returns a bool zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -6359,9 +6024,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToBoolMap returns a map of bool values, that are dereferenced if the passed in pointer was not nil. The bool zero value is used if the pointer was nil.</p>
-
+    <p>ToBoolMap returns a map of bool values, that are
+dereferenced if the passed in pointer was not nil. The bool
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6401,9 +6066,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToBoolSlice returns a slice of bool values, that are dereferenced if the passed in pointer was not nil. Returns a bool zero value if the pointer was nil.</p>
-
+    <p>ToBoolSlice returns a slice of bool values, that are
+dereferenced if the passed in pointer was not nil. Returns a bool
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6443,9 +6108,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToByte returns byte value dereferenced if the passed in pointer was not nil. Returns a byte zero value if the pointer was nil.</p>
-
+    <p>ToByte returns byte value dereferenced if the passed
+in pointer was not nil. Returns a byte zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -6485,9 +6150,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToByteMap returns a map of byte values, that are dereferenced if the passed in pointer was not nil. The byte zero value is used if the pointer was nil.</p>
-
+    <p>ToByteMap returns a map of byte values, that are
+dereferenced if the passed in pointer was not nil. The byte
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6527,9 +6192,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToByteSlice returns a slice of byte values, that are dereferenced if the passed in pointer was not nil. Returns a byte zero value if the pointer was nil.</p>
-
+    <p>ToByteSlice returns a slice of byte values, that are
+dereferenced if the passed in pointer was not nil. Returns a byte
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6569,9 +6234,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToDuration returns time.Duration value dereferenced if the passed in pointer was not nil. Returns a time.Duration zero value if the pointer was nil.</p>
-
+    <p>ToDuration returns time.Duration value dereferenced if the passed
+in pointer was not nil. Returns a time.Duration zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -6611,9 +6276,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToDurationMap returns a map of time.Duration values, that are dereferenced if the passed in pointer was not nil. The time.Duration zero value is used if the pointer was nil.</p>
-
+    <p>ToDurationMap returns a map of time.Duration values, that are
+dereferenced if the passed in pointer was not nil. The time.Duration
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6653,9 +6318,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToDurationSlice returns a slice of time.Duration values, that are dereferenced if the passed in pointer was not nil. Returns a time.Duration zero value if the pointer was nil.</p>
-
+    <p>ToDurationSlice returns a slice of time.Duration values, that are
+dereferenced if the passed in pointer was not nil. Returns a time.Duration
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6695,9 +6360,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToFloat32 returns float32 value dereferenced if the passed in pointer was not nil. Returns a float32 zero value if the pointer was nil.</p>
-
+    <p>ToFloat32 returns float32 value dereferenced if the passed
+in pointer was not nil. Returns a float32 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -6737,9 +6402,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToFloat32Map returns a map of float32 values, that are dereferenced if the passed in pointer was not nil. The float32 zero value is used if the pointer was nil.</p>
-
+    <p>ToFloat32Map returns a map of float32 values, that are
+dereferenced if the passed in pointer was not nil. The float32
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6779,9 +6444,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToFloat32Slice returns a slice of float32 values, that are dereferenced if the passed in pointer was not nil. Returns a float32 zero value if the pointer was nil.</p>
-
+    <p>ToFloat32Slice returns a slice of float32 values, that are
+dereferenced if the passed in pointer was not nil. Returns a float32
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6821,9 +6486,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToFloat64 returns float64 value dereferenced if the passed in pointer was not nil. Returns a float64 zero value if the pointer was nil.</p>
-
+    <p>ToFloat64 returns float64 value dereferenced if the passed
+in pointer was not nil. Returns a float64 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -6863,9 +6528,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToFloat64Map returns a map of float64 values, that are dereferenced if the passed in pointer was not nil. The float64 zero value is used if the pointer was nil.</p>
-
+    <p>ToFloat64Map returns a map of float64 values, that are
+dereferenced if the passed in pointer was not nil. The float64
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6905,9 +6570,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToFloat64Slice returns a slice of float64 values, that are dereferenced if the passed in pointer was not nil. Returns a float64 zero value if the pointer was nil.</p>
-
+    <p>ToFloat64Slice returns a slice of float64 values, that are
+dereferenced if the passed in pointer was not nil. Returns a float64
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -6947,9 +6612,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt returns int value dereferenced if the passed in pointer was not nil. Returns a int zero value if the pointer was nil.</p>
-
+    <p>ToInt returns int value dereferenced if the passed
+in pointer was not nil. Returns a int zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -6989,9 +6654,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt16 returns int16 value dereferenced if the passed in pointer was not nil. Returns a int16 zero value if the pointer was nil.</p>
-
+    <p>ToInt16 returns int16 value dereferenced if the passed
+in pointer was not nil. Returns a int16 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -7031,9 +6696,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt16Map returns a map of int16 values, that are dereferenced if the passed in pointer was not nil. The int16 zero value is used if the pointer was nil.</p>
-
+    <p>ToInt16Map returns a map of int16 values, that are
+dereferenced if the passed in pointer was not nil. The int16
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7073,9 +6738,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt16Slice returns a slice of int16 values, that are dereferenced if the passed in pointer was not nil. Returns a int16 zero value if the pointer was nil.</p>
-
+    <p>ToInt16Slice returns a slice of int16 values, that are
+dereferenced if the passed in pointer was not nil. Returns a int16
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7115,9 +6780,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt32 returns int32 value dereferenced if the passed in pointer was not nil. Returns a int32 zero value if the pointer was nil.</p>
-
+    <p>ToInt32 returns int32 value dereferenced if the passed
+in pointer was not nil. Returns a int32 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -7157,9 +6822,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt32Map returns a map of int32 values, that are dereferenced if the passed in pointer was not nil. The int32 zero value is used if the pointer was nil.</p>
-
+    <p>ToInt32Map returns a map of int32 values, that are
+dereferenced if the passed in pointer was not nil. The int32
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7199,9 +6864,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt32Slice returns a slice of int32 values, that are dereferenced if the passed in pointer was not nil. Returns a int32 zero value if the pointer was nil.</p>
-
+    <p>ToInt32Slice returns a slice of int32 values, that are
+dereferenced if the passed in pointer was not nil. Returns a int32
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7241,9 +6906,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt64 returns int64 value dereferenced if the passed in pointer was not nil. Returns a int64 zero value if the pointer was nil.</p>
-
+    <p>ToInt64 returns int64 value dereferenced if the passed
+in pointer was not nil. Returns a int64 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -7283,9 +6948,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt64Map returns a map of int64 values, that are dereferenced if the passed in pointer was not nil. The int64 zero value is used if the pointer was nil.</p>
-
+    <p>ToInt64Map returns a map of int64 values, that are
+dereferenced if the passed in pointer was not nil. The int64
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7325,9 +6990,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt64Slice returns a slice of int64 values, that are dereferenced if the passed in pointer was not nil. Returns a int64 zero value if the pointer was nil.</p>
-
+    <p>ToInt64Slice returns a slice of int64 values, that are
+dereferenced if the passed in pointer was not nil. Returns a int64
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7367,9 +7032,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt8 returns int8 value dereferenced if the passed in pointer was not nil. Returns a int8 zero value if the pointer was nil.</p>
-
+    <p>ToInt8 returns int8 value dereferenced if the passed
+in pointer was not nil. Returns a int8 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -7409,9 +7074,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt8Map returns a map of int8 values, that are dereferenced if the passed in pointer was not nil. The int8 zero value is used if the pointer was nil.</p>
-
+    <p>ToInt8Map returns a map of int8 values, that are
+dereferenced if the passed in pointer was not nil. The int8
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7451,9 +7116,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToInt8Slice returns a slice of int8 values, that are dereferenced if the passed in pointer was not nil. Returns a int8 zero value if the pointer was nil.</p>
-
+    <p>ToInt8Slice returns a slice of int8 values, that are
+dereferenced if the passed in pointer was not nil. Returns a int8
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7493,9 +7158,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToIntMap returns a map of int values, that are dereferenced if the passed in pointer was not nil. The int zero value is used if the pointer was nil.</p>
-
+    <p>ToIntMap returns a map of int values, that are
+dereferenced if the passed in pointer was not nil. The int
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7535,9 +7200,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToIntSlice returns a slice of int values, that are dereferenced if the passed in pointer was not nil. Returns a int zero value if the pointer was nil.</p>
-
+    <p>ToIntSlice returns a slice of int values, that are
+dereferenced if the passed in pointer was not nil. Returns a int
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7577,9 +7242,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToString returns string value dereferenced if the passed in pointer was not nil. Returns a string zero value if the pointer was nil.</p>
-
+    <p>ToString returns string value dereferenced if the passed
+in pointer was not nil. Returns a string zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -7619,9 +7284,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToStringMap returns a map of string values, that are dereferenced if the passed in pointer was not nil. The string zero value is used if the pointer was nil.</p>
-
+    <p>ToStringMap returns a map of string values, that are
+dereferenced if the passed in pointer was not nil. The string
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7661,9 +7326,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToStringSlice returns a slice of string values, that are dereferenced if the passed in pointer was not nil. Returns a string zero value if the pointer was nil.</p>
-
+    <p>ToStringSlice returns a slice of string values, that are
+dereferenced if the passed in pointer was not nil. Returns a string
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7703,9 +7368,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToTime returns time.Time value dereferenced if the passed in pointer was not nil. Returns a time.Time zero value if the pointer was nil.</p>
-
+    <p>ToTime returns time.Time value dereferenced if the passed
+in pointer was not nil. Returns a time.Time zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -7745,9 +7410,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToTimeMap returns a map of time.Time values, that are dereferenced if the passed in pointer was not nil. The time.Time zero value is used if the pointer was nil.</p>
-
+    <p>ToTimeMap returns a map of time.Time values, that are
+dereferenced if the passed in pointer was not nil. The time.Time
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7787,9 +7452,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToTimeSlice returns a slice of time.Time values, that are dereferenced if the passed in pointer was not nil. Returns a time.Time zero value if the pointer was nil.</p>
-
+    <p>ToTimeSlice returns a slice of time.Time values, that are
+dereferenced if the passed in pointer was not nil. Returns a time.Time
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7829,9 +7494,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint returns uint value dereferenced if the passed in pointer was not nil. Returns a uint zero value if the pointer was nil.</p>
-
+    <p>ToUint returns uint value dereferenced if the passed
+in pointer was not nil. Returns a uint zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -7871,9 +7536,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint16 returns uint16 value dereferenced if the passed in pointer was not nil. Returns a uint16 zero value if the pointer was nil.</p>
-
+    <p>ToUint16 returns uint16 value dereferenced if the passed
+in pointer was not nil. Returns a uint16 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -7913,9 +7578,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint16Map returns a map of uint16 values, that are dereferenced if the passed in pointer was not nil. The uint16 zero value is used if the pointer was nil.</p>
-
+    <p>ToUint16Map returns a map of uint16 values, that are
+dereferenced if the passed in pointer was not nil. The uint16
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7955,9 +7620,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint16Slice returns a slice of uint16 values, that are dereferenced if the passed in pointer was not nil. Returns a uint16 zero value if the pointer was nil.</p>
-
+    <p>ToUint16Slice returns a slice of uint16 values, that are
+dereferenced if the passed in pointer was not nil. Returns a uint16
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -7997,9 +7662,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint32 returns uint32 value dereferenced if the passed in pointer was not nil. Returns a uint32 zero value if the pointer was nil.</p>
-
+    <p>ToUint32 returns uint32 value dereferenced if the passed
+in pointer was not nil. Returns a uint32 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -8039,9 +7704,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint32Map returns a map of uint32 values, that are dereferenced if the passed in pointer was not nil. The uint32 zero value is used if the pointer was nil.</p>
-
+    <p>ToUint32Map returns a map of uint32 values, that are
+dereferenced if the passed in pointer was not nil. The uint32
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -8081,9 +7746,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint32Slice returns a slice of uint32 values, that are dereferenced if the passed in pointer was not nil. Returns a uint32 zero value if the pointer was nil.</p>
-
+    <p>ToUint32Slice returns a slice of uint32 values, that are
+dereferenced if the passed in pointer was not nil. Returns a uint32
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -8123,9 +7788,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint64 returns uint64 value dereferenced if the passed in pointer was not nil. Returns a uint64 zero value if the pointer was nil.</p>
-
+    <p>ToUint64 returns uint64 value dereferenced if the passed
+in pointer was not nil. Returns a uint64 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -8165,9 +7830,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint64Map returns a map of uint64 values, that are dereferenced if the passed in pointer was not nil. The uint64 zero value is used if the pointer was nil.</p>
-
+    <p>ToUint64Map returns a map of uint64 values, that are
+dereferenced if the passed in pointer was not nil. The uint64
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -8207,9 +7872,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint64Slice returns a slice of uint64 values, that are dereferenced if the passed in pointer was not nil. Returns a uint64 zero value if the pointer was nil.</p>
-
+    <p>ToUint64Slice returns a slice of uint64 values, that are
+dereferenced if the passed in pointer was not nil. Returns a uint64
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -8249,9 +7914,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint8 returns uint8 value dereferenced if the passed in pointer was not nil. Returns a uint8 zero value if the pointer was nil.</p>
-
+    <p>ToUint8 returns uint8 value dereferenced if the passed
+in pointer was not nil. Returns a uint8 zero value if the
+pointer was nil.</p>
 
   </div>
 </div>
@@ -8291,9 +7956,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint8Map returns a map of uint8 values, that are dereferenced if the passed in pointer was not nil. The uint8 zero value is used if the pointer was nil.</p>
-
+    <p>ToUint8Map returns a map of uint8 values, that are
+dereferenced if the passed in pointer was not nil. The uint8
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -8333,9 +7998,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUint8Slice returns a slice of uint8 values, that are dereferenced if the passed in pointer was not nil. Returns a uint8 zero value if the pointer was nil.</p>
-
+    <p>ToUint8Slice returns a slice of uint8 values, that are
+dereferenced if the passed in pointer was not nil. Returns a uint8
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -8375,9 +8040,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUintMap returns a map of uint values, that are dereferenced if the passed in pointer was not nil. The uint zero value is used if the pointer was nil.</p>
-
+    <p>ToUintMap returns a map of uint values, that are
+dereferenced if the passed in pointer was not nil. The uint
+zero value is used if the pointer was nil.</p>
 
   </div>
 </div>
@@ -8417,9 +8082,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ToUintSlice returns a slice of uint values, that are dereferenced if the passed in pointer was not nil. Returns a uint zero value if the pointer was nil.</p>
-
+    <p>ToUintSlice returns a slice of uint values, that are
+dereferenced if the passed in pointer was not nil. Returns a uint
+zero value if the pointer was nil.</p>
 
   </div>
 </div>
@@ -8459,9 +8124,7 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint returns a pointer value for the uint value passed in.</p>
-
+    <p>Uint returns a pointer value for the uint value passed in.</p>
 
   </div>
 </div>
@@ -8501,9 +8164,7 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint16 returns a pointer value for the uint16 value passed in.</p>
-
+    <p>Uint16 returns a pointer value for the uint16 value passed in.</p>
 
   </div>
 </div>
@@ -8543,9 +8204,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint16Map returns a map of uint16 pointers from the values passed in.</p>
-
+    <p>Uint16Map returns a map of uint16 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -8585,9 +8245,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint16Slice returns a slice of uint16 pointers from the values passed in.</p>
-
+    <p>Uint16Slice returns a slice of uint16 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -8627,9 +8286,7 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint32 returns a pointer value for the uint32 value passed in.</p>
-
+    <p>Uint32 returns a pointer value for the uint32 value passed in.</p>
 
   </div>
 </div>
@@ -8669,9 +8326,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint32Map returns a map of uint32 pointers from the values passed in.</p>
-
+    <p>Uint32Map returns a map of uint32 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -8711,9 +8367,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint32Slice returns a slice of uint32 pointers from the values passed in.</p>
-
+    <p>Uint32Slice returns a slice of uint32 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -8753,9 +8408,7 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint64 returns a pointer value for the uint64 value passed in.</p>
-
+    <p>Uint64 returns a pointer value for the uint64 value passed in.</p>
 
   </div>
 </div>
@@ -8795,9 +8448,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint64Map returns a map of uint64 pointers from the values passed in.</p>
-
+    <p>Uint64Map returns a map of uint64 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -8837,9 +8489,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint64Slice returns a slice of uint64 pointers from the values passed in.</p>
-
+    <p>Uint64Slice returns a slice of uint64 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -8879,9 +8530,7 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint8 returns a pointer value for the uint8 value passed in.</p>
-
+    <p>Uint8 returns a pointer value for the uint8 value passed in.</p>
 
   </div>
 </div>
@@ -8921,9 +8570,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint8Map returns a map of uint8 pointers from the values passed in.</p>
-
+    <p>Uint8Map returns a map of uint8 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -8963,9 +8611,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Uint8Slice returns a slice of uint8 pointers from the values passed in.</p>
-
+    <p>Uint8Slice returns a slice of uint8 pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -9005,9 +8652,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>UintMap returns a map of uint pointers from the values passed in.</p>
-
+    <p>UintMap returns a map of uint pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -9047,9 +8693,8 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>UintSlice returns a slice of uint pointers from the values passed in.</p>
-
+    <p>UintSlice returns a slice of uint pointers from the values
+passed in.</p>
 
   </div>
 </div>
@@ -9084,9 +8729,9 @@ If provider is of <span class="hljs-keyword">type</span> *T and target is of <sp
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:34 2026 by
+  Generated on Thu Jun 11 07:56:43 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

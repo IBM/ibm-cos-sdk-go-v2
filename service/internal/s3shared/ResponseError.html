@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/internal/s3shared.ResponseError";
@@ -75,9 +75,8 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>ResponseError provides the HTTP centric error type wrapping the underlying error with the HTTP response value and the deserialized RequestID.</p>
-
+    <p>ResponseError provides the HTTP centric error type wrapping the underlying error
+with the HTTP response value and the deserialized RequestID.</p>
 
   </div>
 </div>
@@ -124,9 +123,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>HostID associated with response error.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>HostID associated with response error.</p></div></span>
   
 </li>
 
@@ -162,9 +159,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>As populates target and returns true if the type of target is a error type that the ResponseError embeds, (e.g.S3 HTTP ResponseError).</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>As populates target and returns true if the type of target is a error type that the ResponseError embeds, (e.g.S3 HTTP ResponseError).</p></div></span>
   
 </li>
 
@@ -187,15 +182,14 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ServiceHostID returns the host id associated with Response Error.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ServiceHostID returns the host id associated with Response Error.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -213,9 +207,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>HostID associated with response error</p>
-
+    <p>HostID associated with response error</p>
 
   </div>
 </div>
@@ -235,7 +227,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
       <div class="method_details first">
   <h3 class="signature first" id="As-instance_method">
   
-    func (e *<span class='object_link'><a href="" title="s3shared.ResponseError (struct)">ResponseError</a></span>) <strong><span class='object_link'><a href="#As-instance_method" title="s3shared.ResponseError.As() (method)">As</a></span></strong>(target interface{}) bool 
+    func (e *ResponseError) <strong><span class='object_link'><a href="#As-instance_method" title="s3shared.ResponseError.As() (method)">As</a></span></strong>(target interface{}) bool 
   
 
   
@@ -243,9 +235,8 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>As populates target and returns true if the type of target is a error type that the ResponseError embeds, (e.g.S3 HTTP ResponseError)</p>
-
+    <p>As populates target and returns true if the type of target is a error type that
+the ResponseError embeds, (e.g.S3 HTTP ResponseError)</p>
 
   </div>
 </div>
@@ -277,7 +268,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
       <div class="method_details ">
   <h3 class="signature " id="ServiceHostID-instance_method">
   
-    func (e *<span class='object_link'><a href="" title="s3shared.ResponseError (struct)">ResponseError</a></span>) <strong><span class='object_link'><a href="#ServiceHostID-instance_method" title="s3shared.ResponseError.ServiceHostID() (method)">ServiceHostID</a></span></strong>() string { return e.HostID }
+    func (e *ResponseError) <strong><span class='object_link'><a href="#ServiceHostID-instance_method" title="s3shared.ResponseError.ServiceHostID() (method)">ServiceHostID</a></span></strong>() string { return e.HostID }
   
 
   
@@ -285,9 +276,7 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ServiceHostID returns the host id associated with Response Error</p>
-
+    <p>ServiceHostID returns the host id associated with Response Error</p>
 
   </div>
 </div>
@@ -332,9 +321,9 @@ import "../ibm-cos-sdk-go-v2/service/internal/s3shared"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:54 2026 by
+  Generated on Thu Jun 11 07:56:51 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

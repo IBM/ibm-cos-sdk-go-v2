@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/kms.EndpointParameters";
@@ -75,9 +75,8 @@ import "../ibm-cos-sdk-go-v2/service/kms"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>EndpointParameters provides the parameters that influence how endpoints are resolved.</p>
-
+    <p>EndpointParameters provides the parameters that influence how endpoints are
+resolved.</p>
 
   </div>
 </div>
@@ -124,9 +123,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Override the endpoint used to send this request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Override the endpoint used to send this request.</p></div></span>
   
 </li>
 
@@ -149,9 +146,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>The AWS region used to dispatch the request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>The AWS region used to dispatch the request.</p></div></span>
   
 </li>
 
@@ -174,9 +169,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>When true, use the dual-stack endpoint.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>When true, use the dual-stack endpoint.</p></div></span>
   
 </li>
 
@@ -199,9 +192,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>When true, send this request to the FIPS-compliant regional endpoint.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>When true, send this request to the FIPS-compliant regional endpoint.</p></div></span>
   
 </li>
 
@@ -236,9 +227,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ValidateRequired validates required parameters are set.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ValidateRequired validates required parameters are set.</p></div></span>
   
 </li>
 
@@ -261,15 +250,14 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>WithDefaults returns a shallow copy of EndpointParameterswith default values applied to members where applicable.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>WithDefaults returns a shallow copy of EndpointParameterswith default values applied to members where applicable.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -286,13 +274,10 @@ import "../ibm-cos-sdk-go-v2/service/kms"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>Override the endpoint used to send this request</p>
-
-<p>Parameter is required.</p>
-
+    <p>Override the endpoint used to send this request</p>
+<p>Parameter is
+required.</p>
 <p>SDK::Endpoint</p>
-
 
   </div>
 </div>
@@ -309,13 +294,10 @@ import "../ibm-cos-sdk-go-v2/service/kms"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>The AWS region used to dispatch the request.</p>
-
-<p>Parameter is required.</p>
-
+    <p>The AWS region used to dispatch the request.</p>
+<p>Parameter is
+required.</p>
 <p>AWS::Region</p>
-
 
   </div>
 </div>
@@ -332,13 +314,11 @@ import "../ibm-cos-sdk-go-v2/service/kms"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.</p>
-
-<p>Defaults to false if no value is provided.</p>
-
+    <p>When true, use the dual-stack endpoint. If the configured endpoint does not
+support dual-stack, dispatching the request MAY return an error.</p>
+<p>Defaults to
+false if no value is provided.</p>
 <p>AWS::UseDualStack</p>
-
 
   </div>
 </div>
@@ -355,13 +335,12 @@ import "../ibm-cos-sdk-go-v2/service/kms"
 </h3>
 <div class="docstring">
   <div class="discussion">
-    
-<p>When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.</p>
-
-<p>Defaults to false if no value is provided.</p>
-
+    <p>When true, send this request to the FIPS-compliant regional endpoint. If the
+configured endpoint does not have a FIPS compliant endpoint, dispatching the
+request will return an error.</p>
+<p>Defaults to false if no value is
+provided.</p>
 <p>AWS::UseFIPS</p>
-
 
   </div>
 </div>
@@ -381,7 +360,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details first">
   <h3 class="signature first" id="ValidateRequired-instance_method">
   
-    func (p <span class='object_link'><a href="" title="kms.EndpointParameters (struct)">EndpointParameters</a></span>) <strong><span class='object_link'><a href="#ValidateRequired-instance_method" title="kms.EndpointParameters.ValidateRequired() (method)">ValidateRequired</a></span></strong>() error 
+    func (p EndpointParameters) <strong><span class='object_link'><a href="#ValidateRequired-instance_method" title="kms.EndpointParameters.ValidateRequired() (method)">ValidateRequired</a></span></strong>() error 
   
 
   
@@ -389,9 +368,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ValidateRequired validates required parameters are set.</p>
-
+    <p>ValidateRequired validates required parameters are set.</p>
 
   </div>
 </div>
@@ -439,7 +416,7 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       <div class="method_details ">
   <h3 class="signature " id="WithDefaults-instance_method">
   
-    func (p <span class='object_link'><a href="" title="kms.EndpointParameters (struct)">EndpointParameters</a></span>) <strong><span class='object_link'><a href="#WithDefaults-instance_method" title="kms.EndpointParameters.WithDefaults() (method)">WithDefaults</a></span></strong>() <span class='object_link'><a href="" title="kms.EndpointParameters (struct)">EndpointParameters</a></span> 
+    func (p EndpointParameters) <strong><span class='object_link'><a href="#WithDefaults-instance_method" title="kms.EndpointParameters.WithDefaults() (method)">WithDefaults</a></span></strong>() EndpointParameters 
   
 
   
@@ -447,9 +424,8 @@ import "../ibm-cos-sdk-go-v2/service/kms"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>WithDefaults returns a shallow copy of EndpointParameterswith default values applied to members where applicable.</p>
-
+    <p>WithDefaults returns a shallow copy of EndpointParameterswith default values
+applied to members where applicable.</p>
 
   </div>
 </div>
@@ -498,9 +474,9 @@ import "../ibm-cos-sdk-go-v2/service/kms"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:47 2026 by
+  Generated on Thu Jun 11 07:56:48 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

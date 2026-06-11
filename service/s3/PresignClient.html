@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/s3.PresignClient";
@@ -75,9 +75,8 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>PresignDeleteLegalHold is used to generate a presigned HTTP Request which contains presigned URL, signed headers and HTTP method used.</p>
-
+    <p>PresignDeleteLegalHold is used to generate a presigned HTTP Request which contains
+presigned URL, signed headers and HTTP method used.</p>
 
   </div>
 </div>
@@ -318,6 +317,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
 
       
     </ul>
+    
   
 
 
@@ -331,7 +331,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details first">
   <h3 class="signature first" id="PresignDeleteBucket-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignDeleteBucket-instance_method" title="s3.PresignClient.PresignDeleteBucket() (method)">PresignDeleteBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketInput.html" title="s3.DeleteBucketInput (struct)">DeleteBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignDeleteBucket-instance_method" title="s3.PresignClient.PresignDeleteBucket() (method)">PresignDeleteBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteBucketInput.html" title="s3.DeleteBucketInput (struct)">DeleteBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
   
 
   
@@ -400,7 +400,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PresignDeleteLegalHold-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignDeleteLegalHold-instance_method" title="s3.PresignClient.PresignDeleteLegalHold() (method)">PresignDeleteLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteLegalHoldInput.html" title="s3.DeleteLegalHoldInput (struct)">DeleteLegalHoldInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignDeleteLegalHold-instance_method" title="s3.PresignClient.PresignDeleteLegalHold() (method)">PresignDeleteLegalHold</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteLegalHoldInput.html" title="s3.DeleteLegalHoldInput (struct)">DeleteLegalHoldInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
   
 
   
@@ -469,7 +469,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PresignDeleteObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignDeleteObject-instance_method" title="s3.PresignClient.PresignDeleteObject() (method)">PresignDeleteObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteObjectInput.html" title="s3.DeleteObjectInput (struct)">DeleteObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignDeleteObject-instance_method" title="s3.PresignClient.PresignDeleteObject() (method)">PresignDeleteObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="DeleteObjectInput.html" title="s3.DeleteObjectInput (struct)">DeleteObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
   
 
   
@@ -538,7 +538,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PresignGetObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignGetObject-instance_method" title="s3.PresignClient.PresignGetObject() (method)">PresignGetObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectInput.html" title="s3.GetObjectInput (struct)">GetObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignGetObject-instance_method" title="s3.PresignClient.PresignGetObject() (method)">PresignGetObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="GetObjectInput.html" title="s3.GetObjectInput (struct)">GetObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
   
 
   
@@ -607,7 +607,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PresignHeadBucket-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignHeadBucket-instance_method" title="s3.PresignClient.PresignHeadBucket() (method)">PresignHeadBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadBucketInput.html" title="s3.HeadBucketInput (struct)">HeadBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignHeadBucket-instance_method" title="s3.PresignClient.PresignHeadBucket() (method)">PresignHeadBucket</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadBucketInput.html" title="s3.HeadBucketInput (struct)">HeadBucketInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
   
 
   
@@ -676,7 +676,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PresignHeadObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignHeadObject-instance_method" title="s3.PresignClient.PresignHeadObject() (method)">PresignHeadObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignHeadObject-instance_method" title="s3.PresignClient.PresignHeadObject() (method)">PresignHeadObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="HeadObjectInput.html" title="s3.HeadObjectInput (struct)">HeadObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
   
 
   
@@ -745,7 +745,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PresignPostObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignPostObject-instance_method" title="s3.PresignClient.PresignPostObject() (method)">PresignPostObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectInput.html" title="s3.PutObjectInput (struct)">PutObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="../s3.html#type-PresignPostOptions" title="s3 (package)">PresignPostOptions</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PresignedPostRequest" title="s3 (package)">PresignedPostRequest</a></span>, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignPostObject-instance_method" title="s3.PresignClient.PresignPostObject() (method)">PresignPostObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectInput.html" title="s3.PutObjectInput (struct)">PutObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="../s3.html#type-PresignPostOptions" title="s3 (package)">PresignPostOptions</a></span>)) (*<span class='object_link'><a href="../s3.html#type-PresignedPostRequest" title="s3 (package)">PresignedPostRequest</a></span>, error) 
   
 
   
@@ -826,7 +826,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PresignPutObject-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignPutObject-instance_method" title="s3.PresignClient.PresignPutObject() (method)">PresignPutObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectInput.html" title="s3.PutObjectInput (struct)">PutObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignPutObject-instance_method" title="s3.PresignClient.PresignPutObject() (method)">PresignPutObject</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="PutObjectInput.html" title="s3.PutObjectInput (struct)">PutObjectInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
   
 
   
@@ -905,7 +905,7 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       <div class="method_details ">
   <h3 class="signature " id="PresignUploadPart-instance_method">
   
-    func (c *<span class='object_link'><a href="" title="s3.PresignClient (struct)">PresignClient</a></span>) <strong><span class='object_link'><a href="#PresignUploadPart-instance_method" title="s3.PresignClient.PresignUploadPart() (method)">PresignUploadPart</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="UploadPartInput.html" title="s3.UploadPartInput (struct)">UploadPartInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
+    func (c *PresignClient) <strong><span class='object_link'><a href="#PresignUploadPart-instance_method" title="s3.PresignClient.PresignUploadPart() (method)">PresignUploadPart</a></span></strong>(ctx context.Context, params *<span class='object_link'><a href="UploadPartInput.html" title="s3.UploadPartInput (struct)">UploadPartInput</a></span>, optFns ...func(*<span class='object_link'><a href="PresignOptions.html" title="s3.PresignOptions (struct)">PresignOptions</a></span>)) (*v4.PresignedHTTPRequest, error) 
   
 
   
@@ -987,9 +987,9 @@ import "../ibm-cos-sdk-go-v2/service/s3"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:47 2026 by
+  Generated on Thu Jun 11 07:56:48 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

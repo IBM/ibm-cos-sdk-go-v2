@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws/middleware.RequestUserAgent";
@@ -75,9 +75,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>RequestUserAgent is a build middleware that set the User-Agent for the request.</p>
-
+    <p>RequestUserAgent is a build middleware that set the User-Agent for the request.</p>
 
   </div>
 </div>
@@ -127,15 +125,14 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>NewRequestUserAgent returns a new requestUserAgent which will set the User-Agent and X-Amz-User-Agent for the request.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>NewRequestUserAgent returns a new requestUserAgent which will set the User-Agent and X-Amz-User-Agent for the request.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
     <h2>
       Method  Summary
@@ -161,9 +158,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddCredentialsSource adds the credential source as a feature on the User-Agent string.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddCredentialsSource adds the credential source as a feature on the User-Agent string.</p></div></span>
   
 </li>
 
@@ -186,9 +181,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddSDKAgentKey adds the component identified by name to the User-Agent string.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddSDKAgentKey adds the component identified by name to the User-Agent string.</p></div></span>
   
 </li>
 
@@ -211,9 +204,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddSDKAgentKeyValue adds the key identified by the given name and value to the User-Agent string.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddSDKAgentKeyValue adds the key identified by the given name and value to the User-Agent string.</p></div></span>
   
 </li>
 
@@ -236,9 +227,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddUserAgentFeature adds the feature ID to the tracking list to be emitted in the final User-Agent string.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddUserAgentFeature adds the feature ID to the tracking list to be emitted in the final User-Agent string.</p></div></span>
   
 </li>
 
@@ -261,9 +250,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddUserAgentKey adds the component identified by name to the User-Agent string.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddUserAgentKey adds the component identified by name to the User-Agent string.</p></div></span>
   
 </li>
 
@@ -286,9 +273,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>AddUserAgentKeyValue adds the key identified by the given name and value to the User-Agent string.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>AddUserAgentKeyValue adds the key identified by the given name and value to the User-Agent string.</p></div></span>
   
 </li>
 
@@ -311,15 +296,14 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>ID the name of the middleware.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>ID the name of the middleware.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -333,7 +317,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       <div class="method_details first">
   <h3 class="signature first" id="NewRequestUserAgent-class_method">
   
-    func <strong><span class='object_link'><a href="#NewRequestUserAgent-class_method" title="middleware.RequestUserAgent.NewRequestUserAgent() (method)">NewRequestUserAgent</a></span></strong>() *<span class='object_link'><a href="" title="middleware.RequestUserAgent (struct)">RequestUserAgent</a></span> 
+    func <strong><span class='object_link'><a href="#NewRequestUserAgent-class_method" title="middleware.RequestUserAgent.NewRequestUserAgent() (method)">NewRequestUserAgent</a></span></strong>() *RequestUserAgent 
   
 
   
@@ -341,19 +325,13 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>NewRequestUserAgent returns a new requestUserAgent which will set the User-Agent and X-Amz-User-Agent for the request.</p>
-
+    <p>NewRequestUserAgent returns a new requestUserAgent which will set the User-Agent and X-Amz-User-Agent for the
+request.</p>
 <p>User-Agent example:</p>
-
 <pre class="code go"><code class="go"><div class="hljs">ibm-cos-sdk-<span class="hljs-keyword">go</span>-v2/1.2.3
 </div></code></pre>
-
 <p>X-Amz-User-Agent example:</p>
-
-<pre class="code go"><code class="go"><div class="hljs">ibm-cos-sdk-<span class="hljs-keyword">go</span>-v2/1.2.3 md/GOOS/linux md/GOARCH/amd64 lang/<span class="hljs-keyword">go</span>/1.15
-</div></code></pre>
-
+<pre class="code go"><code class="go"><div class="hljs">ibm-cos-sdk-<span class="hljs-keyword">go</span>-v2/1.2.3 md/GOOS/linux md/GOARCH/amd64 lang/<span class="hljs-keyword">go</span>/1.15</div></code></pre>
 
   </div>
 </div>
@@ -417,7 +395,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       <div class="method_details first">
   <h3 class="signature first" id="AddCredentialsSource-instance_method">
   
-    func (u *<span class='object_link'><a href="" title="middleware.RequestUserAgent (struct)">RequestUserAgent</a></span>) <strong><span class='object_link'><a href="#AddCredentialsSource-instance_method" title="middleware.RequestUserAgent.AddCredentialsSource() (method)">AddCredentialsSource</a></span></strong>(source aws.CredentialSource) 
+    func (u *RequestUserAgent) <strong><span class='object_link'><a href="#AddCredentialsSource-instance_method" title="middleware.RequestUserAgent.AddCredentialsSource() (method)">AddCredentialsSource</a></span></strong>(source aws.CredentialSource) 
   
 
   
@@ -425,9 +403,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddCredentialsSource adds the credential source as a feature on the User-Agent string</p>
-
+    <p>AddCredentialsSource adds the credential source as a feature on the User-Agent string</p>
 
   </div>
 </div>
@@ -465,7 +441,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       <div class="method_details ">
   <h3 class="signature " id="AddSDKAgentKey-instance_method">
   
-    func (u *<span class='object_link'><a href="" title="middleware.RequestUserAgent (struct)">RequestUserAgent</a></span>) <strong><span class='object_link'><a href="#AddSDKAgentKey-instance_method" title="middleware.RequestUserAgent.AddSDKAgentKey() (method)">AddSDKAgentKey</a></span></strong>(keyType <span class='object_link'><a href="SDKAgentKeyType.html" title="middleware.SDKAgentKeyType (struct)">SDKAgentKeyType</a></span>, key string) 
+    func (u *RequestUserAgent) <strong><span class='object_link'><a href="#AddSDKAgentKey-instance_method" title="middleware.RequestUserAgent.AddSDKAgentKey() (method)">AddSDKAgentKey</a></span></strong>(keyType <span class='object_link'><a href="SDKAgentKeyType.html" title="middleware.SDKAgentKeyType (struct)">SDKAgentKeyType</a></span>, key string) 
   
 
   
@@ -473,9 +449,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddSDKAgentKey adds the component identified by name to the User-Agent string.</p>
-
+    <p>AddSDKAgentKey adds the component identified by name to the User-Agent string.</p>
 
   </div>
 </div>
@@ -509,7 +483,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       <div class="method_details ">
   <h3 class="signature " id="AddSDKAgentKeyValue-instance_method">
   
-    func (u *<span class='object_link'><a href="" title="middleware.RequestUserAgent (struct)">RequestUserAgent</a></span>) <strong><span class='object_link'><a href="#AddSDKAgentKeyValue-instance_method" title="middleware.RequestUserAgent.AddSDKAgentKeyValue() (method)">AddSDKAgentKeyValue</a></span></strong>(keyType <span class='object_link'><a href="SDKAgentKeyType.html" title="middleware.SDKAgentKeyType (struct)">SDKAgentKeyType</a></span>, key, value string) 
+    func (u *RequestUserAgent) <strong><span class='object_link'><a href="#AddSDKAgentKeyValue-instance_method" title="middleware.RequestUserAgent.AddSDKAgentKeyValue() (method)">AddSDKAgentKeyValue</a></span></strong>(keyType <span class='object_link'><a href="SDKAgentKeyType.html" title="middleware.SDKAgentKeyType (struct)">SDKAgentKeyType</a></span>, key, value string) 
   
 
   
@@ -517,9 +491,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddSDKAgentKeyValue adds the key identified by the given name and value to the User-Agent string.</p>
-
+    <p>AddSDKAgentKeyValue adds the key identified by the given name and value to the User-Agent string.</p>
 
   </div>
 </div>
@@ -553,7 +525,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       <div class="method_details ">
   <h3 class="signature " id="AddUserAgentFeature-instance_method">
   
-    func (u *<span class='object_link'><a href="" title="middleware.RequestUserAgent (struct)">RequestUserAgent</a></span>) <strong><span class='object_link'><a href="#AddUserAgentFeature-instance_method" title="middleware.RequestUserAgent.AddUserAgentFeature() (method)">AddUserAgentFeature</a></span></strong>(feature UserAgentFeature) 
+    func (u *RequestUserAgent) <strong><span class='object_link'><a href="#AddUserAgentFeature-instance_method" title="middleware.RequestUserAgent.AddUserAgentFeature() (method)">AddUserAgentFeature</a></span></strong>(feature UserAgentFeature) 
   
 
   
@@ -561,9 +533,8 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddUserAgentFeature adds the feature ID to the tracking list to be emitted in the final User-Agent string.</p>
-
+    <p>AddUserAgentFeature adds the feature ID to the tracking list to be emitted
+in the final User-Agent string.</p>
 
   </div>
 </div>
@@ -595,7 +566,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       <div class="method_details ">
   <h3 class="signature " id="AddUserAgentKey-instance_method">
   
-    func (u *<span class='object_link'><a href="" title="middleware.RequestUserAgent (struct)">RequestUserAgent</a></span>) <strong><span class='object_link'><a href="#AddUserAgentKey-instance_method" title="middleware.RequestUserAgent.AddUserAgentKey() (method)">AddUserAgentKey</a></span></strong>(key string) 
+    func (u *RequestUserAgent) <strong><span class='object_link'><a href="#AddUserAgentKey-instance_method" title="middleware.RequestUserAgent.AddUserAgentKey() (method)">AddUserAgentKey</a></span></strong>(key string) 
   
 
   
@@ -603,9 +574,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddUserAgentKey adds the component identified by name to the User-Agent string.</p>
-
+    <p>AddUserAgentKey adds the component identified by name to the User-Agent string.</p>
 
   </div>
 </div>
@@ -637,7 +606,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       <div class="method_details ">
   <h3 class="signature " id="AddUserAgentKeyValue-instance_method">
   
-    func (u *<span class='object_link'><a href="" title="middleware.RequestUserAgent (struct)">RequestUserAgent</a></span>) <strong><span class='object_link'><a href="#AddUserAgentKeyValue-instance_method" title="middleware.RequestUserAgent.AddUserAgentKeyValue() (method)">AddUserAgentKeyValue</a></span></strong>(key, value string) 
+    func (u *RequestUserAgent) <strong><span class='object_link'><a href="#AddUserAgentKeyValue-instance_method" title="middleware.RequestUserAgent.AddUserAgentKeyValue() (method)">AddUserAgentKeyValue</a></span></strong>(key, value string) 
   
 
   
@@ -645,9 +614,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>AddUserAgentKeyValue adds the key identified by the given name and value to the User-Agent string.</p>
-
+    <p>AddUserAgentKeyValue adds the key identified by the given name and value to the User-Agent string.</p>
 
   </div>
 </div>
@@ -679,7 +646,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       <div class="method_details ">
   <h3 class="signature " id="ID-instance_method">
   
-    func (u *<span class='object_link'><a href="" title="middleware.RequestUserAgent (struct)">RequestUserAgent</a></span>) <strong><span class='object_link'><a href="#ID-instance_method" title="middleware.RequestUserAgent.ID() (method)">ID</a></span></strong>() string 
+    func (u *RequestUserAgent) <strong><span class='object_link'><a href="#ID-instance_method" title="middleware.RequestUserAgent.ID() (method)">ID</a></span></strong>() string 
   
 
   
@@ -687,9 +654,7 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>ID the name of the middleware.</p>
-
+    <p>ID the name of the middleware.</p>
 
   </div>
 </div>
@@ -724,9 +689,9 @@ import "../ibm-cos-sdk-go-v2/aws/middleware"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:46 2026 by
+  Generated on Thu Jun 11 07:56:47 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "service/s3/internal/customizations.ExpressSigner";
@@ -75,11 +75,9 @@ import "../ibm-cos-sdk-go-v2/service/s3/internal/customizations"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>ExpressSigner signs requests for the sigv4-s3express auth scheme.</p>
-
-<p>This signer respects the aws.auth#sigv4 properties for signing name and region.</p>
-
+    <p>ExpressSigner signs requests for the sigv4-s3express auth scheme.</p>
+<p>This signer respects the aws.auth#sigv4 properties for signing name and
+region.</p>
 
   </div>
 </div>
@@ -207,15 +205,14 @@ import "../ibm-cos-sdk-go-v2/service/s3/internal/customizations"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>SignRequest signs the request with the provided identity.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>SignRequest signs the request with the provided identity.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -259,7 +256,7 @@ import "../ibm-cos-sdk-go-v2/service/s3/internal/customizations"
       <div class="method_details first">
   <h3 class="signature first" id="SignRequest-instance_method">
   
-    func (v *<span class='object_link'><a href="" title="customizations.ExpressSigner (struct)">ExpressSigner</a></span>) <strong><span class='object_link'><a href="#SignRequest-instance_method" title="customizations.ExpressSigner.SignRequest() (method)">SignRequest</a></span></strong>(ctx context.Context, r *smithyhttp.Request, identity auth.Identity, props smithy.Properties) error 
+    func (v *ExpressSigner) <strong><span class='object_link'><a href="#SignRequest-instance_method" title="customizations.ExpressSigner.SignRequest() (method)">SignRequest</a></span></strong>(ctx context.Context, r *smithyhttp.Request, identity auth.Identity, props smithy.Properties) error 
   
 
   
@@ -267,9 +264,7 @@ import "../ibm-cos-sdk-go-v2/service/s3/internal/customizations"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>SignRequest signs the request with the provided identity.</p>
-
+    <p>SignRequest signs the request with the provided identity.</p>
 
   </div>
 </div>
@@ -364,9 +359,9 @@ import "../ibm-cos-sdk-go-v2/service/s3/internal/customizations"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:56 2026 by
+  Generated on Thu Jun 11 07:56:52 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

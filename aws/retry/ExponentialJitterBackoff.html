@@ -10,11 +10,11 @@
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.github.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "aws/retry.ExponentialJitterBackoff";
@@ -75,9 +75,8 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
 </div>
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>ExponentialJitterBackoff provides backoff delays with jitter based on the number of attempts.</p>
-
+    <p>ExponentialJitterBackoff provides backoff delays with jitter based on the
+number of attempts.</p>
 
   </div>
 </div>
@@ -127,15 +126,14 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>NewExponentialJitterBackoff returns an ExponentialJitterBackoff configured for the max backoff.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>NewExponentialJitterBackoff returns an ExponentialJitterBackoff configured for the max backoff.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
     <h2>
       Method  Summary
@@ -161,15 +159,14 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>BackoffDelay returns the duration to wait before the next attempt should be made.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>BackoffDelay returns the duration to wait before the next attempt should be made.</p></div></span>
   
 </li>
 
 
       
     </ul>
+    
   
 
 
@@ -183,7 +180,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
       <div class="method_details first">
   <h3 class="signature first" id="NewExponentialJitterBackoff-class_method">
   
-    func <strong><span class='object_link'><a href="#NewExponentialJitterBackoff-class_method" title="retry.ExponentialJitterBackoff.NewExponentialJitterBackoff() (method)">NewExponentialJitterBackoff</a></span></strong>(maxBackoff time.Duration) *<span class='object_link'><a href="" title="retry.ExponentialJitterBackoff (struct)">ExponentialJitterBackoff</a></span> 
+    func <strong><span class='object_link'><a href="#NewExponentialJitterBackoff-class_method" title="retry.ExponentialJitterBackoff.NewExponentialJitterBackoff() (method)">NewExponentialJitterBackoff</a></span></strong>(maxBackoff time.Duration) *ExponentialJitterBackoff 
   
 
   
@@ -191,9 +188,8 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>NewExponentialJitterBackoff returns an ExponentialJitterBackoff configured for the max backoff.</p>
-
+    <p>NewExponentialJitterBackoff returns an ExponentialJitterBackoff configured
+for the max backoff.</p>
 
   </div>
 </div>
@@ -241,7 +237,7 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
       <div class="method_details first">
   <h3 class="signature first" id="BackoffDelay-instance_method">
   
-    func (j *<span class='object_link'><a href="" title="retry.ExponentialJitterBackoff (struct)">ExponentialJitterBackoff</a></span>) <strong><span class='object_link'><a href="#BackoffDelay-instance_method" title="retry.ExponentialJitterBackoff.BackoffDelay() (method)">BackoffDelay</a></span></strong>(attempt int, err error) (time.Duration, error) 
+    func (j *ExponentialJitterBackoff) <strong><span class='object_link'><a href="#BackoffDelay-instance_method" title="retry.ExponentialJitterBackoff.BackoffDelay() (method)">BackoffDelay</a></span></strong>(attempt int, err error) (time.Duration, error) 
   
 
   
@@ -249,9 +245,8 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>BackoffDelay returns the duration to wait before the next attempt should be made. Returns an error if unable get a duration.</p>
-
+    <p>BackoffDelay returns the duration to wait before the next attempt should be
+made. Returns an error if unable get a duration.</p>
 
   </div>
 </div>
@@ -312,9 +307,9 @@ import "../ibm-cos-sdk-go-v2/aws/retry"
       </div>
 
       <div id="footer">
-  Generated on Mon Mar 23 05:50:46 2026 by
+  Generated on Thu Jun 11 07:56:47 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.38 (ruby-3.1.2).
+  0.9.44 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->
