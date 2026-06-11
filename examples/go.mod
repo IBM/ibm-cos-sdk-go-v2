@@ -1,4 +1,4 @@
-module github.com/IBM/ibm-cos-sdk-go-v2/feature/s3/manager
+module github.com/IBM/ibm-cos-sdk-go-v2/examples
 
 go 1.25.0
 
@@ -7,7 +7,6 @@ require (
 	github.com/IBM/ibm-cos-sdk-go-v2/config v1.29.14
 	github.com/IBM/ibm-cos-sdk-go-v2/credentials v1.17.67
 	github.com/IBM/ibm-cos-sdk-go-v2/service/s3 v1.79.3
-	github.com/aws/smithy-go v1.27.2
 )
 
 require (
@@ -21,6 +20,7 @@ require (
 	github.com/IBM/ibm-cos-sdk-go-v2/service/internal/checksum v1.7.1 // indirect
 	github.com/IBM/ibm-cos-sdk-go-v2/service/internal/presigned-url v1.12.15 // indirect
 	github.com/IBM/ibm-cos-sdk-go-v2/service/internal/s3shared v1.18.15 // indirect
+	github.com/aws/smithy-go v1.27.2 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.13 // indirect
 	github.com/go-openapi/errors v0.22.8 // indirect
 	github.com/go-openapi/strfmt v0.26.3 // indirect
@@ -41,28 +41,8 @@ require (
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
 
-replace github.com/IBM/ibm-cos-sdk-go-v2 => ../../../
+replace github.com/IBM/ibm-cos-sdk-go-v2 => ../
 
-replace github.com/IBM/ibm-cos-sdk-go-v2/aws/protocol/eventstream => ../../../aws/protocol/eventstream/
+replace github.com/IBM/ibm-cos-sdk-go-v2/config => ../config
 
-replace github.com/IBM/ibm-cos-sdk-go-v2/config => ../../../config/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/credentials => ../../../credentials/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/internal/configsources => ../../../internal/configsources/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/internal/endpoints/v2 => ../../../internal/endpoints/v2/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/internal/ini => ../../../internal/ini/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/internal/v4a => ../../../internal/v4a/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/service/internal/accept-encoding => ../../../service/internal/accept-encoding/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/service/internal/checksum => ../../../service/internal/checksum/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/service/internal/presigned-url => ../../../service/internal/presigned-url/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/service/internal/s3shared => ../../../service/internal/s3shared/
-
-replace github.com/IBM/ibm-cos-sdk-go-v2/service/s3 => ../../../service/s3/
+replace github.com/IBM/ibm-cos-sdk-go-v2/service/s3 => ../service/s3

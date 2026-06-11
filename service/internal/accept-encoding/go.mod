@@ -1,5 +1,5 @@
 module github.com/IBM/ibm-cos-sdk-go-v2/service/internal/accept-encoding
 
-go 1.22
+go 1.24
 
-require github.com/aws/smithy-go v1.22.2
+require github.com/aws/smithy-go v1.27.2

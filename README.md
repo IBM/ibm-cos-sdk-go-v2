@@ -145,7 +145,7 @@ func main() {
 go run main.go
 ```
 
-More examples can be found [here](./examples).
+More examples can be found in the [examples directory](./examples).
 
 ***
 
