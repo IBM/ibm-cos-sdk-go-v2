@@ -1,6 +1,7 @@
 package ibmiam
 
 import (
+	"context"
 	"os"
 	"strings"
 
@@ -10,7 +11,6 @@ import (
 	"github.com/aws/smithy-go"
 	"github.com/aws/smithy-go/logging"
 	"github.com/aws/smithy-go/middleware"
-	"golang.org/x/net/context"
 )
 
 // TrustedProfileProvider Provider Struct
