@@ -1,14 +1,14 @@
 module github.com/IBM/ibm-cos-sdk-go-v2/service/internal/eventstreamtesting
 
-go 1.25.0
+go 1.26.0
 
 require (
-	github.com/IBM/ibm-cos-sdk-go-v2 v1.0.1
+	github.com/IBM/ibm-cos-sdk-go-v2 v1.1.0
 	github.com/IBM/ibm-cos-sdk-go-v2/aws/protocol/eventstream v1.6.10
-	github.com/IBM/ibm-cos-sdk-go-v2/credentials v1.17.67
+	github.com/IBM/ibm-cos-sdk-go-v2/credentials v1.17.68
 )
 
-require github.com/aws/smithy-go v1.27.2 // indirect
+require github.com/aws/smithy-go v1.27.10 // indirect
 
 replace github.com/IBM/ibm-cos-sdk-go-v2 => ../../../
 

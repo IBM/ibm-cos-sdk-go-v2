@@ -4527,6 +4527,29 @@ type LegalHold struct {
 	noSmithyDocumentSerde
 }
 
+// ObjectSyncAttempted represents the metadata about each failed replication object.
+type ObjectSyncAttempted struct {
+	// Timestamp of last sync attempt from primary sync queue.
+	FirstSyncAttempted *time.Time `type:"timestamp" timestampFormat:"iso8601"`
+
+	// Name of object that has failed sync.
+	Key *string `type:"string"`
+
+	// Timestamp of most recent sync attempt from failure sync queue.
+	LastSyncAttempted *time.Time `type:"timestamp" timestampFormat:"iso8601"`
+
+	// Descriptive message regarding the cause of the most recent sync attempt failure.
+	SyncFailureCause *string `type:"string"`
+
+	// The type of sync that has failed (e.g. content, metadata, objectLock).
+	SyncType *string `type:"string"`
+
+	// UUID of object version that has failed sync.
+	VersionId *string `type:"string"`
+
+	noSmithyDocumentSerde
+}
+
 type noSmithyDocumentSerde = smithydocument.NoSerde
 
 // UnknownUnionMember is returned when a union member is returned over the wire,

@@ -1,12 +1,14 @@
 module github.com/IBM/ibm-cos-sdk-go-v2/service/internal/endpoint-discovery
 
-go 1.25.0
+go 1.26.0
 
 require (
-	github.com/IBM/ibm-cos-sdk-go-v2 v1.0.1
-	github.com/aws/smithy-go v1.27.2
+	github.com/IBM/ibm-cos-sdk-go-v2 v1.1.0
+	github.com/aws/smithy-go v1.27.10
 )
 
-require github.com/IBM/ibm-cos-sdk-go-v2/credentials v1.17.67 // indirect
+require github.com/IBM/ibm-cos-sdk-go-v2/credentials v1.17.68 // indirect
 
 replace github.com/IBM/ibm-cos-sdk-go-v2 => ../../../
+
+replace github.com/IBM/ibm-cos-sdk-go-v2/credentials => ../../../credentials

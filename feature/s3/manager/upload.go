@@ -16,6 +16,7 @@ import (
 	internalcontext "github.com/IBM/ibm-cos-sdk-go-v2/internal/context"
 	"github.com/IBM/ibm-cos-sdk-go-v2/service/s3"
 	"github.com/IBM/ibm-cos-sdk-go-v2/service/s3/types"
+	"github.com/aws/smithy-go/logging"
 	smithymiddleware "github.com/aws/smithy-go/middleware"
 	smithyhttp "github.com/aws/smithy-go/transport/http"
 )
@@ -235,6 +236,9 @@ type Uploader struct {
 	// Defaults to package const's MaxUploadParts value.
 	MaxUploadParts int32
 
+	// Logger to send logging messages to
+	Logger logging.Logger
+
 	// The client to use when uploading to S3.
 	S3 UploadAPIClient
 
@@ -328,6 +332,15 @@ func (u Uploader) Upload(ctx context.Context, input *s3.PutObjectInput, opts ...
 	}
 
 	return i.upload()
+}
+
+
+// UploadWithPipe uploads data from a named pipe to S3.
+//
+// The method reuses the existing uploader configuration and Upload behavior,
+// while sourcing the request body from the named pipe.
+func (u *Uploader) UploadWithPipe(ctx context.Context, input *UploadPipeInput, opts ...func(*Uploader)) (*UploadOutput, error) {
+	return uploadWithPipe(ctx, u, input, opts...)
 }
 
 // internal structure to manage an upload to S3.

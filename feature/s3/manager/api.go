@@ -11,9 +11,10 @@ type DeleteObjectsAPIClient interface {
 	DeleteObjects(context.Context, *s3.DeleteObjectsInput, ...func(*s3.Options)) (*s3.DeleteObjectsOutput, error)
 }
 
-// DownloadAPIClient is an S3 API client that can invoke the GetObject operation.
+// DownloadAPIClient is an S3 API client that can invoke the GetObject and HeadObject operations.
 type DownloadAPIClient interface {
 	GetObject(context.Context, *s3.GetObjectInput, ...func(*s3.Options)) (*s3.GetObjectOutput, error)
+	HeadObject(context.Context, *s3.HeadObjectInput, ...func(*s3.Options)) (*s3.HeadObjectOutput, error)
 }
 
 // HeadBucketAPIClient is an S3 API client that can invoke the HeadBucket operation.

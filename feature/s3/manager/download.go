@@ -212,6 +212,12 @@ func (d Downloader) Download(ctx context.Context, w io.WriterAt, input *s3.GetOb
 	return impl.download()
 }
 
+
+// DownloadWithPipe downloads an S3 object to a named pipe with ordered part delivery.
+func (d *Downloader) DownloadWithPipe(ctx context.Context, input *DownloadPipeInput, options ...func(*Downloader)) (n int64, err error) {
+	return downloadWithPipe(ctx, d, input, options...)
+}
+
 // downloader is the implementation structure used internally by Downloader.
 type downloader struct {
 	ctx context.Context

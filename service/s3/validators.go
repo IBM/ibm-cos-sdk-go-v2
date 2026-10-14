@@ -2326,6 +2326,14 @@ func addOpDeleteLegalHoldValidationMiddleware(stack *middleware.Stack) error {
 	return stack.Initialize.Add(&validateOpDeleteLegalHold{}, middleware.After)
 }
 
+func addOpListBucketReplicationFailuresValidationMiddleware(stack *middleware.Stack) error {
+	return stack.Initialize.Add(&validateOpListBucketReplicationFailures{}, middleware.After)
+}
+
+func addOpPutBucketReplicationReattemptValidationMiddleware(stack *middleware.Stack) error {
+	return stack.Initialize.Add(&validateOpPutBucketReplicationReattempt{}, middleware.After)
+}
+
 func validateAccessControlPolicy(v *types.AccessControlPolicy) error {
 	if v == nil {
 		return nil
@@ -5952,4 +5960,78 @@ func validateOpDeleteLegalHoldInput(v *DeleteLegalHoldInput) error {
 	} else {
 		return nil
 	}
+}
+
+type validateOpListBucketReplicationFailures struct {
+}
+
+func (*validateOpListBucketReplicationFailures) ID() string {
+	return "OperationInputValidation"
+}
+
+func (m *validateOpListBucketReplicationFailures) HandleInitialize(ctx context.Context, in middleware.InitializeInput, next middleware.InitializeHandler) (
+	out middleware.InitializeOutput, metadata middleware.Metadata, err error,
+) {
+	input, ok := in.Parameters.(*ListBucketReplicationFailuresInput)
+	if !ok {
+		return out, metadata, fmt.Errorf("unknown input parameters type %T", in.Parameters)
+	}
+	if err := validateOpListBucketReplicationFailuresInput(input); err != nil {
+		return out, metadata, err
+	}
+	return next.HandleInitialize(ctx, in)
+}
+
+func validateOpListBucketReplicationFailuresInput(v *ListBucketReplicationFailuresInput) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "ListBucketReplicationFailuresInput"}
+	if v.Bucket == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket"))
+	}
+	if v.Bucket != nil && len(*v.Bucket) < 1 {
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket Length must be greater than or equal to 1 characters"))
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
+}
+
+type validateOpPutBucketReplicationReattempt struct {
+}
+
+func (*validateOpPutBucketReplicationReattempt) ID() string {
+	return "OperationInputValidation"
+}
+
+func (m *validateOpPutBucketReplicationReattempt) HandleInitialize(ctx context.Context, in middleware.InitializeInput, next middleware.InitializeHandler) (
+	out middleware.InitializeOutput, metadata middleware.Metadata, err error,
+) {
+	input, ok := in.Parameters.(*PutBucketReplicationReattemptInput)
+	if !ok {
+		return out, metadata, fmt.Errorf("unknown input parameters type %T", in.Parameters)
+	}
+	if err := validateOpPutBucketReplicationReattemptInput(input); err != nil {
+		return out, metadata, err
+	}
+	return next.HandleInitialize(ctx, in)
+}
+
+func validateOpPutBucketReplicationReattemptInput(v *PutBucketReplicationReattemptInput) error {
+	if v == nil {
+		return nil
+	}
+	invalidParams := smithy.InvalidParamsError{Context: "PutBucketReplicationReattemptInput"}
+	if v.Bucket == nil {
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket"))
+	}
+	if v.Bucket != nil && len(*v.Bucket) < 1 {
+		invalidParams.Add(smithy.NewErrParamRequired("Bucket Length must be greater than or equal to 1 characters"))
+	}
+	if invalidParams.Len() > 0 {
+		return invalidParams
+	}
+	return nil
 }
