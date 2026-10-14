@@ -127,7 +127,7 @@ Simple Storage Service.</p>
       <dl class="constants">
         
           <dt id="_-constant" class="">
-          <div class="defn">var <strong>_</strong> <span class='object_link'><a href="s3/ListDirectoryBucketsAPIClient.html" title="s3.ListDirectoryBucketsAPIClient (interface)">ListDirectoryBucketsAPIClient</a></span> = 
+          <div class="defn">var <strong>_</strong> <span class='object_link'><a href="s3/ListBucketReplicationFailuresAPIClient.html" title="s3.ListBucketReplicationFailuresAPIClient (interface)">ListBucketReplicationFailuresAPIClient</a></span> = 
           <span class="note title writeonly">writable</span>
           </div>
             
@@ -3399,6 +3399,98 @@ Simple Storage Service.</p>
     
       
 <li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3/ListBucketReplicationFailuresInput.html" title="s3.ListBucketReplicationFailuresInput (struct)"><strong>ListBucketReplicationFailuresInput</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-ListBucketReplicationFailuresOutput" title="s3 (package)"><strong>ListBucketReplicationFailuresOutput</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3/ListBucketReplicationFailuresPaginator.html" title="s3.ListBucketReplicationFailuresPaginator (struct)"><strong>ListBucketReplicationFailuresPaginator</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>ListBucketReplicationFailuresPaginator is a paginator for ListBucketReplicationFailures.</p></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-ListBucketReplicationFailuresPaginatorOptions" title="s3 (package)"><strong>ListBucketReplicationFailuresPaginatorOptions</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>ListBucketReplicationFailuresPaginatorOptions is the paginator options for ListBucketReplicationFailures.</p></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
   <span class="summary_signature"><span class='object_link'><a href="#type-ListBucketsExtendedInput" title="s3 (package)"><strong>ListBucketsExtendedInput</strong></a></span></span>
   
   
@@ -5032,6 +5124,52 @@ Simple Storage Service.</p>
     
       
 <li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3/PutBucketReplicationReattemptInput.html" title="s3.PutBucketReplicationReattemptInput (struct)"><strong>PutBucketReplicationReattemptInput</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-PutBucketReplicationReattemptOutput" title="s3 (package)"><strong>PutBucketReplicationReattemptOutput</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
   <span class="summary_signature"><span class='object_link'><a href="s3/PutBucketRequestPaymentInput.html" title="s3.PutBucketRequestPaymentInput (struct)"><strong>PutBucketRequestPaymentInput</strong></a></span></span>
   
   
@@ -6031,6 +6169,29 @@ Simple Storage Service.</p>
     
       
 <li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="s3/ListBucketReplicationFailuresAPIClient.html" title="s3.ListBucketReplicationFailuresAPIClient (interface)"><strong>ListBucketReplicationFailuresAPIClient</strong></a></span></span>
+  
+  
+  
+  
+  
+  <span class="note title interface">interface</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>ListBucketReplicationFailuresAPIClient is a client that may be implemented for a ListBucketReplicationFailures.</p></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
   <span class="summary_signature"><span class='object_link'><a href="s3/ListBucketsAPIClient.html" title="s3.ListBucketsAPIClient (interface)"><strong>ListBucketsAPIClient</strong></a></span></span>
   
   
@@ -6495,6 +6656,29 @@ Simple Storage Service.</p>
 
   
     <span class="summary_desc"><div class='inline'><p>NewFromConfig returns a new client from the provided config.</p></div></span>
+  
+</li>
+
+
+      
+        
+<li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#NewListBucketReplicationFailuresPaginator-class_method" title="s3.NewListBucketReplicationFailuresPaginator() (method)">func <strong>NewListBucketReplicationFailuresPaginator</strong>(client ListBucketReplicationFailuresAPIClient, params *ListBucketReplicationFailuresInput, optFns ...func(options *ListBucketReplicationFailuresPaginatorOptions)) *ListBucketReplicationFailuresPaginator </a></span></span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>NewListBucketReplicationFailuresPaginator returns a new ListBucketReplicationFailuresPaginator.</p></div></span>
   
 </li>
 
@@ -11760,6 +11944,174 @@ Amazon S3 understands.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="type-ListBucketReplicationFailuresOutput">
+  
+    <strong>ListBucketReplicationFailuresOutput</strong> struct
+  
+
+  
+</h3>
+<div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>Name</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Name of bucket being listed.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>FirstSyncAttemptedBefore</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Value provided via the first-sync-attempted-before request param.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>MaxKeys</strong> *int32 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Maximum accepted value is 1000.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>IsTruncated</strong> *bool 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Whether or not the results are truncated.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>EncodingType</strong> types.EncodingType 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Encoding type, if specified in the request.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>KeyCount</strong> *int32 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Number of keys returned with this request.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>ContinuationToken</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Continuation token for pagination.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>NextContinuationToken</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Next continuation token. Present if this result was truncated.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>Contents</strong> []<span class='object_link'><a href="s3/types.html#type-ObjectSyncAttempted" title="types (package)">types.ObjectSyncAttempted</a></span> 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Metadata about each object returned.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>ResultMetadata</strong> middleware.Metadata 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Metadata pertaining to the operation's result.</p>
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="type-ListBucketReplicationFailuresPaginatorOptions">
+  
+    <strong>ListBucketReplicationFailuresPaginatorOptions</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    <p>ListBucketReplicationFailuresPaginatorOptions is the paginator options for ListBucketReplicationFailures</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>StopOnDuplicateToken</strong> bool 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Set to true if pagination should stop if the service returns a pagination token
+that matches the most recent token provided to the service.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>Limit</strong> int32 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Limit is the maximum number of items to return.</p>
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="type-ListBucketsExtendedInput">
   
     <strong>ListBucketsExtendedInput</strong> struct
@@ -14308,6 +14660,45 @@ transition behavior.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="type-PutBucketReplicationReattemptOutput">
+  
+    <strong>PutBucketReplicationReattemptOutput</strong> struct
+  
+
+  
+</h3>
+<div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>ReplicationReattemptScheduledTime</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Scheduled time for replication reattempt returned in x-ibm-replication-reattempt-scheduled-time header.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>ResultMetadata</strong> middleware.Metadata 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Metadata pertaining to the operation's result.</p>
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="type-PutBucketRequestPaymentOutput">
   
     <strong>PutBucketRequestPaymentOutput</strong> struct
@@ -15993,6 +16384,84 @@ such as changing the client's endpoint or adding custom middleware behavior.</p>
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="NewListBucketReplicationFailuresPaginator-class_method">
+  
+    func <strong><span class='object_link'><a href="#NewListBucketReplicationFailuresPaginator-class_method" title="s3.NewListBucketReplicationFailuresPaginator() (method)">NewListBucketReplicationFailuresPaginator</a></span></strong>(client <span class='object_link'><a href="s3/ListBucketReplicationFailuresAPIClient.html" title="s3.ListBucketReplicationFailuresAPIClient (interface)">ListBucketReplicationFailuresAPIClient</a></span>, params *<span class='object_link'><a href="s3/ListBucketReplicationFailuresInput.html" title="s3.ListBucketReplicationFailuresInput (struct)">ListBucketReplicationFailuresInput</a></span>, optFns ...func(options *<span class='object_link'><a href="#type-ListBucketReplicationFailuresPaginatorOptions" title="s3 (package)">ListBucketReplicationFailuresPaginatorOptions</a></span>)) *<span class='object_link'><a href="s3/ListBucketReplicationFailuresPaginator.html" title="s3.ListBucketReplicationFailuresPaginator (struct)">ListBucketReplicationFailuresPaginator</a></span> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>NewListBucketReplicationFailuresPaginator returns a new ListBucketReplicationFailuresPaginator</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file">// File 'service/s3/api_op_ListBucketReplicationFailures.go', line 234</span>
+
+<div class="hljs"><span class="hljs-keyword">func</span> NewListBucketReplicationFailuresPaginator(client ListBucketReplicationFailuresAPIClient, params *ListBucketReplicationFailuresInput, optFns ...<span class="hljs-keyword">func</span>(options *ListBucketReplicationFailuresPaginatorOptions)) *ListBucketReplicationFailuresPaginator {
+	<span class="hljs-keyword">if</span> params == <span class="hljs-constant">nil</span> {
+		params = &ListBucketReplicationFailuresInput{}
+	}
+
+	options := ListBucketReplicationFailuresPaginatorOptions{}
+	<span class="hljs-keyword">if</span> params.MaxKeys != <span class="hljs-constant">nil</span> {
+		options.Limit = *params.MaxKeys
+	}
+
+	<span class="hljs-keyword">for</span> _, fn := <span class="hljs-keyword">range</span> optFns {
+		fn(&options)
+	}
+
+	<span class="hljs-keyword">return</span> &ListBucketReplicationFailuresPaginator{
+		options:   options,
+		client:    client,
+		params:    params,
+		firstPage: <span class="hljs-constant">true</span>,
+		nextToken: params.ContinuationToken,
+	}
+}</div></pre>
+    </td>
+  </tr>
+</table>
+
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="NewListBucketsExtendedPaginator-class_method">
   
     func <strong><span class='object_link'><a href="#NewListBucketsExtendedPaginator-class_method" title="s3.NewListBucketsExtendedPaginator() (method)">NewListBucketsExtendedPaginator</a></span></strong>(client <span class='object_link'><a href="s3/ListBucketsExtendedAPIClient.html" title="s3.ListBucketsExtendedAPIClient (interface)">ListBucketsExtendedAPIClient</a></span>, params *<span class='object_link'><a href="#type-ListBucketsExtendedInput" title="s3 (package)">ListBucketsExtendedInput</a></span>, optFns ...func(options *<span class='object_link'><a href="#type-ListBucketsExtendedPaginatorOptions" title="s3 (package)">ListBucketsExtendedPaginatorOptions</a></span>)) *<span class='object_link'><a href="s3/ListBucketsExtendedPaginator.html" title="s3.ListBucketsExtendedPaginator (struct)">ListBucketsExtendedPaginator</a></span> 
@@ -17246,9 +17715,9 @@ resolution.</p>
       </div>
 
       <div id="footer">
-  Generated on Thu Jun 11 07:56:44 2026 by
+  Generated on Wed Oct 14 09:05:06 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.44 (ruby-3.1.2).
+  0.9.45 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->

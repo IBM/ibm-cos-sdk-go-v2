@@ -5447,6 +5447,29 @@ import "../ibm-cos-sdk-go-v2/service/s3/types"
     
       
 <li class="public ">
+  <span class="summary_signature"><span class='object_link'><a href="#type-ObjectSyncAttempted" title="types (package)"><strong>ObjectSyncAttempted</strong></a></span></span>
+  
+  
+  <span class="note title readonly">struct</span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>ObjectSyncAttempted represents the metadata about each failed replication object.</p></div></span>
+  
+</li>
+
+
+    
+      
+<li class="public ">
   <span class="summary_signature"><span class='object_link'><a href="#type-ObjectVersion" title="types (package)"><strong>ObjectVersion</strong></a></span></span>
   
   
@@ -13723,6 +13746,94 @@ algorithm. For more information, see <a href="https://docs.aws.amazon.com/Amazon
 </div>
     
       <div class="method_details ">
+  <h3 class="signature " id="type-ObjectSyncAttempted">
+  
+    <strong>ObjectSyncAttempted</strong> struct
+  
+
+  
+</h3>
+<div class="docstring">
+  <div class="discussion">
+    <p>ObjectSyncAttempted represents the metadata about each failed replication object.</p>
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><div class="tags">
+<p class="tag_title">Structure Fields:</p>
+<dl class="fields">
+
+  <dt><code>
+    <strong>FirstSyncAttempted</strong> *time.Time 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Timestamp of last sync attempt from primary sync queue.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>Key</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Name of object that has failed sync.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>LastSyncAttempted</strong> *time.Time 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Timestamp of most recent sync attempt from failure sync queue.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>SyncFailureCause</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>Descriptive message regarding the cause of the most recent sync attempt failure.</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>SyncType</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>The type of sync that has failed (e.g. content, metadata, objectLock).</p>
+    
+  </dd>
+
+  <dt><code>
+    <strong>VersionId</strong> *string 
+    
+    
+  </code></dt>
+  <dd>
+    <p>UUID of object version that has failed sync.</p>
+    
+  </dd>
+
+
+</dl>
+</div>
+
+
+</div>
+    
+      <div class="method_details ">
   <h3 class="signature " id="type-ObjectVersion">
   
     <strong>ObjectVersion</strong> struct
@@ -17599,9 +17710,9 @@ If the bucket has never been so configured, this element is not returned.</p>
       </div>
 
       <div id="footer">
-  Generated on Thu Jun 11 07:56:46 2026 by
+  Generated on Wed Oct 14 09:05:08 2026 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.44 (ruby-3.1.2).
+  0.9.45 (ruby-3.1.2).
 </div>
 
 <!-- BEGIN-SECTION -->
